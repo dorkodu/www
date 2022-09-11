@@ -1,6 +1,6 @@
 <template>
   <div :class="'CardDeck' + attrs">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 <script setup lang="ts">
@@ -25,9 +25,14 @@ const attrs = (columns) ? " --" + columns : "";
   max-width: 76rem;
   margin: 0 auto;
 
-  &>.Card {
+  >.Card {
     max-width: 28rem;
     margin: 0 auto;
+  }
+
+  >.Picture {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
 

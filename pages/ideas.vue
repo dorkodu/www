@@ -15,14 +15,36 @@ definePageMeta({
 });
 
 const quotes: [string, string][] = [
-  [`the simple things are also the most extraordinary things, and only the wise can see them.`, "paulo coelho"],
+  [`And, when you want something, all the universe conspires in helping you to achieve it.`, "paulo coelho"],
+  ["Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.", "steve jobs"],
+  ["A man is a success if he gets up in the morning and gets to bed at night, and in between he does what he wants to do.", "Bob Dylan"],
+  ["If something is important enough, you should still do it even if the odds are not in your favor.", "Elon Musk"],
+  [`The biggest battle is the war against ignorance.`, "Mustafa Kemal Atatürk"],
+  ["You have to let it all go, Neo. Fear, doubt, and disbelief. Free your mind.", "the matrix"],
+  ["The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.", "Albert Camus"],
   ["tongue-tied and twisted, just an earth-bound misfit, i.", "pink floyd"],
-  [`so throw off the bowlines. sail away from the safe harbor. catch the trade winds in your sails. explore. dream. discover.`, "?"],
-  ["write the book you want to read.", "?"],
-  ["you know, one of the tragedies of real life is that there is no background music.", "annie proulx"],
-  ["you only live once, but if you do it right, once is enough.", "mae west"],
-  ["the function of prayer is not to influence God, but rather to change the nature of the one who prays.", "søren kierkegaard"]
+  ["to be great is to be misunderstood.", "Ralph Waldo Emerson"],
 ];
+
+const books: {
+  title: string;
+  author: string;
+  comment: string;
+  img: string;
+}[] = [
+    {
+      title: "the alchemist",
+      author: "paulo coelho",
+      comment: "my favorite book ever. truely a masterpiece, telling the inspiring story of a shepherd boy and his mystical quest for a worldly treasure, meaning and peace. i read it every summer, it helps me remember who i am, and inspires my work.",
+      img: "/images/book-thealchemist.jpg",
+    },
+    {
+      title: "steve jobs",
+      author: "walter isaacson",
+      comment: "the biography of my idol; having read this book in 2 languages and 5+ times; i see it as a bible, a compass for my work, career and life.",
+      img: "/images/book-stevejobs.jpg",
+    }
+  ];
 </script>
 
 <template>
@@ -31,8 +53,12 @@ const quotes: [string, string][] = [
       <template #main>
         <Hero :title="page.title" :tagline="page.tagline" :statement="page.statement">
           <template #content>
-            <p style="font-size: 1.65rem;">
-              🧠💬✍🏻📣💌
+            <p style="font-size: 2rem;">
+              <Icon name="twemoji:brain" />
+              <Icon name="noto:speech-balloon" />
+              <Icon name="fluent-emoji-flat:writing-hand-light" />
+              <Icon name="twemoji:megaphone" />
+              <Icon name="twemoji:love-letter" />
             </p>
           </template>
         </Hero>
@@ -41,16 +67,117 @@ const quotes: [string, string][] = [
         <Picture :source="page.picture.source" />
       </template>
     </Showcase>
+
     <article>
-      <h2>i love being myself...</h2>
+      <h2>i love being myself
+        <Icon name="fluent-emoji-flat:smiling-face" />
+      </h2>
       <p>
-        ...and i love being alive. i'm somehow wonderfully connected to other human beings,
+        i love being alive. i somehow feel wonderful, being connected to other people,
         and it's really hard to choose just a few from a billion things which influenced me.
       </p>
-      <p>so please try to check this page often for inspirations! ✨</p>
+      <p>so please try to check this page often for inspirations!
+        <Icon name="twemoji:sparkles" size="24" />
+      </p>
     </article>
+
+    <article id="thanks">
+      <h2>
+        thanks
+        <Icon name="fluent-emoji-flat:smiling-face-with-halo" />
+      </h2>
+      <p>
+        these are my insprations which shaped my life, character,
+        and if i will be able to use their gift;
+        i may change destiny of the entire world, for the better.
+      </p>
+      <Bulletpoint icon="twemoji:heart-decoration">
+        <h4 class="bulletpoint-title">idols</h4>
+        <ul style="margin: .25rem .5rem !important;">
+          <li><b>steve jobs</b> — personal hero, innovator, founder.</li>
+          <li><b>pink floyd</b> — the greatest progressive rock band.</li>
+          <li><b>atatürk</b> — father of modern turkey.</li>
+          <li><b>syd barrett</b> — psychedelic/crazy diamond.</li>
+          <li><b>bob dylan</b> — poet & voice of freedom.</li>
+          <li><b>isaac newton</b> — the last alchemist.</li>
+          <li><b>dieter rams</b> — grandmaster of industrial design.</li>
+          <li><b>tim berners-lee</b> — inventor of www.</li>
+          <li><b>aaron swartz</b> — activist, hacker, true son of the internet.</li>
+        </ul>
+      </Bulletpoint>
+      <Break />
+      <CardDeck :columns="3">
+        <Picture source="/images/idols/steve.jpg" />
+        <Picture source="/images/idols/floyd.jpg" />
+        <Picture source="/images/idols/ataturk.jpg" />
+        <Picture source="/images/idols/syd.jpg" />
+        <Picture source="/images/idols/dylan.jpg" />
+        <Picture source="/images/idols/newton.jpg" />
+        <Picture source="/images/idols/rams.jpg" />
+        <Picture source="/images/idols/tim.jpg" />
+        <Picture source="/images/idols/aaron.jpg" />
+      </CardDeck>
+      <Break />
+      <Bulletpoint icon="fluent-emoji-flat:musical-score">
+        <h4 class="bulletpoint-title">music</h4>
+        <CareerStep time="#1" title="pink floyd" location="— favorite band" description="
+        an english progressive-psychedelic rock band.
+        a true artistic approach to rock genre with
+        intense sonic universe,
+        experimentation,
+        philosophical lyrics,
+        extended compositions
+        and elaborate live shows." />
+
+        <ul style="margin: .25rem .5rem !important;">
+          <li>
+            <b></b>
+          </li>
+        </ul>
+        <Picture source="/images/tdsotm.jpg" title="dark side of the moon" />
+      </Bulletpoint>
+      <Bulletpoint icon="twemoji:video-game">
+        <h4 class="bulletpoint-title">games</h4>
+        <ul style="margin: .25rem .5rem !important;">
+          <li>
+            <b>empire earth</b> — best real time strategy.
+            lead your civilization in timeline; imperial, military, economic and cultural campaigns.
+            start in stone age villages and finish with space colonies.
+            more fun than chess!
+          </li>
+        </ul>
+      </Bulletpoint>
+      <Picture source="/images/game-ee2.jpg" title="empire earth ii." />
+      <!--
+      <br>
+      <CardDeck :columns="3">
+        <Picture source="/images/game-halo.jpg" />
+        <Picture source="/images/game-gtavc.jpg" />
+        <Picture source="/images/game-gtasa.jpg" />
+        <Picture source="/images/game-terraria.jpg" />
+        <Picture source="/images/game-cod2.jpg" />
+      </CardDeck>
+      <br>
+      <br>
+      -->
+      <Bulletpoint icon="twemoji:books">
+        <h4 class="bulletpoint-title">books</h4>
+        <p>i love reading, mostly non-fiction, textbooks and papers :)</p>
+        <CareerStep v-for="(book, index) in books" :time="'#'+ (index + 1).toString()" :title="book.title"
+          :location="'— ' + book.author" :description="book.comment" />
+      </Bulletpoint>
+      <Break />
+      <CardDeck :columns="2">
+        <Picture v-for="(book, index) in books" :source="book.img" />
+      </CardDeck>
+      <Break />
+    </article>
+
     <article>
-      <h3>💬 quotes</h3>
+      <h3>
+        <Icon name="noto:speech-balloon" size="32" />
+        quotes
+      </h3>
     </article>
 
     <CardDeck :columns="3">
@@ -58,34 +185,27 @@ const quotes: [string, string][] = [
       <Quote v-for="quote in quotes" :message="quote[0]" :owner="quote[1]" />
     </CardDeck>
 
-    <article id="thanks">
-      <h2>thanks</h2>
-    </article>
-    <article class="dorkodian-hero">
-      <Bulletpoint icon="🔗">
-        <h3>some useful links</h3>
-        <ul style="margin: .25rem .5rem !important;">
-          <li>
-            <p><b>🐦</b>&nbsp; i tweet often, <a href="https://twitter.com/d0rukeray">follow me on twitter</a>.</p>
-          </li>
-          <li>
-            <p><b>📖</b>&nbsp; if you are curious, <a href="/story">read my story</a>.</p>
-          </li>
-          <li>
-            <p><b>💾</b>&nbsp; see <a href="/work">my work</a> page for my portfolio & resume.</p>
-          </li>
-          <li>
-            <p><b>💬</b>&nbsp; see <a href="/ideas">ideas</a> page for my opinions, words etc.</p>
-          </li>
-          <li>
-            <p><b>🙏🏻</b>&nbsp; see <a href="/ideas#thanks">thanks</a> section for my attribution.</p>
-          </li>
-        </ul>
-      </Bulletpoint>
-    </article>
+    <Break />
+
+    <Page:Legend />
+
     <Break />
   </main>
 </template>
 
 <style lang="scss" scoped>
+@import "scss/styles.scss";
+
+.CardDeck {
+  margin: 0 auto;
+}
+
+.Bulletpoint {
+  margin-bottom: .5rem;
+}
+
+.bulletpoint-title {
+  color: $system-color-neutral-70 !important;
+  text-decoration: underline;
+}
 </style>

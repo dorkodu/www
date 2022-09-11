@@ -1,21 +1,8 @@
 <script lang="ts" setup>
-import {
-  BrandTelegramIcon,
-  BrandTwitterIcon,
-  BrandGithubIcon,
-  BrandInstagramIcon,
-  MailOpenedIcon,
-  BrandDiscordIcon,
-  CodeIcon,
-  CertificateIcon,
-  HeartHandshakeIcon,
-  PolaroidIcon,
-  ToolsIcon,
-} from "vue-tabler-icons";
 
 const page = {
   title: "my work",
-  tagline: "the founder, product polymath, artisan, software craftsman.",
+  tagline: "the founder, product polymath, designer, software craftsman.",
   statement: `a portfolio of my work; from startup, products and open source; to software and design.`,
   picture: {
     source: "/images/unboxing.png",
@@ -25,7 +12,7 @@ const page = {
 
 definePageMeta({
   title: "my work",
-  description: `founder, product polymath, lunatic.`,
+  description: `founder, product polymath, craftsman.`,
   keywords: `doruk eray, doruk, eray, mr. dorkodu, d0rukeray`,
 });
 </script>
@@ -37,7 +24,18 @@ definePageMeta({
           <template #content>
             <p class="hashtag">#gamification #productivity #social #knowledge #web3 #cryptoeconomics #ui #ux #frontend
             </p>
-            <p style="font-size: 1.5rem">👑🗽💸💻🔗💿📚🎨🎮🛠️📝</p>
+            <p style="font-size: 1.75rem">
+              <Icon name="twemoji:crown" />
+              <Icon name="twemoji:statue-of-liberty" />
+              <Icon name="twemoji:money-with-wings" />
+              <Icon name="fluent-emoji-flat:laptop" />
+              <Icon name="twemoji:computer-disk" />
+              <Icon name="twemoji:books" />
+              <Icon name="twemoji:artist-palette" />
+              <Icon name="twemoji:video-game" />
+              <Icon name="fluent-emoji-flat:hammer-and-wrench" />
+              <Icon name="twemoji:memo" />
+            </p>
           </template>
         </Hero>
       </template>
@@ -49,14 +47,16 @@ definePageMeta({
     <Break />
 
     <article>
-      <p style="font-size: 1.5rem; font-weight: 600; text-align:center; text-shadow: #fff 3px 1px 0;"
-        class="dorkodian-hero">
-        🚧&nbsp; under construction &nbsp;🚧
-      </p>
+      <SectionRuler />
+      <h3>
+        <Icon name="twemoji:hourglass-done" size="36" />&nbsp;
+        <span style="text-shadow: #dde 5px 2px 1px;">work in progress...</span>
+      </h3>
+      <SectionRuler />
     </article>
 
     <article>
-      <h4>open source</h4>
+      <h2>open source</h2>
       <CardDeck :columns="2">
         <img
           src="https://raw.githubusercontent.com/dorukeray/github-stats/master/generated/overview.svg#gh-light-mode-only"
@@ -69,98 +69,30 @@ definePageMeta({
 
     <article>
       <h2>experience</h2>
-      <h4>{ software }</h4>
-      <h4>{ education }</h4>
-      <h4>{ timeline }</h4>
+      <h3>{ software }</h3>
+      <h3>{ education }</h3>
+      <h3>{ timeline }</h3>
     </article>
 
     <article>
       <h2>projects</h2>
-      <h4>{ products }</h4>
-      <h4>{ engineering }</h4>
-      <h4>{ design }</h4>
+      <h3>{ products }</h3>
+      <h3>{ engineering }</h3>
+      <h3>{ design }</h3>
     </article>
 
     <article>
-      <h3>specialities</h3>
-      <h4>{ software }</h4>
-      <h4>{ design }</h4>
-      <h4>{ leadership }</h4>
+      <h2>specialities</h2>
+      <h3>{ software }</h3>
+      <h3>{ design }</h3>
+      <h3>{ leadership }</h3>
     </article>
 
-    <article>
-      <h3 class="section-title">📡 contact</h3>
-      <p style="margin: 0; text-align: center;">want to have a talk? <b>let's get in touch! 🤙🏻</b></p>
-      <CardDeck :columns="2">
-        <li class="IconItem">
-          <BrandTwitterIcon />
-          <div>
-            <span><a href="https://twitter.com/d0rukeray">d0rukeray</a></span>
-            <span><b>twitter</b> (tweets & dm)</span>
-          </div>
-        </li>
-        <li class="IconItem">
-          <BrandTelegramIcon />
-          <div>
-            <span><a href="https://t.me/dorukeray">dorukeray</a></span>
-            <span><b>telegram</b> (1:1 messages)</span>
-          </div>
-        </li>
-        <li class="IconItem">
-          <BrandGithubIcon />
-          <div>
-            <span><a href="https://github.com/dorukeray">dorukeray</a></span>
-            <span><b>github</b> (open source)</span>
-          </div>
-        </li>
-        <li class="IconItem">
-          <BrandInstagramIcon />
-          <div>
-            <span><a href="https://instagram.com/d0rukeray">d0rukeray</a></span>
-            <span><b>instagram</b> (social life)</span>
-          </div>
-        </li>
-        <li class="IconItem">
-          <BrandDiscordIcon />
-          <div>
-            <span><a href="https://discord.com/users/990571541026734080">dorukeray#5097</a></span>
-            <span><b>discord</b> (community chat)</span>
-          </div>
-        </li>
-        <li class="IconItem">
-          <MailOpenedIcon />
-          <div>
-            <span><a href="mailto:doruk@dorkodu.com">doruk@dorkodu.com</a></span>
-            <span><b>email</b> (no, please)</span>
-          </div>
-        </li>
-      </CardDeck>
-    </article>
+    <Page:Contact />
 
     <Break />
 
-    <article class="dorkodian-hero">
-      <Bulletpoint icon="🔗">
-        <h3>some useful links</h3>
-        <ul style="margin: .25rem .5rem !important;">
-          <li>
-            <p><b>🏡</b>&nbsp; if you are curious, <a href="/story">read my story</a>.</p>
-          </li>
-          <li>
-            <p><b>🐦</b>&nbsp; i tweet often, <a href="https://twitter.com/d0rukeray">follow me on twitter</a>.</p>
-          </li>
-          <li>
-            <p><b>📖</b>&nbsp; if you are curious, <a href="/story">read my story</a>.</p>
-          </li>
-          <li>
-            <p><b>💬</b>&nbsp; see <a href="/ideas">ideas</a> page for my opinions, words etc.</p>
-          </li>
-          <li>
-            <p><b>🙏🏻</b>&nbsp; see <a href="/ideas#thanks">thanks</a> section for my attribution.</p>
-          </li>
-        </ul>
-      </Bulletpoint>
-    </article>
+    <Page:Legend />
 
     <!--
 
