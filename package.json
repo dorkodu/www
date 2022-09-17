@@ -5,18 +5,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "publish": "yarn node publish",
-    "warmup": "yarn install && nuxt prepare && nuxt dev"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "dotenv": "^16.0.2",
-    "ftp-deploy": "^2.4.3",
-    "nuxt": "3.0.0-rc.9",
-    "nuxt-icon": "^0.1.5",
-    "sass": "^1.54.0",
-    "sass-loader": "^13.0.2",
-    "twemoji": "^14.0.2"
+    "nuxt": "3.0.0-rc.10"
   },
   "packageManager": "yarn@3.2.3"
 }
