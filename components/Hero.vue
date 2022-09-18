@@ -100,7 +100,7 @@ const attrs = (center)
     padding: 0;
     font-weight: 600;
     font-size: 1.25rem;
-    color: $reference-color-gray-60;
+    color: $system-color-neutral-60;
   }
 
   p {

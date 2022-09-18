@@ -15,7 +15,7 @@ definePageMeta({
   keywords: `doruk eray, doruk, eray, mr. dorkodu, d0rukeray`,
 });
 </script>
-
+  
 <template>
   <main>
     <Showcase style="margin-top: 0;">
@@ -81,4 +81,4 @@ definePageMeta({
 <style lang="scss">
 @import "styles";
 </style>
-  
+    
