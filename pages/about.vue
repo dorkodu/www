@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const page = {
-  title: "my story",
+  title: "my ,",
   tagline: "once upon a time...",
   statement: `a summary & timeline of my life, story, personality.`,
   picture: {
