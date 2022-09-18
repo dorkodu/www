@@ -2,16 +2,16 @@
 
 @charset 'utf-8';
 
-// Abstract
-@import "abstract/reference.scss";
-@import "abstract/system.scss";
+// abstract
+@import "abstract/reference";
+@import "abstract/system";
 
-// Base
+// base
 @import "base/base";
 @import "base/fonts";
 @import "base/typography";
 
-// Blame styles for website specific
+// blame styles are website-specific
 @import "blame";
 
 // normalize vendor
