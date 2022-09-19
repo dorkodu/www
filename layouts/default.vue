@@ -24,7 +24,6 @@
   font-weight: 500;
   font-size: 1.15rem;
   line-height: 1.65rem;
-  margin-bottom: .5rem !important;
 }
 
 .IconItem {
@@ -75,17 +74,6 @@
     p {
       padding: 0 1rem;
     }
-  }
-}
-
-ul {
-  display: flex;
-  flex-direction: column;
-  gap: .25rem;
-
-  li {
-    font-size: 1.15rem !important;
-
   }
 }
 </style>
