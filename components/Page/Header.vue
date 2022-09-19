@@ -3,24 +3,20 @@
     <header class="header">
       <div class="__container">
         <a class="__logo" href="/">
-          <img src="/images/dorukeray-M.png" title="doruk eray" />
+          <img src="/images/dorkodu.svg" title="dorkodu" />
         </a>
         <nav class="__nav">
           <NuxtLink to="/" rel="dofollow">
-            <Icon name="twemoji:house-with-garden" size="24" />
-            <span>home</span>
-          </NuxtLink>
-          <NuxtLink to="/story" rel="dofollow">
-            <Icon name="twemoji:open-book" size="24" />
-            <span>story</span>
+            <Icon name="twemoji:open-book" size="32" />
+            <span>about</span>
           </NuxtLink>
           <NuxtLink to="/work" rel="dofollow">
-            <Icon name="twemoji:floppy-disk" size="24" />
-            <span>work</span>
+            <Icon name="twemoji:floppy-disk" size="30" />
+            <span style="margin-top: 2px;">work</span>
           </NuxtLink>
-          <NuxtLink to="/ideas" rel="dofollow">
-            <Icon name="twemoji:speech-balloon" size="24" />
-            <span>ideas</span>
+          <NuxtLink to="/business" rel="dofollow">
+            <Icon name="noto:dollar-banknote" size="32" />
+            <span>business</span>
           </NuxtLink>
         </nav>
       </div>
@@ -37,7 +33,6 @@
   .__container {
     display: flex;
     margin: 0 auto;
-    padding: .5rem 1rem;
     max-width: $system-layout-breakpoint;
     flex-direction: column;
     gap: 1rem;
@@ -59,16 +54,15 @@
     font-size: 1rem;
     line-height: 1.25rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     a {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      gap: .5rem;
       padding: .5rem;
-
       border-radius: .5rem;
       line-height: 1.5;
       font-size: 1.25rem;
@@ -84,12 +78,16 @@
           color: $reference-color-gray-50;
         }
       }
+    }
+  }
+}
 
-      svg {
-        color: $reference-color-gray-70;
-        width: 2rem;
-        height: 2rem;
-      }
+@media (min-width: 425px) {
+  .header {
+    .__nav {
+      flex-direction: row;
+      align-items: center;
+      gap: .25rem;
     }
   }
 }
@@ -118,7 +116,8 @@
 
     .__nav {
       width: calc(100% - 25rem);
-      gap: 1.5rem;
+      gap: 1rem;
+      color: $reference-color-gray-60;
     }
   }
 }

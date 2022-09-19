@@ -40,44 +40,20 @@
             </svg>
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nam cupiditate accusantium, saepe maxime
-            libero?
+            we liberate the human with meaningful technology.
           </p>
           <nav>
             <a href="https://twitter.com/dorkodu">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
-              </svg>
+              <Icon name="tabler:brand-twitter" />
             </a>
             <a href="https://github.com/dorkodu">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-              </svg>
+              <Icon name="tabler:brand-github" />
             </a>
             <a href="https://instagram.com/dorkodu">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <rect x="4" y="4" width="16" height="16" rx="4" />
-                <circle cx="12" cy="12" r="3" />
-                <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
-              </svg>
+              <Icon name="tabler:brand-instagram" />
             </a>
             <a href="mailto:hey@dorkodu.com">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <polyline points="3 9 12 15 21 9 12 3 3 9" />
-                <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
-                <line x1="3" y1="19" x2="9" y2="13" />
-                <line x1="15" y1="13" x2="21" y2="19" />
-              </svg>
+              <Icon name="tabler:mail-opened" />
             </a>
           </nav>
         </div>
@@ -88,10 +64,10 @@
             <ul>
               <li><a href="/" rel="dofollow">home</a></li>
               <li><a href="/about" rel="dofollow">about</a></li>
-              <li><a href="/manifesto" rel="dofollow">manifesto</a></li>
-              <li><a href="/products" rel="dofollow">products</a></li>
+              <!-- <li><a href="/manifesto" rel="dofollow">manifesto</a></li> -->
+              <!-- <li><a href="/products" rel="dofollow">products</a></li> -->
               <li><a href="/work" rel="dofollow">work</a></li>
-              <li><a href="/investors" rel="dofollow">investors</a></li>
+              <li><a href="/business" rel="dofollow">business</a></li>
             </ul>
           </div>
 
@@ -110,25 +86,13 @@
             <ul class="contact-info">
               <li>
                 <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" fill="none"
-                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <polyline points="3 9 12 15 21 9 12 3 3 9" />
-                    <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
-                    <line x1="3" y1="19" x2="9" y2="13" />
-                    <line x1="15" y1="13" x2="21" y2="19" />
-                  </svg>
+                  <Icon name="tabler:mail-opened" />
                   <span>hey@dorkodu.com</span>
                 </p>
               </li>
               <li>
                 <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <circle cx="12" cy="11" r="3" />
-                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                  </svg>
+                  <Icon name="tabler:map-pin" />
                   <span>istanbul, tr</span>
                 </p>
               </li>
@@ -146,7 +110,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "scss/styles.scss";
+@import "styles";
 
 .footer {
   width: 100%;
@@ -187,11 +151,12 @@
     }
 
     >p {
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
+      margin-top: 1rem;
+      font-size: 1.15rem;
       line-height: 1.2;
       max-width: 25rem;
-      color: $reference-color-gray-40;
+      font-weight: 550;
+      color: $reference-color-gray-60;
       float: none !important;
     }
 
@@ -264,7 +229,7 @@
         gap: 0.35rem;
         color: $reference-color-gray-50;
         font-weight: 600;
-        margin-bottom: .75rem;
+        margin-bottom: .5rem;
 
         svg {
           width: 1.75rem !important;
