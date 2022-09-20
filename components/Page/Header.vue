@@ -12,7 +12,7 @@
           </NuxtLink>
           <NuxtLink to="/work" rel="dofollow">
             <Icon name="twemoji:floppy-disk" size="30" />
-            <span style="margin-top: 2px;">work</span>
+            <span>work</span>
           </NuxtLink>
           <NuxtLink to="/business" rel="dofollow">
             <Icon name="noto:dollar-banknote" size="32" />
@@ -43,7 +43,7 @@
   .__logo {
     img {
       display: block;
-      width: 20rem;
+      width: 18rem;
       height: auto;
       margin: 1rem auto;
     }
@@ -63,7 +63,7 @@
       align-items: center;
       gap: .5rem;
       padding: .5rem;
-      border-radius: .5rem;
+      border-radius: .75rem;
       line-height: 1.5;
       font-size: 1.25rem;
       font-weight: 600;

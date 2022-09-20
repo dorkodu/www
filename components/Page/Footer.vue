@@ -40,7 +40,7 @@
             </svg>
           </div>
           <p>
-            we liberate the human with meaningful technology.
+            we liberate the humankind with our meaningful technology.
           </p>
           <nav>
             <a href="https://twitter.com/dorkodu">
@@ -155,8 +155,8 @@
       font-size: 1.15rem;
       line-height: 1.2;
       max-width: 25rem;
-      font-weight: 550;
-      color: $reference-color-gray-60;
+      font-weight: 500;
+      color: $reference-color-gray-70;
       float: none !important;
     }
 
