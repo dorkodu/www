@@ -62,10 +62,9 @@
           <div>
             <h4>company</h4>
             <ul>
-              <li><a href="/" rel="dofollow">home</a></li>
-              <li><a href="/about" rel="dofollow">about</a></li>
+              <!-- <li><a href="/" rel="dofollow">home</a></li> -->
+              <li><a href="/" rel="dofollow">about</a></li>
               <!-- <li><a href="/manifesto" rel="dofollow">manifesto</a></li> -->
-              <!-- <li><a href="/products" rel="dofollow">products</a></li> -->
               <li><a href="/work" rel="dofollow">work</a></li>
               <li><a href="/business" rel="dofollow">business</a></li>
             </ul>
@@ -74,8 +73,8 @@
           <div>
             <h4>resources</h4>
             <ul>
-              <li><a href="/terms">terms</a></li>
-              <li><a href="/privacy">privacy</a></li>
+              <li><a href="/resources/terms">terms</a></li>
+              <li><a href="/resources/privacy">privacy</a></li>
               <li><a href="/community">community</a></li>
               <li><a href="/press">press</a></li>
             </ul>
@@ -156,7 +155,7 @@
       line-height: 1.2;
       max-width: 25rem;
       font-weight: 500;
-      color: $reference-color-gray-70;
+      color: $reference-color-gray-40;
       float: none !important;
     }
 

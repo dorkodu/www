@@ -5,10 +5,10 @@
         <div>
           <slot name="head"></slot>
         </div>
-        <h1 class="title">{{ title }}</h1>
-        <h2 class="tagline">{{ tagline }}</h2>
+        <h1 class="title">{{ data.title }}</h1>
+        <h2 class="tagline">{{ data.tagline }}</h2>
         <p class="statement">
-          {{ statement }}
+          {{ data.statement }}
         </p>
         <div class="__more">
           <slot name="content"></slot>
@@ -20,11 +20,13 @@
 
 <script setup lang="ts">
 
-const { title, tagline, statement, center }
+const { data, center }
   = defineProps<{
-    title: string,
-    tagline: string,
-    statement: string,
+    data: {
+      title: string,
+      tagline: string,
+      statement: string,
+    },
     center?: boolean,
   }>();
 
@@ -83,7 +85,7 @@ const attrs = (center)
     padding: 0;
     font-size: 1.85rem;
     font-weight: 800;
-    color: $reference-color-gray-80;
+    color: $system-color-neutral-70;
   }
 
   .tagline {
@@ -92,15 +94,16 @@ const attrs = (center)
     font-size: 1.95rem;
     line-height: 2rem;
     font-weight: 800;
-    color: $reference-color-gray-10;
+    color: $system-color-neutral-10;
   }
 
   .statement {
     margin: 0;
     padding: 0;
-    font-weight: 600;
+    font-weight: 550;
     font-size: 1.25rem;
-    color: $system-color-neutral-60;
+    color: $system-color-neutral-50;
+    margin-top: .15rem;
   }
 
   p {

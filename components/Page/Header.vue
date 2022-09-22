@@ -43,9 +43,10 @@
   .__logo {
     img {
       display: block;
-      width: 18rem;
+      width: 20rem;
       height: auto;
-      margin: 1rem auto;
+      padding: 1rem;
+      margin: 0 auto;
     }
   }
 
@@ -67,8 +68,7 @@
       line-height: 1.5;
       font-size: 1.25rem;
       font-weight: 600;
-      color: $reference-color-gray-60;
-      text-decoration: none;
+      color: $reference-color-gray-50;
 
       &:hover {
         background-color: $reference-color-green-90;
@@ -97,7 +97,7 @@
     margin: 1rem auto;
 
     .__logo img {
-      width: 24rem;
+      width: 25rem;
     }
   }
 }
@@ -111,7 +111,7 @@
     }
 
     .__logo img {
-      width: 25rem;
+      width: 28rem;
     }
 
     .__nav {

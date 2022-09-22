@@ -4,8 +4,8 @@
       <div class="__container">
         <img class="avatar" :src="avatar" :alt="name">
         <div class="__info">
-          <div class="symbol">
-            <slot name="symbol"></slot>
+          <div class="icons">
+            <slot name="icons"></slot>
           </div>
           <p class="name">{{ name }}</p>
           <p class="title">{{ title }}</p>
@@ -61,7 +61,6 @@ const { name, title, about, avatar }
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: .2rem;
 
     p {
       padding: 0;
@@ -69,9 +68,14 @@ const { name, title, about, avatar }
     }
   }
 
-  .symbol {
+  .icons {
     display: flex;
     color: $reference-color-gray-60;
+    margin-bottom: .15rem;
+
+    * {
+      stroke-width: 3;
+    }
   }
 
   .name {
@@ -88,6 +92,8 @@ const { name, title, about, avatar }
 
   .about {
     font-size: 1.15rem;
+    line-height: 1.5rem;
+    font-weight: 450;
     color: $reference-color-gray-30;
   }
 }
