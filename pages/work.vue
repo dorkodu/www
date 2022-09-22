@@ -1,17 +1,18 @@
 <script lang="ts" setup>
 const page = {
-  title: "my ,",
-  tagline: "once upon a time...",
-  statement: `a summary & timeline of my life, story, personality.`,
+  title: "work",
+  tagline: "join the revolution!",
+  statement: `we want dorkodu to be a foundation that will make an impact on the human
+            civilization. so we need extraordinary, passionate and hard-working people to pursue this goal.`,
   picture: {
-    source: "/images/coffee.png",
-    title: "one more cup of coffee ☕️"
+    source: "/images/team-with-culture.png",
+    title: "our team & culture."
   },
 };
 
 definePageMeta({
-  title: "my story",
-  description: `a summary & timeline of my life, story, personality.`,
+  title: "work @ dorkodu",
+  description: `join the revolution!`,
 });
 </script>
 
@@ -20,15 +21,12 @@ definePageMeta({
     <Showcase style="margin-top: 0;">
       <template #main>
 
-        <Hero :title="page.title" :tagline="page.tagline" :statement="page.statement">
+        <Hero :data="{
+          title: page.title,
+          tagline: page.tagline,
+          statement: page.statement
+        }">
           <template #content>
-            <p style="font-size: 2rem;">
-              <Icon name="twemoji:joker" />
-              <Icon name="twemoji:rolled-up-newspaper" />
-              <Icon name="twemoji:open-book" />
-              <Icon name="twemoji:hourglass-done" />
-              <Icon name="twemoji:three-oclock" />
-            </p>
           </template>
         </Hero>
 

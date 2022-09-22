@@ -20,7 +20,7 @@
 }
 
 .hashtag {
-  color: $reference-color-blue-60;
+  color: $reference-color-blue-50;
   font-weight: 500;
   font-size: 1.15rem;
   line-height: 1.65rem;

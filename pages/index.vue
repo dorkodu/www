@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 const hero = {
-  title: "we are dorkodu.",
-  tagline: "the meaningful technology company.",
-  statement: `we liberate the human. this is our mission.`,
+  title: "",
+  tagline: "",
+  statement: "",
   picture: {
-    source: "/images/doruk--green.png",
-    title: "pixelated, natively digital 💽"
+    source: "/images/coffee.png",
+    title: ""
   },
 };
 
 definePageMeta({
   title: "welcome!",
-  description: `liberate the human!`,
+  description: `liberate the humankind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
 });
 </script> 
@@ -20,10 +20,11 @@ definePageMeta({
   <main>
     <Showcase style="margin-top: 0;">
       <template #main>
-        <Hero :title="hero.title" :tagline="hero.tagline" :statement="hero.statement" style="margin-top: 0 !important;">
-          <template #head>
-            <Icon name="twemoji:leaf-fluttering-in-wind" size="48" />
-          </template>
+        <Hero :data="{
+          title: `welcome!`,
+          tagline: `dorkodu is the meaningful technology company.`,
+          statement: `our purpose is to liberate the humankind with our meaningful products & technology.`
+        }" style="margin-top: 0 !important;">
           <template #content>
             <p class="hashtag">#gamification #web3 #knowledge #artworks</p>
             <div class="button-container">
@@ -40,38 +41,29 @@ definePageMeta({
 
     <Break />
 
-    <article>
-      <h2>
-        <Icon name="fluent-emoji-flat:thinking-face" size="32" />&nbsp;
-        <span>who we are?</span>
-      </h2>
+    <Hero :data="{
+      title: `hello`,
+      tagline: `hello`,
+      statement: `hello`
+    }" center>
+      <template #head></template>
+      <template #content></template>
+    </Hero>
 
-      <p style="font-size: 1.25rem; margin: 0;">
-        <span class="paragraph-tagline">what we do;</span>
-        <br>
-        <br>find their unique spark & actualize themselves
-        <br>build the utopian dream of heaven on earth;
-        <br>create a free and happy life experience, for everyone;
-        <br><b>liberate the human with meaningful technology.</b>
-      </p>
-      <p>— yep. this is why i wake up every day.</p>
-      <SectionRuler />
-    </article>
-
-    <article>
+    <section>
       <h2>
         <span>hello, again.</span>&nbsp;
         <Icon name="fluent-emoji-flat:waving-hand-light" size="36" />
       </h2>
       <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
         <p style="font-size: 1.25rem; margin: 0; font-weight: 400;">
-          <span class="paragraph-tagline">our purpose;</span>
+          <span class="paragraph-tagline">our purpose</span>
           <br><b>liberate the humankind.</b>
         </p>
       </Bulletpoint>
       <Bulletpoint icon="twemoji:bullseye">
         <p style="font-size: 1.25rem; margin: 0; font-weight: 400;">
-          <span class="paragraph-tagline">my mission;</span>
+          <span class="paragraph-tagline">our mission</span>
           <br>
           we combine gamification, human-centric design with our superior technology
           and create products that help people...
@@ -81,9 +73,30 @@ definePageMeta({
         </p>
       </Bulletpoint>
       <SectionRuler />
-    </article>
+    </section>
 
-
+    <section>
+      <h2>our people</h2>
+      <TeamMember name="doruk eray" title="founder & chief" about="" avatar="/images/doruk--green.png">
+        <template #icons>
+          <Icon name="tabler:flag-3" size="32" />
+          <Icon name="tabler:tools" size="32" />
+          <Icon name="tabler:building-bank" size="32" />
+        </template>
+        <template #more></template>
+      </TeamMember>
+      <hr>
+      <TeamMember name="berk cambaz" title="technologist"
+        about="Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, enim. Dolorem doloremque similique dolorum repellat minus sequi fugiat nihil?"
+        avatar="/images/berk.png">
+        <template #icons>
+          <Icon name="tabler:brand-open-source" size="32" />
+          <Icon name="tabler:cpu" size="32" />
+          <Icon name="tabler:code" size="32" />
+        </template>
+        <template #more></template>
+      </TeamMember>
+    </section>
 
     <PageContact />
 
