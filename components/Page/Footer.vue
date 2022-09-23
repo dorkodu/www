@@ -152,9 +152,9 @@
     >p {
       margin-top: 1rem;
       font-size: 1.15rem;
-      line-height: 1.2;
+      line-height: 1.20rem;
       max-width: 25rem;
-      font-weight: 500;
+      font-weight: 450;
       color: $reference-color-gray-40;
       float: none !important;
     }

@@ -1,19 +1,11 @@
 <script lang="ts" setup>
-const hero = {
-  title: "",
-  tagline: "",
-  statement: "",
-  picture: {
-    source: "/images/coffee.png",
-    title: ""
-  },
-};
 
 definePageMeta({
   title: "welcome!",
   description: `liberate the humankind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
 });
+
 </script> 
 
 <template>
@@ -35,7 +27,7 @@ definePageMeta({
         </Hero>
       </template>
       <template #side>
-        <Picture :source="hero.picture.source" :title="hero.picture.title" />
+        <Picture source="/images/undraw_dorkodu-work-culture.png" />
       </template>
     </Showcase>
 
@@ -77,7 +69,9 @@ definePageMeta({
 
     <section>
       <h2>our people</h2>
-      <TeamMember name="doruk eray" title="founder & chief" about="" avatar="/images/doruk--green.png">
+      <TeamMember name="doruk eray" title="founder & chief"
+        about="cult leader, product polymath, creative psychedelic, progressive craftsman, lunatic. software, ui/ux, artwork, business."
+        avatar="/images/doruk--green.png">
         <template #icons>
           <Icon name="tabler:flag-3" size="32" />
           <Icon name="tabler:tools" size="32" />

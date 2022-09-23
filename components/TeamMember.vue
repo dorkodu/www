@@ -70,7 +70,7 @@ const { name, title, about, avatar }
 
   .icons {
     display: flex;
-    color: $reference-color-gray-60;
+    color: $reference-color-gray-70;
     margin-bottom: .15rem;
 
     * {
@@ -79,22 +79,22 @@ const { name, title, about, avatar }
   }
 
   .name {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
   }
 
   .title {
-    margin-bottom: 0.75rem;
-    color: $reference-color-gray-70;
-    font-size: 1.15rem;
-    font-weight: 700;
+    margin-bottom: .1rem !important;
+    color: $reference-color-gray-60;
+    font-size: 1.25rem;
+    font-weight: 600;
   }
 
   .about {
     font-size: 1.15rem;
-    line-height: 1.5rem;
-    font-weight: 450;
-    color: $reference-color-gray-30;
+    line-height: 1.35rem;
+    font-weight: 400;
+    color: $reference-color-gray-20;
   }
 }
 
