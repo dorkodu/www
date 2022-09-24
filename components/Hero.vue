@@ -85,7 +85,7 @@ const attrs = (center)
     padding: 0;
     font-size: 1.85rem;
     font-weight: 800;
-    color: $system-color-neutral-70;
+    color: $system-color-neutral-80;
   }
 
   .tagline {

@@ -20,7 +20,7 @@ definePageMeta({
           <template #content>
             <p class="hashtag">#gamification #web3 #knowledge #artworks</p>
             <div class="button-container">
-              <Button type="fill" link="/story">our story</Button>
+              <Button type="fill" link="#story">our story</Button>
               <Button type="tonal" link="/work">join us!</Button>
             </div>
           </template>
