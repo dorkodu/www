@@ -41,8 +41,8 @@ const { title, description } = defineProps<{
   }
 
   dd {
-    color: $reference-color-gray-50;
-    font-weight: 450;
+    color: $reference-color-gray-20;
+    font-weight: 400;
     padding-top: .25rem;
     line-height: 1.25;
     font-size: 1.15rem;

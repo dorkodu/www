@@ -2,14 +2,14 @@
   <div>
     <div class="TeamMember">
       <div class="__container">
-        <img class="avatar" :src="avatar" :alt="name">
+        <img v-if="avatar" class="avatar" :src="avatar" :alt="name">
         <div class="__info">
           <div class="icons">
             <slot name="icons"></slot>
           </div>
-          <p class="name">{{ name }}</p>
-          <p class="title">{{ title }}</p>
-          <p class="about">{{ about }}</p>
+          <p v-if="name" class="name">{{ name }}</p>
+          <p v-if="title" class="title">{{ title }}</p>
+          <p v-if="about" class="about">{{ about }}</p>
           <div class="__more">
             <slot name="more"></slot>
           </div>

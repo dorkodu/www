@@ -1,5 +1,6 @@
 <template>
   <dl class="descriptive-list">
+    <Icon v-if="icon" :name="icon" class="badge" size="32" />
     <h2 v-if="title" class="__title">{{ title }}</h2>
     <p v-if="message" class="__message">{{ message }}</p>
     <div class="__contents">
@@ -9,7 +10,8 @@
 </template>
 
 <script setup lang="ts">
-const { title, message } = defineProps<{
+const { icon, title, message } = defineProps<{
+  icon?: string;
   title?: string;
   message?: string;
 }>();
@@ -38,7 +40,7 @@ const { title, message } = defineProps<{
   .__contents {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }
 </style>

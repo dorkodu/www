@@ -22,12 +22,15 @@
 </template>
 
 <script lang="ts" setup>
-const { name, title, quote }
-  = defineProps<{
+const { data } = defineProps<{
+  data: {
     quote: string;
     name: string;
     title?: string;
-  }>();
+  }
+}>();
+
+const { name, title, quote } = data;
 </script>
 
 <style scoped lang="scss">

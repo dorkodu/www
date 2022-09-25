@@ -5,10 +5,10 @@
         <div>
           <slot name="head"></slot>
         </div>
-        <h1 class="title">{{ data.title }}</h1>
-        <h2 class="tagline">{{ data.tagline }}</h2>
+        <h1 class="title">{{ title }}</h1>
+        <h2 class="tagline">{{ tagline }}</h2>
         <p class="statement">
-          {{ data.statement }}
+          {{ statement }}
         </p>
         <div class="__more">
           <slot name="content"></slot>
@@ -29,6 +29,8 @@ const { data, center }
     },
     center?: boolean,
   }>();
+
+const { title, tagline, statement } = data;
 
 const attrs = (center)
   ? " --center"
