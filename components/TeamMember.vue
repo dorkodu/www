@@ -22,9 +22,9 @@
 <script setup lang="ts">
 const { name, title, about, avatar }
   = defineProps<{
-    name: string;
-    title: string;
-    about: string;
+    name?: string;
+    title?: string;
+    about?: string;
     avatar?: string;
   }>();
 </script>
