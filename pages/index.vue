@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 definePageMeta({
-  title: 'welcome',
+  title: 'welcome! — dorkodu',
   description: `liberate the humankind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
 });
@@ -37,12 +37,18 @@ definePageMeta({
     <Hero :data="{
       title: `why?`,
       tagline: `liberate the humankind.`,
-      statement: `we are a community of artists, who doesn’t just paint, dance, write poems or play songs. we create products and technology to make the world actually a better place. not just by communicating our opinions through our artwork, but we walk towards our utopia by doing something impactful and inspirational.`
+      statement: ``
     }" center>
       <template #head>
 
       </template>
-      <template #content></template>
+      <template #content>
+        <p style="font-size:1.25rem; text-align: left;">
+          we are a community of artists, who doesn’t just paint, dance, write poems or play songs. we create products
+          and technology to make the world actually a better place. not just by communicating our opinions through our
+          artwork, but we walk towards our utopia by doing something impactful and inspirational.
+        </p>
+      </template>
     </Hero>
 
     <section>
@@ -71,7 +77,15 @@ definePageMeta({
     </section>
 
     <section>
+      <div style="text-align: center;">
+        <LinkButton action="read more" title="work @ dorkodu" link="/work" />
+        <LinkButton action="read more" title="our business" link="/business" />
+      </div>
+    </section>
+
+    <section>
       <h2>our people</h2>
+      <Picture source="/images/undraw_experts_re_i40h.svg" />
       <TeamMember name="doruk eray" title="founder & chief"
         about="cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business."
         avatar="/images/doruk--green.png">
@@ -94,8 +108,8 @@ definePageMeta({
       </TeamMember>
       <hr>
       <CardDeck :columns="2">
-        <TeamMember style="max-width: 320px; margin: 0 auto;" name="berra uslu" title="rookie"
-          about="graphics, visual arts, media. homegrown creative, sjw.">
+        <TeamMember style="max-width: 360px; margin: 0 auto;" name="berra" title="rookie"
+          about="freelance creative. graphics, visual arts, media. social justice warrior.">
           <template #icons>
             <Icon name="tabler:brush" size="32" />
             <Icon name="tabler:palette" size="32" />
@@ -103,15 +117,8 @@ definePageMeta({
           </template>
           <template #more></template>
         </TeamMember>
-        <TeamMember style="max-width: 320px; margin: 0 auto;" name="öykü gökcen" title="rookie"
-          about="marketing, pr, finance, sales. boring formal business stuff.">
-          <template #icons>
-            <Icon name="tabler:building-store" size="32" />
-            <Icon name="tabler:coin" size="32" />
-            <Icon name="tabler:users" size="32" />
-          </template>
-          <template #more></template>
-        </TeamMember>
+        <TeamMember style="max-width: 360px; margin: 0 auto;" name="be the next rookie?" title=""
+          about="dorkodu is the best place to work for gen-z. anarchist community" />
       </CardDeck>
     </section>
 

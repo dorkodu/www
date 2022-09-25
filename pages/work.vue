@@ -1,18 +1,9 @@
 <script lang="ts" setup>
-const page = {
-  title: "work",
-  tagline: "join the revolution!",
-  statement: `we want dorkodu to be a foundation that will make an impact on the human
-            civilization. so we need extraordinary, passionate and hard-working people to pursue this goal.`,
-  picture: {
-    source: "/images/team-with-culture.png",
-    title: "our team & culture."
-  },
-};
 
 definePageMeta({
   title: "work @ dorkodu",
   description: `join the revolution!`,
+  keywords: `work @ dorkodu, careers at dorkodu, careers dorkodu, dorkodu jobs, work at dorkodu,`,
 });
 </script>
 
@@ -22,17 +13,16 @@ definePageMeta({
       <template #main>
 
         <Hero :data="{
-          title: page.title,
-          tagline: page.tagline,
-          statement: page.statement
+          title: `work`,
+          tagline: `join the revolution.`,
+          statement: `we want dorkodu to be a foundation that will make an impact on the human
+          civilization. so we need extraordinary, passionate and hard-working people to pursue this goal.`
         }">
-          <template #content>
-          </template>
         </Hero>
 
       </template>
-      <template #side>
-        <Picture :source="page.picture.source" :title="page.picture.title" />
+      <template #side>undraw_experts_re_i40h.svg
+        <Picture source="/images/undraw_co_workers_re_1i6i.svg" title="our team & culture." />
       </template>
     </Showcase>
 
@@ -42,10 +32,13 @@ definePageMeta({
       <article>
         <h3>let's work together!</h3>
         <p>at dorkodu, we understand that our worldwide success can only come from our diverse workforce.</p>
+        <Picture source="/images/undraw_engineering_team_a7n2.svg" title="our team & culture." />
         <p>
           dorkodians relish the freedom to create the next generation of technologies in an environment designed to
           foster collaboration, creativity, health and happiness.
         </p>
+        <Picture source="/images/undraw_working_re_ddwy.svg" title="our team & culture." />
+
         <p>building "insanely great" products depends on great people.</p>
         <p>
           dorkodu is where individual imaginations gather together, committing to the vaoues that lead to great work.
@@ -62,7 +55,7 @@ definePageMeta({
 
       <Hero :data="{
         title:`life at dorkodu`,
-        tagline: `join our community and help define it.`,
+        tagline: ``,
         statement: `explore a collaborative culture of inclusion, growth and originality;
         supported by resources that make a difference in your life` 
       }" />

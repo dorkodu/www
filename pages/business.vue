@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 definePageMeta({
-  title: "welcome!",
+  title: "business — dorkodu",
   description: `liberate the humankind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
 });
@@ -15,13 +15,13 @@ definePageMeta({
         <Hero :data="{
           title: `our business`,
           tagline: `company insights for investors, sponsors and our community.`,
-          statement: `dorkodu is not a conventional company. we do not intend to be one. Staying humble and focusing on creating
+          statement: `dorkodu is not a conventional company. we do not intend to be one. staying humble and focusing on creating
           value is our only ambition.`
         }" style="margin-top: 0 !important;">
         </Hero>
       </template>
       <template #side>
-        <Picture source="/images/undraw_dorkodu-work-culture.png" />
+        <Picture source="/images/undraw_experts_re_i40h.svg" />
       </template>
     </Showcase>
 
