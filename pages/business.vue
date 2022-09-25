@@ -13,17 +13,11 @@ definePageMeta({
     <Showcase style="margin-top: 0;">
       <template #main>
         <Hero :data="{
-          title: `company`,
-          tagline: `dorkodu is the meaningful technology company.`,
-          statement: `our purpose is to liberate the humankind with our meaningful products & technology.`
+          title: `our business`,
+          tagline: `company insights for investors, sponsors and our community.`,
+          statement: `dorkodu is not a conventional company. we do not intend to be one. Staying humble and focusing on creating
+          value is our only ambition.`
         }" style="margin-top: 0 !important;">
-          <template #content>
-            <p class="hashtag">#gamification #web3 #knowledge #artworks</p>
-            <div class="button-container">
-              <Button type="fill" link="#story">our story</Button>
-              <Button type="tonal" link="/work">join us!</Button>
-            </div>
-          </template>
         </Hero>
       </template>
       <template #side>
@@ -41,6 +35,46 @@ definePageMeta({
       <template #head></template>
       <template #content></template>
     </Hero>
+
+    <Showcase>
+      <template #main>
+        <DescriptiveList icon="tabler:building" title="company overview" message="">
+
+          <DescriptiveItem title="our name"
+            description="our founder doruk eray wanted to create a unique word for easily getting a .com domain. so our name ended up being 'dorkodu', doruk + code.">
+            <Icon name="twemoji:fire" size="32" />
+          </DescriptiveItem>
+
+          <DescriptiveItem title="technology"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
+            <Icon name="twemoji:fire" size="32" />
+          </DescriptiveItem>
+
+          <DescriptiveItem title="business"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
+            <Icon name="twemoji:fire" size="32" />
+          </DescriptiveItem>
+
+          <DescriptiveItem title="culture"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
+            <Icon name="twemoji:fire" size="32" />
+          </DescriptiveItem>
+
+          <DescriptiveItem title="management"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
+            <Icon name="twemoji:fire" size="32" />
+          </DescriptiveItem>
+
+          <DescriptiveItem title="goals" description="we want dorkodu to be the best gamification">
+            <Icon name="twemoji:fire" size="32" />
+          </DescriptiveItem>
+
+        </DescriptiveList>
+      </template>
+      <template #side>
+
+      </template>
+    </Showcase>
 
     <section>
       <h2>

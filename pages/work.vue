@@ -38,6 +38,88 @@ definePageMeta({
 
     <Break />
 
+    <section>
+      <article>
+        <h3>let's work together!</h3>
+        <p>at dorkodu, we understand that our worldwide success can only come from our diverse workforce.</p>
+        <p>
+          dorkodians relish the freedom to create the next generation of technologies in an environment designed to
+          foster collaboration, creativity, health and happiness.
+        </p>
+        <p>building "insanely great" products depends on great people.</p>
+        <p>
+          dorkodu is where individual imaginations gather together, committing to the vaoues that lead to great work.
+        </p>
+        <p>here you will do more than join something, you will add something.</p>
+        <p></p>
+      </article>
+
+      <Hero :data="{
+        title:`work at dorkodu`,
+        tagline: `join the revolution, inspire the work, liberate the humankind.`,
+        statement: `discover how you can make an impact: see our areas of work: from revolutionary products to breakthrough technologies. also we have opportunities for students.` 
+      }" />
+
+      <Hero :data="{
+        title:`life at dorkodu`,
+        tagline: `join our community and help define it.`,
+        statement: `explore a collaborative culture of inclusion, growth and originality;
+        supported by resources that make a difference in your life` 
+      }" />
+
+      <Testimonial :data="{
+        name: `doruk eray`,
+        title: `founder & chief`,
+        quote: `dorkodu is where you'll work with others who share your passion. 
+        where business serves expertise, where a healthy respect for courage and original thinking 
+        inspires you to bring your best to what we do together.` 
+      }" />
+
+      <article>
+        <h3>our company is built on community.</h3>
+        <p>
+          dorkodu is organized for creativity; by functional specialities rather than business units.
+          we're artists leading artists. in any area; technical experts, unique thinkers, feelers with empathy.
+          best designers lead design;
+          best software artisans lead software.
+        </p>
+        <p>this makes dorkodu different from other archaic tech companies.</p>
+        <p>
+          we prefer to recruit our own talents.
+          if you have prior technical experience, that's awesome!
+          but you have to learn to think "the dorkodian way".
+          <b>we are here to help you actualize yourself.</b>
+        </p>
+        <p>
+          find yourself a purpose.
+          do the work you are passionate about.
+          build your character.
+          believe in your values.
+          work within your principles.
+          make your dreams come true.
+        </p>
+        <p>
+          dorkodu is unique because of our approach to work:
+          <b>folks who has more experience, intuition and passion always makes the right decisions.</b>
+          we don't like managers. we love creative people, who think, design and build.
+          a craftsperson can easily learn management, marketing, sales, finance or any other formal stuff.
+        </p>
+        <p>
+          leaders at dorkodu combine their expertise with important characteristics:
+          focus on the details without losing the sight of the bigger picture.
+          with a willingness to collaboratively debate during collective decision-making.
+          for people here, it's liberating to work with experts who offer relevant guidance and mentoring.
+          this approach to leadership is a commitment to collaboration that leads to innovation.
+        </p>
+        <p>
+          dorkodu is an equal opportunity employer. employment here is based solely upon one's individual merit and
+          qualifications directly related to professional competence. we don't discriminate on the basis of race, color,
+          religion, national origin, ancestry, pregnancy status, sex, age, marital status, disability, medical
+          condition, sexual orientation, gender identity, or any other characteristics protected by law.
+        </p>
+      </article>
+    </section>
+
     <article>
       <h2>
         <span>hello, again.</span>&nbsp;

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 definePageMeta({
-  title: "welcome!",
+  title: 'welcome',
   description: `liberate the humankind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
 });
@@ -15,10 +15,11 @@ definePageMeta({
         <Hero :data="{
           title: `welcome!`,
           tagline: `dorkodu is the meaningful technology company.`,
-          statement: `our purpose is to liberate the humankind with our meaningful products & technology.`
+          statement: `we combine gamification, human-centric design with our superior technology
+          to create products that help people actualize themselves.`
         }" style="margin-top: 0 !important;">
           <template #content>
-            <p class="hashtag">#gamification #web3 #knowledge #artworks</p>
+            <p class="hashtag">#gamification #web3 #knowledge #artwork</p>
             <div class="button-container">
               <Button type="fill" link="#story">our story</Button>
               <Button type="tonal" link="/work">join us!</Button>
@@ -34,11 +35,13 @@ definePageMeta({
     <Break />
 
     <Hero :data="{
-      title: `hello`,
-      tagline: `hello`,
-      statement: `hello`
+      title: `why?`,
+      tagline: `liberate the humankind.`,
+      statement: `we are a community of artists, who doesn’t just paint, dance, write poems or play songs. we create products and technology to make the world actually a better place. not just by communicating our opinions through our artwork, but we walk towards our utopia by doing something impactful and inspirational.`
     }" center>
-      <template #head></template>
+      <template #head>
+
+      </template>
       <template #content></template>
     </Hero>
 
@@ -70,7 +73,7 @@ definePageMeta({
     <section>
       <h2>our people</h2>
       <TeamMember name="doruk eray" title="founder & chief"
-        about="cult leader, product polymath, creative psychedelic, progressive craftsman, lunatic. software, ui/ux, artwork, business."
+        about="cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business."
         avatar="/images/doruk--green.png">
         <template #icons>
           <Icon name="tabler:flag-3" size="32" />
@@ -79,9 +82,8 @@ definePageMeta({
         </template>
         <template #more></template>
       </TeamMember>
-      <hr>
       <TeamMember name="berk cambaz" title="technologist"
-        about="Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, enim. Dolorem doloremque similique dolorum repellat minus sequi fugiat nihil?"
+        about="founding engineer, swiss-knife, homebrew software, research & development, open source."
         avatar="/images/berk.png">
         <template #icons>
           <Icon name="tabler:brand-open-source" size="32" />
@@ -90,13 +92,32 @@ definePageMeta({
         </template>
         <template #more></template>
       </TeamMember>
+      <hr>
+      <CardDeck :columns="2">
+        <TeamMember style="max-width: 320px; margin: 0 auto;" name="berra uslu" title="rookie"
+          about="graphics, visual arts, media. homegrown creative, sjw.">
+          <template #icons>
+            <Icon name="tabler:brush" size="32" />
+            <Icon name="tabler:palette" size="32" />
+            <Icon name="tabler:device-tv-old" size="32" />
+          </template>
+          <template #more></template>
+        </TeamMember>
+        <TeamMember style="max-width: 320px; margin: 0 auto;" name="öykü gökcen" title="rookie"
+          about="marketing, pr, finance, sales. boring formal business stuff.">
+          <template #icons>
+            <Icon name="tabler:building-store" size="32" />
+            <Icon name="tabler:coin" size="32" />
+            <Icon name="tabler:users" size="32" />
+          </template>
+          <template #more></template>
+        </TeamMember>
+      </CardDeck>
     </section>
-
-    <PageContact />
 
     <Break />
 
-    <PageLegend />
+    <PageContact />
 
     <Break />
   </main>

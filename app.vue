@@ -4,7 +4,11 @@ const route = useRoute();
 const WEBSITE_ROOT = "https://dorkodu.com";
 
 useHead({
-  titleTemplate: `${route.meta.title} — dorkodu`,
+  titleTemplate() {
+    return (route.meta.title)
+      ? `${route.meta.title} — dorkodu`
+      : `dorkodu`;
+  },
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
   charset: 'utf-8',
   meta: [
