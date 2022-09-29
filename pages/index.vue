@@ -117,8 +117,16 @@ definePageMeta({
           </template>
           <template #more></template>
         </TeamMember>
-        <TeamMember style="max-width: 360px; margin: 0 auto;" name="be the next rookie?" title=""
-          about="dorkodu is the best place to work for gen-z. anarchist community" />
+
+        <div class="JoinUsAd">
+          h4
+        </div>
+
+        <TeamMember class="TeamAdBanner" name="be the next rookie?" title=""
+          about="dorkodu is the best place to work for gen-z. anarchist community">
+
+        </TeamMember>
+
       </CardDeck>
     </section>
 
@@ -131,5 +139,12 @@ definePageMeta({
 </template>
 <style lang="scss">
 @import "styles";
+
+.JoinUsAd {
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color: $system-color-primary-95;
+}
 </style>
   
