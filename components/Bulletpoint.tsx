@@ -1,8 +1,6 @@
 import { Icon } from "@iconify-icon/react";
 import styled from "@emotion/styled";
-
-import { ThemeProvider } from "@emotion/react";
-import styled from "@emotion/styled";
+import { styled } from "../styles/prism";
 
 const theme = {
   colors: {
@@ -13,12 +11,6 @@ const theme = {
 const SomeText = styled.div`
   color: ${(props) => props.theme.colors.primary};
 `;
-
-render(
-  <ThemeProvider theme={theme}>
-    <SomeText>some text</SomeText>
-  </ThemeProvider>
-);
 
 const Root = styled.div`
   display: flex;
