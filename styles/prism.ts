@@ -37,6 +37,25 @@ const colors = {
     gray: 210,
   },
   baseSaturation: 70, // generate color based on this (default)
+  palette: {},
+};
+
+const colorPalette = {
+  red: (tone: number) => color(colors.hue.red, colors.baseSaturation, tone),
+  orange: (tone: number) =>
+    color(colors.hue.orange, colors.baseSaturation, tone),
+  yellow: (tone: number) =>
+    color(colors.hue.yellow, colors.baseSaturation, tone),
+  green: (tone: number) => color(colors.hue.green, colors.baseSaturation, tone),
+  mint: (tone: number) => color(colors.hue.mint, colors.baseSaturation, tone),
+  cyan: (tone: number) => color(colors.hue.cyan, colors.baseSaturation, tone),
+  blue: (tone: number) => color(colors.hue.blue, colors.baseSaturation, tone),
+  indigo: (tone: number) =>
+    color(colors.hue.indigo, colors.baseSaturation, tone),
+  purple: (tone: number) =>
+    color(colors.hue.purple, colors.baseSaturation, tone),
+  pink: (tone: number) => color(colors.hue.pink, colors.baseSaturation, tone),
+  gray: (tone: number) => color(colors.hue.gray, colors.baseSaturation, tone),
 };
 
 const layout = {
@@ -64,6 +83,19 @@ const color = (hue: number, saturation: number, light: number) => {
   return `hsl(${hue}, ${saturation}%, ${light}%)`;
 };
 
-const tokens = { typescale, color: colors, viewpoint, layout };
+const tokens = {
+  typescale,
+  color: { ...colors, ...colorPalette }, //? to enable reusing tokens for hue
+  viewpoint,
+  layout,
+};
 
-export { tokens, color };
+const ui = {
+  color: {
+    primary: (tone: number) => tokens.color.green(tone),
+    secondary: (tone: number) => tokens.color.blue(tone),
+    neutral: (tone: number) => tokens.color.gray(tone),
+  },
+};
+
+export { tokens, ui, color };
