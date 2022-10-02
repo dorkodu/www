@@ -1,9 +1,14 @@
-// import Navbar from './navbar'
+import { ThemeProvider } from "@emotion/react";
+import styled from "@emotion/styled";
+import { light } from "../styles/theme";
+
 
 export default function Layout({ children }) {
   return (
     <>
-      <main>{children}</main>
+      <ThemeProvider theme={light}>
+        <main>{children}</main>
+      </ThemeProvider>
     </>
   );
 }
