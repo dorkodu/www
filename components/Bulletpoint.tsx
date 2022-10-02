@@ -1,16 +1,6 @@
 import { Icon } from "@iconify-icon/react";
 import styled from "@emotion/styled";
-import { styled } from "../styles/prism";
-
-const theme = {
-  colors: {
-    primary: "hotpink",
-  },
-};
-
-const SomeText = styled.div`
-  color: ${(props) => props.theme.colors.primary};
-`;
+import { tokens, ui } from "../styles/prism";
 
 const Root = styled.div`
   display: flex;
@@ -19,14 +9,14 @@ const Root = styled.div`
 `;
 
 const Emoji = styled.span`
-  font-size: $iconSize !important;
+  font-size: 2rem !important;
   height: auto !important;
   width: auto !important;
   overflow: visible;
 
   .icon {
-    width: $iconSize;
-    height: $iconSize;
+    width: 2rem;
+    height: 2rem;
   }
 `;
 
