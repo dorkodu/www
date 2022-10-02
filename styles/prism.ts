@@ -58,11 +58,6 @@ const colorPalette = {
   gray: (tone: number) => color(colors.hue.gray, colors.baseSaturation, tone),
 };
 
-const layout = {
-  breakpoint: "64rem",
-  curve: "1rem",
-};
-
 const viewpoint = {
   mobile: {
     S: "320px",
@@ -87,7 +82,6 @@ const tokens = {
   typescale,
   color: { ...colors, ...colorPalette }, //? to enable reusing tokens for hue
   viewpoint,
-  layout,
 };
 
 const ui = {
@@ -95,6 +89,10 @@ const ui = {
     primary: (tone: number) => tokens.color.green(tone),
     secondary: (tone: number) => tokens.color.blue(tone),
     neutral: (tone: number) => tokens.color.gray(tone),
+  },
+  layout: {
+    breakpoint: "64rem",
+    curve: "1rem",
   },
 };
 
