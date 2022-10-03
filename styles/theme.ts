@@ -1,7 +1,5 @@
 import { Theme } from "@emotion/react";
-import { tokens, color } from "./prism";
-import fonts from "./fonts";
-import typography from "./typography";
+import { tokens, ui, color } from "./prism";
 
 //? @use fonts
 //? @use colors
