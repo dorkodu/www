@@ -1,20 +1,18 @@
-<template>
-  <div :class="'CardDeck' + attrs">
-    <slot />
-  </div>
-</template>
-<script setup lang="ts">
-const { columns }
-  = defineProps<{
-    columns?: number;
-  }>();
+import styled from "@emotion/styled";
+import { tokens, ui } from "../styles/prism";
 
-const attrs = (columns) ? " --" + columns : "";
-</script>
-<style lang="scss">
-@import "styles";
+interface Props {
+  columns?: number;
+  children: React.ReactNode;
+}
 
-.CardDeck {
+export default function Card({ columns, children }: Props) {
+  const attrs = columns ? " --" + columns : "";
+
+  return <Deck className={attrs}>{children}</Deck>;
+}
+
+const Deck = styled.div`
   display: grid;
   padding: 1rem;
   row-gap: 1rem;
@@ -25,36 +23,30 @@ const attrs = (columns) ? " --" + columns : "";
   max-width: 76rem;
   margin: 0 auto;
 
-  >.Card {
+  > .Card {
     max-width: 28rem;
     margin: 0 auto;
   }
 
-  >.Picture {
+  > .Picture {
     padding: 0 !important;
     margin: 0 !important;
   }
-}
 
-@media (min-width: $system-viewpoint-tablet) {
-  .CardDeck {
+  @media (min-width: ${tokens.viewpoint.tablet}) {
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-}
 
-@media (min-width: 1200px) {
-  .CardDeck {
+  @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr;
 
     &.--2 {
       grid-template-columns: 1fr 1fr;
     }
   }
-}
 
-@media (min-width: 1600px) {
-  .CardDeck {
+  @media (min-width: 1600px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     &.--2 {
@@ -65,5 +57,4 @@ const attrs = (columns) ? " --" + columns : "";
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
-}
-</style>
+`;
