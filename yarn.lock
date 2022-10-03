@@ -96,7 +96,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/babel-plugin@npm:11.10.2, @emotion/babel-plugin@npm:^11.10.0":
+"@emotion/babel-plugin@npm:^11.10.0, @emotion/babel-plugin@npm:^11.10.2":
   version: 11.10.2
   resolution: "@emotion/babel-plugin@npm:11.10.2"
   dependencies:
@@ -1178,7 +1178,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dorkodu-next@workspace:."
   dependencies:
-    "@emotion/babel-plugin": 11.10.2
+    "@emotion/babel-plugin": ^11.10.2
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
     "@iconify-icon/react": ^1.0.0
