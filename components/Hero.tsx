@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { tokens, ui } from "../styles/prism";
 
@@ -19,17 +20,15 @@ export default function Hero({
   children,
 }: Props) {
   return (
-    <>
-      <TheHero className={center ? "--center" : ""}>
-        <Container>
-          {head && <div>{head}</div>}
-          {title && <Title>{title}</Title>}
-          {tagline && <Tagline>{tagline}</Tagline>}
-          {statement && <Statement>{statement}</Statement>}
-          {children && <Content>{children}</Content>}
-        </Container>
-      </TheHero>
-    </>
+    <TheHero center={center ?? false}>
+      <Container>
+        {head && <div>{head}</div>}
+        {title && <Title>{title}</Title>}
+        {tagline && <Tagline>{tagline}</Tagline>}
+        {statement && <Statement>{statement}</Statement>}
+        {children && <div>{children}</div>}
+      </Container>
+    </TheHero>
   );
 }
 
@@ -79,9 +78,7 @@ const Statement = styled.p`
   margin-top: 0.15rem;
 `;
 
-const Content = styled.div``;
-
-const TheHero = styled.section`
+const TheHero = styled.section<{ center: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,15 +90,18 @@ const TheHero = styled.section`
 
   ${Title},
   ${Statement},
-    ${Tagline} {
+  ${Tagline} {
     text-align: left !important;
   }
 
-  &.--center {
-    ${Container} > * {
-      text-align: center !important;
-    }
-  }
+  ${(p) =>
+    p.center
+      ? css`
+          ${Container} > * {
+            text-align: center !important;
+          }
+        `
+      : ``};
 
   p {
     margin-bottom: 0.5rem;
