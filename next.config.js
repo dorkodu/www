@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
 
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
