@@ -1,3 +1,4 @@
+`
 <template>
   <div class="descriptive-item">
     <span class="__badge">
@@ -49,3 +50,5 @@ const { title, description } = defineProps<{
   }
 }
 </style>
+
+`
