@@ -13,7 +13,7 @@ const Quote: FunctionComponent<QuoteProps> = ({ message, owner }) => {
     <Root>
       <Icon icon="" />
       <Message>{message}</Message>
-      <Owner>{"— " + owner}</Owner>
+      {owner ?? <Owner>{"— " + owner}</Owner>}
     </Root>
   );
 };
