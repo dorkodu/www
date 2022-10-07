@@ -31,7 +31,7 @@ let { source, title } = defineProps<{
     font-size: 1.15rem !important;
     margin: 0.5rem;
     text-align: center !important;
-    color: $reference-color-gray-70;
+    color: $tokens.color.gray(70;
     padding: 0 !important;
     font-weight: 500;
   }
