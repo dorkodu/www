@@ -70,7 +70,7 @@ const { name, title, about, avatar }
 
   .icons {
     display: flex;
-    color: $reference-color-gray-70;
+    color: $tokens.color.gray(70;
     margin-bottom: .15rem;
 
     * {
@@ -85,7 +85,7 @@ const { name, title, about, avatar }
 
   .title {
     margin-bottom: .1rem !important;
-    color: $reference-color-gray-60;
+    color: $tokens.color.gray(60;
     font-size: 1.25rem;
     font-weight: 600;
   }
@@ -94,7 +94,7 @@ const { name, title, about, avatar }
     font-size: 1.15rem;
     line-height: 1.35rem;
     font-weight: 400;
-    color: $reference-color-gray-20;
+    color: $tokens.color.gray(20;
   }
 }
 

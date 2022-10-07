@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
+import { FunctionComponent } from "react";
 import { tokens, ui } from "../../styles/prism";
 
-export default function Footer() {
+const Footer: FunctionComponent = () => {
   return (
     <Root>
       <Wrapper>
@@ -116,7 +117,9 @@ export default function Footer() {
       </Wrapper>
     </Root>
   );
-}
+};
+
+export default Footer;
 
 const Wrapper = styled.div`
   padding: 1.5rem 1rem;

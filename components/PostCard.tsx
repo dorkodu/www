@@ -67,7 +67,7 @@ const { data }
     gap: .75rem;
 
     .__token {
-      color: $reference-color-gray-60;
+      color: $tokens.color.gray(60;
       font-weight: 600;
       font-size: 1.15rem;
       line-height: 1.15rem;
@@ -77,7 +77,7 @@ const { data }
       display: block;
       width: 3rem;
       height: .25rem;
-      background-color: $reference-color-gray-90;
+      background-color: $tokens.color.gray(90;
       border-radius: .25rem;
     }
 
@@ -103,8 +103,8 @@ const { data }
     margin: 0;
     padding: .25rem .5rem;
     border-radius: .4rem;
-    color: $reference-color-green-40;
-    background-color: $reference-color-green-90;
+    color: $tokens.color.green-40;
+    background-color: $tokens.color.green-90;
     font-size: 1.15rem;
     font-weight: 750;
     letter-spacing: 0.025rem;
@@ -113,7 +113,7 @@ const { data }
 
   .__title {
     margin: 0 !important;
-    color: $reference-color-gray-10;
+    color: $tokens.color.gray(10;
     font-size: 1.25rem;
     line-height: 2rem;
     font-weight: 700;
@@ -151,13 +151,13 @@ const { data }
       flex-grow: 1;
 
       .__name {
-        color: $reference-color-gray-40;
+        color: $tokens.color.gray(40;
         font-size: 1.15rem;
         font-weight: 700;
       }
 
       .__role {
-        color: $reference-color-gray-70;
+        color: $tokens.color.gray(70;
         font-size: 1rem;
         font-weight: 600;
       }

@@ -19,16 +19,12 @@ definePageMeta({
           to create products that help people actualize themselves.`
         }" style="margin-top: 0 !important;">
           <template #content>
-            <p class="hashtag">#gamification #web3 #knowledge #artwork</p>
-            <div class="button-container">
-              <Button type="fill" link="#story">our story</Button>
-              <Button type="tonal" link="/work">join us!</Button>
-            </div>
+
           </template>
         </Hero>
       </template>
       <template #side>
-        <Picture source="/images/undraw_dorkodu-work-culture.png" />
+
       </template>
     </Showcase>
 

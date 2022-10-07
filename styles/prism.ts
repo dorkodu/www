@@ -55,7 +55,7 @@ const colorPalette = {
   purple: (tone: number) =>
     color(colors.hue.purple, colors.baseSaturation, tone),
   pink: (tone: number) => color(colors.hue.pink, colors.baseSaturation, tone),
-  gray: (tone: number) => color(colors.hue.gray, colors.baseSaturation, tone),
+  gray: (tone: number) => color(colors.hue.gray, 15, tone),
 };
 
 const viewpoint = {

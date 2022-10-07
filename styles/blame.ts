@@ -67,37 +67,4 @@ export default css`
       margin-right: 0.5rem !important;
     }
   }
-
-  /*----------  Feature Showcase  ----------*/
-
-  .feature-showcase .column.--aside .Picture {
-    margin: 0 auto !important;
-  }
-
-  .feature-showcase .column.--main .descriptive-list {
-    max-width: 36rem;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 1000px) {
-    .feature-showcase .column.--main .descriptive-list {
-      float: right;
-      margin-left: 2rem;
-    }
-
-    .feature-showcase .column.--aside .Picture {
-      margin: 4rem auto 0 !important;
-      float: left;
-    }
-
-    .feature-showcase > .column.--main {
-      width: 60%;
-      float: left;
-    }
-
-    .feature-showcase > .column.--aside {
-      width: 40%;
-      float: left;
-    }
-  }
 `;

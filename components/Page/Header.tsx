@@ -10,20 +10,26 @@ const Header: FunctionComponent = () => {
     <Root>
       <Container>
         <Logo href="/">
-          <Image src="/images/dorkodu.svg" alt="dorkodu" title="dorkodu" />
+          <img src="/images/dorkodu.svg" alt="dorkodu" title="dorkodu" />
         </Logo>
         <Nav>
           <Link href="/" rel="dofollow">
-            <Icon icon="twemoji:open-book" size={32} />
-            <span>about</span>
+            <>
+              <Icon icon="twemoji:open-book" size={32} />
+              <span>about</span>
+            </>
           </Link>
           <Link href="/work" rel="dofollow">
-            <Icon icon="twemoji:floppy-disk" size={30} />
-            <span>work</span>
+            <>
+              <Icon icon="twemoji:floppy-disk" size={30} />
+              <span>work</span>
+            </>
           </Link>
           <Link href="/business" rel="dofollow">
-            <Icon icon="noto:dollar-banknote" size={32} />
-            <span>business</span>
+            <>
+              <Icon icon="noto:dollar-banknote" size={32} />
+              <span>business</span>
+            </>
           </Link>
         </Nav>
       </Container>
