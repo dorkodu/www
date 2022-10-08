@@ -1,70 +1,58 @@
 import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import { tokens, ui } from "./prism";
 
-export default css`
-  .paragraph-tagline {
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-    color: ;
-    margin: 0;
+export const SectionIcon = styled.div`
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.25rem !important;
+  margin: 0 auto;
+  stroke-width: 2.25;
+  stroke: ${ui.color.neutral(70)};
+`;
+
+export const Badge = styled.div`
+  padding: 0.5rem !important;
+  border-radius: ${ui.layout.curve};
+  height: 3rem !important;
+  width: 3rem !important;
+
+  background-color: ${ui.color.primary(80)};
+  color: ${ui.color.primary(45)};
+  stroke-width: 2.25;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  margin: 0.5rem 0;
+
+  a,
+  button {
+    margin: 0.25rem 0 !important;
+    margin-right: 0.5rem !important;
   }
+`;
 
-  .badge {
-    padding: 0.5rem !important;
-    border-radius: ${ui.layout.curve};
-    height: 3rem !important;
-    width: 3rem !important;
+export const Showcase = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 
-    background-color: ${ui.color.primary(80)};
-    color: ${ui.color.primary(40)};
-    stroke-width: 2.25;
+  max-width: ${ui.layout.breakpoint};
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  /* 
+  > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+  */
 
-  .symbol {
-    padding: 0.25rem !important;
-    height: 3rem !important;
-    width: 3rem !important;
-
-    color: ${ui.color.neutral(70)};
-    stroke-width: 2.25;
-  }
-
-  article > .Picture {
-    padding: 1rem 0 !important;
-  }
-
-  .section-icon {
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    margin: 0 auto;
-    stroke: ${ui.color.neutral(70)};
-  }
-
-  .Picture.--undraw > img {
-    padding: 0 1rem;
-  }
-
-  .--lightgray {
-    color: ${ui.color.neutral(60)};
-  }
-
-  .header .logo {
-    margin-bottom: 1rem !important;
-  }
-
-  .button-container {
-    padding: 0.5rem 0;
-    text-align: left;
-
-    &.--center {
-      text-align: center !important;
-    }
-
-    .button {
-      margin: 0.25rem 0 !important;
-      margin-right: 0.5rem !important;
-    }
+  @media (min-width: 900px) {
+    flex-direction: row;
   }
 `;
