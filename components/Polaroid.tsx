@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FunctionComponent } from "react";
 import { tokens, ui } from "../styles/prism";
 
 interface PolaroidProps {
-  source: string;
+  source: string | StaticImageData;
   description?: string;
 }
 

@@ -19,7 +19,7 @@ export default function Button({ type, link, children }: Props) {
 
 const TheButton = styled.a`
   display: inline-flex;
-  padding: 0.5rem 1.35rem;
+  padding: 0.5rem 1.5rem;
   border: 0 !important;
   border-radius: 1.25rem;
   line-height: 130%;

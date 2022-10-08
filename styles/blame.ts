@@ -24,7 +24,6 @@ export const Badge = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  display: flex;
   margin: 0.5rem 0;
 
   a,
@@ -44,13 +43,11 @@ export const Showcase = styled.div`
   margin: 0 auto;
   padding: 0 1rem;
 
-  /* 
   > * {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  */
 
   @media (min-width: 900px) {
     flex-direction: row;

@@ -70,12 +70,11 @@ const Tagline = styled.h2`
 `;
 
 const Statement = styled.p`
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
-  font-weight: 550;
+  font-weight: 500;
   font-size: 1.25rem;
   color: ${ui.color.neutral(50)};
-  margin-top: 0.15rem;
 `;
 
 const TheHero = styled.section<{ center: boolean }>`
