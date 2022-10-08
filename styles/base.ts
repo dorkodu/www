@@ -86,7 +86,7 @@ export default css`
   h4,
   h5,
   h6 {
-    color: ${tokens.color.gray(10)};
+    color: ${ui.color.neutral(10)};
     letter-spacing: -0.025rem;
     text-rendering: optimizelegibility;
     font-family: ${tokens.typescale.headline.font};
@@ -140,7 +140,7 @@ export default css`
     overflow: hidden;
     background: transparent;
     border: 0;
-    border-bottom: 0.25rem solid ${tokens.color.gray(95)};
+    border-bottom: 0.25rem solid ${ui.color.neutral(95)};
   }
 
   article,
@@ -155,7 +155,7 @@ export default css`
       list-style: disc;
 
       li {
-        color: ${tokens.color.gray(10)};
+        color: ${ui.color.neutral(10)};
         font-size: 1rem;
         padding-top: 0.25rem;
 
@@ -168,7 +168,7 @@ export default css`
         }
 
         &::marker {
-          color: ${tokens.color.gray(60)} !important;
+          color: ${ui.color.neutral(60)} !important;
         }
 
         h4 {
