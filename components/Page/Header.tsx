@@ -12,26 +12,26 @@ const Header: FunctionComponent = () => {
         <Logo href="/">
           <img src="/images/dorkodu.svg" alt="dorkodu" title="dorkodu" />
         </Logo>
-        <Nav>
-          <Link href="/" rel="dofollow">
-            <>
-              <Icon icon="twemoji:open-book" size={32} />
+        <Nav.Body>
+          <Link href="/">
+            <a rel="dofollow">
+              <Icon icon="twemoji:open-book" width={32} height={32} />
               <span>about</span>
-            </>
+            </a>
           </Link>
-          <Link href="/work" rel="dofollow">
-            <>
-              <Icon icon="twemoji:floppy-disk" size={30} />
+          <Link href="/work">
+            <a rel="dofollow">
+              <Icon icon="twemoji:floppy-disk" width={30} height={30} />
               <span>work</span>
-            </>
+            </a>
           </Link>
-          <Link href="/business" rel="dofollow">
-            <>
-              <Icon icon="noto:dollar-banknote" size={32} />
+          <Link href="/business">
+            <a rel="dofollow">
+              <Icon icon="noto:dollar-banknote" width={32} height={32} />
               <span>business</span>
-            </>
+            </a>
           </Link>
-        </Nav>
+        </Nav.Body>
       </Container>
     </Root>
   );
@@ -45,6 +45,12 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: ${tokens.viewpoint.desktop.S}) {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
 `;
 
 const Logo = styled.a`
@@ -55,74 +61,66 @@ const Logo = styled.a`
     padding: 1rem;
     margin: 0 auto;
   }
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.75rem;
-    line-height: 1.5;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: ${ui.color.neutral(50)};
-
-    &:hover {
-      background-color: ${ui.color.primary(95)};
-      color: ${ui.color.primary(30)};
-
-      svg {
-        color: ${ui.color.neutral(50)};
-      }
-    }
-  }
-`;
-
-const Root = styled.header`
-  padding: 0.64rem;
-
-  @media (min-width: 425px) {
-    & > ${Nav} {
-      flex-direction: row;
-      align-items: center;
-      gap: 0.25rem;
-    }
-  }
 
   @media (min-width: ${tokens.viewpoint.tablet}) {
-    margin: 1rem auto;
-
-    ${Logo} img {
+    img {
       width: 25rem;
     }
   }
 
   @media (min-width: ${tokens.viewpoint.desktop.S}) {
-    ${Container} {
-      flex-direction: row;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    ${Logo} img {
+    img {
       width: 28rem;
     }
+  }
+`;
 
-    ${Nav} {
+const Nav = {
+  Body: styled.nav`
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 1rem;
+      line-height: 1.5;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: ${ui.color.neutral(50)};
+
+      &:hover {
+        background-color: ${ui.color.primary(90)};
+        color: ${ui.color.primary(30)};
+      }
+    }
+
+    @media (min-width: 425px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    @media (min-width: ${tokens.viewpoint.desktop.S}) {
       width: calc(100% - 25rem);
       gap: 1rem;
       color: ${ui.color.neutral(60)};
     }
+  `,
+};
+
+const Root = styled.header`
+  padding: 0.64rem;
+
+  @media (min-width: ${tokens.viewpoint.tablet}) {
+    margin: 1rem auto;
   }
 `;
 
