@@ -307,14 +307,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-icon/react@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@iconify-icon/react@npm:1.0.0"
+"@iconify-icon/react@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@iconify-icon/react@npm:1.0.1"
   dependencies:
-    iconify-icon: ^1.0.0
+    iconify-icon: ^1.0.1
   peerDependencies:
     react: ">=16"
-  checksum: e2d193763589abb0d9f097e54f0174cb121ec96c77543dd0e7f7896d0199f85ebfa1d8dd6154284c44da8ed413b3618c358137d7c3e4735081753994f90ee177
+  checksum: 7a09faedeb93740de716e95ef1522527ae957422c046b23d3ad121a18435c5eaa2fec56786d05617dd1c99b7ea4687c47c58808a1dc589911197a2a17cbddb2a
   languageName: node
   linkType: hard
 
@@ -1181,7 +1181,7 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.2
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
-    "@iconify-icon/react": ^1.0.0
+    "@iconify-icon/react": ^1.0.1
     "@types/node": 18.7.23
     "@types/react": 18.0.21
     "@types/react-dom": 18.0.6
@@ -1971,12 +1971,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iconify-icon@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "iconify-icon@npm:1.0.0"
+"iconify-icon@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "iconify-icon@npm:1.0.1"
   dependencies:
     "@iconify/types": ^2.0.0
-  checksum: cb7399f85efe84a9e3404b06b46f9523d82bfb6e8e6908b03f1acbea218a52dd1f63870db6a12a8526e0746891d5b910c395bff0891140fa5e948eabd3a72fba
+  checksum: a90d9c76492fcd5738ff916697d5c170ab1e26b2f88c9cacc164aa6d321569f89ddb72d344912600a265f0f577e53aac3dbbc009690bc036d0c9b39b5c610b97
   languageName: node
   linkType: hard
 
