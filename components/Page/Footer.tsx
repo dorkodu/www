@@ -51,38 +51,41 @@ const Footer: FunctionComponent = () => {
                 </g>
               </svg>
             </Logo>
-            <p>we liberate the humankind with our meaningful technology.</p>
+            <p>
+              we liberate the humankind; with our meaningful products &
+              technology.
+            </p>
             <nav>
               <a href="https://twitter.com/dorkodu">
                 <Icon
                   className="icon"
                   icon="tabler:brand-twitter"
-                  width={32}
-                  height={32}
+                  width={36}
+                  height={36}
                 />
               </a>
               <a href="https://github.com/dorkodu">
                 <Icon
                   className="icon"
                   icon="tabler:brand-github"
-                  width={32}
-                  height={32}
+                  width={36}
+                  height={36}
                 />
               </a>
               <a href="https://instagram.com/dorkodu">
                 <Icon
                   className="icon"
                   icon="tabler:brand-instagram"
-                  width={32}
-                  height={32}
+                  width={36}
+                  height={36}
                 />
               </a>
               <a href="mailto:hey@dorkodu.com">
                 <Icon
                   className="icon"
                   icon="tabler:mail-opened"
-                  width={32}
-                  height={32}
+                  width={36}
+                  height={36}
                 />
               </a>
             </nav>
@@ -92,14 +95,20 @@ const Footer: FunctionComponent = () => {
             <div>
               <h4>company</h4>
               <nav>
-                <Link href="/" rel="dofollow">
-                  <a>about</a>
+                <Link href="/">
+                  <span>
+                    <a rel="dofollow">about</a>
+                  </span>
                 </Link>
-                <Link href="/work" rel="dofollow">
-                  <a>work</a>
+                <Link href="/work">
+                  <span>
+                    <a rel="dofollow">work</a>
+                  </span>
                 </Link>
-                <Link href="/business" rel="dofollow">
-                  <a>business</a>
+                <Link href="/business">
+                  <span>
+                    <a rel="dofollow">business</a>
+                  </span>
                 </Link>
               </nav>
             </div>
@@ -108,51 +117,41 @@ const Footer: FunctionComponent = () => {
               <h4>resources</h4>
               <nav>
                 <Link href="/resources/terms">
-                  <a>terms</a>
+                  <span>
+                    <a rel="dofollow">terms</a>
+                  </span>
                 </Link>
                 <Link href="/resources/privacy">
-                  <a>privacy</a>
+                  <span>
+                    <a rel="dofollow">privacy</a>
+                  </span>
                 </Link>
                 <Link href="/community">
-                  <a>community</a>
+                  <span>
+                    <a rel="dofollow">community</a>
+                  </span>
                 </Link>
                 <Link href="/press">
-                  <a>press</a>
+                  <span>
+                    <a rel="dofollow">press</a>
+                  </span>
                 </Link>
               </nav>
             </div>
 
-            <ContactInfo>
-              <h4>contact</h4>
-              <p>
-                <Icon
-                  icon="tabler:mail-opened"
-                  className="icon"
-                  width={28}
-                  height={28}
-                />
-                <span>hey@dorkodu.com</span>
+            <Copyright>
+              <p className="company">
+                the <br /> <b>dorkodu</b> <br /> company.
               </p>
-              <p>
-                <Icon
-                  icon="tabler:map-pin"
-                  className="icon"
-                  width={28}
-                  height={28}
-                />
-                <span>istanbul, tr</span>
+              <p className="motto">
+                <span>#</span>liberate
               </p>
-            </ContactInfo>
+              <p className="copy">
+                <span>&copy;</span>2022
+              </p>
+            </Copyright>
           </Nav>
         </UpperSection>
-        <SubSection>
-          <Copyright>
-            <p className="statement">
-              <b style={{ color: tokens.color.gray(48) }}>&copy; 2022</b> — the
-              dorkodu company.
-            </p>
-          </Copyright>
-        </SubSection>
       </Wrapper>
     </Root>
   );
@@ -161,14 +160,19 @@ const Footer: FunctionComponent = () => {
 export default Footer;
 
 const Wrapper = styled.div`
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 3rem;
   max-width: ${ui.layout.breakpoint};
 
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
+  @media (min-width: ${tokens.viewpoint.tablet}) {
     width: 80%;
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  @media (min-width: ${tokens.viewpoint.desktop.S}) {
+    width: 100%;
+    padding: 1.5rem 1rem 2rem;
   }
 `;
 
@@ -178,13 +182,8 @@ const UpperSection = styled.div`
   gap: 2rem;
 
   @media (min-width: ${tokens.viewpoint.desktop.S}) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr);
   }
-`;
-
-const SubSection = styled.div`
-  border-top: 0.2rem solid ${tokens.color.gray(85)};
-  margin-top: 1.5rem;
 `;
 
 const Brand = styled.div`
@@ -194,10 +193,10 @@ const Brand = styled.div`
   p {
     margin-top: 1rem;
     font-size: 1.15rem;
-    line-height: 1.2rem;
-    max-width: 25rem;
+    line-height: 1.25rem;
+    max-width: 20rem;
     font-weight: 450;
-    color: ${tokens.color.gray(40)};
+    color: ${tokens.color.gray(45)};
     float: none !important;
     padding-bottom: 0.75rem;
     border-bottom: 0.25rem dashed ${tokens.color.gray(80)};
@@ -206,12 +205,12 @@ const Brand = styled.div`
   nav {
     display: flex;
     gap: 0.75rem;
-    margin-top: 0.75rem;
+    padding-top: 0.75rem;
     align-items: center;
 
     a {
-      width: 2rem;
-      height: 2rem;
+      width: 2.25rem;
+      height: 2.25rem;
 
       .icon {
         color: ${tokens.color.gray(60)} !important;
@@ -225,12 +224,12 @@ const Brand = styled.div`
     }
   }
 
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
+  @media (min-width: ${tokens.viewpoint.mobile.L}) {
     p {
       margin-left: 0;
       margin-right: 0;
       text-align: left;
-      max-width: 25rem;
+      max-width: 21rem;
     }
   }
 `;
@@ -240,10 +239,10 @@ const Logo = styled.div`
 
   > svg {
     width: auto;
-    height: 3.6rem;
+    height: 3.5rem;
 
     g {
-      fill: ${tokens.color.gray(70)};
+      fill: ${tokens.color.gray(75)};
     }
   }
 
@@ -270,28 +269,29 @@ const Nav = styled.div`
   }
 
   nav {
-    display: flex;
-    flex-direction: column;
-
-    a {
+    span {
       display: block;
-      font-size: 1.15rem;
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.25rem;
-      color: ${tokens.color.gray(10)};
+      a {
+        display: inline-block !important;
+        font-size: 1.15rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        color: ${tokens.color.gray(10)};
 
-      &:hover {
-        color: ${tokens.color.gray(55)};
-        text-decoration: underline;
+        &:hover {
+          color: ${tokens.color.gray(50)};
+          cursor: pointer;
+          text-decoration: underline;
+        }
       }
     }
   }
 
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
+  @media (min-width: ${tokens.viewpoint.mobile.L}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (min-width: ${tokens.viewpoint.tablet}) {
+  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 3fr);
   }
 
@@ -300,42 +300,50 @@ const Nav = styled.div`
   }
 `;
 
-const ContactInfo = styled.div`
-  margin-top: 0.25rem;
-
-  p {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    color: ${tokens.color.gray(50)};
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-
-    .icon {
-      color: ${tokens.color.gray(70)};
-    }
-  }
-
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
-    a {
-      justify-content: flex-start;
-    }
-  }
-`;
-
 const Copyright = styled.div`
-  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 
   p {
-    display: inline-block;
+    display: block;
     line-height: 120%;
-    margin: 0.3rem 0;
     font-size: 1.2rem;
     color: ${tokens.color.gray(60)};
     font-weight: 500;
+  }
 
-    &.statement {
-      float: left;
+  .motto {
+    color: ${tokens.color.gray(40)};
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+    padding: 0.25rem 0;
+
+    span {
+      color: ${tokens.color.gray(70)};
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .copy {
+    color: ${tokens.color.gray(50)};
+    font-size: 1.25rem;
+
+    span {
+      padding-right: 0.2rem;
+      color: ${tokens.color.gray(70)};
+      font-weight: 900;
+    }
+  }
+
+  .company {
+    color: ${tokens.color.gray(60)};
+    line-height: 1.5rem;
+    font-size: 1.45rem;
+
+    b {
+      font-weight: 700 !important;
     }
   }
 `;
