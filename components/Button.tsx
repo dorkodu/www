@@ -38,12 +38,12 @@ const TheButton = styled.a`
 
   //? Primary Button
   &.--fill {
-    background-color: ${ui.color.primary(50)};
+    background-color: ${ui.color.primary(48)};
     color: ${ui.color.primary(100)};
 
     &:hover,
     &:focus {
-      background-color: ${ui.color.primary(60)};
+      background-color: ${ui.color.primary(55)};
     }
   }
 
@@ -55,7 +55,7 @@ const TheButton = styled.a`
     &:hover,
     &:focus {
       color: ${ui.color.primary(40)};
-      background-color: ${ui.color.primary(90)};
+      background-color: ${ui.color.primary(85)};
     }
   }
 

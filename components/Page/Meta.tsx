@@ -19,6 +19,8 @@ const Meta: FunctionComponent<MetaProps> = ({
   keywords,
   image,
 }) => {
+  const URL = website.root + url;
+
   return (
     <>
       <title>{title}</title>
@@ -34,13 +36,13 @@ const Meta: FunctionComponent<MetaProps> = ({
       <meta charSet="UTF-8" />
 
       <meta name="og:type" content="website" />
-      <meta name="og:url" content={url} />
+      <meta name="og:url" content={URL} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={website.twitter.username} />
-      <meta name="twitter:url" content={url} />
+      <meta name="twitter:url" content={URL} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
 
