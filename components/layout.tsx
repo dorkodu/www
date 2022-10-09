@@ -10,11 +10,11 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Page.Header />
       <ThemeProvider theme={light}>
+        <Page.Header />
         <main>{children}</main>
+        <Page.Footer />
       </ThemeProvider>
-      <Page.Footer />
     </>
   );
 }
