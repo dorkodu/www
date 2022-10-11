@@ -321,29 +321,29 @@ const Copyright = styled.div`
     padding: 0.25rem 0;
 
     span {
-      color: ${tokens.color.gray(70)};
+      color: ${tokens.color.gray(65)};
       letter-spacing: 0.1rem;
     }
   }
 
   .copy {
-    color: ${tokens.color.gray(50)};
+    color: ${tokens.color.gray(72)};
     font-size: 1.25rem;
 
     span {
       padding-right: 0.2rem;
-      color: ${tokens.color.gray(70)};
       font-weight: 900;
     }
   }
 
   .company {
-    color: ${tokens.color.gray(60)};
-    line-height: 1.5rem;
-    font-size: 1.45rem;
+    color: ${tokens.color.gray(70)};
+    line-height: 1.65rem;
+    font-size: 1.65rem;
 
     b {
       font-weight: 700 !important;
+      color: ${tokens.color.gray(60)};
     }
   }
 `;

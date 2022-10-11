@@ -1,6 +1,28 @@
 import { Icon } from "@iconify-icon/react";
 import styled from "@emotion/styled";
 import { tokens, ui } from "../styles/prism";
+import { FunctionComponent } from "react";
+
+interface BulletpointProps {
+  icon: string;
+  children: React.ReactNode;
+}
+
+const Bulletpoint: FunctionComponent<BulletpointProps> = ({
+  icon,
+  children,
+}) => {
+  return (
+    <Root>
+      <Emoji>
+        <Icon icon={icon} width={32} height={32} />
+      </Emoji>
+      <Content>{children}</Content>
+    </Root>
+  );
+};
+
+export default Bulletpoint;
 
 const Root = styled.div`
   display: flex;
@@ -13,11 +35,6 @@ const Emoji = styled.span`
   height: auto !important;
   width: auto !important;
   overflow: visible;
-
-  .icon {
-    width: 2rem;
-    height: 2rem;
-  }
 `;
 
 const Content = styled.div`
@@ -27,25 +44,7 @@ const Content = styled.div`
   justify-content: center;
   gap: 0.5rem;
 
-  * {
-    padding: 0 !important;
-    margin: 0 !important;
+  > * {
     text-align: left;
   }
 `;
-
-interface Props {
-  icon: string;
-  children: React.ReactNode;
-}
-
-export default function Bulletpoint({ icon, children }: Props) {
-  return (
-    <Root>
-      <Emoji>
-        <Icon icon={icon} />
-      </Emoji>
-      <Content>{children}</Content>
-    </Root>
-  );
-}

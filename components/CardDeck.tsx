@@ -1,16 +1,19 @@
 import styled from "@emotion/styled";
+import { FunctionComponent } from "react";
 import { tokens, ui } from "../styles/prism";
 
-interface Props {
+interface CardDeckProps {
   columns?: number;
   children: React.ReactNode;
 }
 
-export default function Card({ columns, children }: Props) {
+const CardDeck: FunctionComponent<CardDeckProps> = ({ columns, children }) => {
   const attrs = columns ? " --" + columns : "";
 
   return <Deck className={attrs}>{children}</Deck>;
-}
+};
+
+export default CardDeck;
 
 const Deck = styled.div`
   display: grid;
