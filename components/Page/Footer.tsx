@@ -144,7 +144,7 @@ const Footer: FunctionComponent = () => {
                 the <br /> <b>dorkodu</b> <br /> company.
               </p>
               <p className="motto">
-                <span>#</span>liberate
+                <span>#</span>liberate.
               </p>
               <p className="copy">
                 <span>&copy;</span>2022
@@ -261,7 +261,7 @@ const Nav = styled.div`
   h4 {
     display: inline-block;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin-bottom: 0.5rem;
     border-bottom: 0.35rem solid ${tokens.color.gray(80)};
     border-radius: 3px;
@@ -273,7 +273,7 @@ const Nav = styled.div`
       display: block;
       a {
         display: inline-block !important;
-        font-size: 1.15rem;
+        font-size: 1.25rem;
         padding: 0.2rem 0.4rem;
         border-radius: 0.25rem;
         color: ${tokens.color.gray(10)};
@@ -351,5 +351,5 @@ const Copyright = styled.div`
 const Root = styled.footer`
   width: 100%;
   background-color: ${tokens.color.gray(90)};
-  border-top: 1rem solid ${tokens.color.gray(95)};
+  border-top: 1rem solid ${tokens.color.gray(93)};
 `;
