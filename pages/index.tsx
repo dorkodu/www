@@ -111,11 +111,10 @@ const Home: NextPage = () => {
             <ParagraphTagline>our purpose</ParagraphTagline>
             <b>we liberate the humankind. </b>
             <br />
-            we want to help people...
+            we work to...
           </p>
           <ul css={style.arrowList}>
-            <li>find their true purpose & passion.</li>
-            <li>actualize themselves.</li>
+            <li>help people find and follow their true purpose.</li>
             <li>create a free and happy life experience for everyone.</li>
             <li>build the utopian dream of heaven on earth.</li>
           </ul>
@@ -126,11 +125,12 @@ const Home: NextPage = () => {
         <Bulletpoint icon="twemoji:bullseye">
           <p css={style.p.mission}>
             <ParagraphTagline>our mission</ParagraphTagline>
-            simple plan! we combine gamification, humane design and our superior
-            technology; to create masterpiece products.
+            we combine gamification, human-friendly design and our superior
+            technology; to create masterpiece products which...
           </p>
           <ul css={style.arrowList}>
-            <li>empower human brilliance</li>
+            <li>empower human brilliance.</li>
+            <li>.</li>
           </ul>
         </Bulletpoint>
         <SectionRuler />

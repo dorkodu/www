@@ -1,10 +1,140 @@
-<script lang="ts" setup>
+import { css } from "@emotion/react";
+import type { NextPage } from "next";
+import Image from "next/image";
+import Button from "../components/Button";
+import Hero from "../components/Hero";
+import Polaroid from "../components/Polaroid";
+import { ButtonContainer, Showcase } from "../styles/blame";
+import { tokens, ui } from "../styles/prism";
+import Page from "../components/Page";
+import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import Bulletpoint from "../components/Bulletpoint";
+import { ParagraphTagline } from "../styles/blame";
+import { Icon } from "@iconify-icon/react";
+import SectionRuler from "../components/SectionRuler";
 
-definePageMeta({
+const meta = {
   title: "work @ dorkodu",
   description: `join the revolution!`,
-  keywords: `work @ dorkodu, careers at dorkodu, careers dorkodu, dorkodu jobs, work at dorkodu,`,
-});
+  keywords: `work @ dorkodu, careers at dorkodu, careers dorkodu, dorkodu jobs, work at dorkodu`,
+  url: "/",
+  image: {
+    src: "/public/images/dorkodu-single.png",
+    alt: "dorkodu logo with single letter.",
+  },
+};
+
+const image = {
+  intro: IntroIllustration,
+};
+
+const style = {
+  hashtag: css`
+    color: ${tokens.color.blue(48)};
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0 !important;
+  `,
+  arrowList: css`
+    position: relative;
+    list-style: none;
+    margin: 0 !important;
+    padding-left: 1.5em;
+    font-size: 1.25rem;
+
+    li:before {
+      content: "⇢";
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: ${tokens.color.gray(75)};
+    }
+  `,
+  p: {
+    mission: css`
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 400;
+    `,
+  },
+};
+
+const Work: NextPage = () => {
+  return (
+    <>
+      <Page.Meta {...meta} />
+
+      <Showcase>
+        <Hero
+          title="welcome!"
+          tagline="dorkodu is the meaningful technology company."
+          statement="we combine gamification, human-centric design with our superior technology
+        to create products that help people actualize themselves."
+        >
+          <p css={style.hashtag}>
+            #life #gamification #productivity
+            <br />
+            #crypto #economics #social #knowledge
+          </p>
+          <ButtonContainer>
+            <Button type="fill" link="#story">
+              our story
+            </Button>
+            <Button type="tonal" link="/work">
+              join us<i>!</i>
+            </Button>
+          </ButtonContainer>
+        </Hero>
+        <Polaroid source={image.intro} />
+      </Showcase>
+
+      <section>
+        <h2>
+          <span>hello, again.</span>&nbsp;
+          <Icon icon="fluent-emoji-flat:waving-hand-light" size={36} />
+        </h2>
+        <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
+          <p css={style.p.mission}>
+            <ParagraphTagline>our purpose</ParagraphTagline>
+            <b>we liberate the humankind. </b>
+            <br />
+            we work to...
+          </p>
+          <ul css={style.arrowList}>
+            <li>help people find and follow their true purpose.</li>
+            <li>create a free and happy life experience for everyone.</li>
+            <li>build the utopian dream of heaven on earth.</li>
+          </ul>
+          <p css={style.p.mission}>
+            <b>...with our meaningful products & technology.</b>
+          </p>
+        </Bulletpoint>
+        <Bulletpoint icon="twemoji:bullseye">
+          <p css={style.p.mission}>
+            <ParagraphTagline>our mission</ParagraphTagline>
+            we combine gamification, human-friendly design and our superior
+            technology; to create masterpiece products which...
+          </p>
+          <ul css={style.arrowList}>
+            <li>empower human brilliance.</li>
+            <li>.</li>
+          </ul>
+        </Bulletpoint>
+        <SectionRuler />
+      </section>
+    </>
+  );
+};
+
+export default Work;
+
+/**
+ * <script lang="ts" setup>
+
+definePageMeta();
 </script>
 
 <template>
@@ -287,3 +417,5 @@ definePageMeta({
 <style lang="scss" scoped>
 
 </style>
+
+ */

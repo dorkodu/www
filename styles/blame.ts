@@ -59,6 +59,6 @@ export const ParagraphTagline = styled.span`
   margin: 0;
   padding: 0;
   font-size: 1.35rem !important;
-  font-weight: 650;
+  font-weight: 700;
   color: ${tokens.color.gray(60)};
 `;
