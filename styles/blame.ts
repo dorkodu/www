@@ -53,3 +53,12 @@ export const Showcase = styled.div`
     flex-direction: row;
   }
 `;
+
+export const ParagraphTagline = styled.span`
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 1.35rem !important;
+  font-weight: 650;
+  color: ${tokens.color.gray(60)};
+`;

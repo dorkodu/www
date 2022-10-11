@@ -150,14 +150,15 @@ export default css`
     padding: 1rem;
 
     ul {
-      margin: 0.5rem 1.5rem;
-      padding: 0.5rem 0;
-      list-style: disc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin: 0.5rem 1rem !important;
+      list-style: disc inside U+25B3;
 
       li {
         color: ${ui.color.neutral(10)};
-        font-size: 1rem;
-        padding-top: 0.25rem;
+        font-size: inherit;
 
         p {
           padding-left: 0 !important;
