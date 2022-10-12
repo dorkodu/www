@@ -196,7 +196,7 @@ const Brand = styled.div`
     line-height: 1.25rem;
     max-width: 20rem;
     font-weight: 450;
-    color: ${tokens.color.gray(45)};
+    color: ${tokens.color.gray(40)};
     float: none !important;
     padding-bottom: 0.75rem;
     border-bottom: 0.25rem dashed ${tokens.color.gray(80)};
@@ -242,7 +242,7 @@ const Logo = styled.div`
     height: 3.5rem;
 
     g {
-      fill: ${tokens.color.gray(75)};
+      fill: ${tokens.color.gray(70)};
     }
   }
 
@@ -351,5 +351,5 @@ const Copyright = styled.div`
 const Root = styled.footer`
   width: 100%;
   background-color: ${tokens.color.gray(90)};
-  border-top: 1rem solid ${tokens.color.gray(93)};
+  border-top: 1rem solid ${tokens.color.gray(94)};
 `;

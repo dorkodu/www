@@ -218,7 +218,7 @@ export default css`
     p {
       margin: 0.5rem;
       margin-bottom: 2rem;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       line-height: 1.35;
       text-align: left;
 

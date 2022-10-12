@@ -21,14 +21,12 @@ const Testimonial: FunctionComponent<TestimonialProps> = ({
         <Icon
           icon="tabler:quote"
           css={css`
-             {
-              display: inline-block;
-              margin-bottom: 1rem;
-              margin-right: 1rem;
-              color: ${ui.color.neutral(80)};
-              width: 4rem;
-              height: 4rem;
-            }
+            display: inline-block;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            color: ${ui.color.neutral(80)};
+            width: 4rem;
+            height: 4rem;
           `}
         />
         <Message>{quote}</Message>

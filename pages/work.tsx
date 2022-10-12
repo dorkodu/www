@@ -7,11 +7,14 @@ import Polaroid from "../components/Polaroid";
 import { ButtonContainer, Showcase } from "../styles/blame";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
-import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import Bulletpoint from "../components/Bulletpoint";
 import { ParagraphTagline } from "../styles/blame";
 import { Icon } from "@iconify-icon/react";
 import SectionRuler from "../components/SectionRuler";
+import Testimonial from "../components/Testimonial";
+
+// images
+import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 
 const meta = {
   title: "work @ dorkodu",
@@ -69,27 +72,57 @@ const Work: NextPage = () => {
 
       <Showcase>
         <Hero
-          title="welcome!"
-          tagline="dorkodu is the meaningful technology company."
-          statement="we combine gamification, human-centric design with our superior technology
-        to create products that help people actualize themselves."
+          title="work"
+          tagline="join the revolution!"
+          statement="dorkodu is a foundation built for empowering the human
+          civilization. we need extraordinary, passionate and hard-working people for this mission."
         >
           <p css={style.hashtag}>
-            #life #gamification #productivity
+            #software #ui/ux #graphics
             <br />
-            #crypto #economics #social #knowledge
+            #design #economics #knowledge
           </p>
           <ButtonContainer>
             <Button type="fill" link="#story">
-              our story
+              continue
             </Button>
-            <Button type="tonal" link="/work">
-              join us<i>!</i>
+            <Button type="tonal" link="/business">
+              be an investor<i>!</i>
             </Button>
           </ButtonContainer>
         </Hero>
         <Polaroid source={image.intro} />
       </Showcase>
+
+      <section>
+        <article>
+          <h3>let&apos;s work together!</h3>
+          <p>
+            at dorkodu, we understand that our worldwide success can only come
+            from our diverse workforce.
+          </p>
+          <Polaroid source={image.intro} description="our team & culture." />
+          <p>
+            dorkodians relish the freedom to create the next generation of
+            technologies in an environment designed to foster collaboration,
+            creativity, health and happiness.
+          </p>
+          <Polaroid source={image.intro} description="our team & culture." />
+
+          <p>
+            building &quot;insanely great&quot; products depends on great
+            people.
+          </p>
+          <p>
+            dorkodu is where individual imaginations gather together, committing
+            to the vaoues that lead to great work.
+          </p>
+          <p>
+            here you will do more than join something, you will add something.
+          </p>
+          <p></p>
+        </article>
+      </section>
 
       <section>
         <h2>
@@ -125,6 +158,69 @@ const Work: NextPage = () => {
         </Bulletpoint>
         <SectionRuler />
       </section>
+      <section>
+        <article>
+          <h3>our company is built on community.</h3>
+          <p>
+            dorkodu is organized for creativity; by functional specialities
+            rather than business units. we're artists leading artists. in any
+            area; technical experts, unique thinkers, feelers with empathy. best
+            designers lead design; best software artisans lead software.
+          </p>
+          <p>this makes dorkodu different from other archaic tech companies.</p>
+          <p>
+            we prefer to recruit our own talents. if you have prior technical
+            experience, that's awesome! but you have to learn to think "the
+            dorkodian way".
+            <b>we are here to help you actualize yourself.</b>
+          </p>
+          <p>
+            find yourself a purpose. do the work you are passionate about. build
+            your character. believe in your values. work within your principles.
+            make your dreams come true.
+          </p>
+          <p>
+            dorkodu is unique because of our approach to work:
+            <b>
+              folks who has more experience, intuition and passion always makes
+              the right decisions.
+            </b>
+            we don't like managers. we love creative people, who think, design
+            and build. a craftsperson can easily learn management, marketing,
+            sales, finance or any other formal stuff.
+          </p>
+          <p>
+            leaders at dorkodu combine their expertise with important
+            characteristics: focus on the details without losing the sight of
+            the bigger picture. with a willingness to collaboratively debate
+            during collective decision-making. for people here, it's liberating
+            to work with experts who offer relevant guidance and mentoring. this
+            approach to leadership is a commitment to collaboration that leads
+            to innovation.
+          </p>
+          <p>
+            dorkodu is an equal opportunity employer. employment here is based
+            solely upon one's individual merit and qualifications directly
+            related to professional competence. we don't discriminate on the
+            basis of race, color, religion, national origin, ancestry, pregnancy
+            status, sex, age, marital status, disability, medical condition,
+            sexual orientation, gender identity, or any other characteristics
+            protected by law.
+          </p>
+        </article>
+        <Testimonial
+          name="doruk eray"
+          title="founder & chief"
+          quote="dorkodu is where you'll work with others who share your passion. where business serves expertise, where a healthy respect for courage and original thinking  
+        inspires you to bring your best to what we do together."
+        />
+      </section>
+      <Hero
+        title="life at dorkodu"
+        tagline=""
+        statement="explore a collaborative culture of inclusion, growth and originality;
+        supported by resources that make a difference in your life"
+      />
     </>
   );
 };
@@ -145,8 +241,7 @@ definePageMeta();
         <Hero :data="{
           title: `work`,
           tagline: `join the revolution.`,
-          statement: `we want dorkodu to be a foundation that will make an impact on the human
-          civilization. so we need extraordinary, passionate and hard-working people to pursue this goal.`
+          statement: ``
         }">
         </Hero>
 
@@ -158,24 +253,7 @@ definePageMeta();
 
     <Break />
 
-    <section>
-      <article>
-        <h3>let's work together!</h3>
-        <p>at dorkodu, we understand that our worldwide success can only come from our diverse workforce.</p>
-        <Picture source="/images/undraw_engineering_team_a7n2.svg" title="our team & culture." />
-        <p>
-          dorkodians relish the freedom to create the next generation of technologies in an environment designed to
-          foster collaboration, creativity, health and happiness.
-        </p>
-        <Picture source="/images/undraw_working_re_ddwy.svg" title="our team & culture." />
-
-        <p>building "insanely great" products depends on great people.</p>
-        <p>
-          dorkodu is where individual imaginations gather together, committing to the vaoues that lead to great work.
-        </p>
-        <p>here you will do more than join something, you will add something.</p>
-        <p></p>
-      </article>
+    
 
       <Hero :data="{
         title:`work at dorkodu`,
@@ -183,65 +261,7 @@ definePageMeta();
         statement: `discover how you can make an impact: see our areas of work: from revolutionary products to breakthrough technologies. also we have opportunities for students.` 
       }" />
 
-      <Hero :data="{
-        title:`life at dorkodu`,
-        tagline: ``,
-        statement: `explore a collaborative culture of inclusion, growth and originality;
-        supported by resources that make a difference in your life` 
-      }" />
 
-      <Testimonial :data="{
-        name: `doruk eray`,
-        title: `founder & chief`,
-        quote: `dorkodu is where you'll work with others who share your passion. 
-        where business serves expertise, where a healthy respect for courage and original thinking 
-        inspires you to bring your best to what we do together.` 
-      }" />
-
-      <article>
-        <h3>our company is built on community.</h3>
-        <p>
-          dorkodu is organized for creativity; by functional specialities rather than business units.
-          we're artists leading artists. in any area; technical experts, unique thinkers, feelers with empathy.
-          best designers lead design;
-          best software artisans lead software.
-        </p>
-        <p>this makes dorkodu different from other archaic tech companies.</p>
-        <p>
-          we prefer to recruit our own talents.
-          if you have prior technical experience, that's awesome!
-          but you have to learn to think "the dorkodian way".
-          <b>we are here to help you actualize yourself.</b>
-        </p>
-        <p>
-          find yourself a purpose.
-          do the work you are passionate about.
-          build your character.
-          believe in your values.
-          work within your principles.
-          make your dreams come true.
-        </p>
-        <p>
-          dorkodu is unique because of our approach to work:
-          <b>folks who has more experience, intuition and passion always makes the right decisions.</b>
-          we don't like managers. we love creative people, who think, design and build.
-          a craftsperson can easily learn management, marketing, sales, finance or any other formal stuff.
-        </p>
-        <p>
-          leaders at dorkodu combine their expertise with important characteristics:
-          focus on the details without losing the sight of the bigger picture.
-          with a willingness to collaboratively debate during collective decision-making.
-          for people here, it's liberating to work with experts who offer relevant guidance and mentoring.
-          this approach to leadership is a commitment to collaboration that leads to innovation.
-        </p>
-        <p>
-          dorkodu is an equal opportunity employer. employment here is based solely upon one's individual merit and
-          qualifications directly related to professional competence. we don't discriminate on the basis of race, color,
-          religion, national origin, ancestry, pregnancy status, sex, age, marital status, disability, medical
-          condition, sexual orientation, gender identity, or any other characteristics protected by law.
-        </p>
-      </article>
-    </section>
 
     <article>
       <h2>
