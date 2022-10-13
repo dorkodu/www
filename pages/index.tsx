@@ -1,17 +1,24 @@
 import { css } from "@emotion/react";
 import type { NextPage } from "next";
-import Image from "next/image";
-import Button from "../components/Button";
-import Hero from "../components/Hero";
-import Polaroid from "../components/Polaroid";
-import { ButtonContainer, Showcase } from "../styles/blame";
 import { tokens, ui } from "../styles/prism";
-import Page from "../components/Page";
-import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
-import Bulletpoint from "../components/Bulletpoint";
-import { ParagraphTagline } from "../styles/blame";
 import { Icon } from "@iconify-icon/react";
+import Image from "next/image";
+
+// components
+import { ButtonContainer, Showcase, ParagraphTagline } from "../styles/blame";
 import SectionRuler from "../components/SectionRuler";
+import LinkButton from "../components/LinkButton";
+import Member from "../components/Member";
+import CardDeck from "../components/CardDeck";
+import Page from "../components/Page";
+import Bulletpoint from "../components/Bulletpoint";
+import Hero from "../components/Hero";
+import Button from "../components/Button";
+import Polaroid from "../components/Polaroid";
+
+// images
+import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -26,6 +33,7 @@ const meta = {
 
 const image = {
   intro: IntroIllustration,
+  team: ExpertsIllustration,
 };
 
 const style = {
@@ -60,6 +68,7 @@ const style = {
       font-weight: 400;
     `,
   },
+  JoinUsAd: css``,
 };
 
 const Home: NextPage = () => {
@@ -111,10 +120,11 @@ const Home: NextPage = () => {
             <ParagraphTagline>our purpose</ParagraphTagline>
             <b>we liberate the humankind. </b>
             <br />
-            we work to...
+            we want to help people...
           </p>
           <ul css={style.arrowList}>
-            <li>help people find and follow their true purpose.</li>
+            <li>find their true purpose & passion.</li>
+            <li>actualize themselves.</li>
             <li>create a free and happy life experience for everyone.</li>
             <li>build the utopian dream of heaven on earth.</li>
           </ul>
@@ -125,8 +135,8 @@ const Home: NextPage = () => {
         <Bulletpoint icon="twemoji:bullseye">
           <p css={style.p.mission}>
             <ParagraphTagline>our mission</ParagraphTagline>
-            we combine gamification, human-friendly design and our superior
-            technology; to create masterpiece products which...
+            simple plan! we combine gamification, humane design and our superior
+            technology; to create masterpiece products.
           </p>
           <ul css={style.arrowList}>
             <li>empower human brilliance.</li>
@@ -135,83 +145,80 @@ const Home: NextPage = () => {
         </Bulletpoint>
         <SectionRuler />
       </section>
+
+      <section>
+        <div
+          css={css`
+            text-align: center;
+          `}
+        >
+          <LinkButton action="read more" title="work @ dorkodu" link="/work" />
+          <LinkButton
+            action="read more"
+            title="our business"
+            link="/business"
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>our people</h2>
+        <Polaroid source={image.team} />
+        <Member
+          name="doruk eray"
+          title="founder & chief"
+          about="cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business."
+          avatar="/images/doruk--green.png"
+          icons={
+            <>
+              <Icon icon="tabler:flag-3" size={32} />
+              <Icon icon="tabler:tools" size={32} />
+              <Icon icon="tabler:building-bank" size={32} />
+            </>
+          }
+        />
+
+        <Member
+          name="berk cambaz"
+          title="technologist"
+          about="founding engineer, swiss-knife, homebrew software, research & development, open source."
+          avatar="/images/berk.png"
+          icons={
+            <>
+              <Icon icon="tabler:brand-open-source" size={32} />
+              <Icon icon="tabler:cpu" size={32} />
+              <Icon icon="tabler:code" size={32} />
+            </>
+          }
+        />
+        <hr />
+        <CardDeck columns={2}>
+          <Member
+            name="berra uslu"
+            title="rookie"
+            about="freelance creative. graphics, visual arts, media. social justice warrior."
+            icons={
+              <>
+                <Icon icon="tabler:brand-open-source" size={32} />
+                <Icon icon="tabler:cpu" size={32} />
+                <Icon icon="tabler:code" size={32} />
+              </>
+            }
+          />
+          <div css={style.JoinUsAd}>
+            <h4>your name, here.</h4>
+            <p>
+              dorkodu is the best place to work for gen-z. make history, feel
+              real, have fun.
+            </p>
+          </div>
+        </CardDeck>
+      </section>
+
+      <Page.Contact />
+      <br />
     </>
   );
 };
 
 export default Home;
-
-/*
-<Hero :data="{
-      title: `why?`,
-      tagline: `liberate the humankind.`,
-      statement: ``
-    }" center>
-      <template #head>
-
-      </template>
-      <template #content>
-        
-      </template>
-    </Hero>
-
-
-    <section>
-      <div style="text-align: center;">
-        <LinkButton action="read more" title="work @ dorkodu" link="/work" />
-        <LinkButton action="read more" title="our business" link="/business" />
-      </div>
-    </section>
-
-    <section>
-      <h2>our people</h2>
-      <Picture source="/images/undraw_experts_re_i40h.svg" />
-      <TeamMember name="doruk eray" title="founder & chief"
-        about="cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business."
-        avatar="/images/doruk--green.png">
-        <template #icons>
-          <Icon name="tabler:flag-3" size="32" />
-          <Icon name="tabler:tools" size="32" />
-          <Icon name="tabler:building-bank" size="32" />
-        </template>
-        <template #more></template>
-      </TeamMember>
-      <TeamMember name="berk cambaz" title="technologist"
-        about="founding engineer, swiss-knife, homebrew software, research & development, open source."
-        avatar="/images/berk.png">
-        <template #icons>
-          <Icon name="tabler:brand-open-source" size="32" />
-          <Icon name="tabler:cpu" size="32" />
-          <Icon name="tabler:code" size="32" />
-        </template>
-        <template #more></template>
-      </TeamMember>
-      <hr>
-      <CardDeck :columns="2">
-        <TeamMember style="max-width: 360px; margin: 0 auto;" name="berra" title="rookie"
-          about="freelance creative. graphics, visual arts, media. social justice warrior.">
-          <template #icons>
-            <Icon name="tabler:brush" size="32" />
-            <Icon name="tabler:palette" size="32" />
-            <Icon name="tabler:device-tv-old" size="32" />
-          </template>
-          <template #more></template>
-        </TeamMember>
-
-        <div class="JoinUsAd">
-          h4
-        </div>
-
-        <TeamMember class="TeamAdBanner" name="be the next rookie?" title=""
-          about="dorkodu is the best place to work for gen-z. anarchist community">
-
-        </TeamMember>
-
-      </CardDeck>
-    </section>
-
-    <Break />
-
-    <Page.Contact />
-
-*/

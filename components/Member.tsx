@@ -8,7 +8,7 @@ interface MemberProps {
   about?: string;
   avatar?: string;
   icons?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Member: FunctionComponent<MemberProps> = ({

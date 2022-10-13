@@ -260,12 +260,12 @@ const Nav = styled.div`
 
   h4 {
     display: inline-block;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.35rem;
     margin-bottom: 0.5rem;
-    border-bottom: 0.35rem solid ${tokens.color.gray(80)};
     border-radius: 3px;
-    color: ${tokens.color.gray(10)};
+    border-bottom: 0.25rem solid ${tokens.color.gray(80)};
+    color: ${tokens.color.gray(20)};
   }
 
   nav {
