@@ -265,7 +265,7 @@ const Nav = styled.div`
     margin-bottom: 0.5rem;
     border-radius: 3px;
     border-bottom: 0.25rem solid ${tokens.color.gray(80)};
-    color: ${tokens.color.gray(20)};
+    color: ${tokens.color.gray(15)};
   }
 
   nav {

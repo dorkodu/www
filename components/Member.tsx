@@ -1,33 +1,32 @@
 import { css } from "@emotion/react";
+import { Icon } from "@iconify-icon/react";
 import { FunctionComponent } from "react";
 import { ui } from "../styles/prism";
+import { TeamMember } from "../types/dorkodu";
 
 interface MemberProps {
-  name?: string;
-  title?: string;
-  about?: string;
-  avatar?: string;
-  icons?: React.ReactNode;
+  member: TeamMember;
   children?: React.ReactNode;
 }
 
-const Member: FunctionComponent<MemberProps> = ({
-  name,
-  title,
-  about,
-  avatar,
-  icons,
-  children,
-}) => {
+const Member: FunctionComponent<MemberProps> = ({ member, children }) => {
   return (
     <div css={style.root}>
       <div css={style.container}>
-        {avatar && <img css={style.avatar} src={avatar} alt={name} />}
+        {member.avatar && (
+          <img css={style.avatar} src={member.avatar} alt={member.name} />
+        )}
         <div css={style.info}>
-          {icons && <div css={style.icons}>{icons}</div>}
-          {name && <p css={style.name}>{name}</p>}
-          {title && <p css={style.title}>{title}</p>}
-          {about && <p css={style.about}>{about}</p>}
+          {member.icons && (
+            <div css={style.icons}>
+              {member.icons.map((icon, index) => (
+                <Icon icon={icon} width={32} height={32} key={index} />
+              ))}
+            </div>
+          )}
+          {member.name && <p css={style.name}>{member.name}</p>}
+          {member.title && <p css={style.title}>{member.title}</p>}
+          {member.about && <p css={style.about}>{member.about}</p>}
           <div>{children}</div>
         </div>
       </div>
