@@ -19,15 +19,10 @@ const Testimonial: FunctionComponent<TestimonialProps> = ({
     <Root>
       <Container>
         <Icon
-          icon="tabler:quote"
-          css={css`
-            display: inline-block;
-            margin-bottom: 1rem;
-            margin-right: 1rem;
-            color: ${ui.color.neutral(80)};
-            width: 4rem;
-            height: 4rem;
-          `}
+          icon="tabler:blockquote"
+          css={{ color: ui.color.neutral(80) }}
+          width={60}
+          height={60}
         />
         <Message>{quote}</Message>
         <Divider />
@@ -47,44 +42,41 @@ const Root = styled.div`
 `;
 
 const Message = styled.p`
-  font-size: 1.15rem;
-  line-height: 1.6rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   color: ${ui.color.neutral(20)};
   padding: 0;
-  margin: 0;
+  margin: 0.5rem 0;
 `;
 
 const Title = styled.p`
   padding: 0;
-  margin: 0.25rem auto;
-  color: ${ui.color.neutral(70)};
+  margin: 0;
+  color: ${ui.color.neutral(60)};
   font-size: 1.25rem;
   line-height: 1.5rem;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 550;
   max-width: 24rem;
-`;
-
-const Divider = styled.span`
-  display: inline-block;
-  margin: 1.5rem 0 1rem;
-  background-color: ${ui.color.primary(50)};
-  width: 4.8rem;
-  height: 0.4rem;
-  border-radius: 1rem;
 `;
 
 const Name = styled.h4`
   padding: 0;
-  margin: 0.25rem auto;
+  margin: 0;
   color: ${ui.color.neutral(10)};
   font-size: 1.35rem;
-  font-weight: 700;
-  text-align: center;
+  font-weight: 750;
   max-width: 16rem;
 `;
 
+const Divider = styled.span`
+  display: inline-block;
+  margin: 0.75rem 0;
+  background-color: ${ui.color.primary(50)};
+  width: 5rem;
+  height: 0.45rem;
+  border-radius: 1rem;
+`;
+
 const Container = styled.div`
-  text-align: center;
   width: 100%;
 `;
