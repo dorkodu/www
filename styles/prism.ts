@@ -34,7 +34,7 @@ const colors = {
     indigo: 240,
     purple: 270,
     pink: 330,
-    gray: 200,
+    gray: 210,
   },
   baseSaturation: 70, // generate color based on this (default)
   palette: {},

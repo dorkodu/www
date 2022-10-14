@@ -124,6 +124,251 @@ const Work: NextPage = () => {
         </article>
       </section>
 
+      <Hero
+        {...{
+          title: `work at dorkodu`,
+          tagline: `join the revolution, inspire the work, liberate the humankind.`,
+          statement: `discover how you can make an impact: see our areas of work: from revolutionary products to breakthrough technologies. also we have opportunities for students.`,
+        }}
+      />
+
+      <section>
+        <article>
+          <h2>opportunity is knocking...</h2>
+          <p>
+            Dorkodu is a startup based in <u>Istanbul</u>. We believe that
+            Dorkodu has the potential to help billions of people across the
+            globe to get wiser. We create awesome products to pursue our
+            mission. We started off as a small team, but now weʼre growing
+            rapidly.
+          </p>
+
+          <p
+            css={css`
+              text-align: center !important;
+              max-width: 26rem;
+              margin: 0 auto;
+              padding-right: 1rem;
+            `}
+          >
+            <strong>
+              So anyone who joins now can see the future before even outsiders
+              can dream about it.
+            </strong>
+          </p>
+
+          <p
+            css={css`
+              text-align: center !important;
+              max-width: 32rem;
+              margin: 0 auto;
+              padding-right: 1rem;
+            `}
+          >
+            At Dorkodu, our strategy is simple. We hire the{" "}
+            <strong>most knowledgable and passionate</strong> people we can
+            find.
+          </p>
+
+          <p>
+            We place great emphasis on maintaining a humble and intellectually
+            honest environment where everyoneʼs opinion is respected and
+            peopleʼs contributions are acknowledged and rewarded.
+          </p>
+        </article>
+
+        <article>
+          <h2>Why Dorkodu?</h2>
+          <ul>
+            <li>
+              <p>
+                Because you need a <u>purpose</u> at work.
+                <br />
+                <strong>
+                  <u>Because you want do something that matters!</u>
+                </strong>
+              </p>
+            </li>
+            <li>
+              <p>
+                Because you understand that{" "}
+                <strong>
+                  <u>
+                    assuming responsibility is the only way to grow and develop
+                    yourself.
+                  </u>
+                </strong>
+              </p>
+              <p>
+                You don’t grow while you watch sitcoms and chill on your sofa.
+                This is true for both your career and your life.
+              </p>
+            </li>
+            <li>
+              <p>
+                Because you want to{" "}
+                <u>
+                  <strong>
+                    be a part of an awesome team of top-performing individuals.
+                  </strong>
+                </u>
+                You understand that an entourage of self-driven people is the
+                best gift for your future.
+              </p>
+            </li>
+            <li>
+              <p>
+                Because you know to{" "}
+                <strong>
+                  <u>never surrender an opportunity for short-term security.</u>
+                </strong>
+                You can always get a cozy secure job, but a chance to join the
+                revolution is rare.
+              </p>
+            </li>
+          </ul>
+
+          <h3>What we are looking for...</h3>
+          <p>
+            Dorkodu is a type of job where{" "}
+            <u>
+              you are pushed in cold water and you have to learn to swim by
+              yourself
+            </u>
+            . Your personality and your traits matter as much as your technical
+            expertise.
+          </p>
+          <ul>
+            <li>
+              <p>
+                We are looking for an <strong>independent</strong>,{" "}
+                <strong>responsible person.</strong>
+              </p>
+              <p>
+                There is no time for micro-management. We expect you to be able
+                to carry your own weight and be a reliable partner.
+              </p>
+            </li>
+            <li>
+              <p>
+                We are looking for a <strong>fast learner</strong>.
+              </p>
+              <p>
+                We may need to use technologies that you never used before. That
+                should not scare, but excite you.
+              </p>
+              <p>
+                In most cases we may not even know what we need and you may have
+                to propose something.
+              </p>
+            </li>
+            <li>
+              <p>
+                We are looking for you to <strong>get stuff done</strong>.
+              </p>
+              <p>
+                We work in weekly sprints because we believe in consistent
+                delivery over big lengthy releases.
+              </p>
+            </li>
+            <li>
+              <p>
+                We want you to <strong>be proactive</strong>.
+              </p>
+              <p>
+                We appreciate <u>conviction way more than consensus</u>.
+              </p>
+              <p>
+                Words are nice, opinions are cute; but proactivity in action is
+                golden.
+              </p>
+            </li>
+            <li>
+              <p>
+                We want you to <strong>be an over-communicator</strong>.
+              </p>
+              <p>
+                People here work remote and it’s up to you to show your work,
+                explain your ideas or highlight problems.
+              </p>
+            </li>
+            <li>
+              <p>
+                We want you to <strong>be a partner for your workmates</strong>.
+              </p>
+              <p>
+                Provide guidance and help your workmates when they get stuck.
+              </p>
+            </li>
+          </ul>
+
+          <h3>We are a small team, so…</h3>
+          <ul>
+            <li>
+              <p>
+                <strong>
+                  Passion for the problem is our <i>nitro</i>.
+                </strong>
+                Every day is a struggle, but we keep an eye on the prize. We are
+                passionate about helping people learn and improve themselves and
+                that’s what keeps us going.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>We find a way or a make a way.</strong>
+                We focus on difficult problems and need to solve them, for the
+                future of humankind.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>
+                  We thrive in uncertainty, as we have more questions than
+                  answers.
+                </strong>
+                Not problems, but opportunities to learn new things.
+              </p>
+            </li>
+          </ul>
+
+          <h3>Benefits</h3>
+          <ul>
+            <li>
+              <p>
+                <strong>Be an early “workmate”.</strong>
+              </p>
+              <p>
+                Join our high-growth startup to learn new skills and fast track
+                your career growth.
+                <strong>Grow to be a company leader in the future.</strong>
+                Get management opportunities and run your team, even your
+                project.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>You can make your own schedule.</strong>
+              </p>
+              <p>
+                <em>(As long as things happen on time and on spec.)</em>
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Remote-first:</strong> We don’t care when and where you
+                work from.
+              </p>
+            </li>
+            <li>
+              <p>
+                Potential for <strong>stock options</strong> package.
+              </p>
+            </li>
+          </ul>
+        </article>
+      </section>
+
       <section>
         <h2>
           <span>hello, again.</span>&nbsp;
@@ -163,15 +408,15 @@ const Work: NextPage = () => {
           <h3>our company is built on community.</h3>
           <p>
             dorkodu is organized for creativity; by functional specialities
-            rather than business units. we're artists leading artists. in any
+            rather than business units. we’re artists leading artists. in any
             area; technical experts, unique thinkers, feelers with empathy. best
             designers lead design; best software artisans lead software.
           </p>
           <p>this makes dorkodu different from other archaic tech companies.</p>
           <p>
             we prefer to recruit our own talents. if you have prior technical
-            experience, that's awesome! but you have to learn to think "the
-            dorkodian way".
+            experience, that’s awesome! but you have to learn to think “the
+            dorkodian way”.
             <b>we are here to help you actualize yourself.</b>
           </p>
           <p>
@@ -185,7 +430,7 @@ const Work: NextPage = () => {
               folks who has more experience, intuition and passion always makes
               the right decisions.
             </b>
-            we don't like managers. we love creative people, who think, design
+            we don’t like managers. we love creative people, who think, design
             and build. a craftsperson can easily learn management, marketing,
             sales, finance or any other formal stuff.
           </p>
@@ -193,15 +438,15 @@ const Work: NextPage = () => {
             leaders at dorkodu combine their expertise with important
             characteristics: focus on the details without losing the sight of
             the bigger picture. with a willingness to collaboratively debate
-            during collective decision-making. for people here, it's liberating
+            during collective decision-making. for people here, it’s liberating
             to work with experts who offer relevant guidance and mentoring. this
             approach to leadership is a commitment to collaboration that leads
             to innovation.
           </p>
           <p>
             dorkodu is an equal opportunity employer. employment here is based
-            solely upon one's individual merit and qualifications directly
-            related to professional competence. we don't discriminate on the
+            solely upon one’s individual merit and qualifications directly
+            related to professional competence. we don’t discriminate on the
             basis of race, color, religion, national origin, ancestry, pregnancy
             status, sex, age, marital status, disability, medical condition,
             sexual orientation, gender identity, or any other characteristics
@@ -227,39 +472,15 @@ const Work: NextPage = () => {
 
 export default Work;
 
-/**
- * <script lang="ts" setup>
-
-definePageMeta();
-</script>
+/*
 
 <template>
   <main>
-    <Showcase style="margin-top: 0;">
-      <template #main>
-
-        <Hero :data="{
-          title: `work`,
-          tagline: `join the revolution.`,
-          statement: ``
-        }">
-        </Hero>
-
-      </template>
-      <template #side>undraw_experts_re_i40h.svg
-        <Picture source="/images/undraw_co_workers_re_1i6i.svg" title="our team & culture." />
-      </template>
-    </Showcase>
-
     <Break />
 
     
 
-      <Hero :data="{
-        title:`work at dorkodu`,
-        tagline: `join the revolution, inspire the work, liberate the humankind.`,
-        statement: `discover how you can make an impact: see our areas of work: from revolutionary products to breakthrough technologies. also we have opportunities for students.` 
-      }" />
+      
 
 
 
@@ -340,102 +561,4 @@ definePageMeta();
     </Showcase>
 
     <Break />
-
-    <article>
-      <h2>
-        <Icon name="twemoji:open-book" size="36" />&nbsp;
-        story
-      </h2>
-      <p style="text-align: center;">(shortened)</p>
-      <p>
-        <span class="paragraph-tagline">
-          <Icon name="fluent-emoji-flat:baby-light" size="36" />
-        </span>
-        i was a <i>curious</i> and <i>artistic</i> child, and my mom did teach me how to read and write when I was
-        <strong>3</strong>. i loved tinkering with gadgets, to understand how they work and how to build my own things.
-      </p>
-      <p>
-        <strong>i've always been dreaming to be an inventor since then.</strong>
-        <br>this was the start in my life.
-      </p>
-      <p>
-        <span class="paragraph-tagline">
-          <Icon name="fluent-emoji-flat:school" size="36" />
-        </span>
-        when i started elementary school, i spent my whole time <b>reading about history</b> and
-        <b>picturing the moments</b>, drawing battle scenes, maps, events which I just read.
-        this was exciting until i realized that how tables can turn so quickly.
-      </p>
-
-      <Quote message="
-        For the loser now
-      / Will be later to win
-      / For the times they are a-changin'" owner="bob dylan" />
-
-      <h3>New beginnings...</h3>
-      <p>
-        <span class="paragraph-tagline">
-          <Icon name="twemoji:laptop" size="28" />
-        </span>&nbsp;
-        I learned to code when I was <strong>10</strong>, and this was a milestone in my journey.
-        You can build anything you want, and let everyone use it.
-        What you can do is limited only by your skills and imagination.
-      </p>
-      <p>
-        My secondary school years were spent on a <b>search for meaning</b> for my life:
-        <b>personal projects</b> and
-        <b>technical/artistic experimentation</b>, just curiosity.
-      </p>
-      <p>
-        After a boring but successful exam year, I entered <strong>Vefa Lisesi</strong>,
-        a historical high school in Istanbul. There also I met my close friend <a href="berk.dorkodu.com">Berk</a>, who
-        joined me with the foundations of Dorkodu.
-      </p>
-      <h3>Revolutions</h3>
-      <p>
-        <span class="paragraph-tagline">
-          <Icon name="twemoji:leaf-fluttering-in-wind" size="36" />
-        </span>&nbsp;
-        <a href="https://dorkodu.com">Dorkodu</a>
-        was born when I first branded all my work under an umbrella title,
-        I was in secondary school back then.
-        The name is a mixture of <strong>"Doruk" + "code"</strong>.
-      </p>
-      <p>
-        i switched to developing software products and technologies for the internet platform.
-        <i>eureka!</i> a moment of enlightment.
-        <Icon name="twemoji:sparkles" size="20" />
-        then i discovered the internet's unifying power for our civilization.
-      </p>
-      <p>i thought...<br>maybe there is still a room for improvement.</p>
-      <p>
-        i see <b>gamification</b> as a promising method we can use to fix broken parts of human systems & productivity;
-        and combined with the <b>humane spirit</b> in technology and design, <u><b>we can free the internet.</b></u>
-      </p>
-      <p>This is what I dedicated the first chapter of my career to.</p>
-      <p style="display: flex;">
-        <Icon name="twemoji:victory-hand-light-skin-tone" size="28" />
-        <b>to be continued...</b>
-      </p>
-      <SectionRuler />
-      <p>
-        You can visit <a href="https://dorkodu.com">Dorkodu's website</a>
-        to learn more about who we are and what we do.
-      </p>
-    </article>
-
-    <PageContact />
-
-    <Break />
-
-    <PageLegend />
-
-    <Break />
-  </main>
-</template>
-
-<style lang="scss" scoped>
-
-</style>
-
- */
+*/

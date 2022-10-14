@@ -1,75 +1,147 @@
-<script lang="ts" setup>
+import { css } from "@emotion/react";
+import type { NextPage } from "next";
+import Image from "next/image";
+import Button from "../components/Button";
+import Hero from "../components/Hero";
+import Polaroid from "../components/Polaroid";
+import { ButtonContainer, Showcase } from "../styles/blame";
+import { tokens, ui } from "../styles/prism";
+import Page from "../components/Page";
+import Bulletpoint from "../components/Bulletpoint";
+import { ParagraphTagline } from "../styles/blame";
+import { Icon } from "@iconify-icon/react";
+import SectionRuler from "../components/SectionRuler";
+import Testimonial from "../components/Testimonial";
 
-definePageMeta({
+// images
+import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import DescriptiveList from "../components/DescriptiveList";
+import DescriptiveItem from "../components/DescriptiveItem";
+import Quote from "../components/Quote";
+
+const meta = {
   title: "business — dorkodu",
-  description: `liberate the humankind.`,
-  keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
-});
+  description: `join the revolution!`,
+  keywords: `work @ dorkodu, careers at dorkodu, careers dorkodu, dorkodu jobs, work at dorkodu`,
+  url: "/",
+  image: {
+    src: "/public/images/dorkodu-single.png",
+    alt: "dorkodu logo with single letter.",
+  },
+};
+
+const image = {
+  intro: IntroIllustration,
+};
+
+const style = {
+  hashtag: css`
+    color: ${tokens.color.blue(48)};
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0 !important;
+  `,
+  arrowList: css`
+    position: relative;
+    list-style: none;
+    margin: 0 !important;
+    padding-left: 1.5em;
+    font-size: 1.25rem;
+
+    li:before {
+      content: "⇢";
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: ${tokens.color.gray(75)};
+    }
+  `,
+  p: {
+    mission: css`
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 400;
+    `,
+  },
+};
+
+const Work: NextPage = () => {
+  return (
+    <>
+      <Page.Meta {...meta} />
+
+      <Showcase>
+        <Hero
+          {...{
+            title: `our business`,
+            tagline: `company insights for investors, sponsors and our community.`,
+            statement: `dorkodu is not a conventional company. we do not intend to be one. staying humble and focusing on creating
+          value is our only ambition.`,
+          }}
+        >
+          <p css={style.hashtag}>
+            #software #ui/ux #graphics
+            <br />
+            #design #economics #knowledge
+          </p>
+          <ButtonContainer>
+            <Button type="fill" link="#story">
+              continue
+            </Button>
+            <Button type="tonal" link="/business">
+              be an investor<i>!</i>
+            </Button>
+          </ButtonContainer>
+        </Hero>
+        <Polaroid source={image.intro} />
+      </Showcase>
+
+      <section>
+        <article>
+          <h3>letʼs work together!</h3>
+          <p>
+            at dorkodu, we understand that our worldwide success can only come
+            from our diverse workforce.
+          </p>
+          <Polaroid source={image.intro} description="our team & culture." />
+        </article>
+      </section>
+
+      <section>
+        <Showcase>
+          <Testimonial
+            {...{
+              quote: `
+            i founded dorkodu because i believed we can create a technology company with humane principles;
+            this was my dream at first;
+            then became dorkodu's mission.`,
+              name: "doruk eray",
+              title: "founder & chief",
+            }}
+          />
+          <Polaroid source={image.intro} />
+        </Showcase>
+      </section>
+    </>
+  );
+};
+
+export default Work;
+
+/*
+ <script lang="ts" setup>
+
+definePageMeta();
 
 </script> 
   
 <template>
   <main>
-    <Showcase style="margin-top: 0;">
-      <template #main>
-        <Hero :data="{
-          title: `our business`,
-          tagline: `company insights for investors, sponsors and our community.`,
-          statement: `dorkodu is not a conventional company. we do not intend to be one. staying humble and focusing on creating
-          value is our only ambition.`
-        }" style="margin-top: 0 !important;">
-        </Hero>
-      </template>
-      <template #side>
-        <Picture source="/images/undraw_experts_re_i40h.svg" />
-      </template>
-    </Showcase>
-
-    <Break />
-
-    <Hero :data="{
-      title: `hello`,
-      tagline: `hello`,
-      statement: `hello`
-    }" center>
-      <template #head></template>
-      <template #content></template>
-    </Hero>
-
     <Showcase>
       <template #main>
-        <DescriptiveList icon="tabler:building" title="company overview" message="">
-
-          <DescriptiveItem title="our name"
-            description="our founder doruk eray wanted to create a unique word for easily getting a .com domain. so our name ended up being 'dorkodu', doruk + code.">
-            <Icon name="twemoji:fire" size="32" />
-          </DescriptiveItem>
-
-          <DescriptiveItem title="technology"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
-            <Icon name="twemoji:fire" size="32" />
-          </DescriptiveItem>
-
-          <DescriptiveItem title="business"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
-            <Icon name="twemoji:fire" size="32" />
-          </DescriptiveItem>
-
-          <DescriptiveItem title="culture"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
-            <Icon name="twemoji:fire" size="32" />
-          </DescriptiveItem>
-
-          <DescriptiveItem title="management"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, aspernatur.">
-            <Icon name="twemoji:fire" size="32" />
-          </DescriptiveItem>
-
-          <DescriptiveItem title="goals" description="we want dorkodu to be the best gamification">
-            <Icon name="twemoji:fire" size="32" />
-          </DescriptiveItem>
-
-        </DescriptiveList>
       </template>
       <template #side>
 
@@ -138,4 +210,4 @@ definePageMeta({
 <style lang="scss">
 @import "styles";
 </style>
-    
+    */

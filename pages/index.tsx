@@ -68,7 +68,10 @@ const style = {
       font-weight: 400;
     `,
   },
-  JoinUsAd: css``,
+  JoinUsAd: css`
+    padding: 1rem;
+    background-color: aliceblue;
+  `,
 };
 
 const Home: NextPage = () => {
@@ -164,46 +167,38 @@ const Home: NextPage = () => {
       <section>
         <h2>our people</h2>
         <Polaroid source={image.team} />
+        <p>Lorem ipsum dolor sit amet.</p>
         <Member
-          name="doruk eray"
-          title="founder & chief"
-          about="cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business."
-          avatar="/images/doruk--green.png"
-          icons={
-            <>
-              <Icon icon="tabler:flag-3" size={32} />
-              <Icon icon="tabler:tools" size={32} />
-              <Icon icon="tabler:building-bank" size={32} />
-            </>
-          }
+          member={{
+            name: "doruk eray",
+            title: "founder & chief",
+            about:
+              "cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business.",
+            avatar: "/images/doruk--green.png",
+            icons: ["tabler:flag-3", "tabler:tools", "tabler:building-bank"],
+          }}
         />
 
         <Member
-          name="berk cambaz"
-          title="technologist"
-          about="founding engineer, swiss-knife, homebrew software, research & development, open source."
-          avatar="/images/berk.png"
-          icons={
-            <>
-              <Icon icon="tabler:brand-open-source" size={32} />
-              <Icon icon="tabler:cpu" size={32} />
-              <Icon icon="tabler:code" size={32} />
-            </>
-          }
+          member={{
+            name: "berk cambaz",
+            title: "technologist",
+            about:
+              "founding engineer, swiss-knife, homebrew software, research & development, open source.",
+            avatar: "/images/berk.png",
+            icons: ["tabler:brand-open-source", "tabler:cpu", "tabler:code"],
+          }}
         />
         <hr />
         <CardDeck columns={2}>
           <Member
-            name="berra uslu"
-            title="rookie"
-            about="freelance creative. graphics, visual arts, media. social justice warrior."
-            icons={
-              <>
-                <Icon icon="tabler:brand-open-source" size={32} />
-                <Icon icon="tabler:cpu" size={32} />
-                <Icon icon="tabler:code" size={32} />
-              </>
-            }
+            member={{
+              name: "berra uslu",
+              title: "rookie",
+              about:
+                "freelance creative. graphics, visual arts, media. social justice warrior.",
+              icons: ["tabler:brand-open-source"],
+            }}
           />
           <div css={style.JoinUsAd}>
             <h4>your name, here.</h4>
