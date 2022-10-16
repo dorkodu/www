@@ -69,7 +69,7 @@ const style = css`
       left: 0;
       font-weight: 600;
       font-size: 1.5rem;
-      line-height: 1.5rem;
+      line-height: 0.8;
       color: ${ui.color.secondary(80)};
     }
 

@@ -12,9 +12,11 @@ import { ParagraphTagline } from "../styles/blame";
 import { Icon } from "@iconify-icon/react";
 import SectionRuler from "../components/SectionRuler";
 import Testimonial from "../components/Testimonial";
+import Role from "../components/Work/Role";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import { WorkRole } from "../types/dorkodu";
 
 const meta = {
   title: "work @ dorkodu",
@@ -78,13 +80,12 @@ const Work: NextPage = () => {
           civilization. we need extraordinary, passionate and hard-working people for this mission."
         >
           <p css={style.hashtag}>
-            #software #ui/ux #graphics
-            <br />
-            #design #economics #knowledge
+            #software #ui/ux #design #graphics #people #marketing #data #finance
+            #legal #operations #economics #legal
           </p>
           <ButtonContainer>
             <Button type="fill" link="#story">
-              see open roles
+              explore openings
             </Button>
             <Button type="tonal" link="/business">
               sponsor!
@@ -94,10 +95,31 @@ const Work: NextPage = () => {
         <Polaroid source={image.intro} />
       </Showcase>
 
+      <Showcase>
+        <Page.Index
+          items={[
+            ["#lorem", "lorem"],
+            ["#lorem", "lorem ipsum"],
+            ["#lorem", "about us"],
+            ["#lorem", "open roles"],
+            ["#lorem", "some boring stuff"],
+          ]}
+        />
+        <article>
+          <h2>opportunities at dorkodu</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+            illo sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem
+            impedit placeat optio? Nulla, sequi labore!
+          </p>
+        </article>
+      </Showcase>
+
       <section>
         <article>
           <h2>open roles</h2>
           <p></p>
+          <Role role={roles.ProductDesigner} />
         </article>
       </section>
 
@@ -130,14 +152,6 @@ const Work: NextPage = () => {
           <p></p>
         </article>
       </section>
-
-      <Hero
-        {...{
-          title: `work at dorkodu`,
-          tagline: `join the revolution, inspire the work, liberate the humankind.`,
-          statement: `discover how you can make an impact: see our areas of work: from revolutionary products to breakthrough technologies. also we have opportunities for students.`,
-        }}
-      />
 
       <section>
         <article>
@@ -473,11 +487,33 @@ const Work: NextPage = () => {
         statement="explore a collaborative culture of inclusion, growth and originality;
         supported by resources that make a difference in your life"
       />
+
+      <Showcase></Showcase>
     </>
   );
 };
 
 export default Work;
+
+const roles: Record<string, WorkRole> = {
+  ProductDesigner: {
+    title: "product designer",
+    domain: "trekie",
+    tags: ["design", "product", "messaging"],
+    summary:
+      "We are looking for an experienced, creative and passionate Product Designer to play a key role in our engineering and art work so you should be able to write a little code to prototype what you design.",
+    location: "new york",
+    type: "permanent",
+    responsibility: [
+      "Be at the intersection of art and engineering to design and prototype new features for our unique products.",
+      "Design and ship products of the highest quality with the clean, simple and awesome style for which Dorkodu should be known.",
+    ],
+    requirements: [
+      "Strong portfolio featuring your design samples or self-launched products.",
+      "3+ years of experience building web applications.",
+    ],
+  },
+};
 
 /*
 

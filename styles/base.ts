@@ -140,7 +140,8 @@ export default css`
     overflow: hidden;
     background: transparent;
     border: 0;
-    border-bottom: 0.25rem solid ${ui.color.neutral(95)};
+    border-radius: 100rem;
+    border-bottom: 0.25rem solid ${ui.color.neutral(90)};
   }
 
   article,
@@ -223,12 +224,12 @@ export default css`
       text-align: left;
 
       a {
-        color: ${ui.color.secondary(50)};
+        color: ${ui.color.secondary(45)};
         font-weight: 600;
         text-decoration: underline;
 
         &:hover {
-          color: ${ui.color.secondary(30)};
+          color: ${ui.color.secondary(65)};
         }
       }
     }
