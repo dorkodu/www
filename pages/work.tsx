@@ -84,15 +84,22 @@ const Work: NextPage = () => {
           </p>
           <ButtonContainer>
             <Button type="fill" link="#story">
-              continue
+              see open roles
             </Button>
             <Button type="tonal" link="/business">
-              be an investor<i>!</i>
+              sponsor!
             </Button>
           </ButtonContainer>
         </Hero>
         <Polaroid source={image.intro} />
       </Showcase>
+
+      <section>
+        <article>
+          <h2>open roles</h2>
+          <p></p>
+        </article>
+      </section>
 
       <section>
         <article>

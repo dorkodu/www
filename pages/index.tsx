@@ -15,6 +15,7 @@ import Bulletpoint from "../components/Bulletpoint";
 import Hero from "../components/Hero";
 import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
+import { JoinUsBanner } from "../components/_shared";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
@@ -68,10 +69,32 @@ const style = {
       font-weight: 400;
     `,
   },
-  JoinUsAd: css`
-    padding: 1rem;
-    background-color: aliceblue;
-  `,
+};
+
+const members = {
+  doruk: {
+    name: "doruk eray",
+    title: "founder & chief",
+    about:
+      "cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business.",
+    avatar: "/images/doruk--green.png",
+    icons: ["tabler:flag-3", "tabler:tools", "tabler:building-bank"],
+  },
+  berk: {
+    name: "berk cambaz",
+    title: "technologist",
+    about:
+      "founding engineer, swiss-knife, homebrew software, research & development, open source.",
+    avatar: "/images/berk.png",
+    icons: ["tabler:brand-open-source", "tabler:cpu", "tabler:code"],
+  },
+  berra: {
+    name: "berra uslu",
+    title: "rookie",
+    about:
+      "freelance creative. graphics, visual arts, media. social justice warrior.",
+    icons: ["tabler:brand-open-source"],
+  },
 };
 
 const Home: NextPage = () => {
@@ -138,13 +161,9 @@ const Home: NextPage = () => {
         <Bulletpoint icon="twemoji:bullseye">
           <p css={style.p.mission}>
             <ParagraphTagline>our mission</ParagraphTagline>
-            simple plan! we combine gamification, humane design and our superior
-            technology; to create masterpiece products.
+            we combine gamification, human-centric design and our superior
+            technology; to create products which empower human brilliance.
           </p>
-          <ul css={style.arrowList}>
-            <li>empower human brilliance.</li>
-            <li>.</li>
-          </ul>
         </Bulletpoint>
         <SectionRuler />
       </section>
@@ -168,45 +187,12 @@ const Home: NextPage = () => {
         <h2>our people</h2>
         <Polaroid source={image.team} />
         <p>Lorem ipsum dolor sit amet.</p>
-        <Member
-          member={{
-            name: "doruk eray",
-            title: "founder & chief",
-            about:
-              "cult leader, product polymath, lunatic craftsman. revolutionist. software, ui/ux, artwork, business.",
-            avatar: "/images/doruk--green.png",
-            icons: ["tabler:flag-3", "tabler:tools", "tabler:building-bank"],
-          }}
-        />
-
-        <Member
-          member={{
-            name: "berk cambaz",
-            title: "technologist",
-            about:
-              "founding engineer, swiss-knife, homebrew software, research & development, open source.",
-            avatar: "/images/berk.png",
-            icons: ["tabler:brand-open-source", "tabler:cpu", "tabler:code"],
-          }}
-        />
+        <Member member={members.doruk} />
+        <Member member={members.berk} />
         <hr />
         <CardDeck columns={2}>
-          <Member
-            member={{
-              name: "berra uslu",
-              title: "rookie",
-              about:
-                "freelance creative. graphics, visual arts, media. social justice warrior.",
-              icons: ["tabler:brand-open-source"],
-            }}
-          />
-          <div css={style.JoinUsAd}>
-            <h4>your name, here.</h4>
-            <p>
-              dorkodu is the best place to work for gen-z. make history, feel
-              real, have fun.
-            </p>
-          </div>
+          <Member member={members.berra} />
+          <JoinUsBanner />
         </CardDeck>
       </section>
 

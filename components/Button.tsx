@@ -1,10 +1,11 @@
-import styled from "@emotion/styled";
+import { Theme } from "@emotion/react";
+import styled, { Interpolation } from "@emotion/styled";
 import { tokens, ui } from "../styles/prism";
 
 interface Props {
   type: string;
   link: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function Button({ type, link, children }: Props) {
