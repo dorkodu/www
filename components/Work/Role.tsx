@@ -44,13 +44,25 @@ const Role: FunctionComponent<{
         <h4>your role</h4>
         <ul>
           {role.responsibility?.map((responsibility, index) => (
-            <li key={index}>{responsibility}</li>
+            <li
+              key={index}
+              //! we need bold and italic markup, only use secure input.
+              dangerouslySetInnerHTML={{
+                __html: responsibility,
+              }}
+            />
           ))}
         </ul>
         <h4>our expectations</h4>
         <ul>
           {role.requirements?.map((requirement, index) => (
-            <li key={index}>{requirement}</li>
+            <li
+              key={index}
+              //! we need bold and italic markup, only use secure input.
+              dangerouslySetInnerHTML={{
+                __html: requirement,
+              }}
+            />
           ))}
         </ul>
       </div>
@@ -129,7 +141,7 @@ const style = {
     h4 {
       padding: 0;
       margin: 0;
-      color: ${ui.color.neutral(60)};
+      color: ${ui.color.neutral(65)};
       font-size: 1.35rem;
       font-weight: 700;
     }
@@ -149,6 +161,7 @@ const style = {
       list-style: none;
       padding-left: 1.5em;
       font-size: 1.25rem;
+      margin-left: 0 !important;
 
       li:before {
         content: "↪";
@@ -157,7 +170,7 @@ const style = {
         font-weight: 600;
         font-size: 1.5rem;
         line-height: 1;
-        color: ${ui.color.neutral(40)};
+        color: ${ui.color.secondary(60)};
       }
 
       li {
@@ -168,7 +181,8 @@ const style = {
   `,
   legal: css`
     display: flex;
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 0.25rem;
     padding: 0 !important;
     margin-top: 1rem;
     flex-wrap: wrap;

@@ -40,7 +40,7 @@ const style = {
       border-radius: 1rem;
       padding: 0.5rem 1rem;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       margin-top: 0.25rem;
       color: ${ui.color.primary(100)};
