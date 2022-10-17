@@ -119,8 +119,8 @@ const Work: NextPage = () => {
         <article>
           <h2>open roles</h2>
           <p></p>
-          <Role role={roles.ProductDesigner} />
         </article>
+        <Role role={roles.ProductDesigner} />
       </section>
 
       <section>
@@ -502,8 +502,8 @@ const roles: Record<string, WorkRole> = {
     tags: ["design", "product", "messaging"],
     summary:
       "We are looking for an experienced, creative and passionate Product Designer to play a key role in our engineering and art work so you should be able to write a little code to prototype what you design.",
-    location: "new york",
-    type: "permanent",
+    location: "remote",
+    type: "full time",
     responsibility: [
       "Be at the intersection of art and engineering to design and prototype new features for our unique products.",
       "Design and ship products of the highest quality with the clean, simple and awesome style for which Dorkodu should be known.",

@@ -93,7 +93,7 @@ const members = {
     title: "rookie",
     about:
       "freelance creative. graphics, visual arts, media. social justice warrior.",
-    icons: ["tabler:brand-open-source"],
+    icons: ["tabler:brush", "tabler:palette", "tabler:device-tv-old"],
   },
 };
 
