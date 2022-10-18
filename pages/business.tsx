@@ -68,7 +68,7 @@ const style = {
   },
 };
 
-const Work: NextPage = () => {
+const Business: NextPage = () => {
   return (
     <>
       <Page.Meta {...meta} />
@@ -99,6 +99,26 @@ const Work: NextPage = () => {
         <Polaroid source={image.intro} />
       </Showcase>
 
+      <Showcase>
+        <Page.Index
+          items={[
+            ["#lorem", "lorem"],
+            ["#lorem", "lorem ipsum"],
+            ["#lorem", "about us"],
+            ["#lorem", "open roles"],
+            ["#lorem", "some boring stuff"],
+          ]}
+        />
+        <article>
+          <h2>opportunities at dorkodu</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+            illo sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem
+            impedit placeat optio? Nulla, sequi labore!
+          </p>
+        </article>
+      </Showcase>
+
       <section>
         <article>
           <h3>letʼs work together!</h3>
@@ -115,9 +135,10 @@ const Work: NextPage = () => {
           <Testimonial
             {...{
               quote: `
-            i founded dorkodu because i believed we can create a technology company with humane principles;
+            i founded dorkodu because i believed
+            we can create a technology company with human-centric values;
             this was my dream at first;
-            then became dorkodu's mission.`,
+            then became dorkodu's purpose.`,
               name: "doruk eray",
               title: "founder & chief",
             }}
@@ -129,85 +150,4 @@ const Work: NextPage = () => {
   );
 };
 
-export default Work;
-
-/*
- <script lang="ts" setup>
-
-definePageMeta();
-
-</script> 
-  
-<template>
-  <main>
-    <Showcase>
-      <template #main>
-      </template>
-      <template #side>
-
-      </template>
-    </Showcase>
-
-    <section>
-      <h2>
-        <span>hello, again.</span>&nbsp;
-        <Icon name="fluent-emoji-flat:waving-hand-light" size="36" />
-      </h2>
-      <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
-        <p style="font-size: 1.25rem; margin: 0; font-weight: 400;">
-          <span class="paragraph-tagline">our purpose</span>
-          <br><b>liberate the humankind.</b>
-        </p>
-      </Bulletpoint>
-      <Bulletpoint icon="twemoji:bullseye">
-        <p style="font-size: 1.25rem; margin: 0; font-weight: 400;">
-          <span class="paragraph-tagline">our mission</span>
-          <br>
-          we combine gamification, human-centric design with our superior technology
-          and create products that help people...
-          <br>create a free and happy life experience for everyone,
-          <br>build the utopian dream of heaven on earth,
-          <br><b>...with our meaningful products & technology.</b>
-        </p>
-      </Bulletpoint>
-      <SectionRuler />
-    </section>
-
-    <section>
-      <h2>our people</h2>
-      <TeamMember name="doruk eray" title="founder & chief"
-        about="cult leader, product polymath, creative psychedelic, progressive craftsman, lunatic. software, ui/ux, artwork, business."
-        avatar="/images/doruk--green.png">
-        <template #icons>
-          <Icon name="tabler:flag-3" size="32" />
-          <Icon name="tabler:tools" size="32" />
-          <Icon name="tabler:building-bank" size="32" />
-        </template>
-        <template #more></template>
-      </TeamMember>
-      <hr>
-      <TeamMember name="berk cambaz" title="technologist"
-        about="Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, enim. Dolorem doloremque similique dolorum repellat minus sequi fugiat nihil?"
-        avatar="/images/berk.png">
-        <template #icons>
-          <Icon name="tabler:brand-open-source" size="32" />
-          <Icon name="tabler:cpu" size="32" />
-          <Icon name="tabler:code" size="32" />
-        </template>
-        <template #more></template>
-      </TeamMember>
-    </section>
-
-    <PageContact />
-
-    <Break />
-
-    <PageLegend />
-
-    <Break />
-  </main>
-</template>
-<style lang="scss">
-@import "styles";
-</style>
-    */
+export default Business;
