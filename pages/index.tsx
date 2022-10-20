@@ -105,7 +105,7 @@ const Home: NextPage = () => {
       <Showcase>
         <Hero
           title="welcome!"
-          tagline="dorkodu is the meaningful technology company."
+          tagline="dorkodu is the dream fulfillment company."
           statement="we combine gamification, human-centric design with our superior technology
         to create products that help people actualize themselves."
         >

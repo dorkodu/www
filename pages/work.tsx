@@ -17,6 +17,9 @@ import Role from "../components/Work/Role";
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import { WorkRole } from "../types/dorkodu";
+import DescriptiveList from "../components/DescriptiveList";
+import DescriptiveItem from "../components/DescriptiveItem";
+import CardDeck from "../components/CardDeck";
 
 const meta = {
   title: "work @ dorkodu",
@@ -120,8 +123,13 @@ const Work: NextPage = () => {
           <h2>open roles</h2>
           <p></p>
         </article>
-        <Role role={roles.ProductDesigner} />
       </section>
+
+      <CardDeck columns={2}>
+        <Role role={roles.SoftwareEngineer} />
+        <Role role={roles.ProductDesigner} />
+        <Role role={roles.WebDeveloper} />
+      </CardDeck>
 
       <section>
         <article>
@@ -513,95 +521,79 @@ const roles: Record<string, WorkRole> = {
       "3+ years of experience building web applications.",
     ],
   },
+  SoftwareEngineer: {
+    title: "Software Engineer",
+    domain: "Technology",
+    tags: ["software", "engineering", "backend"],
+    summary: `
+    Join us,
+    Help build the next-generation technology behind Dorkodu's products.
+    `,
+    location: "Remote",
+    type: "Full Time",
+    responsibility: [
+      `<b>Design, develop and test dorkodu's software components.</b>
+       maintain our codebase, review contributuions and get them ready for production.`,
+      `code complex software using <b>modern web tech stack</b>.`,
+      `<b>Data storage</b> — Use database, file system, cache; ensure high performance with efficiency. Implement security and data protection. `,
+      `<b>web api's</b> — engineer our open web services for maximum performance, developer experience and scale.`,
+      `Collaborate with people from other clans.`,
+    ],
+    requirements: [
+      "<b>Strong portfolio</b> featuring your open-source work or own ideas, knowledge mixed into projects.",
+      `<b>2+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
+      "<b>1+</b> years of experience in web platform.",
+      `<b>high education</b> (≠ school) <b>or equivalent experience</b> in a technical field; with passion for <u>inventiveness</u>.`,
+      `experience with <b>git</b> and <b>*nix</b> environments.`,
+      `you are good at <b>typescript</b>.`,
+      `Experience with <b>more than one programming paradigm</b> <em>(functional, OOP, reactive etc.)</em>
+       and <b>language</b> <em>(like C/C++, Go, Haskell, Rust, C#, Java, Python etc.)</em>`,
+      `Understanding of <b>Computer Science</b> and the <b>philosophy</b> behind software engineering.
+       You <b>digested theory</b> <em>(data structures & algorithms etc.)</em> and can apply them in your favorite language.`,
+      `You enjoy technical challenges and <b>inventing new stuff.</b>`,
+      `<b><u>BONUS</u>;</b> cloud, blockchain, crypto, decentralized web, edge-computing, data science, AI/ML.`,
+    ],
+  },
+  WebDeveloper: {
+    title: "Web Developer",
+    domain: "Product",
+    tags: ["product", "web", "frontend"],
+    summary: `
+    Dorkodu needs an experienced full-stack Web Developer who will bring new product ideas to life by developing progressive web apps.
+  
+Take experience designs and turn them into something alive, like a web app.
+Integrate front-end and back-end code, ensuring design integrity.
+Involve in designing and developing large scale web applications.
+Keep code easy to maintain and contribute. Manage and review code contributed by the rest of the team and work with them to get it ready for production.
+
+
+
+Must have 2+ years experience. With either a solid work background or a great portfolio of self-started projects.
+    `,
+    location: "Remote",
+    type: "Full Time",
+    responsibility: [
+      `<b>Design, develop and test dorkodu's software components.</b>
+       maintain our codebase, review contributuions and get them ready for production.`,
+      `code complex frontends using <b>modern web tech stack</b>.`,
+      ``,
+      `Work closely with creative people from 'art' clan.`,
+    ],
+    requirements: [
+      "<b>Strong portfolio</b> featuring your open-source work or self-started projects.",
+      `<b>2+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
+      "<b>1+</b> years of experience in web platform.",
+      `This role is focused on frontend, but a little backend experience is needed.`,
+      `Are you fluent in acronyms? <b>HTML, SCSS, JS/TS, SPA, PWA.</b> Can you make them work together with your eyes closed?`,
+      `experience with <b>git</b> and <b>*nix</b> environments.`,
+      `you are good at <b>typescript</b>.`,
+      `Experience with <b>React, Vite, Next.js, Sage, Zustand, `,
+      `Knowledge of <b>a major programming language</b>
+      <em>(like C/C++, Go, Haskell, Rust, C#, Java, Python etc.)</em>`,
+      `Understanding of <b>Computer Science</b> and the <b>philosophy</b> behind software engineering.
+       You <b>digested theory</b> <em>(data structures & algorithms etc.)</em> and can apply them in your favorite language.`,
+      `You enjoy technical challenges and <b>inventing new stuff.</b>`,
+      `<b><u>BONUS</u>;</b> cloud, blockchain, crypto, decentralized web, edge-computing, data science, AI/ML.`,
+    ],
+  },
 };
-
-/*
-
-<template>
-  <main>
-    <Break />
-
-    
-
-      
-
-
-
-    <article>
-      <h2>
-        <span>hello, again.</span>&nbsp;
-        <Icon name="fluent-emoji-flat:waving-hand-light" size="36" />
-      </h2>
-      <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
-        <p style="font-size: 1.25rem; margin: 0; font-weight: 400;">
-          <span class="paragraph-tagline">my purpose;</span>
-          <br><b>liberate the human.</b>
-        </p>
-      </Bulletpoint>
-      <Bulletpoint icon="twemoji:bullseye">
-        <p style="font-size: 1.25rem; margin: 0; font-weight: 400;">
-          <span class="paragraph-tagline">my mission;</span>
-          <br>create a free and happy life experience for everyone,
-          <br>build the utopian dream of heaven on earth,
-          <br><b>...with meaningful technology.</b>
-        </p>
-      </Bulletpoint>
-      <SectionRuler />
-    </article>
-
-    <article>
-      <h4> why?</h4>
-      <p>
-        simple. <u>i want to live a free, happy and meaningful life.</u><br />
-        i believe this is a fundemental human right; a livable world & a life worth living.
-        so we need to come together, and create this utopic dream life for everyone.
-      </p>
-      <h4>how?</h4>
-      <p>i am passionate in products, design and software.
-        i am an autodidact (self-taught) so i teach myself the arts of my work:
-        <b>
-          gamification,
-          web 3.0,
-          knowledge,
-          economics,
-          human nature,
-          industrial design
-        </b>
-        and
-        <b>artificial intelligence</b>.
-      </p>
-      <p>
-        i want to achieve a meaningful life, be remembered as an inventor, innovator, artist, a cult leader;
-        or in a single word, a <u><b>protagonist</b></u> in the story of human.
-      </p>
-    </article>
-
-    <Break />
-    <Showcase>
-      <template #main>
-        <DescriptiveList title="know thyself."
-          message="you will probably ask me these common questions. so here is, what i think about myself and life.">
-          <DescriptiveItem title="who i am?"
-            description="thinker, leader, artist, inventor, designer, polymath, idol, revolutionist, entrepreneur.">
-            <Icon name="fluent-emoji-flat:boy-light" size="36" />
-          </DescriptiveItem>
-          <DescriptiveItem title="what i love to do?"
-            description="think, design, code, learn, build, socialize, talk, think, feel... any type of creative activity.">
-            <Icon name="twemoji:glowing-star" size="36" />
-          </DescriptiveItem>
-          <DescriptiveItem title="... for whom?" description="myself, and then everyone.">
-            <Icon name="twemoji:people-hugging" size="36" />
-          </DescriptiveItem>
-          <DescriptiveItem title="why?"
-            description="this is my mission, purpose of life. i always experience the human authenticity, being in the flow and losing sense of time and space.">
-            <Icon name="twemoji:growing-heart" size="36" />
-          </DescriptiveItem>
-        </DescriptiveList>
-      </template>
-      <template #side>
-        <Picture source="/images/dancing.png" title="i love being in the zone ♓️" />
-      </template>
-    </Showcase>
-
-    <Break />
-*/
