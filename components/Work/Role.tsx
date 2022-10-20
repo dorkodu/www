@@ -54,7 +54,7 @@ const Role: FunctionComponent<{
           ))}
         </ul>
         <h4>our expectations</h4>
-        <ul>
+        <ul className="requirements">
           {role.requirements?.map((requirement, index) => (
             <li
               key={index}
@@ -90,15 +90,8 @@ const style = {
   meta: css`
     display: flex;
     flex-direction: column;
-
     background-color: ${ui.color.primary(90)};
     border-bottom: 0.5rem solid ${ui.color.primary(85)};
-
-    h3 {
-    }
-
-    p {
-    }
   `,
   title: css`
     text-align: left;
@@ -150,6 +143,7 @@ const style = {
       color: ${ui.color.neutral(20)};
       margin-bottom: 1rem;
       font-size: 1.25rem;
+      line-height: 1.4;
     }
 
     ul {
@@ -171,6 +165,11 @@ const style = {
         font-size: 1.5rem;
         line-height: 1;
         color: ${ui.color.secondary(60)};
+      }
+
+      &.requirements li:before {
+        content: "+";
+        color: ${ui.color.primary(55)};
       }
 
       li {

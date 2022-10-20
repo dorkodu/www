@@ -70,7 +70,7 @@ const Tagline = styled.h2`
 `;
 
 const Statement = styled.p`
-  margin: 0 !important;
+  margin: 0.25rem 0 !important;
   padding: 0;
   font-weight: 500;
   font-size: 1.25rem;
