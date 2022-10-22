@@ -127,7 +127,6 @@ const Work: NextPage = () => {
 
       <CardDeck columns={2}>
         <Role role={roles.SoftwareEngineer} />
-        <Role role={roles.ProductDesigner} />
         <Role role={roles.WebDeveloper} />
       </CardDeck>
 
@@ -504,23 +503,6 @@ const Work: NextPage = () => {
 export default Work;
 
 const roles: Record<string, WorkRole> = {
-  ProductDesigner: {
-    title: "product designer",
-    domain: "trekie",
-    tags: ["design", "product", "messaging"],
-    summary:
-      "We are looking for an experienced, creative and passionate Product Designer to play a key role in our engineering and art work so you should be able to write a little code to prototype what you design.",
-    location: "remote",
-    type: "full time",
-    responsibility: [
-      "Be at the intersection of art and engineering to design and prototype new features for our unique products.",
-      "Design and ship products of the highest quality with the clean, simple and awesome style for which Dorkodu should be known.",
-    ],
-    requirements: [
-      "Strong portfolio featuring your design samples or self-launched products.",
-      "3+ years of experience building web applications.",
-    ],
-  },
   SoftwareEngineer: {
     title: "Software Engineer",
     domain: "Technology",
@@ -529,23 +511,23 @@ const roles: Record<string, WorkRole> = {
     Join us,
     Help build the next-generation technology behind Dorkodu's products.
     `,
-    location: "Remote",
-    type: "Full Time",
+    location: "Remote/Istanbul",
+    type: "Rookie",
     responsibility: [
       `<b>Design, develop and test dorkodu's software components.</b>
-       maintain our codebase, review contributuions and get them ready for production.`,
-      `code complex software using <b>modern web tech stack</b>.`,
+       Maintain our codebase, review contributuions and get them ready for production.`,
+      `Code complex software using <b>modern web tech stack</b>.`,
       `<b>Data storage</b> — Use database, file system, cache; ensure high performance with efficiency. Implement security and data protection. `,
-      `<b>web api's</b> — engineer our open web services for maximum performance, developer experience and scale.`,
-      `Collaborate with people from other clans.`,
+      `<b>Web API's</b> — Engineer our open web services for maximum performance, developer experience and scale.`,
+      `Collaborate with people from Product and Business clans for internal needs.`,
     ],
     requirements: [
       "<b>Strong portfolio</b> featuring your open-source work or own ideas, knowledge mixed into projects.",
       `<b>2+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
       "<b>1+</b> years of experience in web platform.",
-      `<b>high education</b> (≠ school) <b>or equivalent experience</b> in a technical field; with passion for <u>inventiveness</u>.`,
-      `experience with <b>git</b> and <b>*nix</b> environments.`,
-      `you are good at <b>typescript</b>.`,
+      `<b>High education</b> (≠ school) <b>or equivalent experience</b> in a technical field; with passion for <u>inventiveness</u>.`,
+      `Experience with <b>git</b> and <b>*nix</b> environments.`,
+      `You are good at <b>typescript</b>.`,
       `Experience with <b>more than one programming paradigm</b> <em>(functional, OOP, reactive etc.)</em>
        and <b>language</b> <em>(like C/C++, Go, Haskell, Rust, C#, Java, Python etc.)</em>`,
       `Understanding of <b>Computer Science</b> and the <b>philosophy</b> behind software engineering.
@@ -558,42 +540,64 @@ const roles: Record<string, WorkRole> = {
     title: "Web Developer",
     domain: "Product",
     tags: ["product", "web", "frontend"],
-    summary: `
-    Dorkodu needs an experienced full-stack Web Developer who will bring new product ideas to life by developing progressive web apps.
-  
-Take experience designs and turn them into something alive, like a web app.
-Integrate front-end and back-end code, ensuring design integrity.
-Involve in designing and developing large scale web applications.
-Keep code easy to maintain and contribute. Manage and review code contributed by the rest of the team and work with them to get it ready for production.
-
-
-
-Must have 2+ years experience. With either a solid work background or a great portfolio of self-started projects.
-    `,
-    location: "Remote",
-    type: "Full Time",
+    summary: `Dorkodu needs an experienced Full-Stack Web Developer who will bring new product ideas to life by developing progressive web apps.`,
+    location: "Remote/Istanbul",
+    type: "Rookie",
     responsibility: [
-      `<b>Design, develop and test dorkodu's software components.</b>
-       maintain our codebase, review contributuions and get them ready for production.`,
+      `<b>Design, develop and test dorkodu's web software & design components.</b>
+       Maintain our web platform code, review contributuions and get them ready for production.`,
       `code complex frontends using <b>modern web tech stack</b>.`,
-      ``,
+      `Take UI/UX designs and turn them into something alive, a prototype web app frontend.`,
+      `Involve in development and prototyping of our cross-platform unique design system components using web stack.`,
+      `Integrate frontend and backend code, ensuring design & function integrity.`,
       `Work closely with creative people from 'art' clan.`,
     ],
     requirements: [
-      "<b>Strong portfolio</b> featuring your open-source work or self-started projects.",
-      `<b>2+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
-      "<b>1+</b> years of experience in web platform.",
+      `With either a <b>solid work background</b> or a <b>strong portfolio</b> featuring your open-source work/self-started projects.`,
+      `<b>1+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
+      `<b>2+</b> years of experience in web platform.`,
+      `Are you fluent in acronyms? <b>HTML, CSS, JS/TS, SPA, PWA...</b> Can you make them work together with your eyes closed?`,
       `This role is focused on frontend, but a little backend experience is needed.`,
-      `Are you fluent in acronyms? <b>HTML, SCSS, JS/TS, SPA, PWA.</b> Can you make them work together with your eyes closed?`,
-      `experience with <b>git</b> and <b>*nix</b> environments.`,
-      `you are good at <b>typescript</b>.`,
-      `Experience with <b>React, Vite, Next.js, Sage, Zustand, `,
+      `Experience with <b>Git</b> and <b>*nix</b> environments.`,
+      `You are good at <b>TypeScript</b> and <b>CSS</b>.`,
+      `Experience with <b>React, Vite, Next.js, Zustand/Redux</b> and a <b>CSS methodology</b> <em>(Emotion, Tailwind, SCSS, Styled-Components etc.)</em>`,
       `Knowledge of <b>a major programming language</b>
       <em>(like C/C++, Go, Haskell, Rust, C#, Java, Python etc.)</em>`,
-      `Understanding of <b>Computer Science</b> and the <b>philosophy</b> behind software engineering.
-       You <b>digested theory</b> <em>(data structures & algorithms etc.)</em> and can apply them in your favorite language.`,
-      `You enjoy technical challenges and <b>inventing new stuff.</b>`,
-      `<b><u>BONUS</u>;</b> cloud, blockchain, crypto, decentralized web, edge-computing, data science, AI/ML.`,
+      `Understanding of <b>software engineering philosophies</b>.`,
+      `You enjoy <b>tinkering with challenges</b>, e.g. implementing sophisticated user interfaces.`,
+      `<b><u>BONUS</u>;</b> UI/UX design, graphics, new user platforms like VR/AR, advanced web technologies, open-source etc.`,
+    ],
+  },
+  WebDeveloper: {
+    title: "Web Developer",
+    domain: "Product",
+    tags: ["product", "web", "frontend"],
+    summary: `Dorkodu needs an experienced Full-Stack Web Developer who will bring new product ideas to life by developing progressive web apps.`,
+    location: "Remote/Istanbul",
+    type: "Rookie",
+    responsibility: [
+      `<b>Design, develop and test dorkodu's web software & design components.</b>
+       Maintain our web platform code, review contributuions and get them ready for production.`,
+      `code complex frontends using <b>modern web tech stack</b>.`,
+      `Take UI/UX designs and turn them into something alive, a prototype web app frontend.`,
+      `Involve in development and prototyping of our cross-platform unique design system components using web stack.`,
+      `Integrate frontend and backend code, ensuring design & function integrity.`,
+      `Work closely with creative people from 'art' clan.`,
+    ],
+    requirements: [
+      `With either a <b>solid work background</b> or a <b>strong portfolio</b> featuring your open-source work/self-started projects.`,
+      `<b>1+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
+      `<b>2+</b> years of experience in web platform.`,
+      `Are you fluent in acronyms? <b>HTML, CSS, JS/TS, SPA, PWA...</b> Can you make them work together with your eyes closed?`,
+      `This role is focused on frontend, but a little backend experience is needed.`,
+      `Experience with <b>Git</b> and <b>*nix</b> environments.`,
+      `You are good at <b>TypeScript</b> and <b>CSS</b>.`,
+      `Experience with <b>React, Vite, Next.js, Zustand/Redux</b> and a <b>CSS methodology</b> <em>(Emotion, Tailwind, SCSS, Styled-Components etc.)</em>`,
+      `Knowledge of <b>a major programming/scripting language</b>
+      <em>(like Go, PHP, C#, Java, Python etc.)</em>`,
+      `Understanding of <b>software engineering philosophies</b>.`,
+      `You enjoy <b>tinkering with challenges</b>, e.g. implementing sophisticated user interfaces.`,
+      `<b><u>BONUS</u>;</b> UI/UX design, graphics, new user platforms like VR/AR, advanced web technologies, open-source etc.`,
     ],
   },
 };
