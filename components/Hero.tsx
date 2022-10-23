@@ -63,8 +63,8 @@ const Title = styled.h1`
 const Tagline = styled.h2`
   margin: 0;
   padding: 0;
-  font-size: 1.95rem;
-  line-height: 2rem;
+  font-size: 2.05rem;
+  line-height: 2.25rem;
   font-weight: 800;
   color: ${ui.color.neutral(10)};
 `;

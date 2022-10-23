@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import type { NextPage } from "next";
-import { tokens, ui } from "../styles/prism";
+import { tokens, ui, color } from "../styles/prism";
 import { Icon } from "@iconify-icon/react";
 import Image from "next/image";
 
@@ -20,6 +20,7 @@ import { JoinUsBanner } from "../components/_shared";
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
+import styled from "@emotion/styled";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -101,13 +102,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Page.Meta {...meta} />
-
       <Showcase>
         <Hero
-          title="welcome!"
-          tagline="dorkodu is the dream fulfillment company."
           statement="we combine gamification, human-centric design with our superior technology
         to create products that help people actualize themselves."
+          head={<DorkoduPunchline />}
         >
           <p css={style.hashtag}>
             #life #gamification #productivity
@@ -125,7 +124,6 @@ const Home: NextPage = () => {
         </Hero>
         <Polaroid source={image.intro} />
       </Showcase>
-
       <Hero title="why?" tagline="liberate the humankind." statement="" center>
         <p css={style.p.mission}>
           we are a community of artists, who doesn’t just paint, dance, write
@@ -135,7 +133,6 @@ const Home: NextPage = () => {
           impactful and inspirational.
         </p>
       </Hero>
-
       <section>
         <h2>
           <span>hello, again.</span>&nbsp;
@@ -167,7 +164,6 @@ const Home: NextPage = () => {
         </Bulletpoint>
         <SectionRuler />
       </section>
-
       <section>
         <div
           css={css`
@@ -182,7 +178,6 @@ const Home: NextPage = () => {
           />
         </div>
       </section>
-
       <section>
         <h2>our people</h2>
         <Polaroid source={image.team} />
@@ -195,10 +190,70 @@ const Home: NextPage = () => {
           <JoinUsBanner />
         </CardDeck>
       </section>
-
       <Page.Contact />
       <br />
     </>
+  );
+};
+
+const DorkoduPunchline = () => {
+  const style = {
+    title: css`
+      text-align: left;
+      font-size: 1.9rem;
+      line-height: 2.05rem;
+      margin: 0;
+      color: ${ui.color.neutral(35)};
+      font-weight: 650;
+
+      @media (min-width: ${tokens.viewpoint.tablet}) {
+        font-size: 2.05rem;
+        line-height: 2.1rem;
+      }
+
+      span {
+        display: block;
+      }
+    `,
+    tuneIn: css`
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.05rem;
+      color: ${ui.color.primary(48)};
+
+      background: linear-gradient(
+        0deg,
+        ${ui.color.primary(45)},
+        ${color(80, 80, 70)}
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media (min-width: ${tokens.viewpoint.tablet}) {
+        font-size: 2.95rem;
+        line-height: 3rem;
+      }
+    `,
+    turnOn: css`
+      font-weight: 800;
+      letter-spacing: -0.065rem;
+      color: ${ui.color.neutral(75)};
+    `,
+    dropOut: css`
+      font-weight: 600;
+      color: ${ui.color.neutral(20)};
+      line-height: 1.2;
+    `,
+  };
+
+  return (
+    <h1 css={style.title}>
+      <span css={style.turnOn}>we are your</span>
+      <span css={style.tuneIn}>dream fulfillment</span>
+      <span css={style.dropOut}>technology company.</span>
+    </h1>
   );
 };
 
