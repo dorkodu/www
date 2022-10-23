@@ -35,7 +35,7 @@ const Title = styled.p`
 
 const Action = styled.span`
   display: block;
-  color: ${tokens.color.gray(70)} !important;
+  color: ${tokens.color.gray(65)} !important;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
@@ -47,14 +47,14 @@ const Root = styled.a`
   margin-right: 0.5rem;
   padding: 0.5rem 1.5rem 0.5rem 1rem;
   border-radius: 0.75rem;
-  border: 0.25em solid ${tokens.color.gray(95)};
+  border: 0.25em solid ${tokens.color.gray(90)};
   min-width: 12.5rem;
   text-align: left;
   color: ${tokens.color.gray(70)} !important;
 
   &:hover,
   &:focus {
-    border-color: ${tokens.color.gray(90)} !important;
+    border-color: ${tokens.color.gray(80)} !important;
     text-decoration: underline;
 
     ${Action} {

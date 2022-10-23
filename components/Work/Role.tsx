@@ -29,7 +29,7 @@ const Role: FunctionComponent<{
           </p>
           <p>
             <Icon
-              icon="tabler:calendar"
+              icon="tabler:briefcase"
               className="icon"
               width={30}
               height={30}

@@ -15,7 +15,7 @@ import Bulletpoint from "../components/Bulletpoint";
 import Hero from "../components/Hero";
 import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
-import { JoinUsBanner } from "../components/_shared";
+import { JoinUsBanner, DorkoduPunchline } from "../components/_shared";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
@@ -126,44 +126,12 @@ const Home: NextPage = () => {
       </Showcase>
       <Hero title="why?" tagline="liberate the humankind." statement="" center>
         <p css={style.p.mission}>
-          we are a community of artists, who doesn’t just paint, dance, write
-          poems or play songs. we create products and technology to make the
-          world actually a better place. not just by communicating our opinions
-          through our artwork, but we walk towards our utopia by doing something
-          impactful and inspirational.
+          we are a community of creatives who create impactful and inspirational
+          products with humane technology to make the world actually a better
+          place.
         </p>
       </Hero>
-      <section>
-        <h2>
-          <span>hello, again.</span>&nbsp;
-          <Icon icon="fluent-emoji-flat:waving-hand-light" size={36} />
-        </h2>
-        <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
-          <p css={style.p.mission}>
-            <ParagraphTagline>our purpose</ParagraphTagline>
-            <b>we liberate the humankind. </b>
-            <br />
-            we want to help people...
-          </p>
-          <ul css={style.arrowList}>
-            <li>find their true purpose & passion.</li>
-            <li>actualize themselves.</li>
-            <li>create a free and happy life experience for everyone.</li>
-            <li>build the utopian dream of heaven on earth.</li>
-          </ul>
-          <p css={style.p.mission}>
-            <b>...with our meaningful products & technology.</b>
-          </p>
-        </Bulletpoint>
-        <Bulletpoint icon="twemoji:bullseye">
-          <p css={style.p.mission}>
-            <ParagraphTagline>our mission</ParagraphTagline>
-            we combine gamification, human-centric design and our superior
-            technology; to create products which empower human brilliance.
-          </p>
-        </Bulletpoint>
-        <SectionRuler />
-      </section>
+
       <section>
         <div
           css={css`
@@ -178,10 +146,9 @@ const Home: NextPage = () => {
           />
         </div>
       </section>
+      <Mission />
       <section>
         <h2>our people</h2>
-        <Polaroid source={image.team} />
-        <p>Lorem ipsum dolor sit amet.</p>
         <Member member={members.doruk} />
         <Member member={members.berk} />
         <hr />
@@ -196,65 +163,38 @@ const Home: NextPage = () => {
   );
 };
 
-const DorkoduPunchline = () => {
-  const style = {
-    title: css`
-      text-align: left;
-      font-size: 1.9rem;
-      line-height: 2.05rem;
-      margin: 0;
-      color: ${ui.color.neutral(35)};
-      font-weight: 650;
-
-      @media (min-width: ${tokens.viewpoint.tablet}) {
-        font-size: 2.05rem;
-        line-height: 2.1rem;
-      }
-
-      span {
-        display: block;
-      }
-    `,
-    tuneIn: css`
-      font-size: 2.25rem;
-      line-height: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.05rem;
-      color: ${ui.color.primary(48)};
-
-      background: linear-gradient(
-        0deg,
-        ${ui.color.primary(45)},
-        ${color(80, 80, 70)}
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      @media (min-width: ${tokens.viewpoint.tablet}) {
-        font-size: 2.95rem;
-        line-height: 3rem;
-      }
-    `,
-    turnOn: css`
-      font-weight: 800;
-      letter-spacing: -0.065rem;
-      color: ${ui.color.neutral(75)};
-    `,
-    dropOut: css`
-      font-weight: 600;
-      color: ${ui.color.neutral(20)};
-      line-height: 1.2;
-    `,
-  };
-
-  return (
-    <h1 css={style.title}>
-      <span css={style.turnOn}>we are your</span>
-      <span css={style.tuneIn}>dream fulfillment</span>
-      <span css={style.dropOut}>technology company.</span>
-    </h1>
-  );
-};
-
 export default Home;
+
+const Mission = () => (
+  <section>
+    <h2>
+      <span>hello, again.</span>&nbsp;
+      <Icon icon="fluent-emoji-flat:waving-hand-light" size={36} />
+    </h2>
+    <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
+      <p css={style.p.mission}>
+        <ParagraphTagline>our purpose</ParagraphTagline>
+        <b>we liberate the humankind. </b>
+        <br />
+        we want to help people...
+      </p>
+      <ul css={style.arrowList}>
+        <li>find their true purpose & passion.</li>
+        <li>actualize themselves.</li>
+        <li>create a free and happy life experience for everyone.</li>
+        <li>build the utopian dream of heaven on earth.</li>
+      </ul>
+      <p css={style.p.mission}>
+        <b>...with our meaningful products & technology.</b>
+      </p>
+    </Bulletpoint>
+    <Bulletpoint icon="twemoji:bullseye">
+      <p css={style.p.mission}>
+        <ParagraphTagline>our mission</ParagraphTagline>
+        we combine gamification, human-centric design and our superior
+        technology; to create products which empower human brilliance.
+      </p>
+    </Bulletpoint>
+    <SectionRuler />
+  </section>
+);
