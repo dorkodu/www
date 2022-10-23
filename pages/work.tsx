@@ -128,6 +128,7 @@ const Work: NextPage = () => {
       <CardDeck columns={2}>
         <Role role={roles.SoftwareEngineer} />
         <Role role={roles.WebDeveloper} />
+        <Role role={roles.ProductDesigner} />
       </CardDeck>
 
       <section>
@@ -568,36 +569,32 @@ const roles: Record<string, WorkRole> = {
       `<b><u>BONUS</u>;</b> UI/UX design, graphics, new user platforms like VR/AR, advanced web technologies, open-source etc.`,
     ],
   },
-  WebDeveloper: {
-    title: "Web Developer",
+  ProductDesigner: {
+    title: "Product Designer",
     domain: "Product",
     tags: ["product", "web", "frontend"],
-    summary: `Dorkodu needs an experienced Full-Stack Web Developer who will bring new product ideas to life by developing progressive web apps.`,
+    summary: `
+    We need an experienced, creative and passionate Product Designer 
+    to play a key role in our product clan, 
+    and you should be able to write a little code to prototype what you design.`,
     location: "Remote/Istanbul",
     type: "Rookie",
     responsibility: [
-      `<b>Design, develop and test dorkodu's web software & design components.</b>
-       Maintain our web platform code, review contributuions and get them ready for production.`,
-      `code complex frontends using <b>modern web tech stack</b>.`,
-      `Take UI/UX designs and turn them into something alive, a prototype web app frontend.`,
-      `Involve in development and prototyping of our cross-platform unique design system components using web stack.`,
-      `Integrate frontend and backend code, ensuring design & function integrity.`,
-      `Work closely with creative people from 'art' clan.`,
+      `Be at the intersection of <b>art</b> and <b>technology</b> to design and prototype new features for our products.`,
+      `Take broad, conceptual ideas and turn them into something valuable for our users.`,
+      `<b>Design and ship products</b> of the highest quality with the clean, simple and awesome style for which Dorkodu should be known.`,
+      `Work closely with creative people from <b>Art</b> and <b>Engineering</b> clans, especially UI/UX designers and developers.`,
     ],
     requirements: [
-      `With either a <b>solid work background</b> or a <b>strong portfolio</b> featuring your open-source work/self-started projects.`,
-      `<b>1+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
-      `<b>2+</b> years of experience in web platform.`,
-      `Are you fluent in acronyms? <b>HTML, CSS, JS/TS, SPA, PWA...</b> Can you make them work together with your eyes closed?`,
-      `This role is focused on frontend, but a little backend experience is needed.`,
-      `Experience with <b>Git</b> and <b>*nix</b> environments.`,
-      `You are good at <b>TypeScript</b> and <b>CSS</b>.`,
-      `Experience with <b>React, Vite, Next.js, Zustand/Redux</b> and a <b>CSS methodology</b> <em>(Emotion, Tailwind, SCSS, Styled-Components etc.)</em>`,
-      `Knowledge of <b>a major programming/scripting language</b>
-      <em>(like Go, PHP, C#, Java, Python etc.)</em>`,
-      `Understanding of <b>software engineering philosophies</b>.`,
-      `You enjoy <b>tinkering with challenges</b>, e.g. implementing sophisticated user interfaces.`,
-      `<b><u>BONUS</u>;</b> UI/UX design, graphics, new user platforms like VR/AR, advanced web technologies, open-source etc.`,
+      `With either a <b>solid work background</b> or a <b>strong portfolio</b> featuring your design samples/self-started products.`,
+      `<b>1+</b> years of experience in web platform.`,
+      `<b>2+</b> years of experience working on web, mobile, desktop apps or games.
+       We prefer social/productivity market.`,
+      `Knowledge of <b>gamification, game design</b> etc.`,
+      `Design skills with proficiency in <b>typography, UI, color, layout, iconography, aesthetic sense</b>
+       and how these elements impact user experience.`,
+      `A little experience in <strong>HTML, CSS, JavaScript</strong>.`,
+      `Interest in related fields <i>(like computer science, industrial design, visual arts, cognitive science, psychology, economics etc.)</i>`,
     ],
   },
 };
