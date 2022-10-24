@@ -12,15 +12,17 @@ export const SectionIcon = styled.div`
   stroke: ${ui.color.neutral(70)};
 `;
 
-export const Badge = styled.div`
+export const Badge = css`
   padding: 0.5rem !important;
   border-radius: ${ui.layout.curve};
-  height: 3rem !important;
-  width: 3rem !important;
+  height: 3.5rem !important;
+  width: 3.5rem !important;
 
-  background-color: ${ui.color.primary(80)};
-  color: ${ui.color.primary(45)};
-  stroke-width: 2.25;
+  background-color: ${ui.color.primary(80)} !important;
+  color: ${ui.color.primary(45)} !important;
+  stroke: ${ui.color.primary(45)} !important;
+  fill: ${ui.color.primary(45)} !important;
+  stroke-width: 2.25 !important;
 `;
 
 export const ButtonContainer = styled.div`

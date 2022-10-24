@@ -10,7 +10,7 @@ import Page from "../components/Page";
 import Bulletpoint from "../components/Bulletpoint";
 import { ParagraphTagline } from "../styles/blame";
 import { Icon } from "@iconify-icon/react";
-import SectionRuler from "../components/SectionRuler";
+
 import Testimonial from "../components/Testimonial";
 
 // images

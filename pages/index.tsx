@@ -6,7 +6,7 @@ import Image from "next/image";
 
 // components
 import { ButtonContainer, Showcase, ParagraphTagline } from "../styles/blame";
-import SectionRuler from "../components/SectionRuler";
+
 import LinkButton from "../components/LinkButton";
 import Member from "../components/Member";
 import CardDeck from "../components/CardDeck";
@@ -15,7 +15,11 @@ import Bulletpoint from "../components/Bulletpoint";
 import Hero from "../components/Hero";
 import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
-import { JoinUsBanner, DorkoduPunchline } from "../components/_shared";
+import {
+  JoinUsBanner,
+  DorkoduPunchline,
+  SectionRuler,
+} from "../components/_shared";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";

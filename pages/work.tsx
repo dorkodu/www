@@ -4,13 +4,13 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Polaroid from "../components/Polaroid";
-import { ButtonContainer, Showcase } from "../styles/blame";
+import { Badge, ButtonContainer, Showcase } from "../styles/blame";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
 import Bulletpoint from "../components/Bulletpoint";
 import { ParagraphTagline } from "../styles/blame";
-import { Icon } from "@iconify-icon/react";
-import SectionRuler from "../components/SectionRuler";
+import { Icon, iconExists } from "@iconify-icon/react";
+
 import Testimonial from "../components/Testimonial";
 import Role from "../components/Work/Role";
 
@@ -20,6 +20,8 @@ import { WorkRole } from "../types/dorkodu";
 import DescriptiveList from "../components/DescriptiveList";
 import DescriptiveItem from "../components/DescriptiveItem";
 import CardDeck from "../components/CardDeck";
+import Card from "../components/Card";
+import { SectionRuler } from "../components/_shared";
 
 const meta = {
   title: "work @ dorkodu",
@@ -109,7 +111,15 @@ const Work: NextPage = () => {
           ]}
         />
         <article>
-          <h2>opportunities at dorkodu</h2>
+          <h2
+            css={css`
+              font-size: 2.25rem;
+              line-height: 2.25rem;
+              font-weight: 750;
+            `}
+          >
+            life is about a purpose, not a job.
+          </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
             illo sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem
@@ -125,10 +135,127 @@ const Work: NextPage = () => {
         </article>
       </section>
 
+      <article id="openings">
+        <h2>Opportunities at Dorkodu</h2>
+        <p>
+          If you are interested in having a role at Dorkodu and want to create
+          the future with us,&nbsp;
+          <b>check out the openings below, click job titles to see details</b>,
+          and email us if you&apos;re interested.
+        </p>
+
+        <div style={{ margin: "0 auto" }}></div>
+      </article>
+
+      <CardDeck columns={2}>
+        <Card
+          title="Business"
+          head={
+            <svg css={Badge} viewBox="0 0 24 24">
+              <path
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 21h18M3 10h18M5 6l7-3l7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3"
+              ></path>
+            </svg>
+          }
+          message={`
+          Business branch is responsible for maintaining and growing our
+          company, marketing our products, generating new users and revenue
+          streams, add value to the Dorkodu brand.
+          `}
+        >
+          <ul>
+            <li>
+              <a href="#business-developer">Business Developer</a>
+            </li>
+            <li>
+              <a href="#marketer">Marketing Specialist</a>
+            </li>
+            <li>
+              <a href="#growth-hacker">Growth Hacker</a>
+            </li>
+            <li>
+              <a href="#operations">Operations Specialist</a>
+            </li>
+            <li>
+              <a href="#pr">PR Specialist</a>
+            </li>
+            <li>
+              <a href="#postmaster">Postmaster</a>
+            </li>
+            <li>
+              <a href="#lawyer">Brand and Company Lawyer</a>
+            </li>
+          </ul>
+        </Card>
+        <Card
+          title="Business"
+          head={
+            <svg css={Badge} viewBox="0 0 24 24">
+              <path
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 21h18M3 10h18M5 6l7-3l7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3"
+              ></path>
+            </svg>
+          }
+          message={`
+          Business branch is responsible for maintaining and growing our
+          company, marketing our products, generating new users and revenue
+          streams, add value to the Dorkodu brand.
+          `}
+        >
+          <ul>
+            <li>
+              <a href="#business-developer">Business Developer</a>
+            </li>
+            <li>
+              <a href="#marketer">Marketing Specialist</a>
+            </li>
+            <li>
+              <a href="#growth-hacker">Growth Hacker</a>
+            </li>
+            <li>
+              <a href="#operations">Operations Specialist</a>
+            </li>
+            <li>
+              <a href="#pr">PR Specialist</a>
+            </li>
+            <li>
+              <a href="#postmaster">Postmaster</a>
+            </li>
+            <li>
+              <a href="#lawyer">Brand and Company Lawyer</a>
+            </li>
+          </ul>
+        </Card>
+      </CardDeck>
+
+      <DescriptiveList>
+        <DescriptiveItem
+          title="Business"
+          description={`
+          Business branch is responsible for maintaining and growing our
+          company, marketing our products, generating new users and revenue
+          streams, add value to the Dorkodu brand.
+          `}
+          badge=""
+        ></DescriptiveItem>
+      </DescriptiveList>
+
+      <br />
+      <SectionRuler />
+      <br />
+
       <CardDeck columns={2}>
         <Role role={roles.SoftwareEngineer} />
         <Role role={roles.WebDeveloper} />
         <Role role={roles.ProductDesigner} />
+        <Role role={roles.GraphicsArtist} />
+        <Role role={roles.ExperienceDesigner} />
       </CardDeck>
 
       <section>
@@ -509,8 +636,9 @@ const roles: Record<string, WorkRole> = {
     domain: "Technology",
     tags: ["software", "engineering", "backend"],
     summary: `
-    Join us,
-    Help build the next-generation technology behind Dorkodu's products.
+    We need an experienced/passionate <b>Software Engineer</b>. Join us,
+    Help build the next-generation technology behind Dorkodu's products,
+    create web services & open protocols that can reach a billion people.
     `,
     location: "Remote/Istanbul",
     type: "Rookie",
@@ -520,7 +648,7 @@ const roles: Record<string, WorkRole> = {
       `Code complex software using <b>modern web tech stack</b>.`,
       `<b>Data storage</b> — Use database, file system, cache; ensure high performance with efficiency. Implement security and data protection. `,
       `<b>Web API's</b> — Engineer our open web services for maximum performance, developer experience and scale.`,
-      `Collaborate with people from Product and Business clans for internal needs.`,
+      `Collaborate with people from Product and Business clans for internal IT needs.`,
     ],
     requirements: [
       "<b>Strong portfolio</b> featuring your open-source work or own ideas, knowledge mixed into projects.",
@@ -541,11 +669,13 @@ const roles: Record<string, WorkRole> = {
     title: "Web Developer",
     domain: "Product",
     tags: ["product", "web", "frontend"],
-    summary: `Dorkodu needs an experienced Full-Stack Web Developer who will bring new product ideas to life by developing progressive web apps.`,
+    summary: `
+    We need an experienced <b>Full-stack Web Developer</b> 
+    who will bring new product ideas to life by developing progressive web apps.`,
     location: "Remote/Istanbul",
     type: "Rookie",
     responsibility: [
-      `<b>Design, develop and test dorkodu's web software & design components.</b>
+      `<b>Design, develop and test dorkodu's web software & components.</b>
        Maintain our web platform code, review contributuions and get them ready for production.`,
       `code complex frontends using <b>modern web tech stack</b>.`,
       `Take UI/UX designs and turn them into something alive, a prototype web app frontend.`,
@@ -557,7 +687,7 @@ const roles: Record<string, WorkRole> = {
       `With either a <b>solid work background</b> or a <b>strong portfolio</b> featuring your open-source work/self-started projects.`,
       `<b>1+</b> years of experience in building software using <i>modern tech-stack</i> & <i>engineering practices</i>.`,
       `<b>2+</b> years of experience in web platform.`,
-      `Are you fluent in acronyms? <b>HTML, CSS, JS/TS, SPA, PWA...</b> Can you make them work together with your eyes closed?`,
+      `Are you fluent in acronyms? <b>HTML, CSS, JS/TS, SPA, PWA, SSR...</b> Can you make them work together with your eyes closed?`,
       `This role is focused on frontend, but a little backend experience is needed.`,
       `Experience with <b>Git</b> and <b>*nix</b> environments.`,
       `You are good at <b>TypeScript</b> and <b>CSS</b>.`,
@@ -572,10 +702,10 @@ const roles: Record<string, WorkRole> = {
   ProductDesigner: {
     title: "Product Designer",
     domain: "Product",
-    tags: ["product", "web", "frontend"],
+    tags: ["product", "web", "app", "game"],
     summary: `
-    We need an experienced, creative and passionate Product Designer 
-    to play a key role in our product clan, 
+    We need an experienced, creative and passionate <b>Product Designer</b>
+    to play a key role in our product clan,
     and you should be able to write a little code to prototype what you design.`,
     location: "Remote/Istanbul",
     type: "Rookie",
@@ -595,6 +725,73 @@ const roles: Record<string, WorkRole> = {
        and how these elements impact user experience.`,
       `A little experience in <strong>HTML, CSS, JavaScript</strong>.`,
       `Interest in related fields <i>(like computer science, industrial design, visual arts, cognitive science, psychology, economics etc.)</i>`,
+    ],
+  },
+  GraphicsArtist: {
+    title: "Graphics Artist",
+    domain: "Art",
+    tags: ["art", "graphics", "designer", "illustrator", "visual artist"],
+    summary: `
+    We're a small startup and we have big graphic design needs.
+    So we are looking for an exceptional & enthusiastic <b>Graphics Artist</b>.
+    `,
+    location: "Remote/Istanbul",
+    type: "Rookie",
+    responsibility: [
+      `<b>Design</b> <i>high-impact, result-oriented, polished, pixel-perfect</i> illustrations, presentations, ads, materials, web pages for Product and Business clans.`,
+      `<b>Collaborate</b> with experience designers on new ideas and features for our awesome products.`,
+      `Help us create a <b>unique design language/system.</b>`,
+      `<b>Define, craft and evolve designs</b> within our existing graphics art collection and/or standards.`,
+    ],
+    requirements: [
+      `Must have at least <b>2+</b> years experience, with either a <b>work background</b> or a <b>killer design portfolio</b>.`,
+      `Ability to work in a chaotic, unstructured environment while delivering successful results.`,
+      `Should enjoy doing a little scripting with <b>HTML + CSS</b>, <b>JavaScript/Python</b>  or <b>no-code</b> tools to make the job faster and easier.`,
+      `Knowledge of <b>gamification, game design</b> etc.`,
+      `Design skills with proficiency in <b>typography, UI, color, layout, iconography, aesthetic sense</b>
+       and how these elements impact user experience.`,
+      `Advanced skills in a variety of design tools, <b>screen</b> and <b>print</b>, <b>illustration</b> to <b>video-editing</b> 
+      <i>(like Photoshop/GIMP, Illustrator/Inkscape, Figma, Sketch etc.)</i>`,
+      `Ability to <b>create great designs from concept to final deliverables</b>
+      with all of the excitement and pressure of a startup environment.`,
+      `Interest in related fields <i>(like software, industrial design, visual arts, cognitive science, psychology etc.)</i>`,
+    ],
+  },
+  ExperienceDesigner: {
+    title: "Experience Designer (UI/UX)",
+    domain: "Product",
+    tags: ["product", "ui", "ux", "experience", "designer"],
+    summary: `
+     We need an <b>Experience Designer</b> for defining and building
+     the complete user experience and user interface of our products.`,
+    location: "Remote/Istanbul",
+    type: "Rookie",
+    responsibility: [
+      `Be a key member in a small, very talented group of software product developers.`,
+      `<b>Define, design and help build</b> the complete user interface & experience of Dorkodu's products.`,
+      `Work very closely with the product designers and engineers to <i>define and build detailed product specs</i>.`,
+      `Maintain and advance product style guidelines.`,
+      `Build conceptual models, process flows, navigational maps, and wireframes.`,
+      `Work across a wide set of technologies in small teams to deliver products over short development cycles.`,
+      `<b>Collaborate</b> with experience designers on new ideas and features for our awesome products.`,
+      `Help us create a <b>unique design language/system.</b>`,
+      `<b>Define, craft and evolve designs</b> within our existing graphics art collection and/or standards.`,
+    ],
+    requirements: [
+      `Must have at least <b>2+</b> years experience, with either a <b>work background</b> or a <b>killer design portfolio</b>.`,
+      `Should enjoy prototyping with code using <b>HTML + CSS + JavaScript</b>, and <b>no-code</b> tools.`,
+      `Knowledge of <b>gamification</b> and <b>game design</b>.`,
+      `Design and build the interface architecture. Define use cases and information architecture.`,
+      `Design skills with proficiency in <b>typography, UI, color, layout, iconography, aesthetic sense</b>
+       and how these elements impact user experience.`,
+      `
+      <i>(like Photoshop/GIMP, Illustrator/Inkscape, Figma, Sketch etc.)</i>`,
+      `Ability to <b>create great designs from concept to final deliverables</b>
+      with all of the excitement and pressure of a startup environment.`,
+      `Experience designing and implementing user interfaces for scalable web products.`,
+      `Expertise in HTML, CSS, JavaScript, and just a little backend development.`,
+      `Proficiency in Graphic Design and Prototyping; with experience in a variety of design tools.`,
+      `Interest in related fields <i>(like software, industrial design, visual arts, cognitive science, psychology etc.)</i>`,
     ],
   },
 };

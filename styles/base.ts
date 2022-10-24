@@ -144,12 +144,14 @@ export default css`
     border-bottom: 0.25rem solid ${ui.color.neutral(90)};
   }
 
-  article,
   section {
     max-width: 48rem;
     margin: 0 auto;
     padding: 1rem;
+  }
 
+  article,
+  section {
     ul {
       display: flex;
       flex-direction: column;
