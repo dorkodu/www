@@ -6,7 +6,7 @@ interface DescriptiveItemProps {
   title: string;
   description: string;
   badge?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const DescriptiveItem: FunctionComponent<DescriptiveItemProps> = ({

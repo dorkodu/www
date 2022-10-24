@@ -5,15 +5,15 @@ interface Props {
   tag?: string;
   title?: string;
   message?: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
+  head?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-export default function Card({ tag, title, message, icon, children }: Props) {
+export default function Card({ tag, title, message, head, children }: Props) {
   return (
     <Root>
       <div>
-        {icon}
+        {head}
         {tag && <Tag>{tag}</Tag>}
       </div>
       {title && <Title>{title}</Title>}

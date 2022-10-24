@@ -40,7 +40,11 @@ const Role: FunctionComponent<{
       </div>
       <div css={style.body}>
         <h4>summary</h4>
-        <p>{role.summary}</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: role.summary ?? "",
+          }}
+        />
         <h4>your role</h4>
         <ul>
           {role.responsibility?.map((responsibility, index) => (
