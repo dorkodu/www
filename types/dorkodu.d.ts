@@ -16,3 +16,12 @@ export interface TeamMember {
   avatar?: string;
   icons?: string[];
 }
+
+export interface Project {
+  title: string;
+  tagline?: string;
+  description?: string;
+  type?: string;
+  image?: string;
+  link?: string;
+}
