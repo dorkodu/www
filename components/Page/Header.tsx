@@ -13,23 +13,17 @@ const Header: FunctionComponent = () => {
           <img src="/images/dorkodu.svg" alt="dorkodu" title="dorkodu" />
         </Logo>
         <Nav.Body>
-          <Link href="/">
-            <a rel="dofollow">
-              <Icon icon="twemoji:open-book" width={32} height={32} />
-              <span>about</span>
-            </a>
+          <Link href="/" rel="dofollow">
+            <Icon icon="twemoji:open-book" width={32} height={32} />
+            <span>about</span>
           </Link>
-          <Link href="/work">
-            <a rel="dofollow">
-              <Icon icon="twemoji:floppy-disk" width={30} height={30} />
-              <span>work</span>
-            </a>
+          <Link href="/work" rel="dofollow">
+            <Icon icon="twemoji:floppy-disk" width={30} height={30} />
+            <span>work</span>
           </Link>
-          <Link href="/business">
-            <a rel="dofollow">
-              <Icon icon="noto:dollar-banknote" width={32} height={32} />
-              <span>business</span>
-            </a>
+          <Link href="/business" rel="dofollow">
+            <Icon icon="noto:dollar-banknote" width={32} height={32} />
+            <span>business</span>
           </Link>
         </Nav.Body>
       </Container>
