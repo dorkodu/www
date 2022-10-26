@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import { ui, tokens, color } from "../styles/prism";
-import Button from "./Button";
+import { ui } from "../styles/prism";
 
 export const JoinUsBanner = () => {
   const style = {
@@ -51,9 +50,7 @@ export const JoinUsBanner = () => {
       <h3>world needs you.</h3>
       <p>dorkodu is the best place for next generation of work.</p>
       <Link href="/work">
-        <a>
-          <span>join us!</span>
-        </a>
+        <span>join us!</span>
       </Link>
     </div>
   );

@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 import type { NextPage } from "next";
 import { tokens, ui, color } from "../styles/prism";
 import { Icon } from "@iconify-icon/react";
-import Image from "next/image";
 
 // components
 import { Project } from "../types/dorkodu";
@@ -66,13 +65,11 @@ const style = {
       color: ${tokens.color.gray(75)};
     }
   `,
-  p: {
-    mission: css`
-      font-size: 1.25rem;
-      margin: 0;
-      font-weight: 400;
-    `,
-  },
+  largeParagraph: css`
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 400;
+  `,
 };
 
 const Home: NextPage = () => {
@@ -101,13 +98,12 @@ const Home: NextPage = () => {
         </Hero>
         <Polaroid source={image.intro} />
       </Showcase>
-      <Hero title="why?" tagline="liberate the humankind." statement="" center>
-        <p css={style.p.mission}>
-          we are a community of creatives who create impactful and inspirational
-          products with humane technology to make the world actually a better
-          place.
-        </p>
-      </Hero>
+      <Hero
+        title="why?"
+        tagline="liberate the humankind."
+        statement=""
+        center
+      ></Hero>
       <Mission />
       <OurWork />
       <People />
@@ -130,12 +126,12 @@ const Home: NextPage = () => {
 
 export default Home;
 
-//?: REUSABLE PAGE SECTIONS :?//
+//?::: REUSABLE PAGE SECTIONS :::?//
 
 const Mission = () => (
   <section>
     <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
-      <p css={style.p.mission}>
+      <p css={style.largeParagraph}>
         <ParagraphTagline>our purpose</ParagraphTagline>
         <b>we liberate the humankind. </b>
         <br />
@@ -147,12 +143,12 @@ const Mission = () => (
         <li>create a free and happy life experience for everyone.</li>
         <li>build the utopian dream of heaven on earth.</li>
       </ul>
-      <p css={style.p.mission}>
+      <p css={style.largeParagraph}>
         <b>...with our meaningful products & technology.</b>
       </p>
     </Bulletpoint>
     <Bulletpoint icon="twemoji:bullseye">
-      <p css={style.p.mission}>
+      <p css={style.largeParagraph}>
         <ParagraphTagline>our mission</ParagraphTagline>
         we combine gamification, human-centric design and our superior
         technology; to create products which empower human brilliance.
@@ -259,7 +255,8 @@ const DorkoduPunchline = () => {
     dropOut: css`
       font-weight: 700;
       color: ${ui.color.neutral(15)};
-      line-height: 1.2;
+      line-height: 105%;
+      margin-top: 0.25rem;
 
       background: linear-gradient(
         0deg,
@@ -282,14 +279,14 @@ const OurWork = () => {
   const projects: Project[] = [
     {
       title: "trekie",
-      tagline: "the social & gamified personal growth companion",
+      tagline: "the social & gamified personal growth companion app",
       link: "/trekie",
       image: "/images/trekie-S.png",
       type: "product",
     },
     {
       title: "sage",
-      tagline: "the marvelous information exchange protocol",
+      tagline: "the marvelous data exchange protocol for web api's",
       link: "/sage",
       image: "/images/sage.png",
       type: "technology",
@@ -303,7 +300,7 @@ const OurWork = () => {
     },
   ];
 
-  const style = {
+  const localStyle = {
     container: css`
       display: flex;
       justify-content: center;
@@ -330,7 +327,7 @@ const OurWork = () => {
         text-align: center;
         color: ${ui.color.neutral(55)};
         font-weight: 500;
-        line-height: 1.25;
+        line-height: 1.15;
 
         span {
           display: inline-block;
@@ -347,7 +344,7 @@ const OurWork = () => {
         font-weight: 700;
         font-size: 1.65rem !important;
         margin-top: 0.5rem;
-        color: ${ui.color.neutral(25)};
+        color: ${ui.color.neutral(30)};
       }
 
       img {
@@ -358,14 +355,27 @@ const OurWork = () => {
         width: 100%;
       }
     `,
+
+    mission: css`
+      font-weight: 1.25rem;
+    `,
   };
 
   return (
-    <section style={{ maxWidth: "unset" }}>
-      <h2>our work</h2>
-      <div css={style.container}>
+    <>
+      <section>
+        <article>
+          <h2>our work</h2>
+          <p css={style.largeParagraph}>
+            we are a community of creatives who create impactful and
+            inspirational products with humane technology to make the world
+            actually a better place.
+          </p>
+        </article>
+      </section>
+      <div css={localStyle.container}>
         {projects.map((project, index) => (
-          <div css={style.item} key={index}>
+          <div css={localStyle.item} key={index}>
             <img src={project.image} alt={project.title} />
             <h4>{project.title}</h4>
             <p>{project.tagline}</p>
@@ -375,10 +385,6 @@ const OurWork = () => {
           </div>
         ))}
       </div>
-    </section>
+    </>
   );
-
-  /*    
-
-  */
 };

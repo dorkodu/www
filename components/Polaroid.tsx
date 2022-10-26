@@ -33,9 +33,8 @@ const Frame = styled.div`
 
   img {
     border: 0;
-    max-height: 24rem;
-    height: auto;
     border-radius: ${ui.layout.curve};
+    padding: 1rem;
   }
 
   p {

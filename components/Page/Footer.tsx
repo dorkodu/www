@@ -95,20 +95,14 @@ const Footer: FunctionComponent = () => {
             <div>
               <h4>company</h4>
               <nav>
-                <Link href="/">
-                  <span>
-                    <a rel="dofollow">about</a>
-                  </span>
+                <Link href="/" rel="dofollow">
+                  <span>about</span>
                 </Link>
-                <Link href="/work">
-                  <span>
-                    <a rel="dofollow">work</a>
-                  </span>
+                <Link href="/work" rel="dofollow">
+                  <span>work</span>
                 </Link>
-                <Link href="/business">
-                  <span>
-                    <a rel="dofollow">business</a>
-                  </span>
+                <Link href="/business" rel="dofollow">
+                  <span>business</span>
                 </Link>
               </nav>
             </div>
@@ -116,25 +110,20 @@ const Footer: FunctionComponent = () => {
             <div>
               <h4>resources</h4>
               <nav>
-                <Link href="/resources/terms">
-                  <span>
-                    <a rel="dofollow">terms</a>
-                  </span>
+                <Link href="/resources/terms" rel="dofollow">
+                  <span>terms</span>
                 </Link>
-                <Link href="/resources/privacy">
-                  <span>
-                    <a rel="dofollow">privacy</a>
-                  </span>
+                <Link href="/resources/privacy" rel="dofollow">
+                  <span>privacy</span>
                 </Link>
-                <Link href="/community">
-                  <span>
-                    <a rel="dofollow">community</a>
-                  </span>
+                <Link href="/community" rel="dofollow">
+                  <span>community</span>
                 </Link>
-                <Link href="/press">
-                  <span>
-                    <a rel="dofollow">press</a>
-                  </span>
+                <Link href="/press" rel="dofollow">
+                  <span>press</span>
+                </Link>
+                <Link href="https://github.com/dorkodu">
+                  <span>github</span>
                 </Link>
               </nav>
             </div>
