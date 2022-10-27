@@ -325,7 +325,7 @@ const OurWork = () => {
       p {
         font-size: 1.25rem;
         text-align: center;
-        color: ${ui.color.neutral(55)};
+        color: ${ui.color.neutral(60)};
         font-weight: 500;
         line-height: 1.15;
 
@@ -344,7 +344,7 @@ const OurWork = () => {
         font-weight: 700;
         font-size: 1.65rem !important;
         margin-top: 0.5rem;
-        color: ${ui.color.neutral(30)};
+        color: ${ui.color.neutral(40)};
       }
 
       img {

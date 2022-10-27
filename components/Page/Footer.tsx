@@ -258,20 +258,21 @@ const Nav = styled.div`
   }
 
   nav {
-    span {
-      display: block;
-      a {
-        display: inline-block !important;
-        font-size: 1.25rem;
-        padding: 0.2rem 0.4rem;
-        border-radius: 0.25rem;
-        color: ${tokens.color.gray(10)};
+    display: flex;
+    flex-direction: column;
 
-        &:hover {
-          color: ${tokens.color.gray(50)};
-          cursor: pointer;
-          text-decoration: underline;
-        }
+    a {
+      display: inline-flex !important;
+      align-self: flex-start;
+      font-size: 1.25rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      color: ${tokens.color.gray(10)};
+
+      &:hover {
+        color: ${tokens.color.gray(50)};
+        cursor: pointer;
+        text-decoration: underline;
       }
     }
   }
