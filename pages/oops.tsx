@@ -7,7 +7,9 @@ import Polaroid from "../components/Polaroid";
 import { ButtonContainer, Showcase } from "../styles/blame";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
-import PlaceholderImage from "../public/images/workdesk.jpg";
+
+// images
+import VoidIllustration from "../public/images/undraw-void.svg";
 
 const meta = {
   title: "oops! — dorkodu",
@@ -21,7 +23,7 @@ const meta = {
 };
 
 const image = {
-  intro: PlaceholderImage,
+  intro: VoidIllustration,
 };
 
 const Oops: NextPage = () => {
@@ -44,6 +46,10 @@ const Oops: NextPage = () => {
         <Polaroid source={image.intro} />
       </Showcase>
       <br />
+      <section>
+        <hr />
+        <Page.Contact />
+      </section>
     </>
   );
 };

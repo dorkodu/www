@@ -181,8 +181,15 @@ const People = () => {
       name: "berra uslu",
       title: "rookie",
       about:
-        "freelance creative. graphics, visual arts, media. social justice warrior.",
-      icons: ["tabler:brush", "tabler:palette", "tabler:device-tv-old"],
+        "freelance creative. illustrator, visual arts. social justice warrior.",
+      icons: ["tabler:brush", "tabler:palette"],
+    },
+    aziz: {
+      name: "aziz öçmaz",
+      title: "rookie",
+      about:
+        "gamification apprentice, graphics design, media. gnome chieftain.",
+      icons: ["tabler:device-gamepad-2", "tabler:world", "tabler:abacus"],
     },
   };
 
@@ -194,8 +201,10 @@ const People = () => {
       <hr />
       <CardDeck columns={2}>
         <Member member={members.berra} />
-        <JoinUsBanner />
+        <Member member={members.aziz} />
       </CardDeck>
+      <br />
+      <JoinUsBanner />
     </section>
   );
 };
@@ -211,8 +220,8 @@ const DorkoduPunchline = () => {
       font-weight: 650;
 
       @media (min-width: ${tokens.viewpoint.tablet}) {
-        font-size: 2.05rem;
-        line-height: 2.1rem;
+        font-size: 2.25rem;
+        line-height: 2.3rem;
       }
 
       span {
@@ -223,46 +232,48 @@ const DorkoduPunchline = () => {
         -webkit-text-fill-color: transparent;
       }
     `,
-    tuneIn: css`
-      font-size: 2.25rem;
-      line-height: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.05rem;
-      color: ${ui.color.primary(40)};
-
-      background: linear-gradient(
-        0deg,
-        ${ui.color.primary(42.5)} 25%,
-        ${color(100, 75, 75)}
-      );
-
-      @media (min-width: ${tokens.viewpoint.tablet}) {
-        font-size: 2.95rem;
-        line-height: 3rem;
-      }
-    `,
     turnOn: css`
-      font-weight: 750;
-      letter-spacing: -0.065rem;
+      font-weight: 700;
+      letter-spacing: -0.075rem;
       color: ${ui.color.neutral(75)};
 
       background: linear-gradient(
         0deg,
         ${ui.color.neutral(65)},
-        ${ui.color.neutral(85)}
+        ${ui.color.neutral(90)}
       );
+    `,
+    tuneIn: css`
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.075rem;
+      color: ${ui.color.primary(40)};
+
+      background: linear-gradient(
+        0deg,
+        ${ui.color.primary(42.5)} 20%,
+        ${color(100, 75, 80)}
+      );
+
+      @media (min-width: ${tokens.viewpoint.tablet}) {
+        font-size: 3.05rem;
+        line-height: 3.15rem;
+      }
     `,
     dropOut: css`
       font-weight: 700;
       color: ${ui.color.neutral(15)};
-      line-height: 105%;
-      margin-top: 0.25rem;
 
       background: linear-gradient(
         0deg,
         ${ui.color.neutral(0)},
-        ${ui.color.neutral(30)}
+        ${ui.color.neutral(40)}
       );
+
+      @media (min-width: ${tokens.viewpoint.tablet}) {
+        line-height: 115%;
+      }
     `,
   };
 
@@ -304,7 +315,7 @@ const OurWork = () => {
     container: css`
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
 
       flex-wrap: wrap;
       padding: 1rem;

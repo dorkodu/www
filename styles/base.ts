@@ -131,7 +131,16 @@ export default css`
 
   main {
     margin: 0 auto;
-    min-height: 100vh !important;
+    flex-grow: 1;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
   }
 
   hr {
@@ -141,7 +150,7 @@ export default css`
     background: transparent;
     border: 0;
     border-radius: 100rem;
-    border-bottom: 0.25rem solid ${ui.color.neutral(90)};
+    border-bottom: 0.25rem solid ${ui.color.neutral(95)};
   }
 
   section {
