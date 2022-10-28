@@ -47,8 +47,16 @@ export const JoinUsBanner = () => {
 
   return (
     <div css={style.JoinUsBanner}>
+      <Icon
+        icon="fluent-emoji-flat:raised-fist-medium-light"
+        width={48}
+        height={48}
+      />
       <h3>world needs you.</h3>
-      <p>dorkodu is the best place for next generation of work.</p>
+      <p>
+        dorkodu is the best place for the next generation of work.&nbsp;
+        <b>set the stage on fire! 🔥</b>
+      </p>
       <Link href="/work">
         <span>join us!</span>
       </Link>

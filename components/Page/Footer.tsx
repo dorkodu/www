@@ -96,13 +96,13 @@ const Footer: FunctionComponent = () => {
               <h4>company</h4>
               <nav>
                 <Link href="/" rel="dofollow">
-                  <span>about</span>
+                  about
                 </Link>
                 <Link href="/work" rel="dofollow">
-                  <span>work</span>
+                  work
                 </Link>
                 <Link href="/business" rel="dofollow">
-                  <span>business</span>
+                  business
                 </Link>
               </nav>
             </div>
@@ -111,20 +111,18 @@ const Footer: FunctionComponent = () => {
               <h4>resources</h4>
               <nav>
                 <Link href="/resources/terms" rel="dofollow">
-                  <span>terms</span>
+                  terms
                 </Link>
                 <Link href="/resources/privacy" rel="dofollow">
-                  <span>privacy</span>
+                  privacy
                 </Link>
                 <Link href="/community" rel="dofollow">
-                  <span>community</span>
+                  community
                 </Link>
                 <Link href="/press" rel="dofollow">
-                  <span>press</span>
+                  press
                 </Link>
-                <Link href="https://github.com/dorkodu">
-                  <span>github</span>
-                </Link>
+                <Link href="https://github.com/dorkodu">github</Link>
               </nav>
             </div>
 
