@@ -4,6 +4,9 @@ import Polaroid from "../components/Polaroid";
 import Page from "../components/Page";
 import { ButtonContainer, Showcase } from "../styles/blame";
 
+// images
+import VoidIllustration from "../public/images/undraw-void.svg";
+
 const meta = {
   title: "oops! — dorkodu",
   description: "something's gone wrong.",

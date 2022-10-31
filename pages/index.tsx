@@ -98,12 +98,7 @@ const Home: NextPage = () => {
         </Hero>
         <Polaroid source={image.intro} />
       </Showcase>
-      <Hero
-        title="why?"
-        tagline="liberate the humankind."
-        statement=""
-        center
-      ></Hero>
+
       <Mission />
       <OurWork />
       <People />
@@ -189,7 +184,7 @@ const People = () => {
       title: "rookie",
       about:
         "gamification apprentice, graphics design, media. gnome chieftain.",
-      icons: ["tabler:device-gamepad-2", "tabler:world", "tabler:abacus"],
+      icons: ["tabler:device-gamepad-2", "tabler:abacus"],
     },
   };
 
@@ -233,7 +228,7 @@ const DorkoduPunchline = () => {
       }
     `,
     turnOn: css`
-      font-weight: 700;
+      font-weight: 750;
       letter-spacing: -0.075rem;
       color: ${ui.color.neutral(75)};
 
@@ -378,7 +373,7 @@ const OurWork = () => {
         <article>
           <h2>our work</h2>
           <p css={style.largeParagraph}>
-            we are a community of creatives who create impactful and
+            we are a community of creatives who build impactful and
             inspirational products with humane technology to make the world
             actually a better place.
           </p>
@@ -396,6 +391,18 @@ const OurWork = () => {
           </div>
         ))}
       </div>
+    </>
+  );
+};
+
+const Why = () => {
+  const stylus = css``;
+
+  return (
+    <>
+      <Hero title="why?" tagline="liberate the humankind." center>
+        <p>with meaningful technology.</p>
+      </Hero>
     </>
   );
 };

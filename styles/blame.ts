@@ -15,14 +15,11 @@ export const SectionIcon = styled.div`
 export const Badge = css`
   padding: 0.5rem !important;
   border-radius: ${ui.layout.curve};
-  height: 3.5rem !important;
-  width: 3.5rem !important;
 
   background-color: ${ui.color.primary(80)} !important;
   color: ${ui.color.primary(45)} !important;
   stroke: ${ui.color.primary(45)} !important;
   fill: ${ui.color.primary(45)} !important;
-  stroke-width: 2.25 !important;
 `;
 
 export const ButtonContainer = styled.div`
