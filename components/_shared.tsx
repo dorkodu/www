@@ -3,7 +3,9 @@ import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 import { FunctionComponent } from "react";
+import { Badge } from "../styles/blame";
 import { ui } from "../styles/prism";
+import Button from "./Button";
 
 export const JoinUsBanner = () => {
   const style = {
@@ -15,51 +17,59 @@ export const JoinUsBanner = () => {
       max-width: 480px;
       margin: 0 auto;
 
+      border-radius: 2.25rem;
       background-color: ${ui.color.primary(90)};
-      border-radius: 1rem;
-      border: 0.25rem dashed ${ui.color.primary(80)};
+      border: 0.5rem solid ${ui.color.primary(95)};
 
       * {
         margin: 0;
       }
+    `,
+    icon: css``,
+    title: css`
+      text-align: left;
+    `,
+    message: css``,
+    buttons: css`
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
 
-      h3 {
-        text-align: left;
-      }
-
-      a {
-        border-radius: 1rem;
-        padding: 0.5rem 1rem;
-        text-align: center;
-        font-size: 1.35rem;
-        font-weight: 700;
-        margin-top: 0.25rem;
-        color: ${ui.color.primary(100)};
-        background-color: ${ui.color.primary(50)};
-
-        &:hover,
-        &:focus {
-          background-color: ${ui.color.primary(60)};
-        }
+      * {
+        flex-grow: 1;
+        flex-shrink: 1;
+        display: flex;
+        justify-content: center;
       }
     `,
   };
 
   return (
     <div css={style.JoinUsBanner}>
-      <Icon
-        icon="fluent-emoji-flat:raised-fist-medium-light"
-        width={48}
-        height={48}
-      />
-      <h3>world needs you.</h3>
-      <p>
-        dorkodu is the best place for the next generation of work.&nbsp;
-        <b>set the stage on fire! 🔥</b>
+      <div css={style.icon}>
+        <Icon
+          icon="fa6-solid:earth-americas"
+          width={36}
+          height={36}
+          css={Badge}
+        />
+      </div>
+      <h3 css={style.title}>world needs you.</h3>
+      <p css={style.message}>
+        are you passionate about what you do? dorkodu is the best place for the
+        next generation of work.
       </p>
-      <Link href="/work">
-        <span>join us!</span>
-      </Link>
+      <p>
+        <b>vive la révolution! 🔥</b>
+      </p>
+      <div css={style.buttons}>
+        <Button link="/work" type="fill">
+          <span>join us</span>
+        </Button>
+        <Button link="/business" type="tonal">
+          <span>invest</span>
+        </Button>
+      </div>
     </div>
   );
 };

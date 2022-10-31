@@ -3,7 +3,7 @@ import styled, { Interpolation } from "@emotion/styled";
 import { tokens, ui } from "../styles/prism";
 
 interface Props {
-  type: string;
+  type?: string;
   link: string;
   children?: React.ReactNode;
 }

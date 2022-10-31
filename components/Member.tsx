@@ -97,7 +97,7 @@ const style = {
   `,
   title: css`
     margin-bottom: 0.1rem !important;
-    color: ${ui.color.neutral(60)};
+    color: ${ui.color.neutral(65)};
     font-size: 1.25rem;
     font-weight: 600;
   `,
