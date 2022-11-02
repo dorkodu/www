@@ -92,12 +92,14 @@ const style = {
     }
   `,
   name: css`
-    font-size: 1.35rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.025rem;
+    font-weight: 650;
+    line-height: 1.65rem;
   `,
   title: css`
     margin-bottom: 0.1rem !important;
-    color: ${ui.color.neutral(65)};
+    color: ${ui.color.neutral(60)};
     font-size: 1.25rem;
     font-weight: 600;
   `,

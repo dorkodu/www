@@ -14,11 +14,7 @@ const Polaroid: FunctionComponent<PolaroidProps> = ({
 }) => {
   return (
     <Frame>
-      <Image
-        src={source}
-        alt={description ?? undefined}
-        title={description ?? undefined}
-      />
+      <Image src={source} alt={description ?? ""} title={description ?? ""} />
       {description && description !== `` && <p>{description}</p>}
     </Frame>
   );

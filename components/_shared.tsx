@@ -51,7 +51,7 @@ export const JoinUsBanner = () => {
           icon="fa6-solid:earth-americas"
           width={36}
           height={36}
-          css={Badge}
+          css={Badge.Flat}
         />
       </div>
       <h3 css={style.title}>world needs you.</h3>

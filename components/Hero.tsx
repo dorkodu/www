@@ -41,9 +41,7 @@ const Container = styled.div`
 
   max-width: 36rem;
   margin: 0 auto;
-  padding: 0;
-  padding-left: 0.75rem !important;
-  padding-right: 0.25rem !important;
+  padding: 0 0.5rem !important;
 
   > * {
     text-align: left !important;

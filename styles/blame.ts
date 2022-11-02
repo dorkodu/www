@@ -12,15 +12,20 @@ export const SectionIcon = styled.div`
   stroke: ${ui.color.neutral(70)};
 `;
 
-export const Badge = css`
-  padding: 0.5rem !important;
-  border-radius: ${ui.layout.curve};
+export const Badge = {
+  DuoTone: css`
+    color: ${ui.color.primary(45)} !important;
+  `,
+  Flat: css`
+    padding: 0.5rem !important;
+    border-radius: ${ui.layout.curve};
 
-  background-color: ${ui.color.primary(80)} !important;
-  color: ${ui.color.primary(45)} !important;
-  stroke: ${ui.color.primary(45)} !important;
-  fill: ${ui.color.primary(45)} !important;
-`;
+    background-color: ${ui.color.primary(85)} !important;
+    color: ${ui.color.primary(45)} !important;
+    stroke: ${ui.color.primary(45)} !important;
+    fill: ${ui.color.primary(45)} !important;
+  `,
+};
 
 export const ButtonContainer = styled.div`
   margin: 0.5rem 0;
