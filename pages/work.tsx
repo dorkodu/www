@@ -151,7 +151,7 @@ const Work: NextPage = () => {
         <Card
           title="Business"
           head={
-            <svg css={Badge} viewBox="0 0 24 24">
+            <svg css={Badge.DuoTone} viewBox="0 0 24 24">
               <path
                 fill="none"
                 strokeLinecap="round"
@@ -193,7 +193,7 @@ const Work: NextPage = () => {
         <Card
           title="Business"
           head={
-            <svg css={Badge} viewBox="0 0 24 24">
+            <svg css={Badge.DuoTone} viewBox="0 0 24 24">
               <path
                 fill="none"
                 strokeLinecap="round"

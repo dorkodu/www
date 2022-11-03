@@ -6,7 +6,12 @@ import { Icon } from "@iconify-icon/react";
 // components
 import { Project } from "../types/dorkodu";
 
-import { ButtonContainer, Showcase, ParagraphTagline } from "../styles/blame";
+import {
+  ButtonContainer,
+  Showcase,
+  ParagraphTagline,
+  Badge,
+} from "../styles/blame";
 import LinkButton from "../components/LinkButton";
 import Member from "../components/Member";
 import CardDeck from "../components/CardDeck";
@@ -98,7 +103,7 @@ const Home: NextPage = () => {
         </Hero>
         <Polaroid source={image.intro} />
       </Showcase>
-
+      <Why />
       <Mission />
       <OurWork />
       <People />
@@ -396,12 +401,30 @@ const OurWork = () => {
 };
 
 const Why = () => {
-  const stylus = css``;
+  const local = {};
+  const icons = ["icon-park-twotone:success", "icon-park-twotone:brain"];
 
   return (
     <>
-      <Hero title="why?" tagline="liberate the humankind." center>
-        <p>with meaningful technology.</p>
+      <Hero
+        title="why?"
+        tagline="liberate the humankind"
+        head={
+          <Icon icon="icon-park-twotone:brain" width={48} css={Badge.DuoTone} />
+        }
+        center
+      >
+        <p
+          css={css`
+            font-size: 1.6rem;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-weight: 450;
+          `}
+        >
+          with meaningful technology
+        </p>
       </Hero>
     </>
   );

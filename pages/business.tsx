@@ -4,20 +4,20 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Polaroid from "../components/Polaroid";
-import { ButtonContainer, Showcase } from "../styles/blame";
+import { ButtonContainer, Showcase, IconTitle } from "../styles/blame";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
 import Bulletpoint from "../components/Bulletpoint";
 import { ParagraphTagline } from "../styles/blame";
 import { Icon } from "@iconify-icon/react";
+import DescriptiveList from "../components/DescriptiveList";
+import DescriptiveItem from "../components/DescriptiveItem";
+import Quote from "../components/Quote";
 
 import Testimonial from "../components/Testimonial";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
-import DescriptiveList from "../components/DescriptiveList";
-import DescriptiveItem from "../components/DescriptiveItem";
-import Quote from "../components/Quote";
 
 const meta = {
   title: "business — dorkodu",
@@ -119,35 +119,72 @@ const Business: NextPage = () => {
         </article>
       </Showcase>
 
-      <section>
-        <article>
-          <h3>letʼs work together!</h3>
-          <p>
-            at dorkodu, we understand that our worldwide success can only come
-            from our diverse workforce.
-          </p>
-          <Polaroid source={image.intro} description="our team & culture." />
-        </article>
-      </section>
+      <Introduction />
+      <Mission />
+      <Story />
+      <Values />
+      <CorporateOverview />
+      <Press />
 
       <section>
-        <Showcase>
-          <Testimonial
-            {...{
-              quote: `
+        <Testimonial
+          {...{
+            quote: `
             i founded dorkodu because i believed
             we can create a technology company with human-centric values;
             this was my dream at first;
             then became dorkodu's purpose.`,
-              name: "doruk eray",
-              title: "founder & chief",
-            }}
-          />
-          <Polaroid source={image.intro} />
-        </Showcase>
+            name: "doruk eray",
+            title: "founder & chief",
+          }}
+        />
       </section>
     </>
   );
 };
 
 export default Business;
+
+//?::: PAGE SECTIONS :::?//
+
+const Introduction = () => {
+  const local = {};
+  return <></>;
+};
+
+const Mission = () => {
+  const local = {};
+  return <></>;
+};
+
+const Story = () => {
+  const local = {};
+  return <></>;
+};
+
+const Values = () => {
+  const local = {};
+  return <></>;
+};
+
+const CorporateOverview = () => {
+  const local = {};
+  return <></>;
+};
+
+const Press = () => {
+  const local = {};
+
+  return (
+    <>
+      <div css={IconTitle}>
+        <Icon icon="twemoji:rolled-up-newspaper" width={40} height={40} />
+        <div>
+          <h2>press</h2>
+          <p></p>
+        </div>
+      </div>
+      <Page.Contact />
+    </>
+  );
+};

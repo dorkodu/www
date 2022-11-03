@@ -27,6 +27,28 @@ export const Badge = {
   `,
 };
 
+export const IconTitle = css`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+
+  div {
+    h3 {
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+`;
+
 export const ButtonContainer = styled.div`
   margin: 0.5rem 0;
 
