@@ -21,19 +21,20 @@ export default function Button({ type, link, children }: Props) {
 const TheButton = styled.a`
   display: inline-flex;
   padding: 0.5rem 1.5rem;
-  border: 0 !important;
   border-radius: 1.25rem;
   line-height: 130%;
   font-size: 1.36rem;
   font-weight: 700;
   background-color: ${ui.color.neutral(80)};
   color: ${ui.color.neutral(40)};
+  border-bottom: 0.25rem solid ${ui.color.neutral(75)};
   cursor: pointer;
   text-decoration: none !important;
 
   &:hover,
   &:focus {
     background-color: ${ui.color.neutral(90)};
+    border-bottom-color: ${ui.color.neutral(85)};
     color: ${ui.color.neutral(50)};
   }
 
@@ -41,10 +42,12 @@ const TheButton = styled.a`
   &.--fill {
     background-color: ${ui.color.primary(48)};
     color: ${ui.color.primary(100)};
+    border-bottom-color: ${ui.color.primary(40)};
 
     &:hover,
     &:focus {
       background-color: ${ui.color.primary(55)};
+      border-bottom-color: ${ui.color.primary(45)};
     }
   }
 
@@ -52,11 +55,13 @@ const TheButton = styled.a`
   &.--tonal {
     background-color: ${ui.color.primary(80)};
     color: ${ui.color.primary(30)};
+    border-bottom-color: ${ui.color.primary(70)};
 
     &:hover,
     &:focus {
       color: ${ui.color.primary(40)};
       background-color: ${ui.color.primary(85)};
+      border-bottom-color: ${ui.color.primary(75)};
     }
   }
 
@@ -64,7 +69,7 @@ const TheButton = styled.a`
   &.--outline {
     background-color: unset;
     padding: 0.3rem 1.4rem;
-    border: 0.2rem solid ${ui.color.primary(70)} !important;
+    border: 0.25rem solid ${ui.color.primary(70)} !important;
     color: ${ui.color.primary(40)};
 
     &:hover,
