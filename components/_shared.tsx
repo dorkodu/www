@@ -10,67 +10,81 @@ import Button from "./Button";
 export const JoinUsBanner = () => {
   const style = {
     JoinUsBanner: css`
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      background-color: ${ui.color.primary(48)};
+    `,
+    wrapper: css`
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      padding: 1rem;
-      max-width: 480px;
       margin: 0 auto;
-
-      border-radius: 2.25rem;
-      background-color: ${ui.color.primary(90)};
-      border: 0.5rem solid ${ui.color.primary(95)};
+      max-width: 30rem;
 
       * {
         margin: 0;
       }
     `,
-    icon: css``,
-    title: css`
-      text-align: left;
+    icon: css`
+      color: ${ui.color.primary(90)};
+      display: flex;
+      justify-content: center;
     `,
-    message: css``,
+    title: css`
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.85rem;
+    `,
+    message: css`
+      color: #ffffff;
+      font-weight: 450;
+      text-align: center;
+
+      font-size: 1.35rem;
+    `,
     buttons: css`
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
 
-      * {
-        flex-grow: 1;
-        flex-shrink: 1;
-        display: flex;
+      a {
         justify-content: center;
+        padding: 0.5rem 2rem;
+        background-color: ${ui.color.primary(90)} !important;
+        border-bottom-color: ${ui.color.primary(75)} !important;
+        color: ${ui.color.primary(30)} !important;
+
+        &:hover,
+        &:focus {
+          background-color: ${ui.color.primary(95)} !important;
+          border-bottom-color: ${ui.color.primary(80)} !important;
+          color: ${ui.color.primary(35)} !important;
+        }
       }
     `,
   };
 
   return (
-    <div css={style.JoinUsBanner}>
-      <div css={style.icon}>
-        <Icon
-          icon="fa6-solid:earth-americas"
-          width={36}
-          height={36}
-          css={Badge.Flat}
-        />
+    <article css={style.JoinUsBanner}>
+      <div css={style.wrapper}>
+        <div css={style.icon}>
+          <Icon icon="icon-park-twotone:yep" width={64} height={64} />
+        </div>
+        <h3 css={style.title}>world needs you.</h3>
+        <p css={style.message}>
+          are you passionate at your craft?&nbsp;
+          <b>dorkodu</b> is the best place for the next generation of work.
+        </p>
+        <div css={style.buttons}>
+          <Button link="/work" type="tonal">
+            <span>join the revolution!</span>
+          </Button>
+        </div>
       </div>
-      <h3 css={style.title}>world needs you.</h3>
-      <p css={style.message}>
-        are you passionate about what you do? dorkodu is the best place for the
-        next generation of work.
-      </p>
-      <p>
-        <b>vive la révolution! 🔥</b>
-      </p>
-      <div css={style.buttons}>
-        <Button link="/work" type="fill">
-          <span>join us</span>
-        </Button>
-        <Button link="/business" type="tonal">
-          <span>invest</span>
-        </Button>
-      </div>
-    </div>
+    </article>
   );
 };
 
