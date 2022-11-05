@@ -1,16 +1,17 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { tokens, ui } from "../../styles/prism";
 
-const Footer: FunctionComponent = () => {
+const Component: FunctionComponent = () => {
   return (
-    <Root>
-      <Wrapper>
-        <UpperSection>
-          <Brand>
-            <Logo>
+    <footer css={style.Footer}>
+      <div css={style.Wrapper}>
+        <div css={style.UpperSection}>
+          <div css={style.Brand}>
+            <div css={style.Logo}>
               <svg
                 version="1.1"
                 viewBox="0 0 64.58 16.145"
@@ -50,7 +51,7 @@ const Footer: FunctionComponent = () => {
                   </g>
                 </g>
               </svg>
-            </Logo>
+            </div>
             <p>
               we liberate the humankind; with our meaningful products &
               technology.
@@ -89,9 +90,9 @@ const Footer: FunctionComponent = () => {
                 />
               </a>
             </nav>
-          </Brand>
+          </div>
 
-          <Nav>
+          <div css={style.Nav}>
             <div>
               <h4>company</h4>
               <nav>
@@ -119,14 +120,14 @@ const Footer: FunctionComponent = () => {
                 <Link href="/community" rel="dofollow">
                   community
                 </Link>
+                <Link href="https://github.com/dorkodu">open source</Link>
                 <Link href="/press" rel="dofollow">
                   press
                 </Link>
-                <Link href="https://github.com/dorkodu">github</Link>
               </nav>
             </div>
 
-            <Copyright>
+            <div css={style.Copyright}>
               <p className="company">
                 the <br /> <b>dorkodu</b> <br /> company.
               </p>
@@ -136,208 +137,205 @@ const Footer: FunctionComponent = () => {
               <p className="copy">
                 <span>&copy;</span>2022
               </p>
-            </Copyright>
-          </Nav>
-        </UpperSection>
-      </Wrapper>
-    </Root>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 
-export default Footer;
+export default Component;
 
-const Wrapper = styled.div`
-  padding: 1.5rem 1rem 3rem;
-  max-width: ${ui.layout.breakpoint};
-
-  @media (min-width: ${tokens.viewpoint.tablet}) {
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  @media (min-width: ${tokens.viewpoint.desktop.S}) {
+const style = {
+  Footer: css`
     width: 100%;
-    padding: 1.5rem 1rem 2rem;
-  }
-`;
+    background-color: ${tokens.color.gray(90)};
+    border-top: 1rem solid ${tokens.color.gray(94)};
+  `,
+  Wrapper: css`
+    padding: 1.5rem 1rem 3rem;
+    max-width: ${ui.layout.breakpoint};
 
-const UpperSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2rem;
+    @media (min-width: ${tokens.viewpoint.tablet}) {
+      width: 95%;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-  @media (min-width: ${tokens.viewpoint.desktop.S}) {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr);
-  }
-`;
+    @media (min-width: ${tokens.viewpoint.desktop.M}) {
+      width: 100%;
+      padding-bottom: 3rem;
+    }
+  `,
+  UpperSection: css`
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
 
-const Brand = styled.div`
-  margin: 0 0.5rem;
-  padding: 0.5rem;
+    @media (min-width: ${tokens.viewpoint.desktop.S}) {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    }
+  `,
+  Brand: css`
+    margin: 0 0.5rem;
+    padding: 0.5rem;
 
-  p {
-    margin-top: 1rem;
-    font-size: 1.15rem;
-    line-height: 1.25rem;
-    max-width: 20rem;
-    font-weight: 450;
-    color: ${tokens.color.gray(40)};
-    float: none !important;
-    padding-bottom: 0.75rem;
-    border-bottom: 0.25rem dashed ${tokens.color.gray(80)};
-  }
+    p {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+      line-height: 1.25rem;
+      max-width: 20rem;
+      font-weight: 450;
+      color: ${tokens.color.gray(40)};
+      float: none !important;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.25rem dashed ${tokens.color.gray(80)};
+    }
 
-  nav {
-    display: flex;
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    align-items: center;
+    nav {
+      display: flex;
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      align-items: center;
 
-    a {
-      width: 2.25rem;
-      height: 2.25rem;
+      a {
+        width: 2.25rem;
+        height: 2.25rem;
 
-      .icon {
-        color: ${tokens.color.gray(60)} !important;
-      }
-
-      &:hover {
         .icon {
-          color: ${tokens.color.gray(70)} !important;
+          color: ${tokens.color.gray(60)} !important;
+        }
+
+        &:hover {
+          .icon {
+            color: ${tokens.color.gray(70)} !important;
+          }
         }
       }
     }
-  }
 
-  @media (min-width: ${tokens.viewpoint.mobile.L}) {
-    p {
-      margin-left: 0;
-      margin-right: 0;
-      text-align: left;
-      max-width: 21rem;
-    }
-  }
-`;
-
-const Logo = styled.div`
-  display: flex;
-
-  > svg {
-    width: auto;
-    height: 3.5rem;
-
-    g {
-      fill: ${tokens.color.gray(70)};
-    }
-  }
-
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
-    justify-content: flex-start;
-  }
-`;
-
-const Nav = styled.div`
-  padding: 0.5rem;
-  padding-left: 1rem;
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2rem;
-
-  h4 {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 1.35rem;
-    margin-bottom: 0.5rem;
-    border-radius: 3px;
-    border-bottom: 0.25rem solid ${tokens.color.gray(80)};
-    color: ${tokens.color.gray(15)};
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-
-    a {
-      display: inline-flex !important;
-      align-self: flex-start;
-      font-size: 1.25rem;
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.25rem;
-      color: ${tokens.color.gray(10)};
-
-      &:hover {
-        color: ${tokens.color.gray(50)};
-        cursor: pointer;
-        text-decoration: underline;
+    @media (min-width: ${tokens.viewpoint.mobile.L}) {
+      p {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+        max-width: 21rem;
       }
     }
-  }
+  `,
+  Logo: css`
+    display: flex;
 
-  @media (min-width: ${tokens.viewpoint.mobile.L}) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    > svg {
+      width: auto;
+      height: 3.5rem;
 
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 3fr);
-  }
-
-  @media (min-width: ${tokens.viewpoint.desktop.S}) {
-    grid-column: span 2 / span 2;
-  }
-`;
-
-const Copyright = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-
-  p {
-    display: block;
-    line-height: 120%;
-    font-size: 1.2rem;
-    color: ${tokens.color.gray(60)};
-    font-weight: 500;
-  }
-
-  .motto {
-    color: ${tokens.color.gray(40)};
-    font-size: 1.65rem;
-    font-weight: 700;
-    letter-spacing: -0.05rem;
-    padding: 0.25rem 0;
-
-    span {
-      color: ${tokens.color.gray(65)};
-      letter-spacing: 0.1rem;
+      g {
+        fill: ${tokens.color.gray(70)};
+      }
     }
-  }
 
-  .copy {
-    color: ${tokens.color.gray(72)};
-    font-size: 1.25rem;
-
-    span {
-      padding-right: 0.2rem;
-      font-weight: 900;
+    @media (min-width: ${tokens.viewpoint.mobile.XL}) {
+      justify-content: flex-start;
     }
-  }
+  `,
+  Nav: css`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 1rem;
 
-  .company {
-    color: ${tokens.color.gray(70)};
-    line-height: 1.65rem;
-    font-size: 1.65rem;
+    div {
+      display: flex;
+      flex-direction: column;
 
-    b {
-      font-weight: 700 !important;
+      h4 {
+        display: inline-block;
+        font-weight: 750;
+        font-size: 1.35rem;
+        line-height: 150%;
+        color: ${tokens.color.gray(50)};
+        margin: 0 !important;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          display: inline-flex !important;
+          align-self: flex-start;
+          font-size: 1.25rem;
+          padding: 0.2rem 0.4rem;
+          border-radius: 0.25rem;
+          color: ${tokens.color.gray(10)};
+
+          &:hover {
+            color: ${tokens.color.gray(50)};
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    @media (min-width: ${tokens.viewpoint.mobile.XL}) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: ${tokens.viewpoint.desktop.S}) {
+      justify-content: space-around;
+    }
+  `,
+  Copyright: css`
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    p {
+      display: block;
+      line-height: 120%;
+      font-size: 1.2rem;
       color: ${tokens.color.gray(60)};
+      font-weight: 500;
     }
-  }
-`;
 
-const Root = styled.footer`
-  width: 100%;
-  background-color: ${tokens.color.gray(90)};
-  border-top: 1rem solid ${tokens.color.gray(94)};
-`;
+    .motto {
+      color: ${tokens.color.gray(40)};
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.05rem;
+      padding: 0.25rem 0;
+
+      span {
+        color: ${tokens.color.gray(65)};
+        letter-spacing: 0.1rem;
+      }
+    }
+
+    .copy {
+      color: ${tokens.color.gray(72)};
+      font-size: 1.25rem;
+
+      span {
+        padding-right: 0.2rem;
+        font-weight: 900;
+      }
+    }
+
+    .company {
+      color: ${tokens.color.gray(70)};
+      line-height: 1.65rem;
+      font-size: 1.65rem;
+
+      b {
+        font-weight: 700 !important;
+        color: ${tokens.color.gray(60)};
+      }
+    }
+  `,
+};
