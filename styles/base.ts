@@ -109,11 +109,11 @@ export default css`
   }
 
   h2 {
-    font-weight: 700;
+    font-weight: 750;
   }
 
   h3 {
-    font-weight: 650;
+    font-weight: 700;
   }
 
   h4,
@@ -204,27 +204,27 @@ export default css`
     }
 
     h1 {
-      font-size: 1.95rem;
+      font-size: 2.25rem;
     }
 
     h2 {
-      font-size: 1.75rem;
+      font-size: 2.05rem;
     }
 
     h3 {
-      font-size: 1.55rem;
+      font-size: 1.95rem;
     }
 
     h4 {
-      font-size: 1.35rem;
+      font-size: 1.75rem;
     }
 
     h5 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
 
     h6 {
-      font-size: 1.15rem;
+      font-size: 1.35rem;
     }
 
     p {

@@ -25,11 +25,11 @@ const typescale = {
 const colors = {
   hue: {
     red: 350,
-    orange: 35,
-    yellow: 50,
+    orange: 25,
+    yellow: 45,
     green: 130,
     mint: 160,
-    cyan: 200,
+    cyan: 190,
     blue: 210,
     indigo: 240,
     purple: 270,
@@ -45,7 +45,7 @@ const colorPalette = {
   orange: (tone: number) =>
     color(colors.hue.orange, colors.baseSaturation, tone),
   yellow: (tone: number) =>
-    color(colors.hue.yellow, colors.baseSaturation, tone),
+    color(colors.hue.yellow, colors.baseSaturation + 15, tone),
   green: (tone: number) => color(colors.hue.green, colors.baseSaturation, tone),
   mint: (tone: number) => color(colors.hue.mint, colors.baseSaturation, tone),
   cyan: (tone: number) => color(colors.hue.cyan, colors.baseSaturation, tone),

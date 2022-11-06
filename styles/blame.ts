@@ -34,9 +34,15 @@ export const IconTitle = css`
   gap: 1rem;
   margin: 1rem auto;
   padding: 0 1rem;
+  max-width: 30rem;
 
   div {
-    h3 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       padding: 0;
       margin: 0;
       text-align: left;
@@ -84,7 +90,7 @@ export const ParagraphTagline = styled.span`
   display: block;
   margin: 0;
   padding: 0;
-  font-size: 1.35rem !important;
+  font-size: 1.5rem !important;
   font-weight: 700;
-  color: ${tokens.color.gray(60)};
+  color: ${tokens.color.gray(70)};
 `;
