@@ -2,22 +2,21 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import { FunctionComponent } from "react";
+import { IconTitle } from "../../styles/blame";
 import { ui } from "../../styles/prism";
 import CardDeck from "../CardDeck";
-import { ContactItem } from "../_shared";
+import { ContactItem } from "./shared";
 
 const Contact: FunctionComponent = () => {
   return (
     <article css={style.Contact}>
-      <div css={style.IconTitle}>
-        <Icon
-          icon="fluent-emoji-flat:call-me-hand-light"
-          width={40}
-          height={40}
-        />
+      <div css={IconTitle}>
+        <Icon icon="twemoji:postbox" width={48} height={48} />
         <div>
-          <h3>contact</h3>
-          <p>want a talk? reach out.</p>
+          <h4>contact us</h4>
+          <p>
+            reach out for any question or problem, via any related platform below.
+          </p>
         </div>
       </div>
 
@@ -71,26 +70,5 @@ const style = {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 0;
-  `,
-  IconTitle: css`
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-
-    div {
-      h3 {
-        padding: 0;
-        margin: 0;
-        text-align: left;
-      }
-
-      p {
-        padding: 0;
-        margin: 0;
-      }
-    }
   `,
 };
