@@ -15,7 +15,7 @@ const Bulletpoint: FunctionComponent<BulletpointProps> = ({
   return (
     <Root>
       <Emoji>
-        <Icon icon={icon} width={32} height={32} />
+        <Icon icon={icon} width={36} height={36} />
       </Emoji>
       <Content>{children}</Content>
     </Root>
