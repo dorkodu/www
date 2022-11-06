@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import { Badge } from "../styles/blame";
-import { ui } from "../styles/prism";
-import Button from "./Button";
+import { Badge } from "../../styles/blame";
+import { ui } from "../../styles/prism";
+import Button from "../Button";
 
 export const JoinUsBanner = () => {
   const style = {
@@ -80,7 +80,9 @@ export const JoinUsBanner = () => {
         </p>
         <div css={style.buttons}>
           <Button link="/work" type="tonal">
-            <span>join the revolution!</span>
+            <span>
+              join us<i>!</i>
+            </span>
           </Button>
         </div>
       </div>
