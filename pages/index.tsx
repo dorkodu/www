@@ -400,9 +400,109 @@ const OurWork = () => {
   );
 };
 
+const TheDorkoduWay = () => {
+  const style = {
+    TheDorkoduWay: css`
+      display: flex;
+      flex-direction: column;
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 1rem;
+      gap: 1rem;
+
+      @media (min-width: ${tokens.viewpoint.desktop.S}) {
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+
+        * {
+          padding: 0;
+          margin: 0;
+        }
+
+        h3 {
+          width: 40%;
+        }
+
+        p {
+          width: 60%;
+        }
+      }
+    `,
+    title: css`
+      display: block;
+      font-size: 2.05rem;
+      color: ${ui.color.neutral(65)};
+      line-height: 2.15rem;
+      font-weight: 450;
+      word-wrap: normal;
+      margin: 0 auto;
+      max-width: 32rem;
+
+      i {
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: -0.05rem;
+      }
+
+      .dorkodu {
+        color: ${ui.color.primary(45)};
+      }
+
+      .tech {
+        display: inline;
+        color: ${tokens.color.blue(50)};
+        line-height: 2.4rem;
+      }
+
+      .human {
+        color: ${tokens.color.indigo(50)};
+      }
+
+      .ideal {
+        color: ${tokens.color.gray(20)};
+      }
+    `,
+    paragraph: css`
+      font-size: 1.5rem;
+      margin: auto;
+      max-width: 40rem;
+
+      em,
+      i {
+        font-style: normal;
+        display: inline;
+      }
+
+      em {
+        font-weight: 550;
+      }
+
+      i {
+        font-weight: 500;
+      }
+    `,
+  };
+
+  return (
+    <div css={style.TheDorkoduWay}>
+      <h3 css={style.title}>
+        <i className="dorkodu">dorkodu</i> stands for a&nbsp;
+        <i className="ideal">higher ideal</i> of&nbsp;
+        <i className="human">human</i> and <i className="tech">technology</i>.
+      </h3>
+      <p css={style.paragraph}>
+        our culture encompasses <i>emotion</i> and <i>expression</i> that
+        captures the <i>attitude</i>, <i>vibe</i> and <i>energy</i> of the
+        authentic <em>human experience.</em>
+      </p>
+    </div>
+  );
+};
+
 const Why = () => {
   const local = {};
-  const icons = ["icon-park-twotone:success", "icon-park-twotone:brain"];
 
   return (
     <>
