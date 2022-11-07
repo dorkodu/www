@@ -4,11 +4,11 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Polaroid from "../components/Polaroid";
-import { Badge, ButtonContainer, Showcase } from "../styles/blame";
+import { Badge, ButtonContainer, Showcase } from "../styles/elements";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
 import Bulletpoint from "../components/Bulletpoint";
-import { ParagraphTagline } from "../styles/blame";
+import { ParagraphTagline } from "../styles/elements";
 import { Icon, iconExists } from "@iconify-icon/react";
 
 import Testimonial from "../components/Testimonial";
@@ -21,7 +21,7 @@ import DescriptiveList from "../components/DescriptiveList";
 import DescriptiveItem from "../components/DescriptiveItem";
 import CardDeck from "../components/CardDeck";
 import Card from "../components/Card";
-import { SectionRuler } from "../components/_shared";
+import { SectionRuler } from "../components/Page/shared";
 
 const meta = {
   title: "work @ dorkodu",

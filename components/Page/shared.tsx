@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import { Badge } from "../../styles/blame";
+import { Badge } from "../../styles/elements";
 import { ui } from "../../styles/prism";
 import Button from "../Button";
 

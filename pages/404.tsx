@@ -2,7 +2,7 @@ import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Polaroid from "../components/Polaroid";
 import Page from "../components/Page";
-import { ButtonContainer, Showcase } from "../styles/blame";
+import { ButtonContainer, Showcase } from "../styles/elements";
 
 // images
 import VoidIllustration from "../public/images/undraw-void.svg";

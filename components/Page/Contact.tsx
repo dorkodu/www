@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
 import { FunctionComponent } from "react";
-import { IconTitle } from "../../styles/blame";
+import { IconTitle } from "../../styles/elements";
 import { ui } from "../../styles/prism";
 import CardDeck from "../CardDeck";
 import { ContactItem } from "./shared";
@@ -15,7 +15,8 @@ const Contact: FunctionComponent = () => {
         <div>
           <h4>contact us</h4>
           <p>
-            reach out for any question or problem, via any related platform below.
+            For any question, problem, wish or suggestion; you can reach out via
+            the related platform below.
           </p>
         </div>
       </div>

@@ -34,7 +34,7 @@ export const IconTitle = css`
   gap: 1rem;
   margin: 1rem auto;
   padding: 0 1rem;
-  max-width: 30rem;
+  max-width: 36rem;
 
   div {
     h1,
@@ -45,6 +45,7 @@ export const IconTitle = css`
     h6 {
       padding: 0;
       margin: 0;
+      margin-bottom: 0.25rem;
       text-align: left;
     }
 
@@ -52,6 +53,28 @@ export const IconTitle = css`
       padding: 0;
       margin: 0;
     }
+  }
+`;
+
+export const ArrowList = css`
+  position: relative;
+  list-style: none;
+  margin: 0 !important;
+  padding-left: 1.5em;
+  font-size: 1.25rem;
+
+  li:before {
+    content: "⇢";
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: ${tokens.color.gray(75)};
+  }
+
+  li {
+    margin-bottom: 0.25rem;
   }
 `;
 

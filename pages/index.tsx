@@ -11,7 +11,6 @@ import {
   Showcase,
   ParagraphTagline,
   Badge,
-} from "../styles/blame";
 import LinkButton from "../components/LinkButton";
 import Member from "../components/Member";
 import CardDeck from "../components/CardDeck";
@@ -21,13 +20,11 @@ import Hero from "../components/Hero";
 import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
 
-import { JoinUsBanner, SectionRuler } from "../components/_shared";
+import { JoinUsBanner, SectionRuler } from "../components/Page/shared";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
-import styled from "@emotion/styled";
-import Card from "../components/Card";
 
 const meta = {
   title: "welcome! — dorkodu",
