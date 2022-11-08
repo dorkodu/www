@@ -150,17 +150,17 @@ export const IconHeading: FunctionComponent<{
 }> = ({ icon, style, children }) => {
   const IconHeading = css`
     display: flex;
-    margin: 0;
+    margin: 0 0 0.5rem;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
   `;
 
   return (
     <h2 css={IconHeading}>
       <Icon
         icon={icon}
-        style={style ?? { color: ui.color.primary(48) }}
+        style={style ?? { color: ui.color.primary(45) }}
         width={48}
         height={48}
       />

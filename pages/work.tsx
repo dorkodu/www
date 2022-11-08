@@ -15,7 +15,7 @@ import Testimonial from "../components/Testimonial";
 import Role from "../components/Work/Role";
 
 // images
-import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import IntroIllustration from "../public/images/undraw_co_workers_re_1i6i.png";
 import { WorkRole } from "../types/dorkodu";
 import DescriptiveList from "../components/DescriptiveList";
 import DescriptiveItem from "../components/DescriptiveItem";
@@ -77,28 +77,7 @@ const Work: NextPage = () => {
     <>
       <Page.Meta {...meta} />
 
-      <Showcase>
-        <Hero
-          title="work"
-          tagline="join the revolution!"
-          statement="dorkodu is a foundation built for empowering the human
-          civilization. we need extraordinary, passionate and hard-working people for this mission."
-        >
-          <p css={style.hashtag}>
-            #software #ui/ux #design #graphics #people #marketing #data #finance
-            #legal #operations #economics #legal
-          </p>
-          <ButtonContainer>
-            <Button type="fill" link="#story">
-              explore openings
-            </Button>
-            <Button type="tonal" link="/business">
-              sponsor!
-            </Button>
-          </ButtonContainer>
-        </Hero>
-        <Polaroid source={image.intro} />
-      </Showcase>
+      <Intro />
 
       <Showcase>
         <Page.Index
@@ -629,6 +608,26 @@ const Work: NextPage = () => {
 };
 
 export default Work;
+
+const Intro = () => (
+  <Showcase>
+    <Hero
+      title="work"
+      tagline="join the revolution!"
+      statement="dorkodu is a foundation built for liberating the humankind. we need extraordinary, passionate and hard-working people for this mission."
+    >
+      <ButtonContainer style={{ margin: 0 }}>
+        <Button type="fill" link="#story">
+          explore openings
+        </Button>
+        <Button type="tonal" link="/business">
+          sponsor<i>!</i>
+        </Button>
+      </ButtonContainer>
+    </Hero>
+    <Polaroid source={image.intro} />
+  </Showcase>
+);
 
 const roles: Record<string, WorkRole> = {
   SoftwareEngineer: {

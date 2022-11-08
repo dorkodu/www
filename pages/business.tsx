@@ -18,6 +18,7 @@ import Testimonial from "../components/Testimonial";
 
 // images
 import IntroIllustration from "../public/images/undraw_folder.svg";
+import ExcaliburIllustration from "../public/images/undraw_excalibur.svg";
 import { IconHeading } from "../components/Page/shared";
 
 const meta = {
