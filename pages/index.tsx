@@ -22,7 +22,11 @@ import Hero from "../components/Hero";
 import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
 
-import { JoinUsBanner, SectionRuler } from "../components/Page/shared";
+import {
+  IconHeading,
+  JoinUsBanner,
+  SectionRuler,
+} from "../components/Page/shared";
 
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
@@ -55,7 +59,11 @@ const style = {
   largeParagraph: css`
     font-size: 1.25rem;
     margin: 0;
-    font-weight: 400;
+
+    em {
+      font-style: normal;
+      font-weight: 450;
+    }
   `,
 };
 
@@ -65,16 +73,17 @@ const Home: NextPage = () => {
       <Page.Meta {...meta} />
       <Intro />
       <Why />
+      <Motto />
       <Mission />
       <br />
-      <SectionRuler />
       <TheDorkoduWay />
-      <SectionRuler />
-      <Motto />
       <br />
       <OurWork />
       <br />
       <People />
+      <section>
+        <JoinUsBanner />
+      </section>
       <section>
         <ButtonContainer style={{ textAlign: "center" }}>
           <LinkButton action="read more" title="work @ dorkodu" link="/work" />
@@ -116,10 +125,10 @@ const Intro = () => (
 const Mission = () => (
   <section>
     <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
-      <p css={style.largeParagraph}>
-        <ParagraphTagline>our purpose</ParagraphTagline>
-        we want to help people...
-      </p>
+      <ParagraphTagline>
+        <span>our purpose</span>
+      </ParagraphTagline>
+      <p css={style.largeParagraph}>we want to help people...</p>
       <ul css={ArrowList}>
         <li>find their true purpose & passion.</li>
         <li>actualize themselves.</li>
@@ -128,10 +137,13 @@ const Mission = () => (
       </ul>
     </Bulletpoint>
     <Bulletpoint icon="twemoji:bullseye">
-      <p css={style.largeParagraph} style={{ fontWeight: 450 }}>
-        <ParagraphTagline>our mission</ParagraphTagline>
-        we combine gamification, human-centric design and our superior
-        technology; to create products which empower human spirit.
+      <ParagraphTagline>
+        <span>our mission</span>
+      </ParagraphTagline>
+      <p css={style.largeParagraph}>
+        we combine <em>gamification</em>, <em>human-centric design</em> and{" "}
+        <em>our superior technology</em> to create products which{" "}
+        <em>liberate the humankind.</em>
       </p>
     </Bulletpoint>
   </section>
@@ -172,18 +184,26 @@ const People = () => {
     },
   };
 
+  const rookieWrapper = css`
+    max-width: 25rem !important;
+    margin: 0 auto !important;
+  `;
+
   return (
     <section>
-      <h2>our people</h2>
+      <IconHeading icon="icon-park-twotone:peoples-two">our people</IconHeading>
+      <br />
       <Member member={members.doruk} />
       <Member member={members.berk} />
       <hr />
       <CardDeck columns={2}>
-        <Member member={members.berra} />
-        <Member member={members.aziz} />
+        <div css={rookieWrapper}>
+          <Member member={members.berra} />
+        </div>
+        <div css={rookieWrapper}>
+          <Member member={members.aziz} />
+        </div>
       </CardDeck>
-      <br />
-      <JoinUsBanner />
     </section>
   );
 };
@@ -353,7 +373,7 @@ const OurWork = () => {
   return (
     <>
       <section>
-        <h2 style={{ margin: 0 }}>our work</h2>
+        <IconHeading icon="icon-park-twotone:mac-finder">our work</IconHeading>
       </section>
       <div css={localStyle.container}>
         {projects.map((project, index) => (
@@ -482,25 +502,30 @@ const TheDorkoduWay = () => {
 };
 
 const Motto = () => {
-  const style = css`
+  const Motto = css`
     display: flex;
     flex-direction: column;
     max-width: 40rem;
     justify-content: center;
     align-items: center;
+    margin: 1rem auto;
+    padding: 1rem 0 !important;
+    background-color: ${ui.color.primary(85)};
+    border-radius: 1rem;
+    gap: 0.5rem;
 
     @media (min-width: ${tokens.viewpoint.mobile.XL}) {
       flex-direction: row;
-      align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
+      padding: 1rem !important;
     }
 
     p {
-      width: calc(100% - 4rem);
-      font-size: 1.75rem;
-      line-height: 2.25rem;
+      width: calc(100% - 5rem);
+      font-size: 1.5rem;
+      line-height: 2rem;
       font-weight: 450;
-      color: ${ui.color.neutral(20)};
+      color: ${ui.color.primary(40)};
       letter-spacing: -0.025rem;
       margin: 0;
       text-align: center;
@@ -508,26 +533,33 @@ const Motto = () => {
       i {
         font-style: normal;
         font-weight: 500;
-        color: ${ui.color.neutral(10)};
+        color: ${ui.color.primary(35)};
       }
     }
   `;
 
   return (
-    <section css={style}>
-      <div>
-        <Icon
-          icon="icon-park-twotone:torch"
-          css={Badge.DuoTone}
-          width={56}
-          height={56}
-        />
+    <section>
+      <div css={Motto}>
+        <div style={{ display: "flex" }}>
+          <Icon
+            icon="icon-park-twotone:torch"
+            width={56}
+            height={56}
+            style={{
+              color: ui.color.primary(40),
+              backgroundColor: ui.color.primary(75),
+              padding: ".25rem",
+              borderRadius: "1rem",
+            }}
+          />
+        </div>
+        <p>
+          We are here to put the{" "}
+          <i style={{ textDecoration: "underline" }}>humane spirit</i> into the{" "}
+          <i>products</i> and <i>technology</i> again.
+        </p>
       </div>
-      <p>
-        We are here to put the{" "}
-        <i style={{ textDecoration: "underline" }}>humane spirit</i> into the{" "}
-        <i>products</i> and <i>technology</i> again.
-      </p>
     </section>
   );
 };
