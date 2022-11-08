@@ -115,5 +115,6 @@ export const ParagraphTagline = styled.span`
   padding: 0;
   font-size: 1.5rem !important;
   font-weight: 700;
-  color: ${tokens.color.gray(70)};
+  color: ${ui.color.neutral(65)};
+  text-decoration: underline;
 `;

@@ -11,6 +11,8 @@ import {
   Showcase,
   ParagraphTagline,
   Badge,
+  ArrowList,
+} from "../styles/elements";
 import LinkButton from "../components/LinkButton";
 import Member from "../components/Member";
 import CardDeck from "../components/CardDeck";
@@ -49,23 +51,6 @@ const style = {
     font-weight: 500;
     padding: 0;
     margin: 0 !important;
-  `,
-  arrowList: css`
-    position: relative;
-    list-style: none;
-    margin: 0 !important;
-    padding-left: 1.5em;
-    font-size: 1.25rem;
-
-    li:before {
-      content: "⇢";
-      position: absolute;
-      left: 0;
-      font-weight: 600;
-      font-size: 1.5rem;
-      line-height: 1.5rem;
-      color: ${tokens.color.gray(75)};
-    }
   `,
   largeParagraph: css`
     font-size: 1.25rem;
