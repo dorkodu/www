@@ -43,7 +43,7 @@ const Contact: FunctionComponent = () => {
         <ContactItem
           {...{
             icon: "tabler:brand-instagram",
-            link: "https://instagram.com/d0rukeray",
+            link: "https://instagram.com/dorkodu",
             type: "instagram",
             address: "@dorkodu",
             description: "(social)",

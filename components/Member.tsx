@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { css } from "@emotion/react";
 import { Icon } from "@iconify-icon/react";
 import { FunctionComponent } from "react";
@@ -11,7 +12,7 @@ interface MemberProps {
 
 const Member: FunctionComponent<MemberProps> = ({ member, children }) => {
   return (
-    <div css={style.root}>
+    <div css={style.Member}>
       <div css={style.container}>
         {member.avatar && (
           <img css={style.avatar} src={member.avatar} alt={member.name} />
@@ -37,7 +38,7 @@ const Member: FunctionComponent<MemberProps> = ({ member, children }) => {
 export default Member;
 
 const style = {
-  root: css`
+  Member: css`
     display: flex;
     padding: 1rem;
     justify-content: center;

@@ -49,21 +49,6 @@ export const JoinUsBanner = () => {
       align-items: center;
       justify-content: center;
       margin-top: 1rem;
-
-      a {
-        justify-content: center;
-        padding: 0.5rem 2rem;
-        background-color: ${ui.color.primary(90)} !important;
-        border-bottom-color: ${ui.color.primary(75)} !important;
-        color: ${ui.color.primary(30)} !important;
-
-        &:hover,
-        &:focus {
-          background-color: ${ui.color.primary(95)} !important;
-          border-bottom-color: ${ui.color.primary(80)} !important;
-          color: ${ui.color.primary(35)} !important;
-        }
-      }
     `,
   };
 
@@ -146,7 +131,7 @@ export const ContactItem: FunctionComponent<{
   );
 };
 
-export const SectionRuler = () => (
+export const SectionRuler: FunctionComponent = () => (
   <div style={{ margin: "1rem auto", maxWidth: ui.layout.breakpoint }}>
     <hr
       style={{

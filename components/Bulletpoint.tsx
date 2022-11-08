@@ -39,10 +39,6 @@ const Emoji = styled.span`
 
 const Content = styled.div`
   width: calc(100% - 4rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
 
   > * {
     text-align: left;

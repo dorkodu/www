@@ -59,7 +59,8 @@ export const IconTitle = css`
 export const ArrowList = css`
   position: relative;
   list-style: none;
-  margin: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   padding-left: 1.5em;
   font-size: 1.25rem;
 
@@ -109,12 +110,18 @@ export const Showcase = styled.div`
   }
 `;
 
-export const ParagraphTagline = styled.span`
+export const ParagraphTagline = styled.p`
   display: block;
   margin: 0;
   padding: 0;
   font-size: 1.5rem !important;
   font-weight: 700;
-  color: ${ui.color.neutral(65)};
+  color: ${ui.color.neutral(85)};
   text-decoration: underline;
+  margin-bottom: 0.25rem;
+
+  span {
+    color: ${ui.color.neutral(15)};
+    font-weight: 600;
+  }
 `;

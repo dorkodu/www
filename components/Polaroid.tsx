@@ -26,6 +26,7 @@ const Frame = styled.div`
   display: block;
   text-align: center !important;
   margin: 0 auto !important;
+  max-width: 32rem !important;
 
   img {
     border: 0;
@@ -40,17 +41,5 @@ const Frame = styled.div`
     color: ${ui.color.neutral(75)};
     padding: 0 !important;
     font-weight: 500;
-  }
-
-  &.--doodle {
-    max-width: 90%;
-  }
-
-  @media (min-width: ${tokens.viewpoint.mobile.XL}) {
-    max-width: 95%;
-  }
-
-  @media (min-width: ${tokens.viewpoint.tablet}) {
-    max-width: 36rem;
   }
 `;
