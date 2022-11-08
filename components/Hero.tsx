@@ -1,8 +1,9 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { FunctionComponent } from "react";
 import { tokens, ui } from "../styles/prism";
 
-interface Props {
+interface HeroProps {
   title?: string;
   tagline?: string;
   statement?: string;
@@ -11,16 +12,16 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export default function Hero({
+const HeroComponent: FunctionComponent<HeroProps> = ({
   title,
   tagline,
   statement,
   head,
   center,
   children,
-}: Props) {
+}) => {
   return (
-    <TheHero center={center ?? false}>
+    <Hero center={center ?? false}>
       <Container>
         {head && <div>{head}</div>}
         {title && <Title>{title}</Title>}
@@ -28,9 +29,11 @@ export default function Hero({
         {statement && <Statement>{statement}</Statement>}
         {children && <div>{children}</div>}
       </Container>
-    </TheHero>
+    </Hero>
   );
-}
+};
+
+export default HeroComponent;
 
 const Container = styled.div`
   display: flex;
@@ -75,7 +78,7 @@ const Statement = styled.p`
   color: ${ui.color.neutral(50)};
 `;
 
-const TheHero = styled.section<{ center: boolean }>`
+const Hero = styled.section<{ center: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;

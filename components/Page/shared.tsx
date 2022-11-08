@@ -146,8 +146,14 @@ export const ContactItem: FunctionComponent<{
   );
 };
 
-export const SectionRuler = styled.div`
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 0.25rem dashed ${ui.color.neutral(90)};
-`;
+export const SectionRuler = () => (
+  <div style={{ margin: "1rem auto", maxWidth: ui.layout.breakpoint }}>
+    <hr
+      style={{
+        margin: `0 1rem`,
+        padding: 0,
+        borderBottom: `0.25rem dashed ${ui.color.neutral(90)}`,
+      }}
+    />
+  </div>
+);
