@@ -142,3 +142,29 @@ export const SectionRuler: FunctionComponent = () => (
     />
   </div>
 );
+
+export const IconHeading: FunctionComponent<{
+  icon: string;
+  style?: object;
+  children: React.ReactNode;
+}> = ({ icon, style, children }) => {
+  const IconHeading = css`
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  `;
+
+  return (
+    <h2 css={IconHeading}>
+      <Icon
+        icon={icon}
+        style={style ?? { color: ui.color.primary(48) }}
+        width={48}
+        height={48}
+      />
+      <span>{children}</span>
+    </h2>
+  );
+};
