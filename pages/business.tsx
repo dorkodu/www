@@ -176,15 +176,23 @@ const Press = () => {
   const local = {};
 
   return (
-    <>
+    <section>
       <div css={IconTitle}>
-        <Icon icon="twemoji:rolled-up-newspaper" width={40} height={40} />
+        <Icon icon="twemoji:rolled-up-newspaper" width={48} height={48} />
         <div>
           <h2>press</h2>
           <p></p>
         </div>
       </div>
+      <p>
+        For questions or inquiries specific to Investor Relations or Community
+        Membership matters, please email @dorkodu.com or visit our Investor
+        Relations page
+      </p>
+      <p>
+        For customer support, please contact us via a related platform below.
+      </p>
       <Page.Contact />
-    </>
+    </section>
   );
 };

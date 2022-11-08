@@ -63,31 +63,17 @@ const Home: NextPage = () => {
   return (
     <>
       <Page.Meta {...meta} />
-      <Showcase>
-        <Hero
-          statement="we combine gamification, human-centric design with our superior technology
-        to create products that help people actualize themselves."
-          head={<DorkoduPunchline />}
-        >
-          <p css={style.hashtag}>
-            #life #gamification #productivity
-            <br />
-            #crypto #economics #social #knowledge
-          </p>
-          <ButtonContainer>
-            <Button type="fill" link="#story">
-              our story
-            </Button>
-            <Button type="tonal" link="/work">
-              join us<i>!</i>
-            </Button>
-          </ButtonContainer>
-        </Hero>
-        <Polaroid source={image.intro} />
-      </Showcase>
+      <Intro />
       <Why />
       <Mission />
+      <br />
+      <SectionRuler />
+      <TheDorkoduWay />
+      <SectionRuler />
+      <Motto />
+      <br />
       <OurWork />
+      <br />
       <People />
       <section>
         <ButtonContainer style={{ textAlign: "center" }}>
@@ -108,6 +94,23 @@ const Home: NextPage = () => {
 
 export default Home;
 
+const Intro = () => (
+  <Showcase>
+    <Hero
+      statement="we combine gamification, human-centric design with our superior technology
+        to create products that help people fulfill their dreams."
+      head={<DorkoduPunchline />}
+    >
+      <p css={style.hashtag}>
+        #life #gamification #productivity
+        <br />
+        #crypto #economics #social #knowledge
+      </p>
+    </Hero>
+    <Polaroid source={image.intro} />
+  </Showcase>
+);
+
 //?::: REUSABLE PAGE SECTIONS :::?//
 
 const Mission = () => (
@@ -115,28 +118,22 @@ const Mission = () => (
     <Bulletpoint icon="twemoji:leaf-fluttering-in-wind">
       <p css={style.largeParagraph}>
         <ParagraphTagline>our purpose</ParagraphTagline>
-        <b>we liberate the humankind. </b>
-        <br />
         we want to help people...
       </p>
-      <ul css={style.arrowList}>
+      <ul css={ArrowList}>
         <li>find their true purpose & passion.</li>
         <li>actualize themselves.</li>
         <li>create a free and happy life experience for everyone.</li>
         <li>build the utopian dream of heaven on earth.</li>
       </ul>
-      <p css={style.largeParagraph}>
-        <b>...with our meaningful products & technology.</b>
-      </p>
     </Bulletpoint>
     <Bulletpoint icon="twemoji:bullseye">
-      <p css={style.largeParagraph}>
+      <p css={style.largeParagraph} style={{ fontWeight: 450 }}>
         <ParagraphTagline>our mission</ParagraphTagline>
         we combine gamification, human-centric design and our superior
-        technology; to create products which empower human brilliance.
+        technology; to create products which empower human spirit.
       </p>
     </Bulletpoint>
-    <SectionRuler />
   </section>
 );
 
@@ -221,7 +218,7 @@ const DorkoduPunchline = () => {
 
       background: linear-gradient(
         0deg,
-        ${ui.color.neutral(65)},
+        ${ui.color.neutral(70)},
         ${ui.color.neutral(90)}
       );
     `,
@@ -230,12 +227,11 @@ const DorkoduPunchline = () => {
       line-height: 2.25rem;
       font-weight: 800;
       letter-spacing: -0.075rem;
-      color: ${ui.color.primary(40)};
 
       background: linear-gradient(
         0deg,
-        ${ui.color.primary(42.5)} 20%,
-        ${color(100, 75, 80)}
+        ${ui.color.primary(42.5)} 10%,
+        ${color(90, 80, 65)}
       );
 
       @media (min-width: ${tokens.viewpoint.tablet}) {
@@ -324,7 +320,7 @@ const OurWork = () => {
 
         span {
           display: inline-block;
-          color: ${ui.color.primary(40)};
+          color: ${ui.color.primary(35)};
           background-color: ${ui.color.primary(85)};
           padding: 0.25rem 0.5rem;
           margin: 0.25rem;
@@ -357,14 +353,7 @@ const OurWork = () => {
   return (
     <>
       <section>
-        <article>
-          <h2>our work</h2>
-          <p css={style.largeParagraph}>
-            we are a community of creatives who build impactful and
-            inspirational products with humane technology to make the world
-            actually a better place.
-          </p>
-        </article>
+        <h2 style={{ margin: 0 }}>our work</h2>
       </section>
       <div css={localStyle.container}>
         {projects.map((project, index) => (
@@ -392,23 +381,23 @@ const TheDorkoduWay = () => {
       padding: 1rem;
       gap: 1rem;
 
+      * {
+        text-align: center !important;
+      }
+
       @media (min-width: ${tokens.viewpoint.desktop.S}) {
         flex-direction: row;
-        align-content: center;
+        align-items: center;
         justify-content: space-between;
         padding: 1rem 2rem;
 
         * {
           padding: 0;
           margin: 0;
-        }
-
-        h3 {
-          width: 40%;
+          text-align: left !important;
         }
 
         p {
-          width: 60%;
         }
       }
     `,
@@ -416,7 +405,7 @@ const TheDorkoduWay = () => {
       display: block;
       font-size: 2.05rem;
       color: ${ui.color.neutral(65)};
-      line-height: 2.15rem;
+      line-height: 2.25rem;
       font-weight: 450;
       word-wrap: normal;
       margin: 0 auto;
@@ -435,7 +424,7 @@ const TheDorkoduWay = () => {
       .tech {
         display: inline;
         color: ${tokens.color.blue(50)};
-        line-height: 2.4rem;
+        line-height: 2.75rem;
       }
 
       .human {
@@ -445,11 +434,15 @@ const TheDorkoduWay = () => {
       .ideal {
         color: ${tokens.color.gray(20)};
       }
+
+      @media (min-width: ${tokens.viewpoint.desktop.S}) {
+        width: 40%;
+      }
     `,
     paragraph: css`
       font-size: 1.5rem;
-      margin: auto;
-      max-width: 40rem;
+      margin: 0 auto;
+      max-width: 37rem;
 
       em,
       i {
@@ -464,6 +457,12 @@ const TheDorkoduWay = () => {
       i {
         font-weight: 500;
       }
+
+      @media (min-width: ${tokens.viewpoint.desktop.S}) {
+        display: inline-block;
+        width: 60%;
+        height: fit-content;
+      }
     `,
   };
 
@@ -475,11 +474,61 @@ const TheDorkoduWay = () => {
         <i className="human">human</i> and <i className="tech">technology</i>.
       </h3>
       <p css={style.paragraph}>
-        our culture encompasses <i>emotion</i> and <i>expression</i> that
-        captures the <i>attitude</i>, <i>vibe</i> and <i>energy</i> of the
-        authentic <em>human experience.</em>
+        our culture is inspired by <i>emotions</i> which express&nbsp; the{" "}
+        <i>vibe</i> of an authentic <em>human experience.</em>
       </p>
     </div>
+  );
+};
+
+const Motto = () => {
+  const style = css`
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: ${tokens.viewpoint.mobile.XL}) {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    p {
+      width: calc(100% - 4rem);
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      font-weight: 450;
+      color: ${ui.color.neutral(20)};
+      letter-spacing: -0.025rem;
+      margin: 0;
+      text-align: center;
+
+      i {
+        font-style: normal;
+        font-weight: 500;
+        color: ${ui.color.neutral(10)};
+      }
+    }
+  `;
+
+  return (
+    <section css={style}>
+      <div>
+        <Icon
+          icon="icon-park-twotone:torch"
+          css={Badge.DuoTone}
+          width={56}
+          height={56}
+        />
+      </div>
+      <p>
+        We are here to put the{" "}
+        <i style={{ textDecoration: "underline" }}>humane spirit</i> into the{" "}
+        <i>products</i> and <i>technology</i> again.
+      </p>
+    </section>
   );
 };
 
