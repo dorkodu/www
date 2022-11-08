@@ -17,7 +17,8 @@ import Quote from "../components/Quote";
 import Testimonial from "../components/Testimonial";
 
 // images
-import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import IntroIllustration from "../public/images/undraw_folder.svg";
+import { IconHeading } from "../components/Page/shared";
 
 const meta = {
   title: "business — dorkodu",
@@ -73,60 +74,14 @@ const Business: NextPage = () => {
     <>
       <Page.Meta {...meta} />
 
-      <Showcase>
-        <Hero
-          {...{
-            title: `our business`,
-            tagline: `company insights for investors, sponsors and our community.`,
-            statement: `dorkodu is not a conventional company. we do not intend to be one. staying humble and focusing on creating
-          value is our only ambition.`,
-          }}
-        >
-          <p css={style.hashtag}>
-            #software #ui/ux #graphics
-            <br />
-            #design #economics #knowledge
-          </p>
-          <ButtonContainer>
-            <Button type="fill" link="#story">
-              continue
-            </Button>
-            <Button type="tonal" link="/business">
-              be an investor<i>!</i>
-            </Button>
-          </ButtonContainer>
-        </Hero>
-        <Polaroid source={image.intro} />
-      </Showcase>
-
-      <Showcase>
-        <Page.Index
-          items={[
-            ["#lorem", "lorem"],
-            ["#lorem", "lorem ipsum"],
-            ["#lorem", "about us"],
-            ["#lorem", "open roles"],
-            ["#lorem", "some boring stuff"],
-          ]}
-        />
-        <article>
-          <h2>opportunities at dorkodu</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            illo sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem
-            impedit placeat optio? Nulla, sequi labore!
-          </p>
-        </article>
-      </Showcase>
-
-      <Introduction />
+      <Intro />
       <Mission />
       <Story />
       <Values />
       <CorporateOverview />
       <Press />
 
-      <section>
+      <Showcase>
         <Testimonial
           {...{
             quote: `
@@ -138,7 +93,8 @@ const Business: NextPage = () => {
             title: "founder & chief",
           }}
         />
-      </section>
+        <Polaroid source={ExcaliburIllustration} />
+      </Showcase>
     </>
   );
 };
@@ -147,10 +103,50 @@ export default Business;
 
 //?::: PAGE SECTIONS :::?//
 
-const Introduction = () => {
-  const local = {};
-  return <></>;
-};
+const Intro = () => (
+  <Showcase>
+    <Hero
+      {...{
+        title: `our business`,
+        tagline: `company insights for investors, sponsors and our community.`,
+        statement: `dorkodu is not a conventional company. we do not intend to be one. staying humble and focusing on creating
+    value is our only ambition.`,
+      }}
+    >
+      <ButtonContainer style={{ margin: 0 }}>
+        <Button type="fill" link="#overview">
+          continue
+        </Button>
+        <Button type="tonal" link="/business">
+          be an investor<i>!</i>
+        </Button>
+      </ButtonContainer>
+    </Hero>
+    <Polaroid source={image.intro} />
+  </Showcase>
+);
+
+const Navigation = () => (
+  <Showcase>
+    <Page.Index
+      items={[
+        ["#lorem", "lorem"],
+        ["#lorem", "lorem ipsum"],
+        ["#lorem", "about us"],
+        ["#lorem", "open roles"],
+        ["#lorem", "some boring stuff"],
+      ]}
+    />
+    <article>
+      <h2>opportunities at dorkodu</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi illo
+        sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem impedit
+        placeat optio? Nulla, sequi labore!
+      </p>
+    </article>
+  </Showcase>
+);
 
 const Mission = () => {
   const local = {};
@@ -169,7 +165,31 @@ const Values = () => {
 
 const CorporateOverview = () => {
   const local = {};
-  return <></>;
+  return (
+    <section id="overview">
+      <IconHeading icon="icon-park-twotone:city">
+        Corporate Overview
+      </IconHeading>
+      <article>
+        <h3>tl;dr</h3>
+        <p>
+          <b>We bootstrapped Dorkodu by ourselves</b>, as a side-hustle to our
+          school life (now the opposite). We hold meetings at the school during
+          breaks or after school, and mostly online during the pandemic. Thanks
+          to our own minimalist engineering approaches, we only needed to rent a
+          shared hosting.
+        </p>
+        <p>
+          <b>But we are aware of our potential to do really big things.</b>{" "}
+          Although <b>we are not incorporated yet</b>, sooner we will need to.
+        </p>
+        <p>
+          If you want to talk with us about investment, sponsorship or
+          mentorship; please contact us. We appreciate your contributions :)
+        </p>
+      </article>
+    </section>
+  );
 };
 
 const Press = () => {
