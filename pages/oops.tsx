@@ -35,11 +35,11 @@ const Oops: NextPage = () => {
         <Hero
           title="oops!"
           tagline="something's gone wrong."
-          statement="you shouldn't be here. you can use the links to surf the website, or just go back to the home page."
+          statement="you shouldn't be here. you can use the links to surf the website, or just go back home page."
         >
           <ButtonContainer>
             <Button type="fill" link="/">
-              back to home ↗
+              go back ↺
             </Button>
           </ButtonContainer>
         </Hero>
