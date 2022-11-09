@@ -14,14 +14,16 @@ import { Icon, iconExists } from "@iconify-icon/react";
 import Testimonial from "../components/Testimonial";
 import Role from "../components/Work/Role";
 
-// images
-import IntroIllustration from "../public/images/undraw_co_workers_re_1i6i.png";
 import { WorkRole } from "../types/dorkodu";
 import DescriptiveList from "../components/DescriptiveList";
 import DescriptiveItem from "../components/DescriptiveItem";
 import CardDeck from "../components/CardDeck";
 import Card from "../components/Card";
 import { SectionRuler } from "../components/Page/shared";
+
+// images
+import IllustrationCoWorkers from "../public/images/undraw_co_workers_re_1i6i.svg";
+import IllustrationWonder from "../public/images/undraw_excalibur.svg";
 
 const meta = {
   title: "work @ dorkodu",
@@ -35,7 +37,7 @@ const meta = {
 };
 
 const image = {
-  intro: IntroIllustration,
+  intro: IllustrationWonder,
 };
 
 const style = {
@@ -100,29 +102,26 @@ const Work: NextPage = () => {
             life is about a purpose, not a job.
           </h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            illo sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem
-            impedit placeat optio? Nulla, sequi labore!
+            If you are interested in having a role at Dorkodu and want to create
+            the future with us, check out the openings below, click job titles
+            to see details, and email us if you're interested.
           </p>
         </article>
       </Showcase>
 
       <section>
         <article>
-          <h2>open roles</h2>
-          <p></p>
+          <h2>Opportunities at Dorkodu</h2>
+          <p>
+            If you are interested in having a role at Dorkodu and want to create
+            the future with us,&nbsp;
+            <b>check out the openings below, click job titles to see details</b>
+            , and email us if you&apos;re interested.
+          </p>
         </article>
       </section>
 
       <article id="openings">
-        <h2>Opportunities at Dorkodu</h2>
-        <p>
-          If you are interested in having a role at Dorkodu and want to create
-          the future with us,&nbsp;
-          <b>check out the openings below, click job titles to see details</b>,
-          and email us if you&apos;re interested.
-        </p>
-
         <div style={{ margin: "0 auto" }}></div>
       </article>
 
