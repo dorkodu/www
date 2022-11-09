@@ -38,7 +38,8 @@ export default Testimonial;
 const Root = styled.div`
   width: 100%;
   padding: 2rem 1rem;
-  max-width: 48rem;
+  max-width: 36rem;
+  margin: 0 auto;
 `;
 
 const Message = styled.p`

@@ -86,10 +86,10 @@ const Business: NextPage = () => {
         <Testimonial
           {...{
             quote: `
-            i founded dorkodu because i believed
-            we can create a technology company with human-centric values;
+            i founded and bet my life dorkodu because i believe
+            world needs a technology company with human-centric values;
             this was my dream at first;
-            then became dorkodu's purpose.`,
+            then became dorkodu's mission.`,
             name: "doruk eray",
             title: "founder & chief",
           }}

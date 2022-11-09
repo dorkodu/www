@@ -81,6 +81,8 @@ const Home: NextPage = () => {
       <OurWork />
       <br />
       <People />
+      <br />
+      <Story />
       <section>
         <JoinUsBanner />
       </section>
@@ -591,4 +593,8 @@ const Why = () => {
       </Hero>
     </>
   );
+};
+
+const Story = () => {
+  "icon-park-twotone:book-one";
 };
