@@ -596,5 +596,97 @@ const Why = () => {
 };
 
 const Story = () => {
-  "icon-park-twotone:book-one";
+  const local = {
+    timelineList: css`
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      margin-left: 1rem !important;
+
+      &::marker {
+        color: ${ui.color.neutral(90)};
+        font-weight: 600;
+      }
+
+      li {
+        color: ${ui.color.neutral(20)};
+
+        em {
+          font-style: normal;
+          font-weight: 450;
+        }
+
+        &::marker {
+          color: ${ui.color.neutral(90)};
+          font-weight: 600;
+        }
+      }
+    `,
+    footnote: css`
+      display: block;
+      color: ${ui.color.neutral(50)};
+    `,
+  };
+
+  return (
+    <>
+      <section>
+        <IconHeading icon="icon-park-twotone:book-one">our story</IconHeading>
+        <br />
+        <article>
+          <ul css={local.timelineList}>
+            <li>
+              Our founders, <b>Doruk</b> and <b>Berk</b> were born in{" "}
+              <b>2004</b>. Doruk was an artistic child and always wanted to be a
+              leader-inventor.
+            </li>
+            <li>
+              Doruk started coding at <b>10</b>.
+              <span css={local.footnote}>— he finally found his passion.</span>
+            </li>
+            <li>
+              <b>dorkodu</b>'s seeds were planted during <b>2016</b>, when doruk
+              branded all of his software under the name <b>doruk + code</b>.
+              <span css={local.footnote}>
+                — "doruk" means <i>peak</i> in Turkish.
+              </span>
+            </li>
+            <li>
+              Doruk entered <b>Vefa Lisesi.</b>
+              <span css={local.footnote}>
+                — a historical high school in Istanbul 🇹🇷
+              </span>
+            </li>
+            <li>
+              Doruk met <b>Berk</b> at there, instant best friends!
+              <span css={local.footnote}>
+                — berk started coding, after being an international e-sports
+                grandmaster.
+              </span>
+            </li>
+            <li>
+              Doruk and Berk started working together.
+              <span css={local.footnote}>
+                — doruk was engineering on web, berk was a game creator.
+              </span>
+            </li>
+            <li>
+              doruk realized how they can mix his <em>design ideals</em> with
+              their <em>state-of-the-art technology</em> to{" "}
+              <u>
+                <b>make the utopian dream of human life possible.</b>
+              </u>
+            </li>
+            <li>dorkodu won a national high-school software contest.</li>
+          </ul>
+          <p></p>
+          <p>
+            When , they hoped Dorkodu would create a liberating life experience
+            for everyone and help people fulfill their dreams.
+          </p>
+        </article>
+      </section>
+    </>
+  );
 };
