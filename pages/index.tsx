@@ -86,16 +86,6 @@ const Home: NextPage = () => {
       <section>
         <JoinUsBanner />
       </section>
-      <section>
-        <ButtonContainer style={{ textAlign: "center" }}>
-          <LinkButton action="read more" title="work @ dorkodu" link="/work" />
-          <LinkButton
-            action="read more"
-            title="our business"
-            link="/business"
-          />
-        </ButtonContainer>
-      </section>
 
       <Page.Contact />
       <br />
@@ -610,8 +600,6 @@ const Story = () => {
       }
 
       li {
-        color: ${ui.color.neutral(20)};
-
         em {
           font-style: normal;
           font-weight: 450;
@@ -673,19 +661,39 @@ const Story = () => {
             </li>
             <li>
               doruk realized how they can mix his <em>design ideals</em> with
-              their <em>state-of-the-art technology</em> to{" "}
+              their <em>revolutionary technology</em> to{" "}
               <u>
-                <b>make the utopian dream of human life possible.</b>
+                <b>make the dream of utopian human life possible.</b>
               </u>
             </li>
-            <li>dorkodu won a national high-school software contest.</li>
+            <li>
+              dorkodu won{" "}
+              <b>
+                1<sup>st</sup>
+              </b>{" "}
+              place in a <em>national software contest</em> in <b>2020</b>.
+              <span css={local.footnote}>
+                — with <b>dorkodia</b>, an experimental social app for
+                meditation & productivity.
+              </span>
+            </li>
+            <li>doruk and berk</li>
           </ul>
           <p></p>
           <p>
-            When , they hoped Dorkodu would create a liberating life experience
-            for everyone and help people fulfill their dreams.
+            When our founders got together, they hoped Dorkodu would create a
+            liberating life experience for everyone and help people fulfill
+            their dreams.
           </p>
         </article>
+        <ButtonContainer style={{ textAlign: "center" }}>
+          <LinkButton action="read more" title="work @ dorkodu" link="/work" />
+          <LinkButton
+            action="read more"
+            title="our business"
+            link="/business"
+          />
+        </ButtonContainer>
       </section>
     </>
   );
