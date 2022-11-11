@@ -125,3 +125,11 @@ export const ParagraphTagline = styled.p`
     font-weight: 600;
   }
 `;
+
+export const Space = styled.hr`
+  display: block;
+  height: 2.5vw;
+  border: 0;
+  margin: 0;
+  padding: 0;
+`;
