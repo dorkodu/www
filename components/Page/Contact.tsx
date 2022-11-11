@@ -9,7 +9,7 @@ import { ContactItem } from "./shared";
 
 const Contact: FunctionComponent = () => {
   return (
-    <article css={style.Contact}>
+    <section css={style.Contact}>
       <div css={IconTitle}>
         <Icon icon="twemoji:postbox" width={48} height={48} />
         <div>
@@ -59,7 +59,7 @@ const Contact: FunctionComponent = () => {
           }}
         />
       </CardDeck>
-    </article>
+    </section>
   );
 };
 

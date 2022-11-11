@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Polaroid from "../components/Polaroid";
-import { ButtonContainer, Showcase } from "../styles/elements";
+import { ButtonContainer, Showcase, Space } from "../styles/elements";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
 
@@ -49,6 +49,7 @@ const Oops: NextPage = () => {
       <section>
         <hr />
         <Page.Contact />
+        <Space />
       </section>
     </>
   );

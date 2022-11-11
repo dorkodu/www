@@ -12,6 +12,7 @@ import {
   ParagraphTagline,
   Badge,
   ArrowList,
+  Space,
 } from "../styles/elements";
 import LinkButton from "../components/LinkButton";
 import Member from "../components/Member";
@@ -75,20 +76,26 @@ const Home: NextPage = () => {
       <Why />
       <Motto />
       <Mission />
-      <br />
+
+      <Space />
+
       <TheDorkoduWay />
-      <br />
+
+      <Space />
+
       <OurWork />
-      <br />
+
+      <Space />
+
       <People />
-      <br />
+
+      <Space />
+
       <Story />
-      <section>
-        <JoinUsBanner />
-      </section>
 
       <Page.Contact />
-      <br />
+
+      <Space />
     </>
   );
 };
@@ -590,9 +597,10 @@ const Story = () => {
     timelineList: css`
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
       font-size: 1.25rem;
-      margin-left: 1rem !important;
+      line-height: 1.5rem;
+      margin-left: 0 !important;
 
       &::marker {
         color: ${ui.color.neutral(90)};
@@ -609,11 +617,12 @@ const Story = () => {
           color: ${ui.color.neutral(90)};
           font-weight: 600;
         }
+
+        span {
+          display: block;
+          color: ${ui.color.neutral(50)};
+        }
       }
-    `,
-    footnote: css`
-      display: block;
-      color: ${ui.color.neutral(50)};
     `,
   };
 
@@ -625,59 +634,61 @@ const Story = () => {
         <article>
           <ul css={local.timelineList}>
             <li>
-              Our founders, <b>Doruk</b> and <b>Berk</b> were born in{" "}
-              <b>2004</b>. Doruk was an artistic child and always wanted to be a
+              Our founders, <b>Doruk</b> and <b>Berk</b> are born in{" "}
+              <b>2004.</b> Doruk is an artistic kid and wants to be a
               leader-inventor.
             </li>
             <li>
-              Doruk started coding at <b>10</b>.
-              <span css={local.footnote}>— he finally found his passion.</span>
+              Doruk learns to code at <b>10</b>.
+              <span>— he finally found his passion.</span>
             </li>
             <li>
-              <b>dorkodu</b>'s seeds were planted during <b>2016</b>, when doruk
-              branded all of his software under the name <b>doruk + code</b>.
-              <span css={local.footnote}>
+              <b>dorkodu</b>'s seeds are planted during <b>2016</b>, when doruk
+              brands all of his software under the name <b>doruk + code</b>.
+              <span>
                 — "doruk" means <i>peak</i> in Turkish.
               </span>
             </li>
             <li>
               Doruk entered <b>Vefa Lisesi.</b>
-              <span css={local.footnote}>
-                — a historical high school in Istanbul 🇹🇷
-              </span>
+              <span>— a historical high school in Istanbul 🇹🇷</span>
             </li>
             <li>
-              Doruk met <b>Berk</b> at there, instant best friends!
-              <span css={local.footnote}>
-                — berk started coding, after being an international e-sports
+              Doruk and <b>Berk</b> meet at <em>vefa</em> in <em>2018</em>,
+              instant best friends!
+              <span>
+                — berk starts coding, after being an international e-sports
                 grandmaster.
               </span>
             </li>
             <li>
-              Doruk and Berk started working together.
-              <span css={local.footnote}>
-                — doruk was engineering on web, berk was a game creator.
+              Doruk and Berk starts working together.
+              <span>
+                — doruk is engineering on web, berk is a game creator.
               </span>
             </li>
             <li>
-              doruk realized how they can mix his <em>design ideals</em> with
+              doruk realizes how they can mix his <em>design ideals</em> with
               their <em>revolutionary technology</em> to{" "}
               <u>
                 <b>make the dream of utopian human life possible.</b>
               </u>
             </li>
             <li>
-              dorkodu won{" "}
+              dorkodu wins{" "}
               <b>
                 1<sup>st</sup>
               </b>{" "}
               place in a <em>national software contest</em> in <b>2020</b>.
-              <span css={local.footnote}>
+              <span>
                 — with <b>dorkodia</b>, an experimental social app for
                 meditation & productivity.
               </span>
             </li>
-            <li>doruk and berk</li>
+            <li>
+              doruk and berk publish their <em>open source</em> projects.
+              <span>— dorkodu ❤ open source.</span>
+            </li>
           </ul>
           <p></p>
           <p>
@@ -686,6 +697,11 @@ const Story = () => {
             their dreams.
           </p>
         </article>
+
+        <JoinUsBanner />
+
+        <br />
+
         <ButtonContainer style={{ textAlign: "center" }}>
           <LinkButton action="read more" title="work @ dorkodu" link="/work" />
           <LinkButton
