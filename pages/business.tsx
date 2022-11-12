@@ -118,34 +118,12 @@ const Intro = () => (
         <Button type="fill" link="#overview">
           continue
         </Button>
-        <Button type="tonal" link="/business">
+        <Button type="tonal" link="#invest">
           be an investor<i>!</i>
         </Button>
       </ButtonContainer>
     </Hero>
     <Polaroid source={image.intro} />
-  </Showcase>
-);
-
-const Navigation = () => (
-  <Showcase>
-    <Page.Index
-      items={[
-        ["#lorem", "lorem"],
-        ["#lorem", "lorem ipsum"],
-        ["#lorem", "about us"],
-        ["#lorem", "open roles"],
-        ["#lorem", "some boring stuff"],
-      ]}
-    />
-    <article>
-      <h2>opportunities at dorkodu</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi illo
-        sapiente odio nesciunt magnam iure eaque, nemo, blanditiis rem impedit
-        placeat optio? Nulla, sequi labore!
-      </p>
-    </article>
   </Showcase>
 );
 

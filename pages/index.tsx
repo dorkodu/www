@@ -33,7 +33,7 @@ import {
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
 import SuperHeroIllustration from "../public/images/undraw_superhero.svg";
-import Illustration from "../public/images/undraw_superhero.svg";
+import FriendsUnderTreeIllustration from "../public/images/undraw_friendship.svg";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -49,7 +49,7 @@ const meta = {
 const image = {
   intro: IntroIllustration,
   team: ExpertsIllustration,
-  storyMission: SuperHeroIllustration,
+  storyMission: FriendsUnderTreeIllustration,
 };
 
 const style = {
@@ -729,28 +729,24 @@ const Story = () => {
           </ol>
         </article>
         <Space />
-        <Showcase>
-          <Polaroid source={image.storyMission} />
-          <div>
-            <p
-              style={{
-                fontSize: "1.4rem",
-                letterSpacing: "-0.015rem",
-                minWidth: "24rem",
-                margin: 0,
-              }}
-            >
-              When our founders got together, they aspired to{" "}
-              <em style={{ fontWeight: "450", fontStyle: "normal" }}>
-                create liberating life experiences for everyone
-              </em>{" "}
-              and help people{" "}
-              <em style={{ fontWeight: "450", fontStyle: "normal" }}>
-                fulfill their dreams.
-              </em>
-            </p>
-          </div>
-        </Showcase>
+        <Polaroid source={image.storyMission} />
+        <p
+          style={{
+            fontSize: "1.4rem",
+            letterSpacing: "-0.015rem",
+            minWidth: "24rem",
+            margin: 0,
+          }}
+        >
+          When our founders got together, they aspired to{" "}
+          <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+            create liberating life experiences for everyone
+          </em>{" "}
+          and help people{" "}
+          <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+            fulfill their dreams.
+          </em>
+        </p>
         <Space />
         <JoinUsBanner />
         <Space />
