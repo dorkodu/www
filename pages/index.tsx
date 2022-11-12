@@ -32,6 +32,7 @@ import {
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
+import SuperHeroIllustration from "../public/images/undraw_superhero.svg";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -47,6 +48,7 @@ const meta = {
 const image = {
   intro: IntroIllustration,
   team: ExpertsIllustration,
+  storyMission: SuperHeroIllustration,
 };
 
 const style = {
@@ -599,13 +601,9 @@ const Story = () => {
       flex-direction: column;
       gap: 1rem;
       font-size: 1.25rem;
-      line-height: 1.5rem;
-      margin-left: 0 !important;
-
-      &::marker {
-        color: ${ui.color.neutral(90)};
-        font-weight: 600;
-      }
+      line-height: 1.65rem;
+      margin-left: 1.75rem !important;
+      list-style-type: decimal-leading-zero;
 
       li {
         em {
@@ -614,14 +612,28 @@ const Story = () => {
         }
 
         &::marker {
-          color: ${ui.color.neutral(90)};
+          color: ${ui.color.neutral(80)};
           font-weight: 600;
+          font-size: 1.15rem;
         }
 
         span {
           display: block;
           color: ${ui.color.neutral(50)};
         }
+      }
+
+      @media (min-width: ${tokens.viewpoint.tablet}) {
+        margin-left: 3rem !important;
+
+        li::marker {
+          font-weight: 750;
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (min-width: ${tokens.viewpoint.desktop.S}) {
+        margin-left: 2rem !important;
       }
     `,
   };
@@ -632,50 +644,59 @@ const Story = () => {
         <IconHeading icon="icon-park-twotone:book-one">our story</IconHeading>
         <br />
         <article>
-          <ul css={local.timelineList}>
+          <ol css={local.timelineList}>
             <li>
               Our founders, <b>Doruk</b> and <b>Berk</b> are born in{" "}
-              <b>2004.</b> Doruk is an artistic kid and wants to be a
-              leader-inventor.
+              <b>2004.</b>
+              <br />
+              <em>Doruk</em> is an artistic kid and wants to be a leader &
+              inventor.
             </li>
             <li>
-              Doruk learns to code at <b>10</b>.
+              <em>Doruk</em> learns to code at <b>10</b>.
               <span>— he finally found his passion.</span>
             </li>
             <li>
-              <b>dorkodu</b>'s seeds are planted during <b>2016</b>, when doruk
-              brands all of his software under the name <b>doruk + code</b>.
+              <b>Dorkodu</b>'s seeds are planted during <b>2016</b>, when Doruk
+              brands his all software under the name <b>doruk + code</b>.
               <span>
-                — "doruk" means <i>peak</i> in Turkish.
+                — <b>"doruk"</b> means <i>peak</i> in <em>Turkish</em>.
               </span>
             </li>
             <li>
-              Doruk entered <b>Vefa Lisesi.</b>
-              <span>— a historical high school in Istanbul 🇹🇷</span>
+              <em>Doruk</em> entered <b>Vefa Lisesi.</b>
+              <span>— a well-established high school in Istanbul.</span>
             </li>
             <li>
-              Doruk and <b>Berk</b> meet at <em>vefa</em> in <em>2018</em>,
-              instant best friends!
+              <em>Doruk</em> and <b>Berk</b> meet at <em>Vefa</em> in{" "}
+              <em>2018</em>, instant best friends!
               <span>
-                — berk starts coding, after being an international e-sports
-                grandmaster.
+                — <em>Berk</em> starts coding, after being an{" "}
+                <em>international e-sports wonderkid</em>.
               </span>
             </li>
             <li>
-              Doruk and Berk starts working together.
+              <em>Doruk</em> and <em>Berk</em> starts working together.
               <span>
                 — doruk is engineering on web, berk is a game creator.
               </span>
             </li>
             <li>
-              doruk realizes how they can mix his <em>design ideals</em> with
-              their <em>revolutionary technology</em> to{" "}
+              <em>Doruk</em> realizes how they can mix his{" "}
+              <em>design ideals</em> with their{" "}
+              <em>revolutionary technology</em> to{" "}
               <u>
                 <b>make the dream of utopian human life possible.</b>
               </u>
+              <span>
+                — now they found their <em>purpose</em>.
+              </span>
             </li>
             <li>
-              dorkodu wins{" "}
+              <b>dorkodu</b> becomes their full-time hustle.
+            </li>
+            <li>
+              <em>dorkodu</em> wins{" "}
               <b>
                 1<sup>st</sup>
               </b>{" "}
@@ -686,15 +707,40 @@ const Story = () => {
               </span>
             </li>
             <li>
-              doruk and berk publish their <em>open source</em> projects.
-              <span>— dorkodu ❤ open source.</span>
+              <em>doruk and berk</em> publish their <em>open source</em>{" "}
+              projects.
+              <span>
+                — complex <em>software libraries, protocols</em> and{" "}
+                <em>frameworks</em>; even <em>pixelart.</em>
+              </span>
             </li>
-          </ul>
-          <p></p>
-          <p>
-            When our founders got together, they hoped Dorkodu would create a
-            liberating life experience for everyone and help people fulfill
-            their dreams.
+            <li>
+              <em>dorkodu</em> focuses on <em>web3.0</em>,{" "}
+              <em style={{ textTransform: "uppercase" }}>ai</em> and{" "}
+              <em>gamification</em>.
+              <span>
+                — we want to create a free, decentralized, civilized{" "}
+                <b>utopian world</b> with <b>human-friendly</b>{" "}
+                <em>technology</em> and <em>economy</em>.
+              </span>
+            </li>
+            <li>
+              now <em>dorkodu</em>'s mission is to{" "}
+              <b>liberate the humankind!</b>
+              <span></span>
+            </li>
+          </ol>
+          <br />
+          <Polaroid source={image.storyMission} />
+          <p style={{ fontSize: "1.5rem", letterSpacing: "-0.015rem" }}>
+            When our founders got together, they aspired to{" "}
+            <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+              create liberating life experiences for everyone
+            </em>{" "}
+            and help people{" "}
+            <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+              fulfill their dreams.
+            </em>
           </p>
         </article>
 
