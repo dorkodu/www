@@ -145,7 +145,7 @@ const Mission = () => (
       <p css={style.largeParagraph}>
         we combine <em>gamification</em>, <em>human-centric design</em> and{" "}
         <em>our superior technology</em> to create products which{" "}
-        <em>liberate the humankind.</em>
+        <em>free the human spirit.</em>
       </p>
     </Bulletpoint>
   </section>
@@ -497,7 +497,7 @@ const TheDorkoduWay = () => {
       </h3>
       <p css={style.paragraph}>
         our culture is inspired by <i>emotions</i> which express&nbsp; the{" "}
-        <i>vibe</i> of an authentic <em>human experience.</em>
+        <i>vibe</i> of an authentic <em>life experience.</em>
       </p>
     </div>
   );
@@ -527,7 +527,7 @@ const Motto = () => {
       font-size: 1.5rem;
       line-height: 2rem;
       font-weight: 450;
-      color: ${ui.color.primary(40)};
+      color: ${ui.color.primary(35)};
       letter-spacing: -0.025rem;
       margin: 0;
       text-align: center;
@@ -535,7 +535,7 @@ const Motto = () => {
       i {
         font-style: normal;
         font-weight: 500;
-        color: ${ui.color.primary(35)};
+        color: ${ui.color.primary(30)};
       }
     }
   `;
@@ -558,7 +558,7 @@ const Motto = () => {
         </div>
         <p>
           We are here to put the{" "}
-          <i style={{ textDecoration: "underline" }}>humane spirit</i> into the{" "}
+          <i style={{ textDecoration: "underline" }}>meaning</i> back into the{" "}
           <i>products</i> and <i>technology</i> again.
         </p>
       </div>
@@ -655,7 +655,8 @@ const Story = () => {
             </li>
             <li>
               <b>Dorkodu</b>'s seeds are planted during <b>2016</b>, when Doruk
-              brands his all software under the name <b>doruk + code</b>.
+              brands his all software under the name <i>dorkodu</i> (doruk +
+              code).
               <span>
                 — <b>"doruk"</b> means <i>peak</i> in <em>Turkish</em>.
               </span>
@@ -712,9 +713,9 @@ const Story = () => {
               </span>
             </li>
             <li>
-              <em>dorkodu</em> focuses on <em>web3.0</em>,{" "}
-              <em style={{ textTransform: "uppercase" }}>ai</em> and{" "}
-              <em>gamification</em>.
+              <em>dorkodu</em> focuses on <em>gamification</em>,{" "}
+              <em style={{ textTransform: "uppercase" }}>AI</em> and{" "}
+              <em>web 3.0</em>.
               <span>
                 — we want to create a free, decentralized, civilized{" "}
                 <b>utopian world</b> with <b>human-friendly</b>{" "}
@@ -722,8 +723,7 @@ const Story = () => {
               </span>
             </li>
             <li>
-              now <em>dorkodu</em>'s mission is to{" "}
-              <b>liberate the humankind!</b>
+              <em>dorkodu</em>'s mission is to <b>liberate the humankind!</b>
               <span></span>
             </li>
           </ol>
