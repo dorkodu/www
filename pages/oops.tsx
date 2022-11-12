@@ -10,6 +10,7 @@ import Page from "../components/Page";
 
 // images
 import VoidIllustration from "../public/images/undraw-void.svg";
+import FeelingBlueIllustration from "../public/images/undraw_feeling_blue_-4-b7q.svg";
 
 const meta = {
   title: "oops! — dorkodu",
@@ -23,7 +24,7 @@ const meta = {
 };
 
 const image = {
-  intro: VoidIllustration,
+  intro: FeelingBlueIllustration,
 };
 
 const Oops: NextPage = () => {
