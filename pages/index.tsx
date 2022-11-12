@@ -33,6 +33,7 @@ import {
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
 import SuperHeroIllustration from "../public/images/undraw_superhero.svg";
+import Illustration from "../public/images/undraw_superhero.svg";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -624,16 +625,12 @@ const Story = () => {
       }
 
       @media (min-width: ${tokens.viewpoint.tablet}) {
-        margin-left: 3rem !important;
+        margin-left: 2.5rem !important;
 
         li::marker {
           font-weight: 750;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
-      }
-
-      @media (min-width: ${tokens.viewpoint.desktop.S}) {
-        margin-left: 2rem !important;
       }
     `,
   };
@@ -730,24 +727,33 @@ const Story = () => {
               <span></span>
             </li>
           </ol>
-          <br />
-          <Polaroid source={image.storyMission} />
-          <p style={{ fontSize: "1.5rem", letterSpacing: "-0.015rem" }}>
-            When our founders got together, they aspired to{" "}
-            <em style={{ fontWeight: "450", fontStyle: "normal" }}>
-              create liberating life experiences for everyone
-            </em>{" "}
-            and help people{" "}
-            <em style={{ fontWeight: "450", fontStyle: "normal" }}>
-              fulfill their dreams.
-            </em>
-          </p>
         </article>
-
+        <Space />
+        <Showcase>
+          <Polaroid source={image.storyMission} />
+          <div>
+            <p
+              style={{
+                fontSize: "1.4rem",
+                letterSpacing: "-0.015rem",
+                minWidth: "24rem",
+                margin: 0,
+              }}
+            >
+              When our founders got together, they aspired to{" "}
+              <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+                create liberating life experiences for everyone
+              </em>{" "}
+              and help people{" "}
+              <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+                fulfill their dreams.
+              </em>
+            </p>
+          </div>
+        </Showcase>
+        <Space />
         <JoinUsBanner />
-
-        <br />
-
+        <Space />
         <ButtonContainer style={{ textAlign: "center" }}>
           <LinkButton action="read more" title="work @ dorkodu" link="/work" />
           <LinkButton
