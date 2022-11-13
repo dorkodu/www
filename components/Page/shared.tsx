@@ -732,6 +732,11 @@ export const Story = () => {
               </span>
             </li>
             <li>
+              <b>berra</b> and <b>aziz</b> join <em>the dorkodu revolution</em>{" "}
+              as our first rookies.
+              <span>— first redpills escaped the matrix.</span>
+            </li>
+            <li>
               <em>dorkodu</em>'s mission is to <b>liberate the humankind!</b>
               <span></span>
             </li>

@@ -80,13 +80,13 @@ const Business: NextPage = () => {
       <Story />
       <Values />
       <CorporateOverview />
-      <Press />
+      <Page.Contact />
 
       <Showcase>
         <Testimonial
           {...{
             quote: `
-            i founded and bet my life dorkodu because i believe
+            i bet my life on dorkodu because i believe
             world needs a technology company with human-centric values;
             this was my dream at first;
             then became dorkodu's mission.`,
@@ -110,8 +110,7 @@ const Intro = () => (
       {...{
         title: `our business`,
         tagline: `company insights for investors, sponsors and our community.`,
-        statement: `dorkodu is not a conventional company. we do not intend to be one. staying humble and focusing on creating
-    value is our only ambition.`,
+        statement: `dorkodu is not a conventional company. staying humble & focusing on creating value for everyone is our only ambition.`,
       }}
     >
       <ButtonContainer style={{ margin: 0 }}>
@@ -134,7 +133,11 @@ const Mission = () => {
 
 const Story = () => {
   const local = {};
-  return <></>;
+  return (
+    <section>
+      <p></p>
+    </section>
+  );
 };
 
 const Values = () => {
@@ -152,46 +155,22 @@ const CorporateOverview = () => {
       <article>
         <h3>tl;dr</h3>
         <p>
-          <b>We bootstrapped Dorkodu by ourselves</b>, as a side-hustle to our
-          school life (now the opposite). We hold meetings at the school during
-          breaks or after school, and mostly online during the pandemic. Thanks
-          to our own minimalist engineering approaches, we only needed to rent a
-          shared hosting.
+          <b>We bootstrapped Dorkodu by ourselves</b>, <u>two teenagers</u> as a
+          side-hustle to our school life (now the opposite). We hold meetings at
+          the school during breaks, and mostly online during the pandemic.
+          Thanks to our minimalist engineering principles, we only needed to
+          rent a shared hosting.
         </p>
         <p>
-          <b>But we are aware of our potential to do really big things.</b>{" "}
-          Although <b>we are not incorporated yet</b>, sooner we will need to.
+          <b>But we are aware of our potential to do really big things.</b>
+          <br />
+          Although <b>we are not incorporated yet</b>, sooner we need to.
         </p>
         <p>
           If you want to talk with us about investment, sponsorship or
           mentorship; please contact us. We appreciate your contributions :)
         </p>
       </article>
-    </section>
-  );
-};
-
-const Press = () => {
-  const local = {};
-
-  return (
-    <section>
-      <div css={IconTitle}>
-        <Icon icon="twemoji:rolled-up-newspaper" width={48} height={48} />
-        <div>
-          <h2>press</h2>
-          <p></p>
-        </div>
-      </div>
-      <p>
-        For questions or inquiries specific to Investor Relations or Community
-        Membership matters, please email @dorkodu.com or visit our Investor
-        Relations page
-      </p>
-      <p>
-        For customer support, please contact us via a related platform below.
-      </p>
-      <Page.Contact />
     </section>
   );
 };
