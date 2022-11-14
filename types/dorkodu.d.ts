@@ -25,3 +25,11 @@ export interface Project {
   image?: string;
   link?: string;
 }
+
+export interface ContactInfo {
+  type: string;
+  link: string;
+  address: string;
+  icon?: string;
+  description?: string;
+}
