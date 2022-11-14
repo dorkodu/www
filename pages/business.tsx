@@ -4,7 +4,12 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import Polaroid from "../components/Polaroid";
-import { ButtonContainer, Showcase, IconTitle } from "../styles/elements";
+import {
+  ButtonContainer,
+  Showcase,
+  IconTitle,
+  Space,
+} from "../styles/elements";
 import { tokens, ui } from "../styles/prism";
 import Page from "../components/Page";
 import Bulletpoint from "../components/Bulletpoint";
@@ -18,8 +23,13 @@ import Testimonial from "../components/Testimonial";
 
 // images
 import IntroIllustration from "../public/images/undraw_folder.svg";
-import ExcaliburIllustration from "../public/images/undraw_excalibur.svg";
-import { IconHeading } from "../components/Page/shared";
+import DorukPixelart from "../public/images/doruk--green.png";
+
+import {
+  Contact,
+  ContactChannels,
+  IconHeading,
+} from "../components/Page/shared";
 
 const meta = {
   title: "business — dorkodu",
@@ -36,40 +46,6 @@ const image = {
   intro: IntroIllustration,
 };
 
-const style = {
-  hashtag: css`
-    color: ${tokens.color.blue(48)};
-    font-size: 1.15rem;
-    font-weight: 500;
-    padding: 0;
-    margin: 0 !important;
-  `,
-  arrowList: css`
-    position: relative;
-    list-style: none;
-    margin: 0 !important;
-    padding-left: 1.5em;
-    font-size: 1.25rem;
-
-    li:before {
-      content: "⇢";
-      position: absolute;
-      left: 0;
-      font-weight: 600;
-      font-size: 1.5rem;
-      line-height: 1.5rem;
-      color: ${tokens.color.gray(75)};
-    }
-  `,
-  p: {
-    mission: css`
-      font-size: 1.25rem;
-      margin: 0;
-      font-weight: 400;
-    `,
-  },
-};
-
 const Business: NextPage = () => {
   return (
     <>
@@ -80,22 +56,57 @@ const Business: NextPage = () => {
       <Story />
       <Values />
       <CorporateOverview />
-      <Page.Contact />
 
-      <Showcase>
+      <section
+        css={css`
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem 0;
+        `}
+      >
+        <ContactChannels />
+      </section>
+
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          max-width: 55rem;
+          margin: 1rem auto;
+          align-items: center;
+          padding: 1rem;
+
+          @media (min-width: 900px) {
+            flex-direction: row;
+            gap: 1rem;
+          }
+        `}
+      >
+        <Image
+          src={DorukPixelart}
+          style={{
+            width: "auto",
+            maxWidth: "15rem",
+            maxHeight: "15rem",
+            height: "auto",
+            borderRadius: "1rem",
+          }}
+          alt="doruk eray's pixel art"
+        />
         <Testimonial
           {...{
             quote: `
-            i bet my life on dorkodu because i believe
-            world needs a technology company with human-centric values;
-            this was my dream at first;
+            we bet our lives on dorkodu. because we believe
+            world needs a human-friendly technology company.
+            this was my dream at first,
             then became dorkodu's mission.`,
             name: "doruk eray",
             title: "founder & chief",
           }}
         />
-        <Polaroid source={ExcaliburIllustration} />
-      </Showcase>
+      </div>
+      <Space />
     </>
   );
 };
@@ -115,9 +126,9 @@ const Intro = () => (
     >
       <ButtonContainer style={{ margin: 0 }}>
         <Button type="fill" link="#overview">
-          continue
+          read more
         </Button>
-        <Button type="tonal" link="#invest">
+        <Button type="tonal" link="#contact">
           be an investor<i>!</i>
         </Button>
       </ButtonContainer>
@@ -152,8 +163,8 @@ const CorporateOverview = () => {
       <IconHeading icon="icon-park-twotone:city">
         Corporate Overview
       </IconHeading>
+      <br />
       <article>
-        <h3>tl;dr</h3>
         <p>
           <b>We bootstrapped Dorkodu by ourselves</b>, <u>two teenagers</u> as a
           side-hustle to our school life (now the opposite). We hold meetings at
@@ -167,8 +178,9 @@ const CorporateOverview = () => {
           Although <b>we are not incorporated yet</b>, sooner we need to.
         </p>
         <p>
-          If you want to talk with us about investment, sponsorship or
-          mentorship; please contact us. We appreciate your contributions :)
+          If you want to talk with us about <em>investment</em>,{" "}
+          <em>sponsorship</em> or <em>business partnership</em>; please contact
+          us. We appreciate your help<i>!</i> 😇
         </p>
       </article>
     </section>
