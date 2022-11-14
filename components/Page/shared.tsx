@@ -1,36 +1,22 @@
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import { Icon } from "@iconify-icon/react";
-import Link from "next/link";
 import { FunctionComponent } from "react";
 import {
   ArrowList,
   Badge,
-  ButtonContainer,
+  IconTitle,
   ParagraphTagline,
-  Space,
 } from "../../styles/elements";
 import { tokens, ui } from "../../styles/prism";
 import Bulletpoint from "../Bulletpoint";
 import Button from "../Button";
 import CardDeck from "../CardDeck";
-import LinkButton from "../LinkButton";
-import Member from "../Member";
-import Polaroid from "../Polaroid";
 
 // images
-import IntroIllustration from "../../public/images/undraw_dorkodu-work-culture.png";
-import ExpertsIllustration from "../../public/images/undraw_experts_re_i40h.svg";
-import SuperHeroIllustration from "../../public/images/undraw_superhero.svg";
-import FriendsUnderTreeIllustration from "../../public/images/undraw_friendship.svg";
 import { Project } from "../../types/dorkodu";
 import Hero from "../Hero";
-
-const image = {
-  intro: IntroIllustration,
-  team: ExpertsIllustration,
-  storyMission: FriendsUnderTreeIllustration,
-};
+import { contactInfo } from "./data";
+import Member from "../Member";
 
 export const JoinUsBanner = () => {
   const style = {
@@ -101,7 +87,7 @@ export const JoinUsBanner = () => {
 };
 
 export const ContactItem: FunctionComponent<{
-  icon: string;
+  icon?: string;
   link: string;
   type: string;
   address: string;
@@ -141,15 +127,20 @@ export const ContactItem: FunctionComponent<{
 
   return (
     <div css={style.self}>
-      <Icon icon={icon} css={style.icon} width={40} height={40} />
+      {icon && <Icon icon={icon} css={style.icon} width={40} height={40} />}
       <div css={style.body}>
         <span css={style.link}>
           <a href={link}>{type}</a>
         </span>
         <span style={{ lineHeight: 1.3 }}>
           <b>{address}</b>
-          <br />
-          {description}
+
+          {description && (
+            <>
+              <br />
+              {description}
+            </>
+          )}
         </span>
       </div>
     </div>
@@ -663,11 +654,12 @@ export const Story = () => {
               <span>— he finally found his passion.</span>
             </li>
             <li>
-              <b>Dorkodu</b>'s seeds are planted during <b>2016</b>, when Doruk
-              brands his all software under the name <i>dorkodu</i> (doruk +
-              code).
+              <b>Dorkodu</b>&apos;s seeds are planted during <b>2016</b>, when
+              Doruk brands his all software under the name <i>dorkodu</i> (doruk
+              + code).
               <span>
-                — <b>"doruk"</b> means <i>peak</i> in <em>Turkish</em>.
+                — &quot;<b>doruk</b>&quot; means <i>peak</i> in <em>Turkish</em>
+                .
               </span>
             </li>
             <li>
@@ -737,42 +729,46 @@ export const Story = () => {
               <span>— first redpills escaped the matrix.</span>
             </li>
             <li>
-              <em>dorkodu</em>'s mission is to <b>liberate the humankind!</b>
+              <em>dorkodu</em>&apos;s mission is to{" "}
+              <b>liberate the humankind!</b>
               <span></span>
             </li>
           </ol>
         </article>
-        <Space />
-        <Polaroid source={image.storyMission} />
-        <p
-          style={{
-            fontSize: "1.4rem",
-            letterSpacing: "-0.015rem",
-            minWidth: "24rem",
-            margin: 0,
-          }}
-        >
-          When our founders got together, they aspired to{" "}
-          <em style={{ fontWeight: "450", fontStyle: "normal" }}>
-            create liberating life experiences for everyone
-          </em>{" "}
-          and help people{" "}
-          <em style={{ fontWeight: "450", fontStyle: "normal" }}>
-            fulfill their dreams.
-          </em>
-        </p>
-        <Space />
-        <JoinUsBanner />
-        <Space />
-        <ButtonContainer style={{ textAlign: "center" }}>
-          <LinkButton action="read more" title="work @ dorkodu" link="/work" />
-          <LinkButton
-            action="read more"
-            title="our business"
-            link="/business"
-          />
-        </ButtonContainer>
       </section>
     </>
+  );
+};
+
+export const ContactChannels = () => (
+  <CardDeck columns={2}>
+    {contactInfo.map((contact) => {
+      return <ContactItem {...{ ...contact }} key={contact.type} />;
+    })}
+  </CardDeck>
+);
+
+export const Contact: FunctionComponent = () => {
+  const Contact = css`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  `;
+
+  return (
+    <section css={Contact} id="contact">
+      <div css={IconTitle}>
+        <Icon icon="twemoji:postbox" width={48} height={48} />
+        <div>
+          <h4>contact us</h4>
+          <p>
+            For any question, problem, wish or suggestion; you can reach out via
+            the related platform below.
+          </p>
+        </div>
+      </div>
+      <ContactChannels />
+    </section>
   );
 };

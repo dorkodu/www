@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import website from "./website";
+import { website } from "./data";
 
 interface MetaProps {
   title: string;
