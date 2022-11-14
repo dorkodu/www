@@ -8,7 +8,7 @@ ftpDeploy
     password: process.env["FTP_PASSWORD"], // Password optional, prompted if none given
     host: process.env["FTP_HOST"],
     port: process.env["FTP_PORT"],
-    localRoot: __dirname + "/dist",
+    localRoot: __dirname + "/out",
     remoteRoot: process.env["FTP_REMOTE"],
     include: ["*", "**/*"], // this would upload everything except dot files
     // e.g. exclude sourcemaps, and ALL files in node_modules (including dot files)
