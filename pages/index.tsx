@@ -24,6 +24,7 @@ import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
 
 import {
+  Contact,
   IconHeading,
   JoinUsBanner,
   Mission,
@@ -37,7 +38,7 @@ import {
 } from "../components/Page/shared";
 
 // images
-import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.png";
+import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.svg";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
 import SuperHeroIllustration from "../public/images/undraw_superhero.svg";
 import FriendsUnderTreeIllustration from "../public/images/undraw_friendship.svg";
@@ -84,7 +85,6 @@ const Home: NextPage = () => {
       <Page.Meta {...meta} />
       <Intro />
       <Why />
-      <Motto />
       <Mission />
 
       <Space />
@@ -103,7 +103,9 @@ const Home: NextPage = () => {
 
       <Story />
 
-      <Page.Contact />
+      <Promoted />
+
+      <Contact />
 
       <Space />
     </>
@@ -204,3 +206,35 @@ const DorkoduPunchline = () => {
     </h1>
   );
 };
+
+const Promoted = () => (
+  <section>
+    <Motto />
+    <Space />
+    <Polaroid source={image.storyMission} />
+    <p
+      style={{
+        fontSize: "1.4rem",
+        letterSpacing: "-0.015rem",
+        minWidth: "24rem",
+        margin: "1rem 0",
+      }}
+    >
+      When our founders got together, they aspired to{" "}
+      <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+        create liberating life experiences for everyone
+      </em>{" "}
+      and help people{" "}
+      <em style={{ fontWeight: "450", fontStyle: "normal" }}>
+        fulfill their dreams.
+      </em>
+    </p>
+    <Space />
+    <JoinUsBanner />
+    <Space />
+    <ButtonContainer style={{ textAlign: "center" }}>
+      <LinkButton action="read more" title="work @ dorkodu" link="/work" />
+      <LinkButton action="read more" title="our business" link="/business" />
+    </ButtonContainer>
+  </section>
+);
