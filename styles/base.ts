@@ -245,6 +245,11 @@ export default css`
       }
     }
 
+    em {
+      font-weight: 475 !important;
+      font-style: normal !important;
+    }
+
     &.--wide {
       width: 100%;
       max-width: none;
