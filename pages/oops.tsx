@@ -11,6 +11,7 @@ import Page from "../components/Page";
 // images
 import VoidIllustration from "../public/images/undraw-void.svg";
 import FeelingBlueIllustration from "../public/images/undraw_feeling_blue_-4-b7q.svg";
+import { Contact } from "../components/Page/shared";
 
 const meta = {
   title: "oops! — dorkodu",
@@ -49,7 +50,7 @@ const Oops: NextPage = () => {
       <br />
       <section>
         <hr />
-        <Page.Contact />
+        <Contact />
         <Space />
       </section>
     </>
