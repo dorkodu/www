@@ -1,12 +1,13 @@
 {
-  "name": "dorkodu-next",
-  "version": "0.1.0",
+  "name": "dorkodu-www",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "publish": "yarn node publish"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -21,8 +22,10 @@
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "dotenv": "^16.0.3",
     "eslint": "8.24.0",
     "eslint-config-next": "latest",
+    "ftp-deploy": "^2.4.3",
     "sass": "^1.55.0",
     "typescript": "4.8.4"
   },
