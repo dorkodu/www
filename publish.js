@@ -10,7 +10,7 @@ ftpDeploy
     port: process.env["FTP_PORT"],
     localRoot: __dirname + "/out",
     remoteRoot: process.env["FTP_REMOTE"],
-    include: ["*", "**/*"], // this would upload everything except dot files
+    include: ["*", "**/*", ".htaccess"], // this would upload everything except dot files
     // e.g. exclude sourcemaps, and ALL files in node_modules (including dot files)
     // delete ALL existing files at destination before uploading, if true
     deleteRemote: true,
