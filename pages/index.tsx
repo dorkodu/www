@@ -83,6 +83,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Page.Meta {...meta} />
+
       <Intro />
       <Why />
       <Mission />
