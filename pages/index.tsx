@@ -1,37 +1,22 @@
 import { css } from "@emotion/react";
 import type { NextPage } from "next";
 import { tokens, ui, color } from "../styles/prism";
-import { Icon } from "@iconify-icon/react";
 
 // components
-import { Project } from "../types/dorkodu";
 
-import {
-  ButtonContainer,
-  Showcase,
-  ParagraphTagline,
-  Badge,
-  ArrowList,
-  Space,
-} from "../styles/elements";
+import { ButtonContainer, Showcase, Space } from "../styles/elements";
 import LinkButton from "../components/LinkButton";
-import Member from "../components/Member";
-import CardDeck from "../components/CardDeck";
 import Page from "../components/Page";
-import Bulletpoint from "../components/Bulletpoint";
 import Hero from "../components/Hero";
-import Button from "../components/Button";
 import Polaroid from "../components/Polaroid";
 
 import {
   Contact,
-  IconHeading,
   JoinUsBanner,
   Mission,
   Motto,
   OurWork,
   People,
-  SectionRuler,
   Story,
   TheDorkoduWay,
   Why,
@@ -40,7 +25,6 @@ import {
 // images
 import IntroIllustration from "../public/images/undraw_dorkodu-work-culture.svg";
 import ExpertsIllustration from "../public/images/undraw_experts_re_i40h.svg";
-import SuperHeroIllustration from "../public/images/undraw_superhero.svg";
 import FriendsUnderTreeIllustration from "../public/images/undraw_friendship.svg";
 
 const meta = {
@@ -217,7 +201,6 @@ const Promoted = () => (
       style={{
         fontSize: "1.4rem",
         letterSpacing: "-0.015rem",
-        minWidth: "24rem",
         margin: "1rem 0",
       }}
     >
