@@ -180,4 +180,9 @@ export default css`
   [hidden] {
     display: none;
   }
+
+  style {
+    display: none !important;
+    visibility: hidden !important;
+  }
 `;
