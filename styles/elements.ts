@@ -72,6 +72,8 @@ export const ArrowList = css`
     font-size: 1.5rem;
     line-height: 1.5rem;
     color: ${tokens.color.gray(75)};
+    font-family: Rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 
   li {
