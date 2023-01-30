@@ -36,5 +36,6 @@ module.exports = {
     "linebreak-style": ["warn", "unix"],
     quotes: ["warn", "double"],
     semi: ["warn", "always"],
+    "no-unused-vars": ["warn"],
   },
 };
