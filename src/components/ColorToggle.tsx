@@ -1,13 +1,13 @@
-import { SegmentedControl, Group, Center, ActionIcon, useMantineColorScheme } from "@mantine/core";
-
+import { SegmentedControl, Center, ActionIcon, useMantineColorScheme, MantineSize } from "@mantine/core";
 import { IconSun, IconMoon, IconMoonStars } from "@tabler/icons";
 
-export function ColorToggleSegmented() {
+export function ColorToggleSegment({ size }: { size: MantineSize }) {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   return (
     <SegmentedControl
       radius="md"
+      size={size}
       value={colorScheme}
       onChange={(value: "light" | "dark") => {
         toggleColorScheme(value);
@@ -34,13 +34,13 @@ export function ColorToggleSegmented() {
   );
 }
 
-export function ColorToggleActionIcon() {
+export function ColorToggleIcon({ size }: { size: MantineSize }) {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   return (
     <ActionIcon
-      onClick={() => toggleColorScheme()}
-      size="lg"
+      onClick={() => toggleColorScheme(colorScheme === "dark" ? "light" : "dark")}
+      size={size}
       sx={(theme) => ({
         backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
         color: theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.blue[6],
@@ -48,5 +48,22 @@ export function ColorToggleActionIcon() {
     >
       {colorScheme === "dark" ? <IconSun size={18} /> : <IconMoonStars size={18} />}
     </ActionIcon>
+  );
+}
+
+import { Switch, useMantineTheme } from "@mantine/core";
+
+export function ColorToggleSwitch({ size }: { size: MantineSize }) {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
+
+  return (
+    <Switch
+      checked={colorScheme === "dark"}
+      onChange={() => toggleColorScheme(colorScheme === "dark" ? "light" : "dark")}
+      size={size}
+      onLabel={<IconSun color={theme.white} size={18} />}
+      offLabel={<IconMoonStars color={theme.colors.gray[5]} size={18} />}
+    />
   );
 }
