@@ -1,7 +1,7 @@
-import { createStyles, Container, Group, Anchor, Box, Title } from "@mantine/core";
+import { createStyles, Container, Group, Anchor, Box, Image, Stack } from "@mantine/core";
 import { FunctionComponent } from "react";
 import { Text, ActionIcon } from "@mantine/core";
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from "@tabler/icons";
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandGithub } from "@tabler/icons";
 
 export const FooterSimple: FunctionComponent<{
   links: { link: string; label: string }[];
@@ -33,7 +33,7 @@ export const FooterWithLinks: FunctionComponent<{
     links: { label: string; link: string }[];
   }[];
 }> = ({ data }) => {
-  const { classes } = style.FooterWithLinks();
+  const { classes, theme } = style.FooterWithLinks();
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -60,27 +60,40 @@ export const FooterWithLinks: FunctionComponent<{
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Title size={30}>Dorkodu</Title>
-          <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+          <Image
+            src={theme.colorScheme === "dark" ? "/images/dorkodu_Logo_Colorful.svg" : "/images/dorkodu_Logo_Dark.svg"}
+            height={40}
+            width="auto"
+            mb="md"
+          />
+          <Text size="sm" color="dimmed" className={classes.description}>
+            We liberate the humankind; with our meaningful products & technology.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
-        <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
-        </Text>
+        <Stack spacing={4}>
+          <Text color="dimmed" size="sm">
+            Proudly from humans. 🌎🇹🇷
+          </Text>
+          <Text color="dimmed" size="md" weight={500}>
+            © {new Date().getFullYear()} <span style={{ fontWeight: 800 }}>Dorkodu</span>
+          </Text>
+        </Stack>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size={18} stroke={1.5} />
+          <ActionIcon size={40} component="a" href="https://twitter.com/dorkodu">
+            <IconBrandTwitter size={28} />
           </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size={18} stroke={1.5} />
+          <ActionIcon size={40} component="a" href="https://github.com/dorkodu">
+            <IconBrandGithub size={28} />
           </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size={18} stroke={1.5} />
+          <ActionIcon size={40} component="a" href="https://youtube.com/@dorkodu">
+            <IconBrandYoutube size={28} />
+          </ActionIcon>
+          <ActionIcon size={40} component="a" href="https://instagram.com/dorkodu">
+            <IconBrandInstagram size={28} />
           </ActionIcon>
         </Group>
       </Container>
@@ -113,12 +126,13 @@ const style = {
       marginTop: 120,
       paddingTop: theme.spacing.xl * 2,
       paddingBottom: theme.spacing.xl * 2,
-      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
-      borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]}`,
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[9] : theme.colors.gray[2],
+      borderTop: `10px solid ${theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[1]}`,
     },
 
     logo: {
-      maxWidth: 200,
+      maxWidth: 240,
+      marginRight: 20,
 
       [theme.fn.smallerThan("sm")]: {
         display: "flex",
@@ -143,26 +157,29 @@ const style = {
       [theme.fn.smallerThan("sm")]: {
         flexDirection: "column",
         alignItems: "center",
+        rowGap: theme.spacing.md * 3,
       },
     },
 
     groups: {
       display: "flex",
       flexWrap: "wrap",
+      gap: theme.spacing.xl,
+      justifyContent: "space-evenly",
 
-      [theme.fn.smallerThan("sm")]: {
-        display: "none",
+      [theme.fn.smallerThan(500)]: {
+        flexDirection: "column",
       },
     },
 
     wrapper: {
-      width: 160,
+      minWidth: 120,
     },
 
     link: {
       display: "block",
-      color: theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[6],
-      fontSize: theme.fontSizes.sm,
+      color: theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[7],
+      fontSize: theme.fontSizes.sm * 1.025,
       paddingTop: 3,
       paddingBottom: 3,
 
@@ -172,11 +189,11 @@ const style = {
     },
 
     title: {
-      fontSize: theme.fontSizes.lg,
-      fontWeight: 700,
-      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+      fontSize: theme.fontSizes.sm,
+      fontWeight: 750,
+      textTransform: "uppercase",
       marginBottom: theme.spacing.xs / 2,
-      color: theme.colorScheme === "dark" ? theme.white : theme.black,
+      color: theme.colorScheme === "dark" ? theme.white : theme.colors.gray[9],
     },
 
     afterFooter: {
@@ -186,10 +203,14 @@ const style = {
       marginTop: theme.spacing.xl,
       paddingTop: theme.spacing.xl,
       paddingBottom: theme.spacing.xl,
-      borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
+      borderTop: `2px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
 
       [theme.fn.smallerThan("sm")]: {
         flexDirection: "column",
+
+        "*": {
+          textAlign: "center",
+        },
       },
     },
 
