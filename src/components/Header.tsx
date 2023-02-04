@@ -421,7 +421,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
             </a>
           </Group>
 
-          <Group className={classes.hiddenMobile}>
+          <Group className={classes.hiddenMobile} spacing="xs">
             <ColorToggleSwitch size="md" />
             <Button variant="default">Log in</Button>
             <Button>Sign up</Button>
