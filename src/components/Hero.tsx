@@ -1,8 +1,6 @@
 import { createStyles, Image, Container, Title, Button, Group, Text, List, ThemeIcon } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 
-import image from "../../public/images/undraw_dorkodu-work-culture.svg";
-
 const styles = {
   HeroWithBulletpoints: createStyles((theme) => ({
     inner: {
@@ -91,8 +89,10 @@ const styles = {
       fontSize: 40,
       letterSpacing: -1,
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
+      fontFamily: `${theme.fontFamily}`,
+      maxWidth: 600,
+      margin: "0 auto",
       marginBottom: theme.spacing.xs,
-      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 
       "@media (max-width: 520px)": {
         fontSize: 28,
@@ -100,12 +100,9 @@ const styles = {
       },
     },
 
-    highlight: {
-      color: theme.fn.primaryColor(theme.colorScheme),
-    },
-
     description: {
       textAlign: "center",
+      fontWeight: 500,
 
       "@media (max-width: 520px)": {
         textAlign: "left",
@@ -213,7 +210,7 @@ export function HeroWithBulletpoints() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              A <span className={classes.highlight}>modern</span> React <br /> components library
+              A <Text className={classes.highlight}>modern</Text> React <br /> components library
             </Title>
             <Text color="dimmed" mt="md">
               Build fully functional accessible web applications faster than ever – Mantine includes more than 120
@@ -250,40 +247,51 @@ export function HeroWithBulletpoints() {
               </Button>
             </Group>
           </div>
-          <Image src={image} className={classes.image} />
+          <Image src="/images/dorkodu-work-culture.svg" className={classes.image} />
         </div>
       </Container>
     </div>
   );
 }
 
-export function HeroText() {
+export function HeroIndex() {
   const { classes } = styles.HeroText();
 
   return (
     <Container className={classes.wrapper} size={1400}>
       <div className={classes.inner}>
         <Title className={classes.title}>
-          Automated AI{" "}
-          <Text component="span" className={classes.highlight} inherit>
-            code reviews
+          We are your{" "}
+          <Text
+            component="span"
+            variant="gradient"
+            gradient={{
+              from: "hsl(140, 80%, 40%)",
+              to: "hsl(90, 70%, 60%)",
+              deg: 45,
+            }}
+          >
+            dream fulfillment
           </Text>{" "}
-          for any stack
+          technology company.
         </Title>
 
         <Container p={0} size={600}>
           <Text size="lg" color="dimmed" className={classes.description}>
-            Build more reliable software with AI companion. AI is also trained to detect lazy developers who do nothing
-            and just complain on Twitter.
+            We combine gamification, human-centric design with our superior technology to create products that help
+            people fulfill their dreams.
+          </Text>
+          <Text size="lg" color="blue" className={classes.description} my="md" maw={400} mx="auto">
+            #life #gamification #productivity #crypto #economics #social #knowledge
           </Text>
         </Container>
 
         <div className={classes.controls}>
-          <Button className={classes.control} size="lg" variant="default" color="gray">
-            Book a demo
+          <Button className={classes.control} size="md" radius="lg" variant="default">
+            Read Our Story
           </Button>
-          <Button className={classes.control} size="lg">
-            Purchase a license
+          <Button className={classes.control} size="md" radius="lg">
+            Join Us
           </Button>
         </div>
       </div>
