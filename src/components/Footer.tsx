@@ -66,7 +66,7 @@ export const FooterWithLinks: FunctionComponent<{
             width="auto"
             mb="md"
           />
-          <Text size="sm" color="dimmed" className={classes.description}>
+          <Text size={16} color="dimmed" className={classes.description}>
             We liberate the humankind; with our meaningful products & technology.
           </Text>
         </div>
@@ -131,7 +131,7 @@ const style = {
     },
 
     logo: {
-      maxWidth: 240,
+      maxWidth: 280,
       marginRight: 20,
 
       [theme.fn.smallerThan("sm")]: {
