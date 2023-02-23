@@ -7,7 +7,7 @@ specifiers:
   '@mantine/hooks': ^5.10.4
   '@mantine/next': ^5.10.4
   '@next/font': 13.1.6
-  '@types/node': 18.14.0
+  '@types/node': 18.14.1
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   eslint: 8.34.0
@@ -24,7 +24,7 @@ dependencies:
   '@mantine/hooks': 5.10.4_react@18.2.0
   '@mantine/next': 5.10.4_pnokhhiiffeanlj7xihut5qdrq
   '@next/font': 13.1.6
-  '@types/node': 18.14.0
+  '@types/node': 18.14.1
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   eslint: 8.34.0
@@ -634,8 +634,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: false
 
-  /@types/node/18.14.0:
-    resolution: {integrity: sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A==}
+  /@types/node/18.14.1:
+    resolution: {integrity: sha512-QH+37Qds3E0eDlReeboBxfHbX9omAcBCXEzswCu6jySP642jiM3cYSIkU/REqwhCUqXdonHFuBfJDiAJxMNhaQ==}
     dev: false
 
   /@types/parse-json/4.0.0:
@@ -1110,7 +1110,7 @@ packages:
   /duplexer2/0.1.4:
     resolution: {integrity: sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA==}
     dependencies:
-      readable-stream: 2.3.7
+      readable-stream: 2.3.8
     dev: false
 
   /emoji-regex/9.2.2:
@@ -1242,7 +1242,7 @@ packages:
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.3_mvgyw3chnqkp6sgfmmtihyjpnm
-      eslint-plugin-import: 2.27.5_eslint@8.34.0
+      eslint-plugin-import: 2.27.5_2hqppaeqs2axgzqg6vttejknky
       eslint-plugin-jsx-a11y: 6.7.1_eslint@8.34.0
       eslint-plugin-react: 7.32.2_eslint@8.34.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.34.0
@@ -1272,7 +1272,7 @@ packages:
       debug: 4.3.4
       enhanced-resolve: 5.12.0
       eslint: 8.34.0
-      eslint-plugin-import: 2.27.5_eslint@8.34.0
+      eslint-plugin-import: 2.27.5_2hqppaeqs2axgzqg6vttejknky
       get-tsconfig: 4.4.0
       globby: 13.1.3
       is-core-module: 2.11.0
@@ -1282,7 +1282,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-module-utils/2.7.4_eyqnu5kib2hfrvsonwfdq4ojse:
+  /eslint-module-utils/2.7.4_yfzt44nswbaazp63chcrlz6vvq:
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1303,14 +1303,16 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
+      '@typescript-eslint/parser': 5.53.0_7kw3g6rralp5ps6mg3uyzz6azm
       debug: 3.2.7
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
+      eslint-import-resolver-typescript: 3.5.3_mvgyw3chnqkp6sgfmmtihyjpnm
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /eslint-plugin-import/2.27.5_eslint@8.34.0:
+  /eslint-plugin-import/2.27.5_2hqppaeqs2axgzqg6vttejknky:
     resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1320,6 +1322,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
+      '@typescript-eslint/parser': 5.53.0_7kw3g6rralp5ps6mg3uyzz6azm
       array-includes: 3.1.6
       array.prototype.flat: 1.3.1
       array.prototype.flatmap: 1.3.1
@@ -1327,7 +1330,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.7.4_eyqnu5kib2hfrvsonwfdq4ojse
+      eslint-module-utils: 2.7.4_yfzt44nswbaazp63chcrlz6vvq
       has: 1.0.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -2454,8 +2457,8 @@ packages:
       string_decoder: 0.10.31
     dev: false
 
-  /readable-stream/2.3.7:
-    resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
+  /readable-stream/2.3.8:
+    resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
     dependencies:
       core-util-is: 1.0.3
       inherits: 2.0.4
