@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import { useState } from 'react';
+import Head from "next/head";
+import { Inter } from "@next/font/google";
+import { useState } from "react";
 import {
   AppShell,
   Navbar,
@@ -11,7 +11,18 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
-} from '@mantine/core';
+} from "@mantine/core";
+
+const meta = {
+  title: "welcome! — dorkodu",
+  description: `liberate the humankind.`,
+  keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
+  url: "/",
+  image: {
+    src: "/public/images/dorkodu-single.png",
+    alt: "dorkodu logo with single letter.",
+  },
+};
 
 export default function Home() {
   const theme = useMantineTheme();
@@ -29,18 +40,25 @@ export default function Home() {
         <AppShell
           styles={{
             main: {
-              background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+              background:
+                theme.colorScheme === "dark"
+                  ? theme.colors.dark[8]
+                  : theme.colors.gray[0],
             },
           }}
           navbarOffsetBreakpoint="sm"
           asideOffsetBreakpoint="sm"
           navbar={
-            <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
+            <Navbar
+              p="md"
+              hiddenBreakpoint="sm"
+              hidden={!opened}
+              width={{ sm: 200, lg: 300 }}>
               <Text>Application navbar</Text>
             </Navbar>
           }
           aside={
-            <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+            <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
               <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
                 <Text>Application sidebar</Text>
               </Aside>
@@ -53,8 +71,13 @@ export default function Home() {
           }
           header={
             <Header height={{ base: 50, md: 70 }} p="md">
-              <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-                <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  height: "100%",
+                }}>
+                <MediaQuery largerThan="sm" styles={{ display: "none" }}>
                   <Burger
                     opened={opened}
                     onClick={() => setOpened((o) => !o)}
@@ -67,11 +90,10 @@ export default function Home() {
                 <Text>Application header</Text>
               </div>
             </Header>
-          }
-        >
+          }>
           <Text>Resize app to see responsive navbar in action</Text>
         </AppShell>
       </main>
     </>
-  )
+  );
 }
