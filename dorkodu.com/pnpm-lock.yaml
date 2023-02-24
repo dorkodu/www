@@ -1,11 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@dorkodu/prism': latest
   '@emotion/react': ^11.10.6
   '@emotion/server': ^11.10.0
   '@mantine/core': ^5.10.4
   '@mantine/hooks': ^5.10.4
   '@mantine/next': ^5.10.4
+  '@next/font': ^13.1.6
   '@tabler/icons-react': ^2.5.0
   '@types/node': 18.14.1
   '@types/react': 18.0.28
@@ -18,11 +20,13 @@ specifiers:
   typescript: 4.9.5
 
 dependencies:
+  '@dorkodu/prism': 0.3.1
   '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
   '@emotion/server': 11.10.0
   '@mantine/core': 5.10.4_xgfpbscinl7gpxk3zixgsno7yu
   '@mantine/hooks': 5.10.4_react@18.2.0
   '@mantine/next': 5.10.4_pnokhhiiffeanlj7xihut5qdrq
+  '@next/font': 13.1.6
   '@tabler/icons-react': 2.5.0_react@18.2.0
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -84,6 +88,10 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@dorkodu/prism/0.3.1:
+    resolution: {integrity: sha512-72I4ohJvF2SMxWkcsByTwrR40YnQvQuCQAfU+xfZT+lsC/NYYy3309hVS1DupvQkJMAquxNOVbaKi22AvYwUeQ==}
     dev: false
 
   /@emotion/babel-plugin/11.10.6:
@@ -354,6 +362,10 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
+
+  /@next/font/13.1.6:
+    resolution: {integrity: sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==}
+    dev: false
 
   /@next/swc-android-arm-eabi/13.1.6:
     resolution: {integrity: sha512-F3/6Z8LH/pGlPzR1AcjPFxx35mPqjE5xZcf+IL+KgbW9tMkp7CYi1y7qKrEWU7W4AumxX/8OINnDQWLiwLasLQ==}
