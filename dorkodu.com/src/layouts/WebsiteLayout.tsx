@@ -1,16 +1,14 @@
 import { Container } from "@mantine/core";
-import { FunctionComponent } from "react";
-import { Outlet } from "react-router-dom";
-import { FooterWithLinks as Footer } from "../components/Footer";
-import { HeaderWithMegaMenu as Header } from "../components/Header";
+import { FooterWithLinks as Footer } from "@/components/Footer";
+import { HeaderWithMegaMenu as Header } from "@/components/Header";
 
-const WebsiteLayout: FunctionComponent = () => {
+function WebsiteLayout({ children }) {
   return (
     <>
       <Header />
-      <Container>
-        <Outlet />
-      </Container>
+      <main>
+        <Container>{children}</Container>
+      </main>
       <Footer
         data={[
           {
@@ -88,6 +86,6 @@ const WebsiteLayout: FunctionComponent = () => {
       />
     </>
   );
-};
+}
 
 export default WebsiteLayout;

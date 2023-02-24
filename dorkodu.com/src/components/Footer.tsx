@@ -1,7 +1,7 @@
 import { createStyles, Container, Group, Anchor, Box, Image, Stack } from "@mantine/core";
 import { FunctionComponent } from "react";
 import { Text, ActionIcon } from "@mantine/core";
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandGithub } from "@tabler/icons";
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandGithub } from "@tabler/icons-react";
 
 export const FooterSimple: FunctionComponent<{
   links: { link: string; label: string }[];

@@ -1,14 +1,6 @@
-import { ContactInfo } from "./../../types/dorkodu.d";
-import { WorkRole } from "../../types/dorkodu";
+import { Dorkodu } from "../types/dorkodu";
 
-export const website = {
-  root: "https://dorkodu.com",
-  twitter: {
-    username: "dorkodu",
-  },
-};
-
-export const roles: Record<string, WorkRole> = {
+export const roles: Record<string, Dorkodu.WorkRole> = {
   SoftwareEngineer: {
     title: "Software Engineer",
     domain: "Technology",
@@ -174,7 +166,7 @@ export const roles: Record<string, WorkRole> = {
   },
 };
 
-export const contactInfo: ContactInfo[] = [
+export const contactInfo: Dorkodu.ContactInfo[] = [
   {
     icon: "tabler:brand-twitter",
     link: "https://twitter.com/dorkodu",

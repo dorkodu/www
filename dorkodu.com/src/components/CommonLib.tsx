@@ -8,7 +8,7 @@ import Button from "../Button";
 import CardDeck from "../CardDeck";
 
 // images
-import { Project } from "../../types/dorkodu";
+import { Project } from "../types/dorkodu";
 import Hero from "../Hero";
 import { contactInfo } from "./data";
 import Member from "../Member";

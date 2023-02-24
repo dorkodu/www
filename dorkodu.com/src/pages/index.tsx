@@ -1,17 +1,10 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+
 import { useState } from "react";
-import {
-  AppShell,
-  Navbar,
-  Header,
-  Footer,
-  Aside,
-  Text,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
-} from "@mantine/core";
+import { AppShell, Navbar, Header, Footer, Aside, Text, MediaQuery, Burger, useMantineTheme } from "@mantine/core";
+
+import WebsiteLayout from "@/layouts/WebsiteLayout";
+import { NextPage } from "next";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -24,7 +17,7 @@ const meta = {
   },
 };
 
-export default function Home() {
+const Home: NextPage = () => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
 
@@ -40,20 +33,13 @@ export default function Home() {
         <AppShell
           styles={{
             main: {
-              background:
-                theme.colorScheme === "dark"
-                  ? theme.colors.dark[8]
-                  : theme.colors.gray[0],
+              background: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
             },
           }}
           navbarOffsetBreakpoint="sm"
           asideOffsetBreakpoint="sm"
           navbar={
-            <Navbar
-              p="md"
-              hiddenBreakpoint="sm"
-              hidden={!opened}
-              width={{ sm: 200, lg: 300 }}>
+            <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
               <Text>Application navbar</Text>
             </Navbar>
           }
@@ -76,7 +62,8 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   height: "100%",
-                }}>
+                }}
+              >
                 <MediaQuery largerThan="sm" styles={{ display: "none" }}>
                   <Burger
                     opened={opened}
@@ -90,10 +77,17 @@ export default function Home() {
                 <Text>Application header</Text>
               </div>
             </Header>
-          }>
+          }
+        >
           <Text>Resize app to see responsive navbar in action</Text>
         </AppShell>
       </main>
     </>
   );
-}
+};
+
+Home.getLayout = (page) => {
+  return <WebsiteLayout>{page}</WebsiteLayout>;
+};
+
+export default Home;

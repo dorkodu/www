@@ -27,7 +27,7 @@ import {
   IconCoin,
   IconFingerprint,
   IconNotification,
-} from "@tabler/icons";
+} from "@tabler/icons-react";
 
 import { useDisclosure } from "@mantine/hooks";
 import { FunctionComponent } from "react";
