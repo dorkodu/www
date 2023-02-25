@@ -1,8 +1,9 @@
 import { Container } from "@mantine/core";
 import { FooterWithLinks as Footer } from "@/components/Footer";
 import { HeaderWithMegaMenu as Header } from "@/components/Header";
+import { FunctionComponent } from "react";
 
-function WebsiteLayout({ children }) {
+const WebsiteLayout: FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Header />
@@ -86,6 +87,6 @@ function WebsiteLayout({ children }) {
       />
     </>
   );
-}
+};
 
 export default WebsiteLayout;
