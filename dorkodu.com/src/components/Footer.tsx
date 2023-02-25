@@ -65,6 +65,7 @@ export const FooterWithLinks: FunctionComponent<{
             height={40}
             width="auto"
             mb="md"
+            fit="unset"
           />
           <Text size={16} color="dimmed" className={classes.description}>
             We liberate the humankind; with our meaningful products & technology.
