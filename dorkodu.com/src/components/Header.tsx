@@ -16,7 +16,7 @@ import {
   ThemeIcon,
   UnstyledButton,
   createStyles,
-  Image,
+  Title,
 } from "@mantine/core";
 
 import {
@@ -32,7 +32,9 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { FunctionComponent } from "react";
 
-import DorkoduLogo from "@assets/dorkodu/dorkodu_Logo_Colorful.svg";
+import Image from "next/image";
+
+import DorkoduLogo from "@/assets/dorkodu/dorkodu_Logo_Colorful.svg";
 import { ColorToggleSegment, ColorToggleSwitch } from "./ColorToggle";
 import { tokens } from "@dorkodu/prism";
 
@@ -78,12 +80,12 @@ const useStyles = createStyles((theme) => ({
   },
 
   dropdownFooter: {
-    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[0],
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
     margin: -theme.spacing.md,
     marginTop: theme.spacing.sm,
     padding: `${theme.spacing.md}px ${theme.spacing.md * 2}px`,
     paddingBottom: theme.spacing.xl,
-    borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]}`,
+    borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]}`,
   },
 
   hiddenMobile: {
@@ -357,11 +359,11 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
             maxWidth: 920,
             marginLeft: "auto",
             marginRight: "auto",
-            paddingTop: 10,
-            paddingBottom: 10,
+            paddingTop: 15,
+            paddingBottom: 15,
           }}
         >
-          <Image src={DorkoduLogo} height={40} p={10} width="auto" />
+          <Image src={DorkoduLogo} alt="Dorkodu" height={40} />
 
           <Group sx={{ height: "100%" }} spacing={0} className={classes.hiddenMobile}>
             <a href="#" className={classes.link}>
@@ -375,7 +377,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
                     <Box component="span" mr={5}>
                       Work
                     </Box>
-                    <IconChevronDown size={18} color={theme.fn.primaryColor()} />
+                    <IconChevronDown size={18} color={theme.colors.gray[5]} />
                   </Center>
                 </a>
               </HoverCard.Target>
@@ -447,13 +449,15 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
         onClose={closeDrawer}
         size="80%"
         padding="md"
-        title="Dorkodu"
         className={classes.hiddenDesktop}
         zIndex={1000000}
+        title={
+          <Title order={2} size="h3">
+            Dorkodu
+          </Title>
+        }
       >
         <ScrollArea sx={{ height: "calc(100vh - 60px)" }} mx="-md">
-          <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
-
           <a href="#" className={classes.link}>
             <span>About</span>
           </a>
@@ -463,10 +467,14 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
               <Box component="span" mr={5}>
                 Work
               </Box>
-              <IconChevronDown size={16} color={theme.fn.primaryColor()} />
+              <IconChevronDown size={16} color={theme.colors.gray[5]} stroke={3} />
             </Center>
           </UnstyledButton>
-          <Collapse in={linksOpened}>{links.products}</Collapse>
+          <Collapse in={linksOpened}>
+            {links.products}
+            <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
+            {links.others}
+          </Collapse>
 
           <a href="#" className={classes.link}>
             Business
@@ -474,13 +482,13 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
 
           <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
 
-          <Group position="center" grow pb="xl" px="md">
+          <Group position="center" spacing="xs" grow pb="xl" px="sm">
             <Button variant="default">Log in</Button>
-            <Button color="blue">Sign up</Button>
+            <Button>Sign up</Button>
           </Group>
 
           <Group position="left" pb="xl" px="md">
-            <ColorToggleSegment size="md" />
+            <ColorToggleSegment size="sm" />
           </Group>
         </ScrollArea>
       </Drawer>
