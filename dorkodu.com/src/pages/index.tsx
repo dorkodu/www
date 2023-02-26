@@ -6,7 +6,8 @@ import { AppShell, Navbar, Header, Footer, Aside, Text, MediaQuery, Burger, useM
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { NextPage } from "next";
 import Meta from "@/components/Meta";
-import { HeroIndex } from "@/components/Hero";
+
+import { HeroIndex } from "@/components/Hero/HeroIndex";
 
 const meta = {
   title: "welcome! — dorkodu",
