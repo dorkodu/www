@@ -1,14 +1,4 @@
-import {
-  createStyles,
-  Image,
-  Container,
-  Title,
-  Button,
-  Group,
-  Text,
-  List,
-  ThemeIcon,
-} from "@mantine/core";
+import { createStyles, Image, Container, Title, Button, Group, Text, List, ThemeIcon } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 
 const styles = {
@@ -68,7 +58,6 @@ const styles = {
   HeroText: createStyles((theme) => ({
     wrapper: {
       position: "relative",
-      paddingTop: 120,
       paddingBottom: 80,
 
       "@media (max-width: 755px)": {
@@ -84,10 +73,7 @@ const styles = {
 
     dots: {
       position: "absolute",
-      color:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[5]
-          : theme.colors.gray[1],
+      color: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1],
 
       "@media (max-width: 755px)": {
         display: "none",
@@ -156,8 +142,7 @@ const styles = {
     wrapper: {
       position: "relative",
       boxSizing: "border-box",
-      backgroundColor:
-        theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
     },
 
     inner: {
@@ -218,170 +203,4 @@ const styles = {
   })),
 };
 
-export function HeroWithBulletpoints() {
-  const { classes } = styles.HeroWithBulletpoints();
-
-  return (
-    <div>
-      <Container>
-        <div className={classes.inner}>
-          <div className={classes.content}>
-            <Title className={classes.title}>
-              A <Text className={classes.highlight}>modern</Text> React <br />{" "}
-              components library
-            </Title>
-            <Text color="dimmed" mt="md">
-              Build fully functional accessible web applications faster than
-              ever – Mantine includes more than 120 customizable components and
-              hooks to cover you in any situation
-            </Text>
-
-            <List
-              mt={30}
-              spacing="sm"
-              size="sm"
-              icon={
-                <ThemeIcon size={20} radius="xl">
-                  <IconCheck size={12} stroke={1.5} />
-                </ThemeIcon>
-              }>
-              <List.Item>
-                <b>TypeScript based</b> – build type safe applications, all
-                components and hooks export types
-              </List.Item>
-              <List.Item>
-                <b>Free and open source</b> – all packages have MIT license, you
-                can use Mantine in any project
-              </List.Item>
-              <List.Item>
-                <b>No annoying focus ring</b> – focus ring will appear only when
-                user navigates with keyboard
-              </List.Item>
-            </List>
-
-            <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.control}>
-                Get started
-              </Button>
-              <Button
-                variant="default"
-                radius="xl"
-                size="md"
-                className={classes.control}>
-                Source code
-              </Button>
-            </Group>
-          </div>
-          <Image
-            src="/images/dorkodu-work-culture.svg"
-            className={classes.image}
-          />
-        </div>
-      </Container>
-    </div>
-  );
-}
-
-export function HeroIndex() {
-  const { classes } = styles.HeroText();
-
-  return (
-    <Container className={classes.wrapper} size={1400}>
-      <div className={classes.inner}>
-        <Title className={classes.title}>
-          We are your{" "}
-          <Text
-            component="span"
-            variant="gradient"
-            gradient={{
-              from: "hsl(140, 80%, 40%)",
-              to: "hsl(90, 70%, 60%)",
-              deg: 45,
-            }}>
-            dream fulfillment
-          </Text>{" "}
-          technology company.
-        </Title>
-
-        <Container p={0} size={600}>
-          <Text size="lg" color="dimmed" className={classes.description}>
-            We combine gamification, human-centric design with our superior
-            technology to create products that help people fulfill their dreams.
-          </Text>
-          <Text
-            size="lg"
-            color="blue"
-            className={classes.description}
-            my="md"
-            maw={400}
-            mx="auto">
-            #life #gamification #productivity #crypto #economics #social
-            #knowledge
-          </Text>
-        </Container>
-
-        <div className={classes.controls}>
-          <Button
-            className={classes.control}
-            size="md"
-            radius="lg"
-            variant="default">
-            Read Our Story
-          </Button>
-          <Button className={classes.control} size="md" radius="lg">
-            Join Us
-          </Button>
-        </div>
-      </div>
-    </Container>
-  );
-}
-
 const BREAKPOINT = "@media (max-width: 755px)";
-
-export function HeroTitle() {
-  const { classes } = styles.HeroTitle();
-
-  return (
-    <div className={classes.wrapper}>
-      <Container size={700} className={classes.inner}>
-        <h1 className={classes.title}>
-          A{" "}
-          <Text
-            component="span"
-            variant="gradient"
-            gradient={{ from: "blue", to: "cyan" }}
-            inherit>
-            fully featured
-          </Text>{" "}
-          React components and hooks library
-        </h1>
-
-        <Text className={classes.description} color="dimmed">
-          Build fully functional accessible web applications with ease – Mantine
-          includes more than 100 customizable components and hooks to cover you
-          in any situation
-        </Text>
-
-        <Group className={classes.controls}>
-          <Button
-            size="xl"
-            className={classes.control}
-            variant="gradient"
-            gradient={{ from: "blue", to: "cyan" }}>
-            Get started
-          </Button>
-
-          <Button
-            component="a"
-            href="https://github.com/mantinedev/mantine"
-            size="xl"
-            variant="default"
-            className={classes.control}>
-            GitHub
-          </Button>
-        </Group>
-      </Container>
-    </div>
-  );
-}
