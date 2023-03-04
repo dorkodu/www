@@ -1,5 +1,5 @@
 import { Container } from "@mantine/core";
-import { FooterWithLinks as Footer } from "@/components/Footer";
+import { FooterBlock as Footer } from "@/components/Footer/FooterBlock";
 import { HeaderWithMegaMenu as Header } from "@/components/Header/HeaderWithMegaMenu";
 import { FunctionComponent } from "react";
 
