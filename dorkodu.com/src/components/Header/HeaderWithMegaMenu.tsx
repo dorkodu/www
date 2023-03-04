@@ -17,9 +17,10 @@ import {
   createStyles,
   Title,
   Stack,
+  ThemeIcon,
 } from "@mantine/core";
 
-import { IconChevronDown } from "@tabler/icons-react";
+import { IconBriefcase, IconBriefcaseOff, IconCampfire, IconChevronDown } from "@tabler/icons-react";
 
 import { useDisclosure } from "@mantine/hooks";
 import { FunctionComponent } from "react";
@@ -186,7 +187,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
     },
   ];
 
-  const workLinks = [
+  const workLinks1 = [
     {
       icon: () => (
         <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} viewBox="0 0 36 36">
@@ -308,6 +309,27 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
     },
   ];
 
+  const workLinks = [
+    {
+      icon: () => (
+        <ThemeIcon variant="light" radius="md" size="lg" color="green">
+          <IconBriefcase />
+        </ThemeIcon>
+      ),
+      title: "Jobs",
+      description: "Join the revolution.",
+    },
+    {
+      icon: () => (
+        <ThemeIcon variant="light" radius="md" size="lg" color="green">
+          <IconBriefcase />
+        </ThemeIcon>
+      ),
+      title: "Life @ Dorkodu",
+      description: "Why work with us?",
+    },
+  ];
+
   const links = {
     products: productLinks.map((item) => (
       <UnstyledButton className={classes.subLink} key={item.title}>
@@ -362,7 +384,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
               About
             </a>
 
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+            <HoverCard width={500} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
@@ -399,7 +421,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
               </HoverCard.Dropdown>
             </HoverCard>
 
-            <HoverCard width={240} position="bottom" radius="md" shadow="md" withinPortal>
+            <HoverCard width={225} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
@@ -411,7 +433,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
                 </a>
               </HoverCard.Target>
 
-              <HoverCard.Dropdown sx={{ overflow: "hidden" }} m="md">
+              <HoverCard.Dropdown sx={{ overflow: "hidden" }} p={8}>
                 <Stack spacing="xs">{links.others}</Stack>
               </HoverCard.Dropdown>
             </HoverCard>
