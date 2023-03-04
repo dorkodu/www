@@ -1,6 +1,6 @@
 import { Container } from "@mantine/core";
 import { FooterWithLinks as Footer } from "@/components/Footer";
-import { HeaderWithMegaMenu as Header } from "@/components/Header";
+import { HeaderWithMegaMenu as Header } from "@/components/Header/HeaderWithMegaMenu";
 import { FunctionComponent } from "react";
 
 const WebsiteLayout: FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
