@@ -34,8 +34,11 @@ import {
   IconHeartHandshake,
   IconLicense,
   IconMasksTheater,
+  IconPlant,
+  IconPlant2,
   IconSquareRoundedArrowRight,
   IconSquareRoundedArrowRightFilled,
+  IconTrees,
 } from "@tabler/icons-react";
 
 import { useDisclosure } from "@mantine/hooks";
@@ -112,6 +115,7 @@ const useStyles = createStyles((theme) => ({
 const links = {
   product: [
     {
+      link: "/products/wander",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} viewBox="0 0 36 36">
           <path
@@ -132,6 +136,7 @@ const links = {
       description: "Mind Garden",
     },
     {
+      link: "/products/trekie",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} viewBox="0 0 36 36">
           <path fill="#269" d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z"></path>
@@ -147,6 +152,7 @@ const links = {
       description: "Social & Gamified Life Growth",
     },
     {
+      link: "/products/forum",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} viewBox="0 0 36 36">
           <path fill="#292F33" d="M7 11h22v18H7z"></path>
@@ -179,6 +185,7 @@ const links = {
       description: "Public Town Square",
     },
     {
+      link: "/products/id",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} viewBox="0 0 36 36">
           <path
@@ -198,43 +205,56 @@ const links = {
   ],
   company: [
     {
+      link: "/jobs",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
-          <IconBriefcase stroke={2.25} />
+          <IconBriefcase />
         </ThemeIcon>
       ),
       title: "Jobs",
       description: "Join the revolution.",
     },
-
     {
+      link: "/manifesto",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
-          <IconLicense stroke={2.25} />
+          <IconLicense />
         </ThemeIcon>
       ),
       title: "Our Manifesto",
-      description: "Liberate the humankind",
+      description: "Liberate the humankind.",
+    },
+    {
+      link: "https://garden.dorkodu.com",
+      icon: (
+        <ThemeIcon variant="light" radius="md" size="lg" color="green">
+          <IconPlant />
+        </ThemeIcon>
+      ),
+      title: "Garden",
+      description: "Our ideas, public.",
     },
   ],
   business: [
     {
+      link: "/business",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
           <IconBuildingCommunity stroke={2.25} />
         </ThemeIcon>
       ),
       title: "For Business",
-      description: "Let's Grow Together!",
+      description: "Grow together.",
     },
     {
+      link: "/creators",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
           <IconHeartHandshake stroke={2} />
         </ThemeIcon>
       ),
       title: "For Creators",
-      description: "Let's Create Together!",
+      description: "Create together.",
     },
   ],
 };
@@ -250,12 +270,14 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
       icon: React.ReactNode;
       title: string;
       description: string;
+      link: string;
     }>
   ) => {
     return list.map((item) => (
-      <UnstyledButton className={classes.subLink} key={item.title}>
+      <UnstyledButton<"a"> className={classes.subLink} href={item.link} key={item.title}>
         <Group noWrap align="flex-start">
           {item.icon}
+
           <div>
             <Text size="sm" weight={550}>
               {item.title}
@@ -283,10 +305,12 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
             paddingBottom: 15,
           }}
         >
-          <Image src={DorkoduLogo} alt="Dorkodu" height={40} />
+          <a href="/">
+            <Image src={DorkoduLogo} alt="Dorkodu" height={40} />
+          </a>
 
           <Group sx={{ height: "100%" }} spacing={0} className={classes.hiddenMobile}>
-            <a href="#" className={classes.link}>
+            <a href="/about" className={classes.link}>
               About
             </a>
 
@@ -340,9 +364,9 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
               </HoverCard.Target>
 
               <HoverCard.Dropdown sx={{ overflow: "hidden" }} p={8}>
-                <Stack spacing="xs">
+                <Stack spacing={0}>
                   {MenuButtonsWithIcon(links.company)}
-                  <Divider color={theme.colorScheme === "dark" ? "dark.4" : "gray.2"} />
+                  <Divider my={8} color={theme.colorScheme === "dark" ? "dark.4" : "gray.2"} />
                   {MenuButtonsWithIcon(links.business)}
                 </Stack>
               </HoverCard.Dropdown>
@@ -408,8 +432,10 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
           <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
 
           <Group position="center" spacing="xs" grow pb="xl" px="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="default" radius={theme.radius.lg - 2}>
+              Log In
+            </Button>
+            <Button radius={theme.radius.lg - 2}>Sign Up</Button>
           </Group>
 
           <Group position="left" pb="xl" px="md">
