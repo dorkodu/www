@@ -1,4 +1,16 @@
-import { createStyles, Image, Container, Title, Button, Group, Text, List, ThemeIcon } from "@mantine/core";
+import {
+  createStyles,
+  Image,
+  Container,
+  Title,
+  Button,
+  Group,
+  Text,
+  List,
+  ThemeIcon,
+  Stack,
+  Badge,
+} from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 
 const styles = {
@@ -33,14 +45,12 @@ const styles = {
     },
 
     title: {
-      textAlign: "center",
       fontWeight: 800,
       fontSize: 40,
       letterSpacing: -1,
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
       fontFamily: `${theme.fontFamily}`,
       maxWidth: 600,
-      margin: "0 auto",
       marginBottom: theme.spacing.xs,
 
       "@media (max-width: 520px)": {
@@ -50,19 +60,17 @@ const styles = {
     },
 
     description: {
-      textAlign: "center",
       fontWeight: 500,
+      fontSize: theme.fontSizes.xl + 2,
 
       "@media (max-width: 520px)": {
-        textAlign: "left",
         fontSize: theme.fontSizes.md,
       },
     },
 
     controls: {
-      marginTop: theme.spacing.lg,
+      marginTop: theme.spacing.xs,
       display: "flex",
-      justifyContent: "center",
 
       "@media (max-width: 520px)": {
         flexDirection: "column",
@@ -91,27 +99,27 @@ export function HeroIndex() {
   const { classes } = styles.HeroText();
 
   return (
-    <Container className={classes.wrapper} size={1400}>
-      <div className={classes.inner}>
-        <Title className={classes.title}>Your life, one place.</Title>
-        <Container p={0} size={600}>
-          <Text size="xl" color="dimmed" className={classes.description}>
-            We create dream fulfillment technology for you.
-          </Text>
-          <Text size="lg" color="blue" className={classes.description} my="md" maw={400} mx="auto">
-            #life #gamification #productivity #crypto #economics #social #knowledge
-          </Text>
-        </Container>
-
-        <div className={classes.controls}>
-          <Button className={classes.control} size="md" radius="lg">
-            Join Us
-          </Button>
-          <Button className={classes.control} size="md" radius="lg" variant="default">
-            Read Our Story
-          </Button>
-        </div>
+    <Stack className={classes.inner} spacing="xs">
+      <Title className={classes.title}>
+        Your life, one place.
+        <br />
+        Just like a digital mind.
+      </Title>
+      <Text size="xl" color="dimmed" className={classes.description} maw={500}>
+        With all tools you need, life is like a game. Fulfill your dreams. Say hello to{" "}
+        <i>
+          <u> your second mind</u>
+        </i>
+        .
+      </Text>
+      <div className={classes.controls}>
+        <Button className={classes.control} size="md" radius="lg">
+          Create Account
+        </Button>
+        <Button className={classes.control} size="md" radius="lg" variant="default">
+          Our Story
+        </Button>
       </div>
-    </Container>
+    </Stack>
   );
 }
