@@ -1,17 +1,4 @@
-import {
-  createStyles,
-  Image,
-  Container,
-  Title,
-  Button,
-  Group,
-  Text,
-  List,
-  ThemeIcon,
-  Stack,
-  Badge,
-} from "@mantine/core";
-import { IconCheck } from "@tabler/icons-react";
+import { createStyles, Image, Container, Title, Button, Text, Stack, rem } from "@mantine/core";
 
 const styles = {
   HeroText: createStyles((theme) => ({
@@ -26,8 +13,30 @@ const styles = {
     },
 
     inner: {
-      position: "relative",
-      zIndex: 1,
+      display: "flex",
+      justifyContent: "space-between",
+      gap: theme.spacing.xl,
+      alignItems: "center",
+      paddingTop: `calc(${theme.spacing.xl} * 4)`,
+      paddingBottom: `calc(${theme.spacing.xl} * 4)`,
+    },
+
+    content: {
+      maxWidth: rem(480),
+      marginRight: `calc(${theme.spacing.xl} * 3)`,
+
+      [theme.fn.smallerThan("md")]: {
+        maxWidth: "100%",
+        marginRight: 0,
+      },
+    },
+
+    image: {
+      flex: 1,
+
+      [theme.fn.smallerThan("md")]: {
+        display: "none",
+      },
     },
 
     dots: {
@@ -61,7 +70,7 @@ const styles = {
 
     description: {
       fontWeight: 500,
-      fontSize: theme.fontSizes.xl + 2,
+      fontSize: theme.fontSizes.xl,
 
       "@media (max-width: 520px)": {
         fontSize: theme.fontSizes.md,
@@ -69,7 +78,7 @@ const styles = {
     },
 
     controls: {
-      marginTop: theme.spacing.xs,
+      marginTop: theme.spacing.md,
       display: "flex",
 
       "@media (max-width: 520px)": {
@@ -99,27 +108,36 @@ export function HeroIndex() {
   const { classes } = styles.HeroText();
 
   return (
-    <Stack className={classes.inner} spacing="xs">
-      <Title className={classes.title}>
-        Your life, one place.
-        <br />
-        Just like a digital mind.
-      </Title>
-      <Text size="xl" color="dimmed" className={classes.description} maw={500}>
-        With all tools you need, life is like a game. Fulfill your dreams. Say hello to{" "}
-        <i>
-          <u> your second mind</u>
-        </i>
-        .
-      </Text>
-      <div className={classes.controls}>
-        <Button className={classes.control} size="md" radius="lg">
-          Create Account
-        </Button>
-        <Button className={classes.control} size="md" radius="lg" variant="default">
-          Our Story
-        </Button>
-      </div>
-    </Stack>
+    <div>
+      <Container>
+        <div className={classes.inner}>
+          <div className={classes.content}>
+            <Stack spacing={0}>
+              <Title className={classes.title}>
+                Your life, one place.
+                <br />
+                Just like a digital mind.
+              </Title>
+              <Text size="xl" color="dimmed" className={classes.description} maw={500}>
+                With all tools you need, life is like a game. Fulfill your dreams. Say hello to&nbsp;
+                <i>
+                  <u>your second mind</u>
+                </i>
+                .
+              </Text>
+              <div className={classes.controls}>
+                <Button className={classes.control} size="md" radius="lg">
+                  Create Account
+                </Button>
+                <Button className={classes.control} size="md" radius="lg" variant="default">
+                  Our Story
+                </Button>
+              </div>
+            </Stack>
+          </div>
+          <Image src="/images/dorkodu-ecosystem.svg" className={classes.image} />
+        </div>
+      </Container>
+    </div>
   );
 }
