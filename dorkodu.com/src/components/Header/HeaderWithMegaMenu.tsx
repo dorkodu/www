@@ -94,7 +94,7 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
     margin: -theme.spacing.md,
     marginTop: theme.spacing.sm,
-    padding: `${theme.spacing.md}px ${theme.spacing.md * 2}px`,
+    padding: `${theme.spacing.md}px ${Number(theme.spacing.md) * 2}px`,
     paddingBottom: theme.spacing.xl,
     borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]}`,
   },
@@ -292,7 +292,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
   };
 
   return (
-    <Box pb={120}>
+    <Box pb={75}>
       <Header height="auto" px="md" withBorder={false}>
         <Group
           position="apart"
@@ -376,10 +376,10 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
           <Group className={classes.hiddenMobile} spacing="xs">
             <ColorToggleSwitch size="md" />
             {/* <Button radius={theme.radius.lg - 2} rightIcon={<IconCircleArrowRightFilled />}>Enter</Button> */}
-            <Button variant="default" radius={theme.radius.lg - 2}>
+            <Button variant="default" radius={Number(theme.radius.lg) - 1}>
               Log In
             </Button>
-            <Button radius={theme.radius.lg - 2}>Sign Up</Button>
+            <Button radius={Number(theme.radius.lg) - 1}>Sign Up</Button>
           </Group>
 
           <Burger
@@ -418,7 +418,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Work
+                Our Work
               </Box>
               <IconChevronDown size={16} color={theme.colors.gray[5]} stroke={3} />
             </Center>
@@ -432,10 +432,10 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
           <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
 
           <Group position="center" spacing="xs" grow pb="xl" px="sm">
-            <Button variant="default" radius={theme.radius.lg - 2}>
+            <Button variant="default" radius={Number(theme.radius.lg) - 2}>
               Log In
             </Button>
-            <Button radius={theme.radius.lg - 2}>Sign Up</Button>
+            <Button radius={Number(theme.radius.lg) - 2}>Sign Up</Button>
           </Group>
 
           <Group position="left" pb="xl" px="md">
