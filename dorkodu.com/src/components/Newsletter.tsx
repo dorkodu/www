@@ -6,7 +6,7 @@ const styles = {
     wrapper: {
       display: "flex",
       alignItems: "center",
-      padding: theme.spacing.xl * 2,
+      padding: +theme.spacing.xl * 2,
       borderRadius: theme.radius.lg,
       backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
       border: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[3]}`,
@@ -26,7 +26,7 @@ const styles = {
     },
 
     body: {
-      paddingRight: theme.spacing.xl * 2,
+      paddingRight: +theme.spacing.xl * 2,
 
       [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
         paddingRight: 0,
