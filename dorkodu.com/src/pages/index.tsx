@@ -12,14 +12,29 @@ import {
   Text,
   Box,
   Paper,
+  Group,
+  createStyles,
+  Button,
+  ThemeIcon,
+  Col,
+  Stack,
+  List,
+  Image,
+  CSSObject,
 } from "@mantine/core";
+
+import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from "@tabler/icons-react";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { NextPage } from "next";
-import Meta from "@/components/Meta";
 
+import Meta from "@/components/Meta";
 import { HeroIndex } from "@/components/Hero/HeroIndex";
-import { FunctionComponent } from "react";
+import { EmailBanner } from "@/components/Newsletter";
+
+import ForumIcon from "@/assets/logos/forum_Icon.svg";
+import { useColorScheme } from "@mantine/hooks";
+import { ProductCardData, ProductShowcaseGrid } from "@/components/Product";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -41,6 +56,7 @@ const Home: NextPage = () => {
       <main>
         <HeroIndex />
         <Products />
+        <FeaturesWithTitle />
         <ProsConsList />
         <Mission />
         <LeadGrid />
@@ -51,12 +67,36 @@ const Home: NextPage = () => {
   );
 };
 
-const Products = () => {
-  return <></>;
+const styles = {
+  FeaturesWithTitle: createStyles((theme) => ({
+    wrapper: {
+      padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    },
+
+    title: {
+      fontSize: rem(36),
+      fontWeight: 900,
+      lineHeight: 1.1,
+      marginBottom: theme.spacing.md,
+      color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    },
+  })),
 };
 
-const Mission = () => {
-  return <></>;
+const Products = () => {
+  const products: ProductCardData[] = [
+    { title: "Forum", tagline: "Social Discourse", icon: ForumIcon.src, link: "/products/forum" },
+    { title: "ID", tagline: "Your Digital Identity", icon: ForumIcon.src, link: "/products/id" },
+  ];
+
+  return (
+    <Box my={60}>
+      <Title order={2} weight={900}>
+        Our Products
+      </Title>
+      {<ProductShowcaseGrid products={products} />}
+    </Box>
+  );
 };
 
 const ProsConsList = () => {
@@ -68,56 +108,161 @@ const Punchline = () => {
 };
 
 const Newsletter = () => {
-  return <></>;
+  return <EmailBanner />;
+};
+
+export const Mission = () => {
+  return (
+    <section>
+      <Stack>
+        <Title>Our Purpose</Title>
+        <Text>we want to help people...</Text>
+        <List>
+          <List.Item>find their true purpose & passion.</List.Item>
+          <List.Item>actualize themselves.</List.Item>
+          <List.Item>create a free and happy life experience for everyone.</List.Item>
+          <List.Item>build the utopian dream of heaven on earth.</List.Item>
+        </List>
+      </Stack>
+
+      <Stack>
+        <Title>Our Mission</Title>
+        <Text>
+          we combine <em>gamification</em>, <em>human-centric design</em> and <em>our superior technology</em> to create
+          products which <em>free the human spirit.</em>
+        </Text>
+      </Stack>
+    </section>
+  );
+};
+
+export const OurWork = () => {
+  const projects = [
+    {
+      title: "trekie",
+      tagline: "the social & gamified personal growth companion app",
+      link: "/trekie",
+      image: "/images/trekie-S.png",
+      type: "product",
+    },
+    {
+      title: "sage",
+      tagline: "the marvelous data exchange protocol for web api's",
+      link: "/sage",
+      image: "/images/sage.png",
+      type: "technology",
+    },
+    {
+      title: "LIBRE",
+      tagline: "open source @ dorkodu ",
+      link: "https://libre.dorkodu.com",
+      image: "/images/libre-compact-S.png",
+      type: "community",
+    },
+  ];
+
+  return (
+    <div>
+      {projects.map((project, index) => (
+        <div key={index}>
+          <img src={project.image} alt={project.title} />
+          <h4>{project.title}</h4>
+          <p>{project.tagline}</p>
+          <p>
+            <span>{project.type}</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 const LeadGrid = () => {
   const theme = useMantineTheme();
-
   const PRIMARY_COL_HEIGHT = rem(300);
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
   return (
-    <Container my="xl">
-      <SimpleGrid cols={2} spacing="lg" breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-        <Paper>
-          <Title order={3}>Lorem, ipsum.</Title>
-          <Text>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio maiores esse impedit natus ipsam commodi eum
-            dolorem libero tempora vitae!
-          </Text>
-        </Paper>
-        <Grid gutter="lg">
+    <Container my="md">
+      <SimpleGrid cols={2} spacing="md" breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
+        <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
+        <Grid gutter="md">
           <Grid.Col>
-            <Paper>
-              <Title order={3}>Lorem, ipsum.</Title>
-              <Text>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio maiores esse impedit natus ipsam commodi
-                eum dolorem libero tempora vitae!
-              </Text>
-            </Paper>
+            <Skeleton height={SECONDARY_COL_HEIGHT} bg="blue" radius="md" animate={false} />
           </Grid.Col>
           <Grid.Col span={6}>
-            <Paper>
-              <Title order={3}>Lorem, ipsum.</Title>
-              <Text>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio maiores esse impedit natus ipsam commodi
-                eum dolorem libero tempora vitae!
-              </Text>
-            </Paper>
+            <Skeleton height={SECONDARY_COL_HEIGHT} bg="blue" radius="md" animate={false} />
           </Grid.Col>
           <Grid.Col span={6}>
-            <Paper>
-              <Title order={3}>Lorem, ipsum.</Title>
-              <Text>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio maiores esse impedit natus ipsam commodi
-                eum dolorem libero tempora vitae!
-              </Text>
-            </Paper>
+            <Skeleton height={SECONDARY_COL_HEIGHT} bg="blue" radius="md" animate={false} />
           </Grid.Col>
         </Grid>
       </SimpleGrid>
     </Container>
+  );
+};
+
+const FeaturesWithTitle = () => {
+  const { classes } = styles.FeaturesWithTitle();
+
+  const features = [
+    {
+      icon: IconReceiptOff,
+      title: "Free and open source",
+      description: "All packages are published under MIT license, you can use Mantine in any project",
+    },
+    {
+      icon: IconFileCode,
+      title: "TypeScript based",
+      description: "Build type safe applications, all components and hooks export types",
+    },
+    {
+      icon: IconCircleDotted,
+      title: "No annoying focus ring",
+      description: "With new :focus-visible selector focus ring will appear only when user navigates with keyboard",
+    },
+    {
+      icon: IconFlame,
+      title: "Flexible",
+      description: "Customize colors, spacing, shadows, fonts and many other settings with global theme object",
+    },
+  ];
+
+  const items = features.map((feature) => (
+    <div key={feature.title}>
+      <ThemeIcon size={48} variant="light" color="green">
+        <feature.icon size={rem(32)} />
+      </ThemeIcon>
+      <Text fz="lg" mt="xs" fw={700}>
+        {feature.title}
+      </Text>
+      <Text c="dimmed" mt="xs" fz="md" fw={450}>
+        {feature.description}
+      </Text>
+    </div>
+  ));
+
+  return (
+    <div className={classes.wrapper}>
+      <Grid>
+        <Col span={8} md={5}>
+          <Title className={classes.title}>A fully featured React components library for your next project</Title>
+          <Text c="dimmed">
+            Build fully functional accessible web applications faster than ever – Mantine includes more than 120
+            customizable components and hooks to cover you in any situation
+          </Text>
+
+          <Button variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }} size="lg" radius="md" mt="xl">
+            Get started
+          </Button>
+        </Col>
+        <Col span={12} md={7}>
+          <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: "md", cols: 1 }]}>
+            {items}
+          </SimpleGrid>
+        </Col>
+      </Grid>
+    </div>
   );
 };
 
