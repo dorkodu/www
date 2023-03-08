@@ -121,7 +121,9 @@ export function HeroIndex() {
               <Text size="xl" color="dimmed" className={classes.description} maw={500}>
                 With all tools you need, life is like a game. Fulfill your dreams. Say hello to&nbsp;
                 <i>
-                  <u>your second mind</u>
+                  <b>
+                    <u>your second mind</u>
+                  </b>
                 </i>
                 .
               </Text>
