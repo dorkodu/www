@@ -1,4 +1,34 @@
+import Meta from "@/components/Meta";
+import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { createStyles, Title, Text, Button, Container, Group, rem } from "@mantine/core";
+import { NextPage } from "next";
+import Head from "next/head";
+
+const meta = {
+  title: "Oops!",
+  description: `Something went wrong.`,
+  keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
+  url: "/",
+  image: {
+    src: "/public/images/dorkodu-single.png",
+    alt: "dorkodu logo with single letter.",
+  },
+};
+
+const Home: NextPage = () => {
+  return (
+    <WebsiteLayout>
+      <Head>
+        <Meta {...meta} />
+      </Head>
+      <main>
+        <NotFound />
+      </main>
+    </WebsiteLayout>
+  );
+};
+
+export default Home;
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -20,7 +50,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     textAlign: "center",
     fontWeight: 900,
     fontSize: rem(38),
@@ -38,7 +67,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function NotFoundTitle() {
+export function NotFound() {
   const { classes } = useStyles();
 
   return (
