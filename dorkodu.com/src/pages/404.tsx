@@ -1,6 +1,7 @@
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { createStyles, Title, Text, Button, Container, Group, rem } from "@mantine/core";
+import { IconArrowRight } from "@tabler/icons-react";
 import { NextPage } from "next";
 import Head from "next/head";
 
@@ -32,26 +33,26 @@ export default Home;
 
 const useStyles = createStyles((theme) => ({
   root: {
-    paddingTop: rem(80),
-    paddingBottom: rem(80),
+    paddingTop: rem(32),
+    paddingBottom: rem(32),
   },
 
   label: {
     textAlign: "center",
     fontWeight: 900,
-    fontSize: rem(220),
+    fontSize: rem(200),
     lineHeight: 1,
     marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
-    color: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2],
+    color: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3],
 
     [theme.fn.smallerThan("sm")]: {
-      fontSize: rem(120),
+      fontSize: rem(100),
     },
   },
 
   title: {
     textAlign: "center",
-    fontWeight: 900,
+    fontWeight: 850,
     fontSize: rem(38),
 
     [theme.fn.smallerThan("sm")]: {
@@ -60,8 +61,9 @@ const useStyles = createStyles((theme) => ({
   },
 
   description: {
-    maxWidth: rem(500),
+    maxWidth: rem(450),
     margin: "auto",
+    fontWeight: 500,
     marginTop: theme.spacing.xl,
     marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
   },
@@ -73,14 +75,13 @@ export function NotFound() {
   return (
     <Container className={classes.root}>
       <div className={classes.label}>404</div>
-      <Title className={classes.title}>You have found a secret place.</Title>
-      <Text color="dimmed" size="lg" align="center" className={classes.description}>
-        Unfortunately, this is only a 404 page. You may have mistyped the address, or the page has been moved to another
-        URL.
+      <Title className={classes.title}>Something's gone wrong.</Title>
+      <Text color="dimmed" size="xl" align="center" className={classes.description}>
+        You may have mistyped the address, or the page has been moved to another URL.
       </Text>
-      <Group position="center">
-        <Button variant="subtle" size="md">
-          Take me back to home page
+      <Group position="center" my={25}>
+        <Button variant="gradient" size="lg" radius={20} rightIcon={<IconArrowRight />}>
+          Go Back Home
         </Button>
       </Group>
     </Container>
