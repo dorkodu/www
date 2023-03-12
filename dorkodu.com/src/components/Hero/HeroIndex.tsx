@@ -1,4 +1,5 @@
 import { createStyles, Image, Container, Title, Button, Text, Stack, rem } from "@mantine/core";
+import { IconArrowRight } from "@tabler/icons-react";
 
 const styles = {
   HeroText: createStyles((theme) => ({
@@ -80,6 +81,7 @@ const styles = {
     controls: {
       marginTop: theme.spacing.md,
       display: "flex",
+      alignItems: "center",
 
       "@media (max-width: 520px)": {
         flexDirection: "column",
@@ -128,11 +130,8 @@ export function HeroIndex() {
                 .
               </Text>
               <div className={classes.controls}>
-                <Button className={classes.control} size="md" radius="lg">
+                <Button className={classes.control} size="lg" radius={22} rightIcon={<IconArrowRight />}>
                   Create Account
-                </Button>
-                <Button className={classes.control} size="md" radius="lg" variant="default">
-                  Our Story
                 </Button>
               </div>
             </Stack>
