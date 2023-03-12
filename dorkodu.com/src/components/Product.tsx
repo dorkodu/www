@@ -2,7 +2,7 @@ import { Group, Image, Paper, SimpleGrid, Stack, Text } from "@mantine/core";
 
 export type ProductCardData = { title: string; tagline: string; icon: string; link: string };
 
-export const ProductCard = ({ product }: { product: ProductCardData }) => {
+export const ProductLinkCard = ({ product }: { product: ProductCardData }) => {
   return (
     <Paper p={10} component="a" href={product.link} withBorder shadow="sm" radius="lg">
       <Group spacing="sm">
@@ -23,7 +23,7 @@ export const ProductCard = ({ product }: { product: ProductCardData }) => {
 export const ProductShowcaseGrid = ({ products }: { products: ProductCardData[] }) => (
   <SimpleGrid my={20} cols={3} spacing={16}>
     {products.map((item) => (
-      <ProductCard product={item} />
+      <ProductLinkCard product={item} />
     ))}
   </SimpleGrid>
 );
