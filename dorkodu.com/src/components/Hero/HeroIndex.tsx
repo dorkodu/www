@@ -1,8 +1,8 @@
-import { createStyles, Image, Container, Title, Button, Text, Stack, rem } from "@mantine/core";
+import { createStyles, Image, Container, Title, Button, Text, Stack, rem, Group, Badge } from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
 
 const styles = {
-  HeroText: createStyles((theme) => ({
+  HeroIndex: createStyles((theme) => ({
     wrapper: {
       position: "relative",
       paddingBottom: 80,
@@ -15,6 +15,7 @@ const styles = {
 
     inner: {
       display: "flex",
+      flexWrap: "wrap",
       justifyContent: "space-between",
       gap: theme.spacing.xl,
       alignItems: "center",
@@ -34,10 +35,6 @@ const styles = {
 
     image: {
       flex: 1,
-
-      [theme.fn.smallerThan("md")]: {
-        display: "none",
-      },
     },
 
     dots: {
@@ -61,10 +58,9 @@ const styles = {
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
       fontFamily: `${theme.fontFamily}`,
       maxWidth: 600,
-      marginBottom: theme.spacing.xs,
 
       "@media (max-width: 520px)": {
-        fontSize: 28,
+        fontSize: 26,
         textAlign: "left",
       },
     },
@@ -78,17 +74,16 @@ const styles = {
       },
     },
 
-    controls: {
+    cta: {
       marginTop: theme.spacing.md,
       display: "flex",
-      alignItems: "center",
 
       "@media (max-width: 520px)": {
         flexDirection: "column",
       },
     },
 
-    control: {
+    ctaButton: {
       "&:not(:first-of-type)": {
         marginLeft: theme.spacing.md,
       },
@@ -107,38 +102,50 @@ const styles = {
 };
 
 export function HeroIndex() {
-  const { classes } = styles.HeroText();
+  const { classes } = styles.HeroIndex();
 
   return (
-    <div>
-      <Container>
-        <div className={classes.inner}>
-          <div className={classes.content}>
-            <Stack spacing={0}>
-              <Title className={classes.title}>
-                Your life, one place.
-                <br />
-                Just like a digital mind.
-              </Title>
-              <Text size="xl" color="dimmed" className={classes.description} maw={500}>
-                With all tools you need, life is like a game. Fulfill your dreams. Say hello to&nbsp;
-                <i>
-                  <b>
-                    <u>your second mind</u>
-                  </b>
-                </i>
-                .
-              </Text>
-              <div className={classes.controls}>
-                <Button className={classes.control} size="lg" radius={22} rightIcon={<IconArrowRight />}>
-                  Create Account
-                </Button>
-              </div>
-            </Stack>
-          </div>
-          <Image src="/images/dorkodu-ecosystem.svg" className={classes.image} />
+    <Container p={0}>
+      <div className={classes.inner}>
+        <div className={classes.content}>
+          <Stack spacing={8}>
+            <Title className={classes.title}>
+              Your life, one place.
+              <br />
+              Just like a digital mind.
+            </Title>
+            <Group>
+              <Badge color="green" size="lg" px={8} py={4}>
+                Badge
+              </Badge>
+              <Badge color="green" variant="dot">
+                Badge
+              </Badge>
+              <Badge color="green" size="lg" variant="dot">
+                Badge
+              </Badge>
+              <Badge color="green" size="lg" variant="dot">
+                Badge
+              </Badge>
+            </Group>
+            <Text size="xl" color="dimmed" className={classes.description} maw={500}>
+              With all tools you need, life is like a game. Fulfill your dreams. Say hello to&nbsp;
+              <i>
+                <b>
+                  <u>your second mind</u>
+                </b>
+              </i>
+              .
+            </Text>
+            <div className={classes.cta}>
+              <Button className={classes.ctaButton} size="lg" radius={22} rightIcon={<IconArrowRight />}>
+                Create Account
+              </Button>
+            </div>
+          </Stack>
         </div>
-      </Container>
-    </div>
+        <Image src="/images/dorkodu-ecosystem.svg" className={classes.image} />
+      </div>
+    </Container>
   );
 }
