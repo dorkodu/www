@@ -44,7 +44,8 @@ export const FooterBlock: FunctionComponent<{
             fit="unset"
           />
           <Text size={16} color="dimmed" className={classes.description}>
-            We liberate the humankind; with our meaningful products & technology.
+            {/* We liberate the humankind; with our meaningful products & technology. */}
+            We Are Your <b>Dream Fulfillment</b> Technology Company.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
@@ -82,8 +83,8 @@ const style = {
   FooterWithLinks: createStyles((theme) => ({
     footer: {
       marginTop: 120,
-      paddingTop: theme.spacing.xl * 2,
-      paddingBottom: theme.spacing.xl * 2,
+      paddingTop: +theme.spacing.xl * 2,
+      paddingBottom: +theme.spacing.xl * 2,
       backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[9] : theme.colors.gray[2],
       borderTop: `10px solid ${theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[1]}`,
     },
@@ -101,6 +102,7 @@ const style = {
 
     description: {
       marginTop: 5,
+      textTransform: "uppercase",
 
       [theme.fn.smallerThan("sm")]: {
         marginTop: theme.spacing.xs,
@@ -115,7 +117,7 @@ const style = {
       [theme.fn.smallerThan("sm")]: {
         flexDirection: "column",
         alignItems: "center",
-        rowGap: theme.spacing.md * 3,
+        rowGap: +theme.spacing.md * 3,
       },
     },
 
@@ -137,7 +139,7 @@ const style = {
     link: {
       display: "block",
       color: theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[7],
-      fontSize: theme.fontSizes.sm * 1.025,
+      fontSize: +theme.fontSizes.sm * 1.025,
       paddingTop: 3,
       paddingBottom: 3,
 
@@ -147,11 +149,11 @@ const style = {
     },
 
     title: {
-      fontSize: theme.fontSizes.sm,
-      fontWeight: 750,
+      fontSize: theme.fontSizes.md,
+      fontWeight: 800,
       textTransform: "uppercase",
-      marginBottom: theme.spacing.xs / 2,
-      color: theme.colorScheme === "dark" ? theme.white : theme.colors.gray[9],
+      marginBottom: +theme.spacing.xs / 2,
+      color: theme.colorScheme === "dark" ? theme.white : theme.colors.dark[6],
     },
 
     afterFooter: {
