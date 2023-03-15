@@ -54,6 +54,7 @@ const useStyles = createStyles((theme) => ({
     textAlign: "center",
     fontWeight: 850,
     fontSize: rem(38),
+    color: theme.colorScheme == "dark" ? "white" : theme.colors.dark[9],
 
     [theme.fn.smallerThan("sm")]: {
       fontSize: rem(32),
