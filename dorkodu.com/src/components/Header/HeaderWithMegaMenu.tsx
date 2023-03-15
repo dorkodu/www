@@ -431,16 +431,14 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
 
           <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
 
-          <Group position="center" spacing="xs" grow pb="xl" px="sm">
-            <Button variant="default" radius={Number(theme.radius.lg) - 2}>
+          <Group position="center" spacing="xs" grow pb="xl" px={0}>
+            <Button variant="default" radius={Number(theme.radius.lg) - 1}>
               Log In
             </Button>
-            <Button radius={Number(theme.radius.lg) - 2}>Sign Up</Button>
+            <Button radius={Number(theme.radius.lg) - 1}>Sign Up</Button>
           </Group>
 
-          <Group position="left" pb="xl" px="md">
-            <ColorToggleSegment size="sm" />
-          </Group>
+          <ColorToggleSegment size="sm" />
         </ScrollArea>
       </Drawer>
     </Box>
