@@ -30,6 +30,7 @@ import {
   IconCake,
   IconCampfire,
   IconChevronDown,
+  IconChevronRight,
   IconCircleArrowRightFilled,
   IconHeartHandshake,
   IconLicense,
@@ -49,6 +50,7 @@ import Image from "next/image";
 import DorkoduLogo from "@/assets/dorkodu/dorkodu_Logo_Colorful.svg";
 import { ColorToggleSegment, ColorToggleSwitch } from "../ColorToggle";
 import { tokens } from "@dorkodu/prism";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -57,8 +59,8 @@ const useStyles = createStyles((theme) => ({
     height: "100%",
     paddingTop: 4,
     paddingBottom: 4,
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
+    paddingLeft: theme.spacing.sm,
+    paddingRight: theme.spacing.sm,
     textDecoration: "none",
     borderRadius: theme.spacing.sm,
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
@@ -261,7 +263,8 @@ const links = {
 
 export const HeaderWithMegaMenu: FunctionComponent = () => {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
-  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  const [productLinksOpened, { toggle: toggleProductLinks }] = useDisclosure(false);
+  const [companyLinksOpened, { toggle: toggleCompanyLinks }] = useDisclosure(false);
 
   const { classes, theme } = useStyles();
 
@@ -274,20 +277,22 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
     }>
   ) => {
     return list.map((item) => (
-      <UnstyledButton<"a"> className={classes.subLink} href={item.link} key={item.title}>
-        <Group noWrap align="flex-start">
-          {item.icon}
+      <Link href={item.link} key={item.title}>
+        <UnstyledButton className={classes.subLink}>
+          <Group noWrap align="flex-start">
+            {item.icon}
 
-          <div>
-            <Text size="sm" weight={550}>
-              {item.title}
-            </Text>
-            <Text size="xs" color="dimmed">
-              {item.description}
-            </Text>
-          </div>
-        </Group>
-      </UnstyledButton>
+            <div>
+              <Text size="sm" weight={550}>
+                {item.title}
+              </Text>
+              <Text size="xs" color="dimmed">
+                {item.description}
+              </Text>
+            </div>
+          </Group>
+        </UnstyledButton>
+      </Link>
     ));
   };
 
@@ -316,7 +321,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
 
             <HoverCard width={500} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
-                <a href="#" className={classes.link}>
+                <a className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
                       Our Work
@@ -353,7 +358,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
 
             <HoverCard width={250} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
-                <a href="#" className={classes.link}>
+                <a className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
                       Company
@@ -373,7 +378,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
             </HoverCard>
           </Group>
 
-          <Group className={classes.hiddenMobile} spacing="xs">
+          <Group className={classes.hiddenMobile} spacing={8}>
             <ColorToggleSwitch size="md" />
             {/* <Button radius={theme.radius.lg - 2} rightIcon={<IconCircleArrowRightFilled />}>Enter</Button> */}
             <Button variant="default" radius={Number(theme.radius.lg) - 1}>
@@ -405,7 +410,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
         className={classes.hiddenDesktop}
         zIndex={1000000}
         title={
-          <Title order={2} size="h3">
+          <Title order={2} size="h2">
             Dorkodu
           </Title>
         }
@@ -415,19 +420,28 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
             <span>About</span>
           </a>
 
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
+          <UnstyledButton className={classes.link} onClick={toggleProductLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Our Work
+                Products
               </Box>
               <IconChevronDown size={16} color={theme.colors.gray[5]} stroke={3} />
             </Center>
           </UnstyledButton>
-          <Collapse in={linksOpened}>{MenuButtonsWithIcon(links.product)}</Collapse>
+          <Collapse in={productLinksOpened}>{MenuButtonsWithIcon(links.product)}</Collapse>
 
-          <a href="#" className={classes.link}>
-            Business
-          </a>
+          <UnstyledButton className={classes.link} onClick={toggleCompanyLinks}>
+            <Center inline>
+              <Box component="span" mr={5}>
+                Company
+              </Box>
+              <IconChevronDown size={16} color={theme.colors.gray[5]} stroke={3} />
+            </Center>
+          </UnstyledButton>
+          <Collapse in={companyLinksOpened}>
+            {MenuButtonsWithIcon(links.company)}
+            {MenuButtonsWithIcon(links.business)}
+          </Collapse>
 
           <Divider my="sm" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
 

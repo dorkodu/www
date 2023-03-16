@@ -45,7 +45,7 @@ export const FooterBlock: FunctionComponent<{
           />
           <Text size={16} color="dimmed" className={classes.description}>
             {/* We liberate the humankind; with our meaningful products & technology. */}
-            We Are Your <b>Dream Fulfillment</b> Technology Company.
+            We are your <b>dream fulfillment</b> technology company.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
@@ -102,7 +102,6 @@ const style = {
 
     description: {
       marginTop: 5,
-      textTransform: "uppercase",
 
       [theme.fn.smallerThan("sm")]: {
         marginTop: theme.spacing.xs,
