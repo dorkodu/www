@@ -1,5 +1,5 @@
 import { SegmentedControl, Center, ActionIcon, useMantineColorScheme, MantineSize } from "@mantine/core";
-import { IconSun, IconMoon, IconMoonStars } from "@tabler/icons-react";
+import { IconSun, IconMoon, IconMoonStars, IconMoon2, IconSunFilled, IconMoonFilled } from "@tabler/icons-react";
 
 export function ColorToggleSegment({ size }: { size: MantineSize }) {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -62,8 +62,9 @@ export function ColorToggleSwitch({ size }: { size: MantineSize }) {
       checked={colorScheme === "dark"}
       onChange={() => toggleColorScheme(colorScheme === "dark" ? "light" : "dark")}
       size={size}
-      onLabel={<IconSun color={theme.white} size={18} />}
-      offLabel={<IconMoonStars color={theme.colors.gray[5]} size={18} />}
+      styles={{}}
+      onLabel={<IconSunFilled color={theme.white} size={18} />}
+      offLabel={<IconMoonFilled color={theme.colors.gray[3]} size={18} />}
     />
   );
 }
