@@ -1,18 +1,29 @@
-import { Grid, Group, Image, Paper, SimpleGrid, Stack, Text } from "@mantine/core";
+import Dorkodu from "@/types/dorkodu";
+import { Grid, Group, Image, Paper, Stack, Text, useMantineTheme } from "@mantine/core";
 
-export type ProductCardData = { title: string; tagline: string; icon: string; link: string };
+export const ProductLinkCard = ({ project }: { project: Dorkodu.Project }) => {
+  const theme = useMantineTheme();
 
-export const ProductLinkCard = ({ product }: { product: ProductCardData }) => {
   return (
-    <Paper p={10} component="a" href={product.link} withBorder shadow="sm" radius="lg">
-      <Group spacing="sm" pr={12}>
-        <Image src={product.icon} width={60} height={60} fit="contain" alt={product.title} withPlaceholder />
+    <Paper
+      p={10}
+      component="a"
+      href={project.link}
+      withBorder
+      shadow="sm"
+      radius="lg"
+      sx={{
+        backgroundColor: theme.colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.white,
+      }}
+    >
+      <Group pr={10}>
+        <Image src={project.image} width={60} height={60} fit="contain" alt={project.title} withPlaceholder />
         <Stack spacing={0}>
-          <Text weight={800} size={24}>
-            {product.title}
+          <Text weight={800} size={24} color={theme.colorScheme == "dark" ? theme.white : theme.colors.dark[9]}>
+            {project.title}
           </Text>
           <Text weight={500} color="dimmed" size="md">
-            {product.tagline}
+            {project.tagline}
           </Text>
         </Stack>
       </Group>
@@ -20,11 +31,11 @@ export const ProductLinkCard = ({ product }: { product: ProductCardData }) => {
   );
 };
 
-export const ProductShowcaseGrid = ({ products }: { products: ProductCardData[] }) => (
+export const ProductShowcaseGrid = ({ products }: { products: Dorkodu.Project[] }) => (
   <Grid my={20} gutter={8}>
     {products.map((item) => (
-      <Grid.Col span={"content"}>
-        <ProductLinkCard product={item} />
+      <Grid.Col span="content" key={item.title}>
+        <ProductLinkCard project={item} />
       </Grid.Col>
     ))}
   </Grid>
