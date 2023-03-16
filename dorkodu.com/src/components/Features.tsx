@@ -22,6 +22,7 @@ const styles = {
     item: {
       display: "flex",
       gap: 12,
+      backgroundColor: theme.colorScheme == "dark" ? theme.colors.dark[8] : theme.colors.white,
     },
 
     itemIcon: {
@@ -107,7 +108,7 @@ export function FeaturedUseCases({ supTitle, title, description, useCases }: Fea
 
       <SimpleGrid
         cols={2}
-        spacing={25}
+        spacing={10}
         breakpoints={[{ maxWidth: 550, cols: 1, spacing: 40 }]}
         style={{ marginTop: 30 }}
       >
