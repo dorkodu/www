@@ -1,6 +1,7 @@
-export namespace Dorkodu {
+namespace Dorkodu {
   export interface WorkRole {
     title: string;
+    icon?: React.ReactNode;
     domain: string;
     tags: string[];
     summary?: string;
@@ -15,7 +16,7 @@ export namespace Dorkodu {
     title: string;
     about?: string;
     avatar?: string;
-    icons?: string[];
+    icons?: React.ReactNode;
   }
 
   export interface Project {
@@ -24,6 +25,7 @@ export namespace Dorkodu {
     description?: string;
     type?: string;
     image?: string;
+    icon?: React.ReactNode;
     link?: string;
   }
 
@@ -31,7 +33,9 @@ export namespace Dorkodu {
     type: string;
     link: string;
     address: string;
-    icon?: string;
+    icon?: React.ReactNode;
     description?: string;
   }
 }
+
+export default Dorkodu;
