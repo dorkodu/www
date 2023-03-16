@@ -21,6 +21,10 @@ const styles = {
       alignItems: "center",
       paddingTop: `calc(${theme.spacing.xl} * 4)`,
       paddingBottom: `calc(${theme.spacing.xl} * 4)`,
+
+      [theme.fn.smallerThan("md")]: {
+        flexDirection: "column",
+      },
     },
 
     content: {
@@ -35,20 +39,7 @@ const styles = {
 
     image: {
       flex: 1,
-    },
-
-    dots: {
-      position: "absolute",
-      color: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1],
-
-      "@media (max-width: 755px)": {
-        display: "none",
-      },
-    },
-
-    dotsLeft: {
-      left: 0,
-      top: 0,
+      maxWidth: 400,
     },
 
     title: {
@@ -114,20 +105,7 @@ export function HeroIndex() {
               <br />
               Just like a digital mind.
             </Title>
-            <Group>
-              <Badge color="green" size="lg" px={8} py={4}>
-                Badge
-              </Badge>
-              <Badge color="green" variant="dot">
-                Badge
-              </Badge>
-              <Badge color="green" size="lg" variant="dot">
-                Badge
-              </Badge>
-              <Badge color="green" size="lg" variant="dot">
-                Badge
-              </Badge>
-            </Group>
+
             <Text size="xl" color="dimmed" className={classes.description} maw={500}>
               With all tools you need, life is like a game. Fulfill your dreams. Say hello to&nbsp;
               <i>
