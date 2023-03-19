@@ -41,6 +41,7 @@ import { FAQs } from "@/components/FAQ";
 import { HeroWithBackground } from "@/components/Hero/HeroWithBackground";
 import { FeaturedUsecases } from "@/data/featured";
 import Dorkodu from "@/types/dorkodu";
+import { projects } from "@/data/products";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -59,19 +60,15 @@ const Home: NextPage = () => {
       <Head>
         <Meta {...meta} />
       </Head>
-      <Stack spacing={60}>
-        <HeroIndex />
-        <Products />
-        <FeaturedUseCases {...FeaturedUsecases} />
-        <FeaturesWithTitle />
-        <ProsConsList />
-        <HeroWithBackground />
-        <Mission />
-        <FAQs />
-        <LeadGrid />
-        <Punchline />
-        <Newsletter />
-      </Stack>
+      <HeroIndex />
+      <Products />
+      <Punchline />
+      <FeaturedUseCases {...FeaturedUsecases} />
+      <ProsConsList />
+      <Mission />
+      <FAQs />
+      <LeadGrid />
+      <Newsletter />
     </WebsiteLayout>
   );
 };
@@ -101,7 +98,7 @@ const Products = () => {
   return (
     <Box my={60}>
       <Title order={2} weight={800}>
-        Our Products
+        Our Apps
       </Title>
       <ProductShowcaseGrid products={products} />
     </Box>
@@ -146,30 +143,6 @@ export const Mission = () => {
 };
 
 export const OurWork = () => {
-  const projects = [
-    {
-      title: "trekie",
-      tagline: "the social & gamified personal growth companion app",
-      link: "/trekie",
-      image: "/images/trekie-S.png",
-      type: "product",
-    },
-    {
-      title: "sage",
-      tagline: "the marvelous data exchange protocol for web api's",
-      link: "/sage",
-      image: "/images/sage.png",
-      type: "technology",
-    },
-    {
-      title: "LIBRE",
-      tagline: "open source @ dorkodu ",
-      link: "https://libre.dorkodu.com",
-      image: "/images/libre-compact-S.png",
-      type: "community",
-    },
-  ];
-
   return (
     <div>
       {projects.map((project, index) => (
@@ -208,70 +181,6 @@ const LeadGrid = () => {
         </Grid>
       </SimpleGrid>
     </Container>
-  );
-};
-
-const FeaturesWithTitle = () => {
-  const { classes } = styles.FeaturesWithTitle();
-
-  const features = [
-    {
-      icon: IconReceiptOff,
-      title: "Free and open source",
-      description: "All packages are published under MIT license, you can use Mantine in any project",
-    },
-    {
-      icon: IconFileCode,
-      title: "TypeScript based",
-      description: "Build type safe applications, all components and hooks export types",
-    },
-    {
-      icon: IconCircleDotted,
-      title: "No annoying focus ring",
-      description: "With new :focus-visible selector focus ring will appear only when user navigates with keyboard",
-    },
-    {
-      icon: IconFlame,
-      title: "Flexible",
-      description: "Customize colors, spacing, shadows, fonts and many other settings with global theme object",
-    },
-  ];
-
-  const items = features.map((feature) => (
-    <div key={feature.title}>
-      <ThemeIcon size={48} variant="light" color="green">
-        <feature.icon size={rem(32)} />
-      </ThemeIcon>
-      <Text fz="lg" mt="xs" fw={700}>
-        {feature.title}
-      </Text>
-      <Text c="dimmed" mt="xs" fz="md" fw={450}>
-        {feature.description}
-      </Text>
-    </div>
-  ));
-
-  return (
-    <div className={classes.wrapper}>
-      <Grid>
-        <Col span={8} md={5}>
-          <Title className={classes.title}>A fully featured React components library for your next project</Title>
-          <Text c="dimmed">
-            Build fully functional accessible web applications faster than ever – Mantine includes more than 120
-            customizable components and hooks to cover you in any situation
-          </Text>
-
-          <Button variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }} size="lg" radius="md" mt="xl">
-            Get started
-          </Button>
-        </Col>
-        <Col span={12} md={7}>
-          <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: "md", cols: 1 }]}>
-            {items}
-          </SimpleGrid>
-        </Col>
-      </Grid>
-    </div>
   );
 };
 

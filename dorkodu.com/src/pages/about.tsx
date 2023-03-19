@@ -26,9 +26,7 @@ const Home: NextPage = () => {
       <Head>
         <Meta {...meta} />
       </Head>
-      <main>
-        <HeroIndex />
-      </main>
+      <main></main>
     </WebsiteLayout>
   );
 };
