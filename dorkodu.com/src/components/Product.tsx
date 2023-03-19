@@ -1,5 +1,6 @@
 import Dorkodu from "@/types/dorkodu";
-import { Grid, Group, Image, Paper, Stack, Text, useMantineTheme } from "@mantine/core";
+import { Badge, Center, Grid, Group, Image, Paper, Stack, Text, useMantineTheme } from "@mantine/core";
+import { IconConfetti, IconMoodHappy } from "@tabler/icons-react";
 
 export const ProductLinkCard = ({ project }: { project: Dorkodu.Project }) => {
   const theme = useMantineTheme();
@@ -31,12 +32,29 @@ export const ProductLinkCard = ({ project }: { project: Dorkodu.Project }) => {
   );
 };
 
-export const ProductShowcaseGrid = ({ products }: { products: Dorkodu.Project[] }) => (
-  <Grid my={20} gutter={8}>
-    {products.map((item) => (
-      <Grid.Col span="content" key={item.title}>
-        <ProductLinkCard project={item} />
+export const ProductShowcaseGrid = ({ products }: { products: Dorkodu.Project[] }) => {
+  const theme = useMantineTheme();
+
+  return (
+    <Grid my={20} gutter={8}>
+      {products.map((item) => (
+        <Grid.Col span="content" key={item.title}>
+          <ProductLinkCard project={item} />
+        </Grid.Col>
+      ))}
+      <Grid.Col span="content" key="more-soon">
+        <Center h={80} p="lg">
+          <Badge size="xl" variant="light" p="md" radius={12} sx={{}}>
+            <Center>
+              <IconMoodHappy color={theme.colorScheme == "dark" ? theme.colors.green[8] : theme.colors.green[8]} />
+              &nbsp;
+              <span>
+                more coming soon<i>!</i>&nbsp;
+              </span>
+            </Center>
+          </Badge>
+        </Center>
       </Grid.Col>
-    ))}
-  </Grid>
-);
+    </Grid>
+  );
+};
