@@ -3,13 +3,87 @@ import { FunctionComponent } from "react";
 import { Text, ActionIcon } from "@mantine/core";
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandGithub } from "@tabler/icons-react";
 
-export const FooterBlock: FunctionComponent<{
-  data: {
-    title: string;
-    links: { label: string; link: string }[];
-  }[];
-}> = ({ data }) => {
+export const FooterBlock = () => {
   const { classes, theme } = style.FooterWithLinks();
+
+  const data = [
+    {
+      title: "Company",
+      links: [
+        {
+          label: "About",
+          link: "/about",
+        },
+        {
+          label: "Jobs",
+          link: "/jobs",
+        },
+        {
+          label: "Garden",
+          link: "https://garden.dorkodu.com",
+        },
+        {
+          label: "For Business",
+          link: "/business",
+        },
+        {
+          label: "For Creators",
+          link: "/creators",
+        },
+      ],
+    },
+    {
+      title: "Products",
+      links: [
+        {
+          label: "Wander",
+          link: "/product/wander",
+        },
+        {
+          label: "Trekie",
+          link: "/product/trekie",
+        },
+        {
+          label: "Forum",
+          link: "/product/forum",
+        },
+        {
+          label: "ID",
+          link: "/product/id",
+        },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        {
+          label: "Manifesto",
+          link: "/manifesto",
+        },
+
+        {
+          label: "Terms",
+          link: "/terms",
+        },
+        {
+          label: "Privacy",
+          link: "/privacy",
+        },
+        {
+          label: "Open Source",
+          link: "https://github.com/dorkodu",
+        },
+        {
+          label: "Press",
+          link: "/press",
+        },
+        {
+          label: "Contact Us",
+          link: "/contact-us",
+        },
+      ],
+    },
+  ];
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
