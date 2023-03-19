@@ -38,9 +38,8 @@ const styles = {
       textAlign: "center",
       textTransform: "uppercase",
       fontWeight: 800,
-      fontSize: theme.fontSizes.sm,
+      fontSize: theme.fontSizes.md,
       color: theme.fn.variant({ variant: "light", color: theme.primaryColor }).color,
-      letterSpacing: rem(0.5),
     },
 
     title: {
