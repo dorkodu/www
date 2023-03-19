@@ -24,6 +24,7 @@ const styles = {
 
       [theme.fn.smallerThan("md")]: {
         flexDirection: "column",
+        gap: +theme.spacing.md * 2,
       },
     },
 
