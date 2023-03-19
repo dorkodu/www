@@ -9,14 +9,7 @@ export function FAQs() {
   const theme = useMantineTheme();
 
   return (
-    <Container
-      size="sm"
-      sx={{
-        paddingTop: `calc(${theme.spacing.md} * 2)`,
-        paddingBottom: `calc(${theme.spacing.md} * 2)`,
-        minHeight: 650,
-      }}
-    >
+    <Container size="sm">
       <Title align="center" sx={{ marginBottom: 20 }} order={2}>
         FAQs
       </Title>
