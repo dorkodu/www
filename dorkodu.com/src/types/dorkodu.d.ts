@@ -17,6 +17,7 @@ namespace Dorkodu {
     about?: string;
     avatar?: string;
     icons?: React.ReactNode;
+    tags?: string[];
   }
 
   export interface Project {
