@@ -262,7 +262,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
 
               <HoverCard.Dropdown sx={{ overflow: "hidden", marginTop: 16 }} p="sm">
                 <Group position="apart" px="md">
-                  <Text weight={500}>Products</Text>
+                  <Text weight={600}>Products</Text>
                 </Group>
                 <Divider my="sm" mx="-md" color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"} />
                 <SimpleGrid cols={2} spacing={0}>
