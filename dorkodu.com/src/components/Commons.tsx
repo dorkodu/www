@@ -1,3 +1,19 @@
+import { Box, Container, Group, Paper, Text, Title, useMantineTheme } from "@mantine/core";
+
+export const SectionTitle = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => {
+  return (
+    <Container my={40} mx="auto">
+      <Group noWrap>
+        <Box w={36}>{icon}</Box>
+        <div>
+          <Title order={2}>{title}</Title>
+          <Text>{text}</Text>
+        </div>
+      </Group>
+    </Container>
+  );
+};
+
 export const StarDivider = () => {
   const theme = useMantineTheme();
 
