@@ -329,13 +329,13 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
-        size="70%"
+        size="75%"
         padding="md"
         className={classes.hiddenDesktop}
         zIndex={1000000}
         title={
           <Group position="apart">
-            <Title order={2} size="h2">
+            <Title order={2} size="h3">
               Dorkodu
             </Title>
             <ColorToggleSwitch size="md" />
