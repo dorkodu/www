@@ -18,7 +18,7 @@ export const people = {
     {
       name: "Doruk Eray",
       title: "Founder & Chief",
-      about: "Product Polymath, Craftsman, Cult Leader.",
+      about: "Craftsman, Polymath, Cult Leader.",
       tags: ["Product", "Business", "Software", "Design", "Art"],
       avatar: "/images/people/doruk.png",
     },
