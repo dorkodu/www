@@ -22,17 +22,17 @@ export function TheRingMember({ member }: { member: Dorkodu.TeamMember }) {
     <Box maw={500}>
       <Group noWrap={smolScreen ? true : false} align="flex-start">
         <Avatar src={member.avatar} size={100} radius="lg" />
-        <Stack spacing={0}>
+        <Stack spacing={0} mt={4}>
           <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
             {member.title}
           </Text>
           <Text fz="xl" fw={700} className={classes.name}>
             {member.name}
           </Text>
-          <Text fz="sm" weight={500} m={0} p={0} c="dimmed" my={5}>
+          <Text fz="sm" weight={500} m={0} p={0} c="dimmed">
             {member.about}
           </Text>
-          <Group spacing={5} mt={4}>
+          <Group spacing={5} mt={8}>
             {member.tags?.map((tag) => (
               <Badge radius={8} px={8} variant="gradient">
                 {tag}
