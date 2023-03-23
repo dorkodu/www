@@ -1,4 +1,5 @@
 import { Box, Container, Group, Paper, Text, Title, useMantineTheme } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const SectionTitle = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => {
   return (
@@ -25,6 +26,7 @@ export const StarDivider = () => {
       mt={"2.5rem"}
       mb={"4rem"}
       color={theme.colorScheme == "dark" ? theme.colors.dark[6] : theme.colors.gray[3]}
+      sx={{ userSelect: "none" }}
       align="center"
     >
       ꘏
@@ -58,3 +60,16 @@ export const StoryCard = ({ icon, text, order }: { icon: React.ReactNode; text: 
 };
 
 export const punctuation = ["＊", "⁕", "๛", "⹈", "꘏", "꘎", "⋆", "⭑", "☸"];
+
+export const Showcase = ({ content }: { content: [React.ReactNode, React.ReactNode] }) => {
+  const isBigScreen = useMediaQuery("(min-width: 760px)");
+
+  return (
+    <Container my={50}>
+      <Group noWrap={isBigScreen} spacing={20}>
+        {content[0]}
+        {content[1]}
+      </Group>
+    </Container>
+  );
+};
