@@ -87,7 +87,7 @@ export const FooterBlock = () => {
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text<"a">
+      <Text
         key={index}
         className={classes.link}
         component="a"
@@ -117,9 +117,12 @@ export const FooterBlock = () => {
             mb="md"
             fit="unset"
           />
-          <Text size={16} color="dimmed" className={classes.description}>
-            {/* We liberate the humankind; with our meaningful products & technology. */}
-            We are your <b>dream fulfillment</b> technology company.
+          <Text size={18} weight={400} color="dimmed" className={classes.description}>
+            We Are Your{" "}
+            <Text weight={500} span>
+              Dream Fulfillment Technology
+            </Text>{" "}
+            Company.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
@@ -164,8 +167,8 @@ const style = {
     },
 
     logo: {
-      maxWidth: 280,
-      marginRight: 20,
+      maxWidth: 320,
+      marginLeft: 10,
 
       [theme.fn.smallerThan("sm")]: {
         display: "flex",
