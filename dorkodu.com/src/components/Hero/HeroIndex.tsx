@@ -46,7 +46,7 @@ const styles = {
     title: {
       fontWeight: 800,
       fontSize: 40,
-      letterSpacing: -1,
+      letterSpacing: -1.25,
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
       fontFamily: `${theme.fontFamily}`,
       maxWidth: 600,
@@ -102,9 +102,11 @@ export function HeroIndex() {
         <div className={classes.content}>
           <Stack spacing={8}>
             <Title className={classes.title}>
-              Your life, one place.
-              <br />
-              Just like a digital mind.
+              <Text mb={-8}>Your life, one place.</Text>
+              <Text span>Just like a</Text>
+              <Text variant="gradient" gradient={{ from: "#00cc44", to: "lime", deg: 360 }} span>
+                &nbsp;digital mind.&nbsp;
+              </Text>
             </Title>
 
             <Text size="xl" color="dimmed" className={classes.description} maw={500}>
