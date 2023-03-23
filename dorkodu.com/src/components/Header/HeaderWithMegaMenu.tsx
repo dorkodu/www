@@ -152,7 +152,7 @@ const links = {
           <IconLicense />
         </ThemeIcon>
       ),
-      title: "Our Manifesto",
+      title: "The README",
       description: "Liberate the humankind.",
     },
     {
