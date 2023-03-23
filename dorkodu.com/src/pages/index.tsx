@@ -73,22 +73,6 @@ const Home: NextPage = () => {
   );
 };
 
-const styles = {
-  FeaturesWithTitle: createStyles((theme) => ({
-    wrapper: {
-      padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
-    },
-
-    title: {
-      fontSize: rem(36),
-      fontWeight: 900,
-      lineHeight: 1.1,
-      marginBottom: theme.spacing.md,
-      color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    },
-  })),
-};
-
 const Products = () => {
   const products: Dorkodu.Project[] = [
     { title: "Forum", tagline: "Social Discourse", image: ForumIcon.src, link: "/products/forum" },
