@@ -123,15 +123,15 @@ const links = {
   product: [
     {
       link: "/products/forum",
-      icon: <Image src={ForumIcon.src} width={40} height={40} alt="Forum" withPlaceholder />,
+      icon: <Image src={ForumIcon.src} width={48} height={48} alt="Forum" withPlaceholder />,
       title: "Forum",
       description: "Social Discourse",
     },
     {
       link: "/products/id",
-      icon: <Image src={IDIcon.src} width={40} height={40} alt="Dorkodu ID" withPlaceholder />,
+      icon: <Image src={IDIcon.src} width={48} height={48} alt="Dorkodu ID" withPlaceholder />,
       title: "ID",
-      description: "Digital Life Hub",
+      description: "Your Digital Identity",
     },
   ],
   company: [
@@ -146,14 +146,14 @@ const links = {
       description: "Join the revolution.",
     },
     {
-      link: "/manifesto",
+      link: "/readme",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
           <IconLicense />
         </ThemeIcon>
       ),
-      title: "The README",
-      description: "Liberate the humankind.",
+      title: "README",
+      description: "The Dorkodu Manifesto",
     },
     {
       link: "https://garden.dorkodu.com",
