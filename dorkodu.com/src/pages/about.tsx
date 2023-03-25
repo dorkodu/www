@@ -256,7 +256,7 @@ const Press = () => {
 
 const OurTeam = () => {
   return (
-    <Box<"section"> id="people" py={20}>
+    <Box component="section" id="people" py={20}>
       <SectionTitle title="Our People" text="Here's to the crazy ones." icon={People} />
 
       <Stack spacing={30}>
