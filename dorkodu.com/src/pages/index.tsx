@@ -42,6 +42,8 @@ import { HeroWithBackground } from "@/components/Hero/HeroWithBackground";
 import { FeaturedUsecases } from "@/data/featured";
 import Dorkodu from "@/types/dorkodu";
 import { projects } from "@/data/products";
+import { SectionTitle } from "@/components/Commons";
+import { Bullseye, Leaf } from "@/styles/twemoji";
 
 const meta = {
   title: "welcome! — dorkodu",
@@ -103,17 +105,28 @@ const Newsletter = () => {
 
 export const Mission = () => {
   return (
-    <section>
-      <Stack>
-        <Title>Our Purpose</Title>
-        <Text>we want to help people...</Text>
+    <Container my={25}>
+      <Title order={2}>Who We Are?</Title>
+
+      <Box component="section" id="our-purpose" py={20}>
+        <SectionTitle title="Our Purpose" text="Why we do this?" icon={Leaf} />
         <List>
           <List.Item>find their true purpose & passion.</List.Item>
           <List.Item>actualize themselves.</List.Item>
           <List.Item>create a free and happy life experience for everyone.</List.Item>
           <List.Item>build the utopian dream of heaven on earth.</List.Item>
         </List>
-      </Stack>
+      </Box>
+
+      <Box component="section" id="people" py={20}>
+        <SectionTitle title="Our Mission" text="Our roadmap and objectives." icon={Bullseye} />
+        <List>
+          <List.Item>find their true purpose & passion.</List.Item>
+          <List.Item>actualize themselves.</List.Item>
+          <List.Item>create a free and happy life experience for everyone.</List.Item>
+          <List.Item>build the utopian dream of heaven on earth.</List.Item>
+        </List>
+      </Box>
 
       <Stack>
         <Title>Our Mission</Title>
@@ -122,7 +135,7 @@ export const Mission = () => {
           products which <em>free the human spirit.</em>
         </Text>
       </Stack>
-    </section>
+    </Container>
   );
 };
 
