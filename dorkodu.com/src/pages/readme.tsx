@@ -27,9 +27,9 @@ const Readme: NextPage = () => {
       <Hero />
 
       <Container size={600} my={50}>
-        <ActI />
-        <ActI />
-        <ActI />
+        <Act1 />
+        <Act2 />
+        <Act3 />
       </Container>
 
       <Jobs />
@@ -126,19 +126,101 @@ const Jobs = () => {
   );
 };
 
-const ActI = () => {
+const Act1 = () => {
   return (
     <StoryAct>
       <Title>Act I.</Title>
       <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, qui. Molestias expedita, alias sit maiores porro
-        nam veniam architecto itaque quo inventore laudantium obcaecati totam.
+        This is not a manifesto. <br />
+        This is not a codex, not a whitepaper, and not a secret master plan. <br />
+        That person is you.
+      </Text>
+      <Text>
+        This is just a simple story.
+        <br />A story told in three acts.
+      </Text>
+      <Text>
+        This is a simple story, but a good story. <br />
+        Like all simple stories, it has a beginning, a middle and an end. <br />
+        Like all good stories, it’s a story about magic.
+      </Text>
+      <Text>
+        This is a story waiting to be read. <br />
+        Ideally in one sitting and with a hot beverage by your side. <br />
+        It is waiting to be read by the one person it was specifically written for.
       </Text>
     </StoryAct>
   );
 };
 
-const StoryAct = ({ children }: { children: React.ReactNode }) => {};
+const Act2 = () => {
+  return (
+    <StoryAct>
+      <Title>Act Title</Title>
+      <Text>
+        And then, once a connection had been established, you suddenly had access to a completely new world. A world of
+        seemingly infinite yet unknown possibilities. A world full of ideas, resources and thoughts from people all
+        around the globe. A world waiting for you to be explored.
+      </Text>
+      <Text>It was mind blowing.A magical moment.</Text>
+      <Text>
+        Everyone of us has experienced their own transformative moments with computers. The first time you touched a
+        touchscreen. The first time you wrote and executed a line of code. The first time you discovered a video game
+        that completely consumed you.
+      </Text>
+      <Text>
+        It’s often difficult to describe these moments because, like magic, they lie beyond articulation. They have to
+        be experienced.
+      </Text>
+      <Text>
+        Computers are not magic in themselves. It’s the software that runs on them, the interaction between bits and
+        atoms, that makes them magical.
+      </Text>
+      <Text>
+        One ingredient of computer magic is software’s ability to create even more magical experiences. It’s a tool for
+        tools. Great software supports human intellect. But magical software enhances human creativity.
+      </Text>
+      <Text>
+        The early pioneers of modern computing described computers as “dream machines”. What got them excited about
+        computers was not so much what they were, but everything they had the potential to be.
+      </Text>
+      <Text>
+        This is the other facet of software magic: It stretches our imagination beyond what we thought was possible.
+        Great software makes us feel like we live in the future. But magical software allows us to imagine the future
+        that comes after it.
+      </Text>
+      <Text>We look back at these magical moments with nostalgia.</Text>
+      <Text weight={500}>What happened to them?</Text>
+    </StoryAct>
+  );
+};
+
+const Act3 = () => {
+  return (
+    <StoryAct>
+      <Title>Act Title</Title>
+      <Text>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dignissimos qui magni repellendus voluptas
+        voluptatum est? Facilis voluptatem sapiente tempora, odio exercitationem molestias animi distinctio et, placeat
+        nostrum veritatis dolore!
+      </Text>
+    </StoryAct>
+  );
+};
+
+const AlanKeyQuote = () => (
+  <Text weight={600} size="xl">
+    “The best way to predict the future is to invent it.”
+  </Text>
+);
+
+const StoryAct = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Container size={600} my={40}>
+      {children}
+    </Container>
+  );
+};
 
 const styles = {
   Hero: createStyles((theme) => ({
