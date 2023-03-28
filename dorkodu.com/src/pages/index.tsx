@@ -96,7 +96,13 @@ const ProsConsList = () => {
 };
 
 const Punchline = () => {
-  return <></>;
+  return (
+    <>
+      <Container>
+        <Title>It's never been easier to</Title>
+      </Container>
+    </>
+  );
 };
 
 const Newsletter = () => {
