@@ -33,10 +33,6 @@ const meta = {
   description: `Your Dream Fulfillment Technology Company.`,
   keywords: `about dorkodu, about dorkodu.com, dream fulfillment company, technology, the dorkodu company, dream technology`,
   url: "/about",
-  image: {
-    src: "/public/images/dorkodu-single.png",
-    alt: "dorkodu logo with single letter.",
-  },
 };
 
 const About: NextPage = () => {
@@ -121,7 +117,7 @@ const Hero = () => {
           </Title>
           <Title order={2} size="h1" weight={800} className={$.headline}>
             <Text span>Your</Text>
-            <Text variant="gradient" gradient={{ from: "blue", to: "cyan", deg: 45 }} span>
+            <Text variant="gradient" gradient={{ from: "#00cc40", to: "lime", deg: 180 }} span>
               &nbsp;Dream Fulfillment&nbsp;
             </Text>
             <Text mt={-8}>Technology Company.</Text>
@@ -279,7 +275,7 @@ const OurTeam = () => {
 const Story = () => {
   return (
     <>
-      <SectionTitle title="Our Story" text="A timeline of meaningful technology." icon={GreenBook} />
+      <SectionTitle title="Our Story" text="A timeline of pursuing meaning in technology." icon={GreenBook} />
       <Container my={50} px={0}>
         <SimpleGrid cols={2} spacing="lg" breakpoints={[{ maxWidth: "36rem", cols: 1, spacing: "sm" }]}>
           {story.map((item, index) => (
