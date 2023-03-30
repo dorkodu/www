@@ -20,7 +20,7 @@ export const FooterBlock = () => {
         },
         {
           label: "Garden",
-          link: "https://garden.dorkodu.com",
+          link: "/garden",
         },
         {
           label: "For Business",
@@ -57,8 +57,8 @@ export const FooterBlock = () => {
       title: "Resources",
       links: [
         {
-          label: "Manifesto",
-          link: "/manifesto",
+          label: "README",
+          link: "/readme",
         },
 
         {
