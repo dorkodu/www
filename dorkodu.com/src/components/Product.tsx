@@ -1,5 +1,5 @@
 import Dorkodu from "@/types/dorkodu";
-import { Badge, Center, Grid, Group, Image, Paper, Stack, Text, useMantineTheme } from "@mantine/core";
+import { Badge, Box, Center, Grid, Group, Image, Paper, Stack, Text, ThemeIcon, useMantineTheme } from "@mantine/core";
 import { IconConfetti, IconMoodHappy } from "@tabler/icons-react";
 
 export const ProductLinkCard = ({ project }: { project: Dorkodu.Project }) => {
@@ -44,13 +44,9 @@ export const ProductShowcaseGrid = ({ products }: { products: Dorkodu.Project[] 
       ))}
       <Grid.Col span="content" key="more-soon">
         <Center h={80} p="lg">
-          <Badge size="xl" variant="light" p="md" radius={12} sx={{}}>
+          <Badge size="xl" variant="light" p="md" radius={10}>
             <Center>
-              <IconMoodHappy color={theme.colorScheme == "dark" ? theme.colors.green[8] : theme.colors.green[8]} />
-              &nbsp;
-              <span>
-                more coming soon<i>!</i>&nbsp;
-              </span>
+              <span>More Coming Soon!</span>
             </Center>
           </Badge>
         </Center>
