@@ -67,9 +67,16 @@ export const Showcase = ({ content }: { content: [React.ReactNode, React.ReactNo
   return (
     <Container my={50}>
       <Group noWrap={isBigScreen} spacing={20}>
-        {content[0]}
-        {content[1]}
+        <Box sx={{ flex: 1 }}>{content[0]}</Box>
+        <Box sx={{ flex: 1.1 }}>{content[1]}</Box>
       </Group>
     </Container>
   );
 };
+
+export const WIP = () => (
+  <Container size={600} my={50}>
+    <Title order={2}>Sorry, come back later.</Title>
+    <Text>This page is currently under development.</Text>
+  </Container>
+);
