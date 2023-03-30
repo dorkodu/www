@@ -36,9 +36,10 @@ const styles = {
 
     title: {
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
-      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+      fontWeight: 750,
+      letterSpacing: -0.75,
       lineHeight: 1,
-      marginBottom: theme.spacing.md,
+      marginBottom: theme.spacing.xs,
     },
 
     controls: {
@@ -70,13 +71,12 @@ export function EmailBanner() {
   return (
     <div className={classes.wrapper}>
       <div className={classes.body}>
-        <Title className={classes.title}>Wake up, Neo.</Title>
-        <Text weight={500} size="lg" mb={5}>
-          Subscribe to our newsletter!
-        </Text>
-        <Text size="sm" color="dimmed">
-          You will never miss important product updates, latest news and community QA sessions. Our newsletter is once a
-          week, every Sunday.
+        <Title className={classes.title} order={2}>
+          Subscribe to our newsletter.
+        </Title>
+        <Text weight={500} size="lg" mb={5}></Text>
+        <Text color="dimmed">
+          <b>Once a week;</b> you will never miss important updates and latest news.
         </Text>
 
         <div className={classes.controls}>
