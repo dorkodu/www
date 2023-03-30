@@ -156,7 +156,7 @@ const links = {
       description: "The Dorkodu Manifesto",
     },
     {
-      link: "https://garden.dorkodu.com",
+      link: "https://dorkodu.com/garden",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
           <IconPlant />
