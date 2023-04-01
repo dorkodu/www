@@ -52,84 +52,17 @@ import { ColorToggleSegment, ColorToggleSwitch } from "../ColorToggle";
 import { tokens } from "@dorkodu/prism";
 import Link from "next/link";
 
-import ForumIcon from "@/assets/logos/forum_Icon.svg";
-import IDIcon from "@/assets/logos/id_Icon.svg";
-
-const useStyles = createStyles((theme) => ({
-  link: {
-    display: "flex",
-    alignItems: "center",
-    height: "100%",
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingLeft: theme.spacing.sm,
-    paddingRight: theme.spacing.sm,
-    textDecoration: "none",
-    borderRadius: theme.spacing.sm,
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontWeight: 500,
-    fontSize: theme.fontSizes.sm,
-    cursor: "pointer",
-
-    [theme.fn.smallerThan("sm")]: {
-      height: 42,
-      display: "flex",
-      alignItems: "center",
-      width: "100%",
-    },
-
-    ...theme.fn.hover({
-      color: theme.colorScheme === "dark" ? theme.colors.white : theme.colors.green[9],
-      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.green[1],
-      textDecoration: "underline",
-    }),
-  },
-
-  subLink: {
-    width: "100%",
-    padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
-    borderRadius: theme.radius.md,
-
-    ...theme.fn.hover({
-      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
-    }),
-
-    "&:active": theme.activeStyles,
-  },
-
-  dropdownFooter: {
-    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
-    margin: -theme.spacing.md,
-    marginTop: theme.spacing.sm,
-    padding: `${theme.spacing.md}px ${Number(theme.spacing.md) * 2}px`,
-    paddingBottom: theme.spacing.xl,
-    borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]}`,
-  },
-
-  hiddenMobile: {
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
-    },
-  },
-
-  hiddenDesktop: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
-  },
-}));
-
 const links = {
   product: [
     {
       link: "/products/forum",
-      icon: <Image src={ForumIcon.src} width={48} height={48} alt="Forum" withPlaceholder />,
+      icon: <Image src="/images/logos/forum_Icon.svg" width={48} height={48} alt="Forum" withPlaceholder />,
       title: "Forum",
       description: "Social Discourse",
     },
     {
       link: "/products/id",
-      icon: <Image src={IDIcon.src} width={48} height={48} alt="Dorkodu ID" withPlaceholder />,
+      icon: <Image src="/images/logos/id_Icon.svg" width={48} height={48} alt="Dorkodu ID" withPlaceholder />,
       title: "ID",
       description: "Your Digital Identity",
     },
@@ -156,7 +89,7 @@ const links = {
       description: "The Dorkodu Manifesto",
     },
     {
-      link: "https://dorkodu.com/garden",
+      link: "/garden",
       icon: (
         <ThemeIcon variant="light" radius="md" size="lg" color="green">
           <IconPlant />
@@ -240,7 +173,7 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
           }}
         >
           <Link href="/">
-            <Image src={DorkoduLogo.src} alt="Dorkodu" height={40} />
+            <Image src="/images/dorkodu_Logo_Colorful.svg" alt="Dorkodu" height={40} />
           </Link>
 
           <Group sx={{ height: "100%" }} spacing={0} className={classes.hiddenMobile}>
@@ -383,3 +316,67 @@ export const HeaderWithMegaMenu: FunctionComponent = () => {
     </Box>
   );
 };
+
+const useStyles = createStyles((theme) => ({
+  link: {
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingLeft: theme.spacing.sm,
+    paddingRight: theme.spacing.sm,
+    textDecoration: "none",
+    borderRadius: theme.spacing.sm,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    fontWeight: 500,
+    fontSize: theme.fontSizes.sm,
+    cursor: "pointer",
+
+    [theme.fn.smallerThan("sm")]: {
+      height: 42,
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+    },
+
+    ...theme.fn.hover({
+      color: theme.colorScheme === "dark" ? theme.colors.white : theme.colors.green[9],
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.green[1],
+      textDecoration: "underline",
+    }),
+  },
+
+  subLink: {
+    width: "100%",
+    padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
+    borderRadius: theme.radius.md,
+
+    ...theme.fn.hover({
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
+    }),
+
+    "&:active": theme.activeStyles,
+  },
+
+  dropdownFooter: {
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[1],
+    margin: -theme.spacing.md,
+    marginTop: theme.spacing.sm,
+    padding: `${theme.spacing.md}px ${Number(theme.spacing.md) * 2}px`,
+    paddingBottom: theme.spacing.xl,
+    borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]}`,
+  },
+
+  hiddenMobile: {
+    [theme.fn.smallerThan("sm")]: {
+      display: "none",
+    },
+  },
+
+  hiddenDesktop: {
+    [theme.fn.largerThan("sm")]: {
+      display: "none",
+    },
+  },
+}));
