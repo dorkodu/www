@@ -1,9 +1,9 @@
-import { Box, Container, Group, Paper, Text, Title, useMantineTheme } from "@mantine/core";
+import { Box, Container, Flex, Group, Paper, Text, Title, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 export const SectionTitle = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => {
   return (
-    <Container my={40} mx="auto">
+    <Container>
       <Group noWrap>
         <Box w={36}>{icon}</Box>
         <div>
@@ -66,9 +66,9 @@ export const Showcase = ({ content }: { content: [React.ReactNode, React.ReactNo
 
   return (
     <Container my={50}>
-      <Group noWrap={isBigScreen} spacing={20}>
-        <Box sx={{ flex: 1 }}>{content[0]}</Box>
-        <Box sx={{ flex: 1.1 }}>{content[1]}</Box>
+      <Group noWrap={isBigScreen}>
+        <div style={{ flex: 1 }}>{content[0]}</div>
+        <div style={{ flex: 1.1 }}>{content[1]}</div>
       </Group>
     </Container>
   );
