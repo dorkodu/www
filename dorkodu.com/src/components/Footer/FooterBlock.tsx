@@ -60,22 +60,22 @@ export const FooterBlock = () => {
           label: "README",
           link: "/readme",
         },
-
         {
           label: "Terms",
           link: "/terms",
         },
+
         {
           label: "Privacy",
           link: "/privacy",
         },
         {
-          label: "Open Source",
-          link: "https://github.com/dorkodu",
-        },
-        {
           label: "Press",
           link: "/press",
+        },
+        {
+          label: "Open Source",
+          link: "https://github.com/dorkodu",
         },
         {
           label: "Contact Us",
