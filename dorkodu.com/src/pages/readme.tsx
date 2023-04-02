@@ -1,3 +1,4 @@
+import { Showcase } from "@/components/Commons";
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { createStyles, Title, Text, Button, Container, Group, rem, Stack, Image, List, Box } from "@mantine/core";
@@ -8,13 +9,9 @@ import Head from "next/head";
 
 const meta = {
   title: "README",
-  description: `A Story of...`,
-  keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
-  url: "/",
-  image: {
-    src: "/public/images/dorkodu-single.png",
-    alt: "dorkodu logo with single letter.",
-  },
+  description: `The Dorkodu Manifesto`,
+  keywords: `dorkodu readme, dorkodu manifesto`,
+  url: "/readme",
 };
 
 const Readme: NextPage = () => {
@@ -26,7 +23,7 @@ const Readme: NextPage = () => {
 
       <Hero />
 
-      <Container size={600} my={50}>
+      <Container my={50}>
         <Act1 />
         <Act2 />
         <Act3 />
@@ -68,30 +65,8 @@ const Hero = () => {
               communities.
             </div>
           </Text>
-          <List
-            mt={20}
-            spacing={8}
-            icon={
-              <Text size={28} color="green">
-                ⁕
-              </Text>
-            }
-          >
-            <List.Item>
-              <Text weight={600}>Free & Open Source.</Text>
-              <Text color="dimmed">All packages have MIT license.</Text>
-            </List.Item>
-            <List.Item>
-              <Text weight={600}>Free & Open Source.</Text>
-              <Text color="dimmed">All packages have MIT license.</Text>
-            </List.Item>
-            <List.Item>
-              <Text weight={600}>Free & Open Source.</Text>
-              <Text color="dimmed">All packages have MIT license.</Text>
-            </List.Item>
-          </List>
         </div>
-        <Image src="/images/undraw/co-workers.svg" className={$.image} />
+        <Image src="/images/undraw/terms.svg" className={$.image} />
       </div>
     </Container>
   );
@@ -131,23 +106,31 @@ const Act1 = () => {
     <StoryAct>
       <Title>Act I.</Title>
       <Text>
-        This is not a manifesto. <br />
-        This is not a codex, not a whitepaper, and not a secret master plan. <br />
-        That person is you.
+        {`
+         This is not a manifesto.
+         This is not a codex, not a whitepaper, and not a secret master plan.
+         That person is you. 
+        `}
       </Text>
       <Text>
-        This is just a simple story.
-        <br />A story told in three acts.
+        {`
+          This is just a simple story.
+          A story told in three acts.
+        `}
       </Text>
       <Text>
-        This is a simple story, but a good story. <br />
-        Like all simple stories, it has a beginning, a middle and an end. <br />
-        Like all good stories, it’s a story about magic.
+        {`
+          This is a simple story, but a good story.
+          Like all simple stories, it has a beginning, a middle and an end.
+          Like all good stories, it's a story about magic.
+        `}
       </Text>
       <Text>
-        This is a story waiting to be read. <br />
-        Ideally in one sitting and with a hot beverage by your side. <br />
-        It is waiting to be read by the one person it was specifically written for.
+        {`
+          This is a story waiting to be read.
+          Ideally in one sitting and with a hot beverage by your side.
+          It is waiting to be read by the one person it was specifically written for.
+        `}
       </Text>
     </StoryAct>
   );
@@ -155,43 +138,48 @@ const Act1 = () => {
 
 const Act2 = () => {
   return (
-    <StoryAct>
-      <Title>Act Title</Title>
-      <Text>
-        And then, once a connection had been established, you suddenly had access to a completely new world. A world of
-        seemingly infinite yet unknown possibilities. A world full of ideas, resources and thoughts from people all
-        around the globe. A world waiting for you to be explored.
-      </Text>
-      <Text>It was mind blowing.A magical moment.</Text>
-      <Text>
-        Everyone of us has experienced their own transformative moments with computers. The first time you touched a
-        touchscreen. The first time you wrote and executed a line of code. The first time you discovered a video game
-        that completely consumed you.
-      </Text>
-      <Text>
-        It’s often difficult to describe these moments because, like magic, they lie beyond articulation. They have to
-        be experienced.
-      </Text>
-      <Text>
-        Computers are not magic in themselves. It’s the software that runs on them, the interaction between bits and
-        atoms, that makes them magical.
-      </Text>
-      <Text>
-        One ingredient of computer magic is software’s ability to create even more magical experiences. It’s a tool for
-        tools. Great software supports human intellect. But magical software enhances human creativity.
-      </Text>
-      <Text>
-        The early pioneers of modern computing described computers as “dream machines”. What got them excited about
-        computers was not so much what they were, but everything they had the potential to be.
-      </Text>
-      <Text>
-        This is the other facet of software magic: It stretches our imagination beyond what we thought was possible.
-        Great software makes us feel like we live in the future. But magical software allows us to imagine the future
-        that comes after it.
-      </Text>
-      <Text>We look back at these magical moments with nostalgia.</Text>
-      <Text weight={500}>What happened to them?</Text>
-    </StoryAct>
+    <Showcase
+      content={[
+        <StoryAct>
+          <Title>Act Title</Title>
+          <Text>
+            And then, once a connection had been established, you suddenly had access to a completely new world. A world
+            of seemingly infinite yet unknown possibilities. A world full of ideas, resources and thoughts from people
+            all around the globe. A world waiting for you to be explored.
+          </Text>
+          <Text>It was mind blowing.A magical moment.</Text>
+          <Text>
+            Everyone of us has experienced their own transformative moments with computers. The first time you touched a
+            touchscreen. The first time you wrote and executed a line of code. The first time you discovered a video
+            game that completely consumed you.
+          </Text>
+          <Text>
+            It’s often difficult to describe these moments because, like magic, they lie beyond articulation. They have
+            to be experienced.
+          </Text>
+          <Text>
+            Computers are not magic in themselves. It’s the software that runs on them, the interaction between bits and
+            atoms, that makes them magical.
+          </Text>
+          <Text>
+            One ingredient of computer magic is software’s ability to create even more magical experiences. It’s a tool
+            for tools. Great software supports human intellect. But magical software enhances human creativity.
+          </Text>
+          <Text>
+            The early pioneers of modern computing described computers as “dream machines”. What got them excited about
+            computers was not so much what they were, but everything they had the potential to be.
+          </Text>
+          <Text>
+            This is the other facet of software magic: It stretches our imagination beyond what we thought was possible.
+            Great software makes us feel like we live in the future. But magical software allows us to imagine the
+            future that comes after it.
+          </Text>
+          <Text>We look back at these magical moments with nostalgia.</Text>
+          <Text weight={500}>What happened to them?</Text>
+        </StoryAct>,
+        <Image src="/image/undraw/" />,
+      ]}
+    />
   );
 };
 
@@ -208,10 +196,15 @@ const Act3 = () => {
   );
 };
 
-const AlanKeyQuote = () => (
-  <Text weight={600} size="xl">
-    “The best way to predict the future is to invent it.”
-  </Text>
+const AlanKayQuote = () => (
+  <Container>
+    <Text weight={500} size="xl">
+      “The best way to predict the future is to invent it.”
+    </Text>
+    <Text weight={700} size="lg">
+      — Alan Kay
+    </Text>
+  </Container>
 );
 
 const StoryAct = ({ children }: { children: React.ReactNode }) => {
@@ -267,7 +260,7 @@ const styles = {
     },
 
     image: {
-      maxWidth: 400,
+      maxWidth: 360,
     },
   })),
 };
