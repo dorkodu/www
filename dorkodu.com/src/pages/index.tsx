@@ -21,6 +21,7 @@ import {
   List,
   Image,
   CSSObject,
+  Space,
 } from "@mantine/core";
 
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from "@tabler/icons-react";
@@ -42,16 +43,27 @@ import { HeroWithBackground } from "@/components/Hero/HeroWithBackground";
 import { FeaturedUsecases } from "@/data/featured";
 import Dorkodu from "@/types/dorkodu";
 import { projects } from "@/data/products";
-import { SectionTitle } from "@/components/Commons";
-import { Bullseye, Leaf } from "@/styles/twemoji";
+import { SectionTitle, Showcase } from "@/components/Commons";
+import {
+  Bullseye,
+  Checkbox,
+  CrossMark,
+  Earth,
+  Emoji,
+  GrowingHeart,
+  Leaf,
+  SmilingEyes,
+  SparklingHeart,
+} from "@/styles/twemoji";
+import { ListItem } from "@mantine/core/lib/List/ListItem/ListItem";
 
 const meta = {
-  title: "welcome! — dorkodu",
-  description: `liberate the humankind.`,
+  title: "Dorkodu",
+  description: `Just Like A Digital Mind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
   url: "/",
   image: {
-    src: "/public/images/dorkodu-single.png",
+    src: "/images/dorkodu-single.png",
     alt: "dorkodu logo with single letter.",
   },
 };
@@ -69,7 +81,6 @@ const Home: NextPage = () => {
       <ProsConsList />
       <Mission />
       <FAQs />
-      <LeadGrid />
       <Newsletter />
     </WebsiteLayout>
   );
@@ -82,65 +93,121 @@ const Products = () => {
   ];
 
   return (
-    <Box my={60}>
+    <Container my={60}>
       <Title order={2} weight={800}>
         Our Apps
       </Title>
       <ProductShowcaseGrid products={products} />
-    </Box>
+    </Container>
   );
 };
 
 const ProsConsList = () => {
-  return <></>;
+  const Pros = (
+    <List icon={<Emoji size={24} emoji={Checkbox} />} spacing={8}>
+      <List.Item>a</List.Item>
+      <List.Item>a</List.Item>
+    </List>
+  );
+
+  const Cons = (
+    <List icon={<Emoji size={24} emoji={CrossMark} />} spacing={8}>
+      <List.Item>a</List.Item>
+      <List.Item>a</List.Item>
+    </List>
+  );
+
+  return (
+    <Container size={760}>
+      <Showcase content={[Pros, Cons]} />
+    </Container>
+  );
 };
 
 const Punchline = () => {
   return (
-    <>
-      <Container>
-        <Title>It's never been easier to</Title>
-      </Container>
-    </>
+    <Showcase
+      content={[
+        <Container>
+          <Title>It's never been easier to</Title>
+        </Container>,
+        <List
+          icon={
+            <Box w={24} h={24}>
+              {Checkbox}
+            </Box>
+          }
+          spacing={20}
+        >
+          <List.Item>
+            <Text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo obcaecati cumque sint. Accusantium
+              possimus facilis quo commodi? Quibusdam, ipsa id.
+            </Text>
+          </List.Item>
+          <List.Item>
+            <Text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo obcaecati cumque sint. Accusantium
+              possimus facilis quo commodi? Quibusdam, ipsa id.
+            </Text>
+          </List.Item>
+          <List.Item>
+            <Text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo obcaecati cumque sint. Accusantium
+              possimus facilis quo commodi? Quibusdam, ipsa id.
+            </Text>
+          </List.Item>
+        </List>,
+      ]}
+    ></Showcase>
   );
 };
 
 const Newsletter = () => {
-  return <EmailBanner />;
+  return (
+    <Box mt={80}>
+      <EmailBanner />
+    </Box>
+  );
 };
 
 export const Mission = () => {
+  const theme = useMantineTheme();
+
   return (
-    <Container my={25}>
-      <Title order={2}>Who We Are?</Title>
+    <Container my={25} p={0}>
+      <Showcase
+        content={[
+          <SectionTitle title="Our Purpose" text="Why we do this?" icon={Leaf} />,
+          <Box component="section" id="our-purpose" py={20}>
+            <List spacing={8}>
+              <List.Item icon={<Emoji size={24} emoji={SparklingHeart} />}>
+                Help people find and pursue their true purpose.
+              </List.Item>
+              <List.Item icon={<Emoji size={24} emoji={SmilingEyes} />}>
+                Create a meaningful life experience for everyone.
+              </List.Item>
+              <List.Item icon={<Emoji size={24} emoji={Earth} />}>
+                Build the utopian dream of heaven on earth.
+              </List.Item>
+            </List>
+          </Box>,
+        ]}
+      />
 
-      <Box component="section" id="our-purpose" py={20}>
-        <SectionTitle title="Our Purpose" text="Why we do this?" icon={Leaf} />
-        <List>
-          <List.Item>find their true purpose & passion.</List.Item>
-          <List.Item>actualize themselves.</List.Item>
-          <List.Item>create a free and happy life experience for everyone.</List.Item>
-          <List.Item>build the utopian dream of heaven on earth.</List.Item>
-        </List>
-      </Box>
-
-      <Box component="section" id="people" py={20}>
-        <SectionTitle title="Our Mission" text="Our roadmap and objectives." icon={Bullseye} />
-        <List>
-          <List.Item>find their true purpose & passion.</List.Item>
-          <List.Item>actualize themselves.</List.Item>
-          <List.Item>create a free and happy life experience for everyone.</List.Item>
-          <List.Item>build the utopian dream of heaven on earth.</List.Item>
-        </List>
-      </Box>
-
-      <Stack>
-        <Title>Our Mission</Title>
-        <Text>
-          we combine <em>gamification</em>, <em>human-centric design</em> and <em>our superior technology</em> to create
-          products which <em>free the human spirit.</em>
-        </Text>
-      </Stack>
+      <Showcase
+        content={[
+          <SectionTitle title="Our Mission" text="Our roadmap and objectives." icon={Bullseye} />,
+          <Box component="section" id="our-purpose" py={20}>
+            <Text size={24} weight={800} color={theme.colorScheme == "dark" ? theme.white : theme.black}>
+              Liberate the Humankind;
+            </Text>
+            <Text size={18} weight={500} color="dimmed">
+              with meaningful technology.
+            </Text>
+          </Box>,
+        ]}
+      />
     </Container>
   );
 };
@@ -159,31 +226,6 @@ export const OurWork = () => {
         </div>
       ))}
     </div>
-  );
-};
-
-const LeadGrid = () => {
-  const theme = useMantineTheme();
-  const PRIMARY_COL_HEIGHT = rem(300);
-  const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
-
-  return (
-    <Container my="md">
-      <SimpleGrid cols={2} spacing="md" breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-        <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
-        <Grid gutter="md">
-          <Grid.Col>
-            <Skeleton height={SECONDARY_COL_HEIGHT} bg="blue" radius="md" animate={false} />
-          </Grid.Col>
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} bg="blue" radius="md" animate={false} />
-          </Grid.Col>
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} bg="blue" radius="md" animate={false} />
-          </Grid.Col>
-        </Grid>
-      </SimpleGrid>
-    </Container>
   );
 };
 
