@@ -62,14 +62,14 @@ export const StoryCard = ({ icon, text, order }: { icon: React.ReactNode; text: 
 export const punctuation = ["＊", "⁕", "๛", "⹈", "꘏", "꘎", "⋆", "⭑", "☸"];
 
 export const Showcase = ({ content }: { content: [React.ReactNode, React.ReactNode] }) => {
-  const isBigScreen = useMediaQuery("(min-width: 760px)");
+  const isSmallScreen = useMediaQuery("(max-width: 720px)");
 
   return (
     <Container my={50}>
-      <Group noWrap={isBigScreen}>
+      <Flex direction={isSmallScreen ? "column" : "row"} align="center" justify="center" gap={20}>
         <div style={{ flex: 1 }}>{content[0]}</div>
-        <div style={{ flex: 1.1 }}>{content[1]}</div>
-      </Group>
+        <div style={{ flex: 1 }}>{content[1]}</div>
+      </Flex>
     </Container>
   );
 };
