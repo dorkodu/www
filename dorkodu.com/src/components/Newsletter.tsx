@@ -45,33 +45,28 @@ const styles = {
     controls: {
       display: "flex",
       marginTop: theme.spacing.xl,
+      gap: 5,
+
+      [theme.fn.smallerThan(500)]: {
+        flexDirection: "column",
+        gap: 10,
+      },
     },
 
     inputWrapper: {
       width: "100%",
       flex: "1",
     },
-
-    input: {
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
-      borderRight: 0,
-    },
-
-    control: {
-      borderTopLeftRadius: 0,
-      borderBottomLeftRadius: 0,
-    },
   })),
 };
 
 export function EmailBanner() {
-  const { classes, theme } = styles.EmailBanner();
+  const { classes: $, theme } = styles.EmailBanner();
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.body}>
-        <Title className={classes.title} order={2}>
+    <div className={$.wrapper}>
+      <div className={$.body}>
+        <Title className={$.title} order={2}>
           Subscribe to our newsletter.
         </Title>
         <Text weight={500} size="lg" mb={5}></Text>
@@ -79,22 +74,23 @@ export function EmailBanner() {
           <b>Once a week;</b> you will never miss important updates and latest news.
         </Text>
 
-        <div className={classes.controls}>
+        <div className={$.controls}>
           <TextInput
             placeholder="Your Email"
             variant="filled"
             type="email"
             size="md"
-            classNames={{ input: classes.input, root: classes.inputWrapper }}
+            classNames={{ root: $.inputWrapper }}
+            radius={12}
           />
-          <Button className={classes.control} size="md">
+          <Button size="md" radius={12}>
             Subscribe
           </Button>
         </div>
       </div>
       <Image
         src={theme.colorScheme === "dark" ? "/images/newsletter_Light.svg" : "/images/newsletter_Dark.svg"}
-        className={classes.image}
+        className={$.image}
       />
     </div>
   );
