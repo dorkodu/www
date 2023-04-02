@@ -79,7 +79,7 @@ export const FooterBlock = () => {
         },
         {
           label: "Contact Us",
-          link: "/contact-us",
+          link: "/contact",
         },
       ],
     },
@@ -118,11 +118,11 @@ export const FooterBlock = () => {
             fit="unset"
           />
           <Text size={18} weight={400} color="dimmed" className={classes.description}>
-            We Are Your{" "}
+            We are the{" "}
             <Text weight={500} span>
-              Dream Fulfillment Technology
+              dream fulfillment technology company
             </Text>{" "}
-            Company.
+            for the humankind.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
@@ -167,7 +167,7 @@ const style = {
     },
 
     logo: {
-      maxWidth: 320,
+      maxWidth: 300,
       marginLeft: 10,
 
       [theme.fn.smallerThan("sm")]: {
