@@ -48,12 +48,19 @@ const styles = {
       fontSize: 40,
       letterSpacing: -1.25,
       color: theme.colorScheme === "dark" ? theme.white : theme.black,
-      fontFamily: `${theme.fontFamily}`,
       maxWidth: 600,
 
-      "@media (max-width: 520px)": {
-        fontSize: 26,
+      [theme.fn.smallerThan(520)]: {
+        fontSize: 30,
         textAlign: "left",
+      },
+
+      [theme.fn.smallerThan(360)]: {
+        fontSize: 28,
+      },
+
+      [theme.fn.smallerThan(330)]: {
+        fontSize: 26,
       },
     },
 
@@ -81,9 +88,6 @@ const styles = {
       },
 
       "@media (max-width: 520px)": {
-        height: 42,
-        fontSize: theme.fontSizes.md,
-
         "&:not(:first-of-type)": {
           marginTop: theme.spacing.md,
           marginLeft: 0,
@@ -110,13 +114,13 @@ export function HeroIndex() {
             </Title>
 
             <Text size="xl" color="dimmed" className={classes.description} maw={500}>
-              With all tools you need, life is like a game. Fulfill your dreams. Say hello to&nbsp;
+              With all apps you need, life's like a game. Say hello to&nbsp;
               <i>
                 <b>
-                  <u>your second mind</u>
+                  <u>your own digital brain</u>
                 </b>
               </i>
-              .
+              . Fulfill your dreams.
             </Text>
             <div className={classes.cta}>
               <Button className={classes.ctaButton} size="lg" radius={22} rightIcon={<IconArrowRight />}>
