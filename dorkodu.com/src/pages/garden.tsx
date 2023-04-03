@@ -1,6 +1,6 @@
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
-import { Emoji, PottedPlant } from "@/styles/twemoji";
+import { Emoji, PottedPlant } from "@/styles/emoji";
 import { Badge, Container, Group, Paper, Text, Title } from "@mantine/core";
 import { NextPage } from "next";
 import Head from "next/head";

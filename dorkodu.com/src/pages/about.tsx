@@ -25,7 +25,7 @@ import Meta from "@/components/Meta";
 import { TeamMember, TheRingMember } from "@/components/Member";
 import { people, story } from "@/data/company";
 
-import { GreenBook, GrowingHeart, MoneyWithWings, MountainSnowy, People } from "@/styles/twemoji";
+import { GreenBook, GrowingHeart, MoneyWithWings, MountainSnowy, People } from "@/styles/emoji";
 import { SectionTitle, Showcase, StarDivider, StoryCard } from "@/components/Commons";
 
 const meta = {

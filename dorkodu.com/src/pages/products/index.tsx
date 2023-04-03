@@ -1,7 +1,6 @@
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
-import { Emoji, PottedPlant } from "@/styles/twemoji";
-import { Badge, Container, Group, Paper, Text, Title } from "@mantine/core";
+import { Container, Title } from "@mantine/core";
 import Head from "next/head";
 
 const meta = {
@@ -23,3 +22,11 @@ const Page = () => {
 };
 
 export default Page;
+
+const Hero = () => {
+  return (
+    <Container size={720}>
+      <Title>Our Products</Title>
+    </Container>
+  );
+};
