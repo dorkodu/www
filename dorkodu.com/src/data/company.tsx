@@ -10,7 +10,7 @@ import {
   People,
   Programmer,
   School,
-} from "@/styles/twemoji";
+} from "@/styles/emoji";
 import { Text } from "@mantine/core";
 
 export const people = {
