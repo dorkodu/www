@@ -45,6 +45,7 @@ import Dorkodu from "@/types/dorkodu";
 import { projects } from "@/data/products";
 import { SectionTitle, Showcase } from "@/components/Commons";
 import {
+  ArrowRight,
   Bullseye,
   Checkbox,
   CrossMark,
@@ -54,7 +55,7 @@ import {
   Leaf,
   SmilingEyes,
   SparklingHeart,
-} from "@/styles/twemoji";
+} from "@/styles/emoji";
 import { ListItem } from "@mantine/core/lib/List/ListItem/ListItem";
 
 const meta = {
@@ -129,32 +130,44 @@ const Punchline = () => {
     <Showcase
       content={[
         <Container>
-          <Title>It's never been easier to</Title>
+          <Title
+            sx={(theme) => ({
+              letterSpacing: -0.75,
+              fontSize: rem(32),
+              maxWidth: rem(400),
+              fontWeight: 800,
+              color: theme.colorScheme == "dark" ? theme.white : theme.black,
+            })}
+            order={1}
+          >
+            We are bringing{" "}
+            <Text variant="gradient" span gradient={{ from: "violet", to: "cyan", deg: 45 }}>
+              meaning
+            </Text>{" "}
+            back to{" "}
+            <Text variant="gradient" span gradient={{ from: "lime", to: "#00cc45" }}>
+              technology.
+            </Text>
+          </Title>
+          <Text color="dimmed" size="lg" mt={12} weight={500}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, culpa! Et nesciunt expedita eveniet
+            molestias.
+          </Text>
         </Container>,
-        <List
-          icon={
-            <Box w={24} h={24}>
-              {Checkbox}
-            </Box>
-          }
-          spacing={20}
-        >
+        <List icon={<Emoji size={24} emoji={ArrowRight} />} spacing={20} center>
           <List.Item>
             <Text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo obcaecati cumque sint. Accusantium
-              possimus facilis quo commodi? Quibusdam, ipsa id.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem ratione?
             </Text>
           </List.Item>
           <List.Item>
             <Text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo obcaecati cumque sint. Accusantium
-              possimus facilis quo commodi? Quibusdam, ipsa id.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem ratione?
             </Text>
           </List.Item>
           <List.Item>
             <Text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo obcaecati cumque sint. Accusantium
-              possimus facilis quo commodi? Quibusdam, ipsa id.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem ratione?
             </Text>
           </List.Item>
         </List>,
