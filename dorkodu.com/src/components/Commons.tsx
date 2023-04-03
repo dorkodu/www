@@ -65,7 +65,7 @@ export const Showcase = ({ content }: { content: [React.ReactNode, React.ReactNo
   const isSmallScreen = useMediaQuery("(max-width: 720px)");
 
   return (
-    <Container my={50}>
+    <Container py={40} px={0}>
       <Flex direction={isSmallScreen ? "column" : "row"} align="center" justify="center" gap={20}>
         <div style={{ flex: 1 }}>{content[0]}</div>
         <div style={{ flex: 1 }}>{content[1]}</div>
