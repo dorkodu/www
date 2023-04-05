@@ -171,3 +171,12 @@ const WhoWeAre = () => {
     </Container>
   );
 };
+
+const PerksAndBenefits = () => {
+  return (
+    <Container>
+      <Title>Perks & Benefits</Title>
+      <Text>We are a bootstrapped, surviving by passion startup now. Just about to become profitable. </Text>
+    </Container>
+  );
+};
