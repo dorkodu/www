@@ -98,14 +98,14 @@ const styles = {
 };
 
 export function HeroIndex() {
-  const { classes } = styles.HeroIndex();
+  const { classes: $ } = styles.HeroIndex();
 
   return (
     <Container p={0}>
-      <div className={classes.inner}>
-        <div className={classes.content}>
+      <div className={$.inner}>
+        <div className={$.content}>
           <Stack spacing={8}>
-            <Title className={classes.title}>
+            <Title className={$.title}>
               <Text mb={-8}>Your life, one place.</Text>
               <Text span>Just like a</Text>
               <Text variant="gradient" gradient={{ from: "#00cc44", to: "lime", deg: 360 }} span>
@@ -113,7 +113,7 @@ export function HeroIndex() {
               </Text>
             </Title>
 
-            <Text size="xl" color="dimmed" className={classes.description} maw={500}>
+            <Text size="xl" color="dimmed" className={$.description} maw={500}>
               With all apps you need, life's like a game. Say hello to&nbsp;
               <i>
                 <b>
@@ -122,14 +122,14 @@ export function HeroIndex() {
               </i>
               . Fulfill your dreams.
             </Text>
-            <div className={classes.cta}>
-              <Button className={classes.ctaButton} size="lg" radius={22} rightIcon={<IconArrowRight />}>
+            <div className={$.cta}>
+              <Button className={$.ctaButton} size="lg" radius={22} rightIcon={<IconArrowRight />}>
                 Create Account
               </Button>
             </div>
           </Stack>
         </div>
-        <Image src="/images/dorkodu-ecosystem.svg" className={classes.image} />
+        <Image src="/images/dorkodu-ecosystem.svg" className={$.image} />
       </div>
     </Container>
   );
