@@ -22,9 +22,24 @@ import {
   Image,
   CSSObject,
   Space,
+  UnstyledButton,
 } from "@mantine/core";
 
-import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from "@tabler/icons-react";
+import {
+  IconReceiptOff,
+  IconFlame,
+  IconCircleDotted,
+  IconFileCode,
+  IconBrandTwitter,
+  IconBrandTwitterFilled,
+  IconBrandInstagram,
+  IconBrandGithub,
+  IconBrandYoutube,
+  IconBrandLinkedin,
+  IconMail,
+  IconAt,
+  IconMailOpened,
+} from "@tabler/icons-react";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { NextPage } from "next";
@@ -53,6 +68,7 @@ import {
   Emoji,
   GrowingHeart,
   Leaf,
+  Postbox,
   SmilingEyes,
   SparklingHeart,
 } from "@/styles/emoji";
@@ -78,10 +94,13 @@ const Home: NextPage = () => {
       <HeroIndex />
       <Products />
       <Punchline />
-      <FeaturedUseCases {...FeaturedUsecases} />
-      <ProsConsList />
+      {/*
+        <FeaturedUseCases {...FeaturedUsecases} />
+        <ProsConsList />
+      */}
       <Mission />
       <FAQs />
+      <ContactUs />
       <Newsletter />
     </WebsiteLayout>
   );
@@ -103,18 +122,20 @@ const Products = () => {
   );
 };
 
-const ProsConsList = () => {
+const YesAndNoList = () => {
   const Pros = (
-    <List icon={<Emoji size={24} emoji={Checkbox} />} spacing={8}>
+    <List icon={<Emoji size={24} emoji={Checkbox} />} center spacing={8}>
       <List.Item>a</List.Item>
       <List.Item>a</List.Item>
     </List>
   );
 
   const Cons = (
-    <List icon={<Emoji size={24} emoji={CrossMark} />} spacing={8}>
-      <List.Item>a</List.Item>
-      <List.Item>a</List.Item>
+    <List icon={<Emoji size={24} emoji={CrossMark} />} center spacing={8}>
+      <List.Item>No board of directors.</List.Item>
+      <List.Item>Not backed by a capital fund.</List.Item>
+      <List.Item>No Founders from Ivy League.</List.Item>
+      <List.Item>No eyes on an exit.</List.Item>
     </List>
   );
 
@@ -132,6 +153,7 @@ const Punchline = () => {
         <Container>
           <Title
             sx={(theme) => ({
+              lineHeight: 0.8,
               letterSpacing: -0.75,
               fontSize: rem(32),
               maxWidth: rem(400),
@@ -141,23 +163,23 @@ const Punchline = () => {
             order={1}
           >
             We are bringing{" "}
-            <Text variant="gradient" span gradient={{ from: "violet", to: "cyan", deg: 45 }}>
+            <Text variant="gradient" span gradient={{ from: "indigo", to: "blue" }}>
               meaning
             </Text>{" "}
             back to{" "}
-            <Text variant="gradient" span gradient={{ from: "lime", to: "#00cc45" }}>
+            <Text variant="gradient" span gradient={{ from: "#00cc45", to: "lime" }}>
               technology.
             </Text>
           </Title>
           <Text color="dimmed" size="lg" mt={12} weight={500}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, culpa! Et nesciunt expedita eveniet
-            molestias.
+            Our culture is inspired by emotions which express the vibe of an authentic life experience.
           </Text>
         </Container>,
         <List icon={<Emoji size={24} emoji={ArrowRight} />} spacing={20} center>
           <List.Item>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem ratione?
+              When our founders got together, they aspired to create liberating life experiences for everyone and help
+              people fulfill their dreams.
             </Text>
           </List.Item>
           <List.Item>
@@ -172,7 +194,7 @@ const Punchline = () => {
           </List.Item>
         </List>,
       ]}
-    ></Showcase>
+    />
   );
 };
 
@@ -193,7 +215,7 @@ export const Mission = () => {
         content={[
           <SectionTitle title="Our Purpose" text="Why we do this?" icon={Leaf} />,
           <Box component="section" id="our-purpose" py={20}>
-            <List spacing={8}>
+            <List spacing={8} center>
               <List.Item icon={<Emoji size={24} emoji={SparklingHeart} />}>
                 Help people find and pursue their true purpose.
               </List.Item>
@@ -243,3 +265,119 @@ export const OurWork = () => {
 };
 
 export default Home;
+
+export const ContactUs = () => {
+  type ContactInfo = {
+    platform: string;
+    tag: string;
+    link: string;
+    icon: React.ReactNode;
+  };
+
+  const contactInfo: ContactInfo[] = [
+    {
+      platform: "Twitter",
+      tag: "@dorkodu",
+      link: "https://twitter.com/dorkodu",
+      icon: (
+        <ThemeIcon color="blue" size={40} radius={10}>
+          <IconBrandTwitter width={28} height={28} />
+        </ThemeIcon>
+      ),
+    },
+    {
+      platform: "Instagram",
+      tag: "@dorkodu",
+      link: "https://instagram.com/dorkodu",
+      icon: (
+        <ThemeIcon variant="gradient" gradient={{ from: "orange", to: "grape" }} size={40} radius={10}>
+          <IconBrandInstagram width={34} height={34} />
+        </ThemeIcon>
+      ),
+    },
+    {
+      platform: "GitHub",
+      tag: "@dorkodu",
+      link: "https://github.com/dorkodu",
+      icon: (
+        <ThemeIcon variant="gradient" gradient={{ from: "black", to: "gray" }} size={40} radius={10}>
+          <IconBrandGithub width={30} height={30} />
+        </ThemeIcon>
+      ),
+    },
+    {
+      platform: "YouTube",
+      tag: "@dorkodu",
+      link: "https://youtube.com/@dorkodu",
+      icon: (
+        <ThemeIcon color="red" size={40} radius={10}>
+          <IconBrandYoutube width={32} height={32} />
+        </ThemeIcon>
+      ),
+    },
+    {
+      platform: "LinkedIn",
+      tag: "@dorkodu",
+      link: "https://linkedin.com/company/dorkodu",
+      icon: (
+        <ThemeIcon variant="gradient" gradient={{ from: "blue", to: "cyan" }} size={40} radius={10}>
+          <IconBrandLinkedin width={32} height={32} />
+        </ThemeIcon>
+      ),
+    },
+    {
+      platform: "Email",
+      tag: "hey@dorkodu.com",
+      link: "mailto:hey@dorkodu.com",
+      icon: (
+        <ThemeIcon variant="gradient" gradient={{ from: "green", to: "lime" }} size={40} radius={10}>
+          <IconMailOpened width={30} height={30} />
+        </ThemeIcon>
+      ),
+    },
+  ];
+
+  const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
+    return (
+      <Box maw={250} mx="auto">
+        <UnstyledButton component="a" href={info.link} title={info.platform}>
+          <Paper withBorder p={10} radius="lg">
+            <Group noWrap>
+              {info.icon}
+              <div>
+                <Text weight={500}>{info.platform}</Text>
+                <Text color="blue" weight={500} underline>
+                  {info.tag}
+                </Text>
+              </div>
+            </Group>
+          </Paper>
+        </UnstyledButton>
+      </Box>
+    );
+  };
+
+  return (
+    <Container size={600} pt={50}>
+      <Title order={2} align="center" mb={8}>
+        Contact Us
+      </Title>
+      <Text maw={400} align="center" mx="auto">
+        For any question, problem, wish or suggestion; you can reach us out via any related platform below.
+      </Text>
+      <SimpleGrid
+        my={25}
+        cols={2}
+        breakpoints={[{ maxWidth: "540", cols: 1, spacing: "sm" }]}
+        spacing={20}
+        verticalSpacing={20}
+      >
+        {contactInfo.map((info) => (
+          <Box>
+            <ContactInfoCard info={info} key={info.platform} />
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Container>
+  );
+};
