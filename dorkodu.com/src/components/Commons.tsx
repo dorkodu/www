@@ -4,13 +4,13 @@ import { useMediaQuery } from "@mantine/hooks";
 export const SectionTitle = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => {
   return (
     <Container>
-      <Group noWrap>
-        <Box w={36}>{icon}</Box>
-        <div>
+      <Flex gap={15} align="center">
+        <Box sx={{ width: 40 }}>{icon}</Box>
+        <Box sx={{ width: "100% - 40px" }}>
           <Title order={2}>{title}</Title>
-          <Text>{text}</Text>
-        </div>
-      </Group>
+          <Text maw={400}>{text}</Text>
+        </Box>
+      </Flex>
     </Container>
   );
 };
