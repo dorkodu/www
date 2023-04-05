@@ -25,8 +25,9 @@ import Meta from "@/components/Meta";
 import { TeamMember, TheRingMember } from "@/components/Member";
 import { people, story } from "@/data/company";
 
-import { GreenBook, GrowingHeart, MoneyWithWings, MountainSnowy, People } from "@/styles/emoji";
+import { ArrowRight, Emoji, GreenBook, GrowingHeart, MoneyWithWings, MountainSnowy, People } from "@/styles/emoji";
 import { SectionTitle, Showcase, StarDivider, StoryCard } from "@/components/Commons";
+import Link from "next/link";
 
 const meta = {
   title: "About — Dorkodu",
@@ -46,8 +47,8 @@ const About: NextPage = () => {
       <OurTeam />
       <StarDivider />
       <Story />
-      <Jobs />
       <Investors />
+      <Jobs />
       <Press />
     </WebsiteLayout>
   );
@@ -67,7 +68,7 @@ const Hero = () => {
           </Title>
           <Title order={2} size="h1" weight={800} className={$.headline}>
             <Text variant="gradient" gradient={{ from: "#00cc40", to: "lime", deg: 180 }} span>
-              Dream Fulfillment
+              Life Fulfillment
             </Text>
             <Text mt={-8}>Technology Company</Text>
             <Text mt={-8}>for the Humankind.</Text>
@@ -76,7 +77,7 @@ const Hero = () => {
             We combine gamification, human-centric design with our superior technology to create products that help
             people&nbsp;
             <Text span weight={500}>
-              fulfill their dreams
+              fulfill their lifes
             </Text>
             .
           </Text>
@@ -115,10 +116,10 @@ const Hero = () => {
 
 const OurTeam = () => {
   return (
-    <Box component="section" id="people" py={25}>
+    <Container id="people" py={25} px={0}>
       <SectionTitle title="Our People" text="Here's to the crazy ones." icon={People} />
 
-      <Stack spacing={30} mt={20}>
+      <Stack spacing={30} mt={40}>
         {people.theRing.map((member) => (
           <TheRingMember member={member} key={member.name} />
         ))}
@@ -131,35 +132,35 @@ const OurTeam = () => {
           <TeamMember member={member} key={member.name} />
         ))}
       </SimpleGrid>
-    </Box>
+    </Container>
   );
 };
 
 const Jobs = () => {
-  const isBigScreen = useMediaQuery("(min-width: 760px)");
-
   return (
     <Container my={50}>
-      <Group noWrap={isBigScreen} spacing={20}>
-        <Stack spacing={0} maw={600}>
-          <Title order={2}>Work @ Dorkodu</Title>
-          <Text color="dimmed" weight={500} size="lg">
-            Join the revolution.
+      <Stack spacing={0} maw={460}>
+        <Title order={2} sx={{ letterSpacing: -0.5, lineHeight: 1.1 }}>
+          Join us;{" "}
+          <Text sx={{ lineHeight: 1 }} weight={500} span>
+            and help bring the human spirit back into technology.
           </Text>
-          <Text my={8}>
-            {`
-          We're proud of our mission and the business we've built around it. 
-          We work really hard, and most days we love our jobs. 
+        </Title>
+
+        <Text my={8}>
+          {`
+          If you believe in our mission of liberating the humankind with meaningful technology, 
+          we’d love to talk to you.
         `}
-          </Text>
-          <div>
-            <Button variant="gradient" rightIcon={<IconArrowRight />} size="lg" radius={18} mt={10}>
+        </Text>
+        <div>
+          <Link href="/jobs">
+            <Button rightIcon={<IconArrowRight />} size="lg" radius={18} mt={10}>
               Explore Open Roles
             </Button>
-          </div>
-        </Stack>
-        <Image src="/images/undraw_pair-programming.svg" alt="" />
-      </Group>
+          </Link>
+        </div>
+      </Stack>
     </Container>
   );
 };
@@ -168,48 +169,39 @@ const Investors = () => {
   return (
     <Showcase
       content={[
-        <SectionTitle icon={MoneyWithWings} text="A moral obligation to independence." title="No Investors" />,
-        <Text my={8} size="lg">
-          {`
-            No board of directors, not backed by a capital fund, no eyes on an exit. 
-            We feel a moral obligation to exercise our independence. 
-            To do things no one would give us permission to do. 
-            To try things other companies would be afraid to try. 
-            To skip safe, and go for original.
-          `}
-        </Text>,
+        <Box>
+          <SectionTitle
+            icon={MoneyWithWings}
+            text="Sorry, we're not backed by your popular capital fund. And we have no eyes on an exit."
+            title="Investors?"
+          />
+        </Box>,
+        <>
+          <Text mb={10} weight={600}>
+            We are proudly an <i>indie</i> tech company.
+          </Text>
+          <List icon={<Emoji size={24} emoji={ArrowRight} />} center spacing={4}>
+            <List.Item>
+              <Text>To do things no one would give us permission to do.</Text>
+            </List.Item>
+            <List.Item>
+              <Text>To create products that are not just "fast horses".</Text>
+            </List.Item>
+            <List.Item>
+              <Text>To fix problems Wall Street doesn't care about.</Text>
+            </List.Item>
+            <List.Item>
+              <Text>To skip safe, and go for original.</Text>
+            </List.Item>
+          </List>
+        </>,
       ]}
     />
   );
 };
 
 const Press = () => {
-  const isBigScreen = useMediaQuery("(min-width: 760px)");
-
-  return (
-    <Container my={50}>
-      <Group noWrap={isBigScreen} spacing={20}>
-        <Stack spacing={0} maw={600}>
-          <Title order={2}>Press</Title>
-          <Text color="dimmed" weight={500} size="lg">
-            We are on the news!
-          </Text>
-          <Text my={8}>
-            {`
-          We're proud of our mission and the business we've built around it. 
-          We work really hard, and most days we love our jobs. 
-        `}
-          </Text>
-          <div>
-            <Button variant="gradient" rightIcon={<IconArrowRight />} size="lg" radius={18} mt={10}>
-              Explore Open Roles
-            </Button>
-          </div>
-        </Stack>
-        <Image src="/images/undraw/news.svg" alt="News" maw={400} />
-      </Group>
-    </Container>
-  );
+  return <></>;
 };
 
 const Story = () => {
@@ -226,19 +218,6 @@ const Story = () => {
     </>
   );
 };
-
-const something = (
-  <div>
-    <Text>
-      Dorkodu&apos;s mission is to <b>liberate the humankind.</b>
-    </Text>
-    <Text color="dimmed">
-      We want to create a free, civilized <b>utopian world</b> with <b>human-friendly</b> <em>technology</em> and{" "}
-      <em>economy</em>.
-    </Text>
-    <Image />
-  </div>
-);
 
 const styles = {
   Hero: createStyles((theme) => ({
