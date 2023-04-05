@@ -141,17 +141,18 @@ const Jobs = () => {
     <Container my={50}>
       <Stack spacing={0} maw={460}>
         <Title order={2} sx={{ letterSpacing: -0.5, lineHeight: 1.1 }}>
-          Join us;{" "}
-          <Text sx={{ lineHeight: 1 }} weight={500} span>
-            and help bring the human spirit back into technology.
+          <Text sx={{ lineHeight: 1 }} weight={800} span>
+            Join us;
+          </Text>
+          &nbsp;
+          <Text sx={{ lineHeight: 1 }} weight={500} color="dimmed" span>
+            and help bring the <b>human spirit</b> back into <b>technology</b>.
           </Text>
         </Title>
 
-        <Text my={8}>
-          {`
-          If you believe in our mission of liberating the humankind with meaningful technology, 
-          we’d love to talk to you.
-        `}
+        <Text my={8} size="lg">
+          If you believe in our mission of liberating the humankind with meaningful technology, we’d love to talk to
+          you.
         </Text>
         <div>
           <Link href="/jobs">
