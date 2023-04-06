@@ -46,8 +46,8 @@ const About: NextPage = () => {
       <Hero />
       <OurTeam />
       <StarDivider />
-      <Story />
       <Investors />
+      <Story />
       <Jobs />
       <Press />
     </WebsiteLayout>
@@ -139,7 +139,7 @@ const OurTeam = () => {
 const Jobs = () => {
   return (
     <Container my={50}>
-      <Stack spacing={0} maw={460}>
+      <Stack spacing={0} maw={480}>
         <Title order={2} sx={{ letterSpacing: -0.5, lineHeight: 1.1 }}>
           <Text sx={{ lineHeight: 1 }} weight={800} span>
             Join us;
@@ -150,13 +150,13 @@ const Jobs = () => {
           </Text>
         </Title>
 
-        <Text my={8} size="lg">
+        <Text my={8} size={18}>
           If you believe in our mission of liberating the humankind with meaningful technology, we’d love to talk to
           you.
         </Text>
         <div>
           <Link href="/jobs">
-            <Button rightIcon={<IconArrowRight />} size="lg" radius={18} mt={10}>
+            <Button rightIcon={<IconArrowRight />} size="lg" radius={22} mt={10}>
               Explore Open Roles
             </Button>
           </Link>
