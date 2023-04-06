@@ -74,7 +74,7 @@ const Hero = () => {
             </div>
           </Text>
         </div>
-        <Image src="/images/undraw/co-workers.svg" className={$.image} />
+        <Image src="/images/undraw/pair-programming.svg" className={$.image} />
       </div>
     </Container>
   );
