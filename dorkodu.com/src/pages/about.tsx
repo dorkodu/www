@@ -168,36 +168,38 @@ const Jobs = () => {
 
 const Investors = () => {
   return (
-    <Showcase
-      content={[
-        <Box>
-          <SectionTitle
-            icon={MoneyWithWings}
-            text="Sorry, we're not backed by your popular capital fund. And we have no eyes on an exit."
-            title="Investors?"
-          />
-        </Box>,
-        <>
-          <Text mb={10} weight={600}>
-            We are proudly an <i>indie</i> tech company.
-          </Text>
-          <List icon={<Emoji size={24} emoji={ArrowRight} />} center spacing={4}>
-            <List.Item>
-              <Text>To do things no one would give us permission to do.</Text>
-            </List.Item>
-            <List.Item>
-              <Text>To create products that are not just "fast horses".</Text>
-            </List.Item>
-            <List.Item>
-              <Text>To fix problems Wall Street doesn't care about.</Text>
-            </List.Item>
-            <List.Item>
-              <Text>To skip safe, and go for original.</Text>
-            </List.Item>
-          </List>
-        </>,
-      ]}
-    />
+    <Box pb={80}>
+      <Showcase
+        content={[
+          <Box>
+            <SectionTitle
+              icon={MoneyWithWings}
+              text="Sorry, we're not backed by your popular capital fund. And we have no eyes on an exit."
+              title="Investors?"
+            />
+          </Box>,
+          <>
+            <Text mb={10} weight={600}>
+              We are proudly an <i>indie</i> tech company.
+            </Text>
+            <List icon={<Emoji size={24} emoji={ArrowRight} />} center spacing={4}>
+              <List.Item>
+                <Text>To do things no one would give us permission to do.</Text>
+              </List.Item>
+              <List.Item>
+                <Text>To create products that are not just "fast horses".</Text>
+              </List.Item>
+              <List.Item>
+                <Text>To fix problems Wall Street doesn't care about.</Text>
+              </List.Item>
+              <List.Item>
+                <Text>To skip safe, and go for original.</Text>
+              </List.Item>
+            </List>
+          </>,
+        ]}
+      />
+    </Box>
   );
 };
 
