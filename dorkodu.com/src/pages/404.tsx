@@ -78,7 +78,7 @@ export function NotFound() {
       <div className={classes.label}>404</div>
       <Title className={classes.title}>Something's gone wrong.</Title>
       <Text color="dimmed" size="xl" align="center" className={classes.description}>
-        You may have mistyped the address, or the page has been moved to another URL.
+        The page you are looking for was moved, removed, renamed or may have never existed.
       </Text>
       <Group position="center" my={25}>
         <Button variant="gradient" size="lg" radius={20} rightIcon={<IconArrowRight />}>
