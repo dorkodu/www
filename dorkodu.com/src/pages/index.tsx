@@ -286,6 +286,16 @@ export const ContactUs = () => {
       ),
     },
     {
+      platform: "Substack",
+      tag: "@dorkodu",
+      link: "https://substack.com/dorkodu",
+      icon: (
+        <ThemeIcon color="blue" size={40} radius={10}>
+          <IconBrandSubstack width={28} height={28} />
+        </ThemeIcon>
+      ),
+    },
+    {
       platform: "Instagram",
       tag: "@dorkodu",
       link: "https://instagram.com/dorkodu",

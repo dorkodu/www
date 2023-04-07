@@ -16,6 +16,8 @@ import {
   rem,
   Image,
   Title,
+  Stack,
+  List,
 } from "@mantine/core";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
@@ -23,6 +25,7 @@ import { NextPage } from "next";
 import Meta from "@/components/Meta";
 
 import { HeroIndex } from "@/components/Hero/HeroIndex";
+import { Showcase } from "@/components/Commons";
 
 const meta = {
   title: "Jobs — Dorkodu",
@@ -38,6 +41,9 @@ const Jobs: NextPage = () => {
         <Meta {...meta} />
       </Head>
       <Hero />
+      <Pitch />
+      <WhoWeAre />
+      <PerksAndBenefits />
     </WebsiteLayout>
   );
 };
@@ -172,11 +178,30 @@ const WhoWeAre = () => {
   );
 };
 
-const PerksAndBenefits = () => {
+const PerksAndBenefits = () => (
+  <Showcase
+    content={[
+      <Stack spacing="xs">
+        <Title order={2}>Perks & Benefits</Title>
+        <Text>
+          We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our mission
+          and you are a long-term thinker, you found your place!
+        </Text>
+      </Stack>,
+      <List>
+        <List.Item>
+          <Text></Text>
+        </List.Item>
+      </List>,
+    ]}
+  />
+);
+
+const JobOpenings = () => {
   return (
     <Container>
-      <Title>Perks & Benefits</Title>
-      <Text>We are a bootstrapped, surviving by passion startup now. Just about to become profitable. </Text>
+      <Title>Open Roles</Title>
+      <Text></Text>
     </Container>
   );
 };
