@@ -33,9 +33,10 @@ const Hero = () => {
       <Title
         order={1}
         mt={10}
-        sx={{
+        sx={(theme) => ({
           letterSpacing: -0.75,
-        }}
+          color: theme.colorScheme == "dark" ? theme.white : theme.black,
+        })}
       >
         Dorkodu's Digital Garden
       </Title>
