@@ -1,6 +1,6 @@
 import { FAQ, faqs } from "@/data/faq";
 
-import { Container, Title, Accordion, createStyles, rem, ThemeIcon, useMantineTheme } from "@mantine/core";
+import { Container, Title, Accordion, createStyles, rem, ThemeIcon, useMantineTheme, Text } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 
 export function FAQs() {
@@ -41,8 +41,12 @@ export function FAQsAccordion({ faqs }: { faqs: FAQ[] }) {
     >
       {faqs.map((faq, index) => (
         <Accordion.Item value={faq.q} key={index}>
-          <Accordion.Control>{faq.q}</Accordion.Control>
-          <Accordion.Panel>{faq.a}</Accordion.Panel>
+          <Accordion.Control>
+            <Text>{faq.q}</Text>
+          </Accordion.Control>
+          <Accordion.Panel>
+            <Text>{faq.a}</Text>
+          </Accordion.Panel>
         </Accordion.Item>
       ))}
     </Accordion>
