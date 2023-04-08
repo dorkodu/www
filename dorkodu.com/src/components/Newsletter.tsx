@@ -1,4 +1,4 @@
-import { createStyles, Text, Title, TextInput, Button, Image } from "@mantine/core";
+import { createStyles, Text, Title, TextInput, Button, Image, Container } from "@mantine/core";
 import image from "@assets/gilmour.webp";
 
 const styles = {
@@ -57,8 +57,27 @@ const styles = {
       width: "100%",
       flex: "1",
     },
+
+    input: {
+      backgroundColor: theme.colorScheme == "dark" ? theme.colors.dark[6] : theme.colors.gray[2],
+      fontWeight: 500,
+    },
   })),
 };
+
+export const SubstackEmbeddedForm = () => (
+  <Container size={400}>
+    <iframe
+      src="https://dorkodu.substack.com/embed"
+      style={{
+        width: "100%",
+        height: "auto",
+      }}
+      frameBorder="0"
+      scrolling="no"
+    />
+  </Container>
+);
 
 export function EmailBanner() {
   const { classes: $, theme } = styles.EmailBanner();
@@ -80,7 +99,7 @@ export function EmailBanner() {
             variant="filled"
             type="email"
             size="md"
-            classNames={{ root: $.inputWrapper }}
+            classNames={{ root: $.inputWrapper, input: $.input }}
             radius={12}
           />
           <Button size="md" radius={12}>
