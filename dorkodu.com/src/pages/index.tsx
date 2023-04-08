@@ -39,14 +39,15 @@ import {
   IconMail,
   IconAt,
   IconMailOpened,
+  IconBookmark,
+  IconBrandTiktok,
 } from "@tabler/icons-react";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
-import { NextPage } from "next";
 
 import Meta from "@/components/Meta";
 import { HeroIndex } from "@/components/Hero/HeroIndex";
-import { EmailBanner } from "@/components/Newsletter";
+import { EmailBanner, SubstackEmbeddedForm } from "@/components/Newsletter";
 
 import ForumIcon from "@/assets/logos/forum_Icon.svg";
 import IDIcon from "@/assets/logos/id_Icon.svg";
@@ -72,7 +73,6 @@ import {
   SmilingEyes,
   SparklingHeart,
 } from "@/styles/emoji";
-import { ListItem } from "@mantine/core/lib/List/ListItem/ListItem";
 
 const meta = {
   title: "Dorkodu",
@@ -85,7 +85,7 @@ const meta = {
   },
 };
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <WebsiteLayout>
       <Head>
@@ -104,7 +104,7 @@ const Home: NextPage = () => {
       <Newsletter />
     </WebsiteLayout>
   );
-};
+}
 
 const Products = () => {
   const products: Dorkodu.Project[] = [
@@ -125,7 +125,8 @@ const Products = () => {
 const YesAndNoList = () => {
   const Pros = (
     <List icon={<Emoji size={24} emoji={Checkbox} />} center spacing={8}>
-      <List.Item>a</List.Item>
+      <List.Item>Started as a wannabe-inventor kid's dream company.</List.Item>
+      <List.Item>Homebrewed technology.</List.Item>
       <List.Item>a</List.Item>
     </List>
   );
@@ -134,7 +135,7 @@ const YesAndNoList = () => {
     <List icon={<Emoji size={24} emoji={CrossMark} />} center spacing={8}>
       <List.Item>No board of directors.</List.Item>
       <List.Item>Not backed by a capital fund.</List.Item>
-      <List.Item>No Founders from Ivy League.</List.Item>
+      <List.Item>No founders from Ivy League.</List.Item>
       <List.Item>No eyes on an exit.</List.Item>
     </List>
   );
@@ -264,8 +265,6 @@ export const OurWork = () => {
   );
 };
 
-export default Home;
-
 export const ContactUs = () => {
   type ContactInfo = {
     platform: string;
@@ -282,16 +281,6 @@ export const ContactUs = () => {
       icon: (
         <ThemeIcon color="blue" size={40} radius={10}>
           <IconBrandTwitter width={28} height={28} />
-        </ThemeIcon>
-      ),
-    },
-    {
-      platform: "Substack",
-      tag: "@dorkodu",
-      link: "https://substack.com/dorkodu",
-      icon: (
-        <ThemeIcon color="blue" size={40} radius={10}>
-          <IconBrandSubstack width={28} height={28} />
         </ThemeIcon>
       ),
     },
@@ -316,12 +305,32 @@ export const ContactUs = () => {
       ),
     },
     {
+      platform: "Substack",
+      tag: "dorkodu",
+      link: "https://dorkodu.substack.com",
+      icon: (
+        <ThemeIcon variant="gradient" gradient={{ from: "orange", to: "yellow" }} size={40} radius={10}>
+          <IconBookmark width={28} height={28} />
+        </ThemeIcon>
+      ),
+    },
+    {
       platform: "YouTube",
       tag: "@dorkodu",
       link: "https://youtube.com/@dorkodu",
       icon: (
         <ThemeIcon color="red" size={40} radius={10}>
           <IconBrandYoutube width={32} height={32} />
+        </ThemeIcon>
+      ),
+    },
+    {
+      platform: "TikTok",
+      tag: "@dorkodu",
+      link: "https://tiktok.com/@dorkodu",
+      icon: (
+        <ThemeIcon variant="gradient" gradient={{ from: "black", to: "#16163E" }} size={40} radius={10}>
+          <IconBrandTiktok width={28} height={28} />
         </ThemeIcon>
       ),
     },
