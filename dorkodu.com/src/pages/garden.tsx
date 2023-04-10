@@ -1,3 +1,4 @@
+import { WIP } from "@/components/Commons";
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { Emoji, PottedPlant } from "@/styles/emoji";
@@ -20,6 +21,7 @@ const Page: NextPage = () => {
       </Head>
 
       <Hero />
+      <WIP />
     </WebsiteLayout>
   );
 };
@@ -50,11 +52,6 @@ const Hero = () => {
       >
         Our ideas seedling for the public.
       </Title>
-      <Text my={10}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis nulla accusantium voluptates distinctio,
-        dignissimos provident facilis officia veritatis molestias illum ea nostrum debitis fugiat et temporibus harum ut
-        ipsa incidunt?
-      </Text>
     </Container>
   );
 };

@@ -94,10 +94,8 @@ export default function Home() {
       <HeroIndex />
       <Products />
       <Punchline />
-      {/*
-        <FeaturedUseCases {...FeaturedUsecases} />
-        <ProsConsList />
-      */}
+      <FeaturedUseCases {...FeaturedUsecases} />
+      <YesAndNoList />
       <Mission />
       <FAQs />
       <ContactUs />
@@ -124,25 +122,29 @@ const Products = () => {
 
 const YesAndNoList = () => {
   const Pros = (
-    <List icon={<Emoji size={24} emoji={Checkbox} />} center spacing={8}>
-      <List.Item>Started as a wannabe-inventor kid's dream company.</List.Item>
-      <List.Item>Homebrewed technology.</List.Item>
-      <List.Item>a</List.Item>
+    <List icon={<Emoji size={20} emoji={Checkbox} />} center spacing={8}>
+      <List.Item>Two inventor kids' dream tech company</List.Item>
+      <List.Item>Homebrew open source technology</List.Item>
+      <List.Item>Human-friendly design</List.Item>
+      <List.Item>You own your data</List.Item>
     </List>
   );
 
   const Cons = (
-    <List icon={<Emoji size={24} emoji={CrossMark} />} center spacing={8}>
-      <List.Item>No board of directors.</List.Item>
-      <List.Item>Not backed by a capital fund.</List.Item>
-      <List.Item>No founders from Ivy League.</List.Item>
-      <List.Item>No eyes on an exit.</List.Item>
+    <List icon={<Emoji size={20} emoji={CrossMark} />} center spacing={8}>
+      <List.Item>No board of directors</List.Item>
+      <List.Item>Not backed by your favorite VCs</List.Item>
+      <List.Item>No founders from Ivy League</List.Item>
+      <List.Item>No eyes on an exit</List.Item>
+      <List.Item>Never abuse your privacy</List.Item>
+      <List.Item>Never exploit your attention</List.Item>
     </List>
   );
 
   return (
     <Container size={760}>
-      <Showcase content={[Pros, Cons]} />
+      <Title order={2}>Our Yes & No List</Title>
+      <Showcase noCenter content={[Pros, Cons]} />
     </Container>
   );
 };
@@ -184,9 +186,7 @@ const Punchline = () => {
             </Text>
           </List.Item>
           <List.Item>
-            <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem ratione?
-            </Text>
+            <Text>Empowering the world’s best minds. From students and hobbyists to startups.</Text>
           </List.Item>
           <List.Item>
             <Text>
