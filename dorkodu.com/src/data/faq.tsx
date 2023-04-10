@@ -6,13 +6,21 @@ export type FAQ = {
 export const faqs: FAQ[] = [
   {
     q: "What is Dorkodu?",
-    a: "We are an indie tech company. We create social and gamified apps for helping you fulfill your life.",
-  },
-  {
-    q: `What does "Dorkodu" mean? Where does the name come from?`,
     a: (
       <>
-        We made it up: <b>Doruk + Berk + Code</b>. Add some alliteration.
+        We are an indie tech company.
+        <br />
+        We create social & gamified productivity apps to help you fulfill your dream life.
+      </>
+    ),
+  },
+  {
+    q: `What's about the name "Dorkodu"?`,
+    a: (
+      <>
+        We made it up: <b>Doruk + Berk + Code</b>. Add some alliteration. Voila!
+        <br />
+        We needed an <b>original, authentic name</b> which also had to be available as <i>.com</i> domain.
       </>
     ),
   },
@@ -21,8 +29,8 @@ export const faqs: FAQ[] = [
     a: "It is free to create a Dorkodu account, and will always be.",
   },
   {
-    q: "What does Dorkodu company do?",
-    a: "We build products and technology for helping you",
+    q: "What does the company do?",
+    a: "Our company builds the products and technology to help you fulfill your dream life.",
   },
   {
     q: `What does "dream fulfillment technology company" mean?`,
