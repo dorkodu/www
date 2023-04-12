@@ -88,10 +88,28 @@ export const Showcase = ({
 
 export const WIP = () => (
   <Container size={600} my={50}>
-    <Alert icon={<Emoji size={32} emoji={SadEmoji} />} title="Bummer!" color="red">
-      <Title order={2}>Sorry, come back later.</Title>
-      <Text>This page is currently under development.</Text>
-    </Alert>
+    <Paper
+      radius={10}
+      sx={($) => ({
+        backgroundColor: $.colors.orange[2],
+        padding: 12,
+      })}
+    >
+      <Group noWrap>
+        <Emoji size={40} emoji={SadEmoji} />
+        <div>
+          <Title
+            order={3}
+            sx={($) => ({
+              color: $.colors.yellow[7],
+            })}
+          >
+            Oops!
+          </Title>
+          <Text>This page is currently not available.</Text>
+        </div>
+      </Group>
+    </Paper>
   </Container>
 );
 
