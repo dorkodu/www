@@ -15,7 +15,8 @@ export const FeaturedUsecases = {
         </>
       ),
       title: "Todos",
-      description: "Tasks, reminders, lists...",
+      description:
+        "Be the master of your to-do list. Flexibly manage due-dates, assignees, statuses, dependencies, and more.",
     },
     {
       icon: (
