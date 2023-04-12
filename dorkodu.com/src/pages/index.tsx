@@ -76,7 +76,7 @@ import {
 
 const meta = {
   title: "Dorkodu",
-  description: `Just Like A Digital Mind.`,
+  description: `Just Like Your Digital Mind.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
   url: "/",
   image: {
@@ -123,7 +123,11 @@ const Products = () => {
 const YesAndNoList = () => {
   const Pros = (
     <List icon={<Emoji size={20} emoji={Checkbox} />} center spacing={8}>
-      <List.Item>Two inventor kids' dream tech company</List.Item>
+      <List.Item>
+        Founded by two inventor kids,
+        <br />
+        as their dream tech company
+      </List.Item>
       <List.Item>Homebrew open source technology</List.Item>
       <List.Item>Human-friendly design</List.Item>
       <List.Item>You own your data</List.Item>
