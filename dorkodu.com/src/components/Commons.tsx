@@ -106,7 +106,7 @@ export const WIP = () => (
           >
             Oops!
           </Title>
-          <Text>This page is currently not available.</Text>
+          <Text color="dark">This page is currently not available.</Text>
         </div>
       </Group>
     </Paper>
