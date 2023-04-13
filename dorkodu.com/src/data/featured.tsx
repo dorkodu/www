@@ -14,7 +14,7 @@ export const FeaturedUsecases = {
           ></path>
         </>
       ),
-      title: "Todos",
+      title: "To-dos",
       description:
         "Be the master of your to-do list. Flexibly manage due-dates, assignees, statuses, dependencies, and more.",
     },
