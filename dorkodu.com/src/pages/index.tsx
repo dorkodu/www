@@ -126,22 +126,22 @@ const YesAndNoList = () => {
       <List.Item>
         Founded by two inventor kids,
         <br />
-        as their dream tech company
+        as their dream tech company.
       </List.Item>
-      <List.Item>Homebrew open source technology</List.Item>
-      <List.Item>Human-friendly design</List.Item>
-      <List.Item>You own your data</List.Item>
+      <List.Item>Homebrew open source technology.</List.Item>
+      <List.Item>Human-friendly design.</List.Item>
+      <List.Item>You own your data.</List.Item>
     </List>
   );
 
   const Cons = (
     <List icon={<Emoji size={20} emoji={CrossMark} />} center spacing={8}>
-      <List.Item>No board of directors</List.Item>
-      <List.Item>Not backed by your favorite VCs</List.Item>
-      <List.Item>No founders from Ivy League</List.Item>
-      <List.Item>No eyes on an exit</List.Item>
-      <List.Item>Never abuse your privacy</List.Item>
-      <List.Item>Never exploit your attention</List.Item>
+      <List.Item>No board of directors.</List.Item>
+      <List.Item>Not backed by your favorite VCs.</List.Item>
+      <List.Item>No founders from Ivy League.</List.Item>
+      <List.Item>No eyes on an exit.</List.Item>
+      <List.Item>Never abuse your privacy.</List.Item>
+      <List.Item>Never exploit your attention.</List.Item>
     </List>
   );
 
@@ -160,9 +160,9 @@ const Punchline = () => {
         <Container>
           <Title
             sx={(theme) => ({
-              lineHeight: 0.8,
+              lineHeight: 0.85,
               letterSpacing: -0.75,
-              fontSize: rem(32),
+              fontSize: rem(30),
               maxWidth: rem(400),
               fontWeight: 800,
               color: theme.colorScheme == "dark" ? theme.white : theme.black,
@@ -175,8 +175,9 @@ const Punchline = () => {
             </Text>{" "}
             back to{" "}
             <Text variant="gradient" span gradient={{ from: "#00cc45", to: "lime" }}>
-              technology.
-            </Text>
+              technology
+            </Text>{" "}
+            again.
           </Title>
           <Text color="dimmed" size="lg" mt={12} weight={500}>
             Our culture is inspired by emotions which express the vibe of an authentic life experience.
@@ -190,7 +191,8 @@ const Punchline = () => {
             </Text>
           </List.Item>
           <List.Item>
-            <Text>Empowering the world’s best minds. From students and hobbyists to startups.</Text>
+            <Text weight={700}>Empowering the world’s best minds.</Text>
+            <Text>From students and hobbyists to startups.</Text>
           </List.Item>
           <List.Item>
             <Text>
@@ -239,12 +241,31 @@ export const Mission = () => {
         content={[
           <SectionTitle title="Our Mission" text="Our roadmap and objectives." icon={Bullseye} />,
           <Box component="section" id="our-purpose" py={20}>
-            <Text size={24} weight={800} color={theme.colorScheme == "dark" ? theme.white : theme.black}>
-              Liberate the Humankind;
-            </Text>
-            <Text size={18} weight={500} color="dimmed">
-              with meaningful technology.
-            </Text>
+            <Box>
+              <Text size={24} weight={800} color={theme.colorScheme == "dark" ? theme.white : theme.black}>
+                Liberate the Humankind;
+              </Text>
+              <Text size={18} weight={500} color="dimmed">
+                with meaningful technology.
+              </Text>
+            </Box>
+            <List icon={<Emoji size={24} emoji={ArrowRight} />} spacing={20} my={20} center>
+              <List.Item>
+                <Text>
+                  When our founders got together, they aspired to create liberating life experiences for everyone and
+                  help people fulfill their dreams.
+                </Text>
+              </List.Item>
+              <List.Item>
+                <Text>Empowering the world’s best minds. From students and hobbyists to startups.</Text>
+              </List.Item>
+              <List.Item>
+                <Text>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem
+                  ratione?
+                </Text>
+              </List.Item>
+            </List>
           </Box>,
         ]}
       />
