@@ -1,8 +1,10 @@
 export const FeaturedUsecases = {
-  supTitle: "Use cases",
-  title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-  description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, perspiciatis assumenda consequatur excepturi ut amet illum consectetur sunt tempore, totam vero delectus asperiores porro molestiae!",
+  supTitle: "WELCOME TO THE REAL WORLD.",
+  title: "The Internet, owned and created by you.",
+  description: `
+    Welcome to Anytype, where the digital assets and communities you create are truly yours.
+    Here, you can decide how your data is used, shared, and valued.
+  `,
   useCases: [
     {
       icon: (
