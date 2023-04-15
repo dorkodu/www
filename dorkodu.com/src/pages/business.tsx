@@ -7,13 +7,13 @@ import { NextPage } from "next";
 import Head from "next/head";
 
 const meta = {
-  title: `Dorkodu's Digital Garden`,
-  description: `Our ideas seedling for the public.`,
-  keywords: `dorkodu garden, digital garden`,
-  url: "/garden",
+  title: "Dorkodu For Business",
+  description: `Build together, grow together.`,
+  keywords: `dorkodu for business`,
+  url: "/business",
 };
 
-const Page: NextPage = () => {
+export default function Page() {
   return (
     <WebsiteLayout>
       <Head>
@@ -24,9 +24,7 @@ const Page: NextPage = () => {
       <WIP />
     </WebsiteLayout>
   );
-};
-
-export default Page;
+}
 
 const Hero = () => {
   return (
@@ -53,7 +51,7 @@ const Hero = () => {
           letterSpacing: -0.25,
         }}
       >
-        Build and grow, together.
+        Build, sell & grow together.
       </Title>
     </Container>
   );
