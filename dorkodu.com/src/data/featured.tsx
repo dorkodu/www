@@ -1,8 +1,8 @@
 export const FeaturedUsecases = {
-  supTitle: "WELCOME TO THE REAL WORLD.",
+  supTitle: "WELCOME TO FREEDOM.",
   title: "The Internet, owned and created by you.",
   description: `
-    Welcome to Anytype, where the digital assets and communities you create are truly yours.
+    Welcome to Dorkodu, where the digital assets you create are truly yours.
     Here, you can decide how your data is used, shared, and valued.
   `,
   useCases: [
