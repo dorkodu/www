@@ -41,6 +41,8 @@ import {
   IconMailOpened,
   IconBookmark,
   IconBrandTiktok,
+  IconLinkOff,
+  IconExternalLink,
 } from "@tabler/icons-react";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
@@ -95,6 +97,7 @@ export default function Home() {
       <Products />
       <Punchline />
       <FeaturedUseCases {...FeaturedUsecases} />
+      <AboutWander />
       <YesAndNoList />
       <Mission />
       <FAQs />
@@ -136,7 +139,6 @@ const YesAndNoList = () => {
 
   const Cons = (
     <List icon={<Emoji size={20} emoji={CrossMark} />} center spacing={8}>
-      <List.Item>No board of directors.</List.Item>
       <List.Item>Not backed by your favorite VCs.</List.Item>
       <List.Item>No founders from Ivy League.</List.Item>
       <List.Item>No eyes on an exit.</List.Item>
@@ -180,26 +182,98 @@ const Punchline = () => {
             again.
           </Title>
           <Text color="dimmed" size="lg" mt={12} weight={500}>
-            Our culture is inspired by emotions which express the vibe of an authentic life experience.
+            We're a small team on a mission to build the open technology for empowering human wisdom.
           </Text>
         </Container>,
-        <List icon={<Emoji size={24} emoji={ArrowRight} />} spacing={20} center>
+        <List
+          icon={<></>}
+          spacing={20}
+          center
+          styles={($) => ({
+            item: {
+              borderWidth: 1,
+              borderColor: $.colorScheme == "light" ? $.colors.gray[3] : $.colors.dark[5],
+              borderRadius: 10,
+              borderStyle: "solid",
+              padding: 15,
+              paddingLeft: 5,
+            },
+          })}
+        >
           <List.Item>
-            <Text>
-              When our founders got together, they aspired to create liberating life experiences for everyone and help
-              people fulfill their dreams.
+            <Text weight={800} mb={5}>
+              OWN YOUR DATA
             </Text>
+            <Text>No more lock-in. Own your data, own your identity. Credible exit.</Text>
           </List.Item>
           <List.Item>
-            <Text weight={700}>Empowering the world’s best minds.</Text>
-            <Text>From students and hobbyists to startups.</Text>
+            <Text weight={800} mb={5}>
+              FREEDOM
+            </Text>
+            <Text>Permissionless and composable protocols. Open app. Build what you want on top.</Text>
           </List.Item>
           <List.Item>
-            <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem ratione?
-            </Text>
+            <Text weight={800} mb={5}></Text>
+            <Text>Built on the Wander network, inspired by the web. A universal repository for human knowledge.</Text>
           </List.Item>
         </List>,
+      ]}
+    />
+  );
+};
+
+const AboutWander = () => {
+  return (
+    <Showcase
+      content={[
+        <Image maw={300} mx={"auto"} src="/images/logos/wander_Brand.svg" />,
+        <Container>
+          <Title
+            order={2}
+            sx={($) => ({
+              color: $.colorScheme == "dark" ? $.white : $.black,
+            })}
+          >
+            Wander
+          </Title>
+          <Text weight={500} mb={10} color="dimmed">
+            The Second Brain Protocol
+          </Text>
+          <Text>An open software protocol for building the collective digital mind of the humankind.</Text>
+          <List icon={<Emoji emoji={Checkbox} size={20} />} center spacing={4} my={10}>
+            <List.Item>Decentralized</List.Item>
+            <List.Item>Permissionless</List.Item>
+            <List.Item>Self-Sovereign</List.Item>
+            <List.Item>Open Source</List.Item>
+          </List>
+          <Text>Collaborate across a worldwide network of digital objects.</Text>
+          <Text>
+            Wander is an open protocol that prioritizes user-ownership. Your data belongs to you. Wander belongs to
+            everybody.
+          </Text>
+          <Group my={20}>
+            <Button
+              component="a"
+              href="https://github.com/dorkodu/wander"
+              variant="gradient"
+              rightIcon={<IconExternalLink />}
+              size="md"
+              radius="lg"
+            >
+              Read the Docs
+            </Button>
+            <Button
+              component="a"
+              href="https://github.com/dorkodu/wander"
+              color="dark"
+              leftIcon={<IconBrandGithub />}
+              size="md"
+              radius="lg"
+            >
+              GitHub
+            </Button>
+          </Group>
+        </Container>,
       ]}
     />
   );
@@ -249,21 +323,10 @@ export const Mission = () => {
                 with meaningful technology.
               </Text>
             </Box>
-            <List icon={<Emoji size={24} emoji={ArrowRight} />} spacing={20} my={20} center>
+            <List icon={<Emoji size={24} emoji={ArrowRight} />} spacing={20} my="md" center>
               <List.Item>
-                <Text>
-                  When our founders got together, they aspired to create liberating life experiences for everyone and
-                  help people fulfill their dreams.
-                </Text>
-              </List.Item>
-              <List.Item>
-                <Text>Empowering the world’s best minds. From students and hobbyists to startups.</Text>
-              </List.Item>
-              <List.Item>
-                <Text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vel non esse saepe voluptatem
-                  ratione?
-                </Text>
+                <Text weight={700}>Empowering the world’s best minds.</Text>
+                <Text>From students and hobbyists to startups.</Text>
               </List.Item>
             </List>
           </Box>,
