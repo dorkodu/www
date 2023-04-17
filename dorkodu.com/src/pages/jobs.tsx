@@ -188,13 +188,25 @@ const PerksAndBenefits = () => (
           and you are a long-term thinker, you found your place!
         </Text>
       </Stack>,
-      <List>
+      <List center spacing={10}>
         <List.Item>
           <Text></Text>
         </List.Item>
       </List>,
     ]}
   />
+);
+
+const Quote = () => (
+  <Container>
+    <Text>“The best way to predict the future is to invent it.”</Text>
+    <Text>
+      — Alan Kay
+      <Text color="dimmed" span>
+        , computing pioneer.
+      </Text>
+    </Text>
+  </Container>
 );
 
 const JobOpenings = () => {
