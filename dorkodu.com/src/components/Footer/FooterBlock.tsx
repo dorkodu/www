@@ -37,19 +37,16 @@ export const FooterBlock = () => {
       links: [
         {
           label: "Wander",
-          link: "/product/wander",
+          link: "https://wander.dorkodu.com",
         },
-        {
-          label: "Trekie",
-          link: "/product/trekie",
-        },
+
         {
           label: "Forum",
-          link: "/product/forum",
+          link: "https://forum.dorkodu.com",
         },
         {
           label: "ID",
-          link: "/product/id",
+          link: "https://id.dorkodu.com",
         },
       ],
     },
@@ -207,7 +204,6 @@ const style = {
         flexDirection: "column",
       },
     },
-
     wrapper: {
       minWidth: 120,
     },
