@@ -55,13 +55,13 @@ import Link from "next/link";
 const links = {
   product: [
     {
-      link: "/products/forum",
+      link: "https://forum.dorkodu.com",
       icon: <Image src="/images/logos/forum_Icon.svg" width={48} height={48} alt="Forum" withPlaceholder />,
       title: "Forum",
       description: "Social Discourse",
     },
     {
-      link: "/products/id",
+      link: "https://id.dorkodu.com",
       icon: <Image src="/images/logos/id_Icon.svg" width={48} height={48} alt="Dorkodu ID" withPlaceholder />,
       title: "ID",
       description: "Your Digital Identity",
