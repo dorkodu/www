@@ -26,6 +26,7 @@ import Meta from "@/components/Meta";
 
 import { HeroIndex } from "@/components/Hero/HeroIndex";
 import { Showcase } from "@/components/Commons";
+import { ArrowRight, Emoji } from "@/styles/emoji";
 
 const meta = {
   title: "Jobs — Dorkodu",
@@ -162,6 +163,7 @@ const Pitch = () => {
         That person might be you.
       </Text>
       <Text>Join us and let's bring back the magic of software.</Text>
+      <Quote />
     </Container>
   );
 };
@@ -178,28 +180,55 @@ const WhoWeAre = () => {
   );
 };
 
-const PerksAndBenefits = () => (
-  <Showcase
-    content={[
-      <Stack spacing="xs">
-        <Title order={2}>Perks & Benefits</Title>
-        <Text>
-          We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our mission
-          and you are a long-term thinker, you found your place!
-        </Text>
-      </Stack>,
-      <List center spacing={10}>
-        <List.Item>
-          <Text></Text>
-        </List.Item>
-      </List>,
-    ]}
-  />
-);
+const PerksAndBenefits = () => {
+  return (
+    <Showcase
+      content={[
+        <Stack spacing="xs">
+          <Title order={2}>Perks & Benefits</Title>
+          <Text>
+            We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our
+            mission and you are a long-term thinker, you found your place!
+          </Text>
+        </Stack>,
+        <List spacing={10} center icon={<Emoji emoji={ArrowRight} size={24} />}>
+          <List.Item>
+            <Text weight={500}>Remote-First</Text>
+            <Text color="dimmed"></Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={500}>Stock Options</Text>
+            <Text color="dimmed"></Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={500}>Flexible Time-Off</Text>
+            <Text color="dimmed"></Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={500}>4 Day Work-Week</Text>
+            <Text color="dimmed"></Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={500}>Build Your Own Workspace</Text>
+            <Text color="dimmed"></Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={500}>End Of Year Bonus</Text>
+            <Text color="dimmed">We value going the extra mile.</Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={500}>Earn As You Work</Text>
+            <Text color="dimmed">We pay you a location independent rate.</Text>
+          </List.Item>
+        </List>,
+      ]}
+    />
+  );
+};
 
 const Quote = () => (
   <Container>
-    <Text>“The best way to predict the future is to invent it.”</Text>
+    <Text weight={600}>“The best way to predict the future is to invent it.”</Text>
     <Text>
       — Alan Kay
       <Text color="dimmed" span>
