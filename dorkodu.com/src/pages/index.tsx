@@ -480,8 +480,8 @@ export const ContactUs = () => {
         verticalSpacing={20}
       >
         {contactInfo.map((info) => (
-          <Box>
-            <ContactInfoCard info={info} key={info.platform} />
+          <Box key={info.platform}>
+            <ContactInfoCard info={info} />
           </Box>
         ))}
       </SimpleGrid>
