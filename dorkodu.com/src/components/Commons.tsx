@@ -8,8 +8,17 @@ export const SectionTitle = ({ icon, title, text }: { icon: React.ReactNode; tit
       <Flex gap={15} align="center">
         <Box sx={{ width: 40 }}>{icon}</Box>
         <Box sx={{ width: "100% - 40px" }}>
-          <Title order={2}>{title}</Title>
-          <Text maw={400}>{text}</Text>
+          <Title
+            order={2}
+            sx={{
+              letterSpacing: -0.75,
+            }}
+          >
+            {title}
+          </Title>
+          <Text weight={500} color="dimmed" maw={400}>
+            {text}
+          </Text>
         </Box>
       </Flex>
     </Container>
