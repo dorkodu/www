@@ -18,6 +18,14 @@ import {
   Title,
   Stack,
   List,
+  SimpleGrid,
+  ThemeIcon,
+  Box,
+  Paper,
+  Anchor,
+  Button,
+  Group,
+  Alert,
 } from "@mantine/core";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
@@ -25,8 +33,10 @@ import { NextPage } from "next";
 import Meta from "@/components/Meta";
 
 import { HeroIndex } from "@/components/Hero/HeroIndex";
-import { Showcase } from "@/components/Commons";
-import { ArrowRight, Emoji } from "@/styles/emoji";
+import { SectionTitle, Showcase } from "@/components/Commons";
+import { ArrowRight, Briefcase, Emoji } from "@/styles/emoji";
+import { IconBrandGithub, IconBrandTwitter, IconBusinessplan } from "@tabler/icons-react";
+import { IconBrandTwitterFilled } from "@tabler/icons-react";
 
 const meta = {
   title: "Jobs — Dorkodu",
@@ -44,6 +54,7 @@ const Jobs: NextPage = () => {
       <Hero />
       <Pitch />
       <WhoWeAre />
+      <OpenRoles />
       <PerksAndBenefits />
     </WebsiteLayout>
   );
@@ -141,21 +152,27 @@ const styles = {
 const Pitch = () => {
   return (
     <Container>
-      <Title>
-        Software has lost its magic.
+      <Title
+        sx={($) => ({
+          letterSpacing: -1,
+          lineHeight: 1.2,
+          color: $.colorScheme == "dark" ? $.white : $.black,
+        })}
+      >
+        Technology has lost its meaning.
         <br />
-        We want your help to bring it back.
+        Help us bring it back, together.
       </Title>
       <Text>
-        Remember when software still felt magical? Good software used to be an experience.
+        Remember when software felt magical? Good software used to be an experience.
         <br />
         It used to radically change how we lived and worked.
         <br />
         It made us feel like we lived in the future.
       </Text>
       <Text>
-        We are building the tools for the next generation of high-impact companies. The place where ambitious creators
-        come to bring radical ideas to life.
+        We are building the tools for the next generation of high-impact individuals and teams. The place where
+        ambitious creators come to bring radical ideas to life.
       </Text>
       <Text>
         We are looking for talented people who share our passion for crafting exceptional software products.
@@ -168,6 +185,57 @@ const Pitch = () => {
   );
 };
 
+const OpenRoles = () => (
+  <Container py={40}>
+    <Showcase
+      content={[
+        <Box>
+          <SectionTitle
+            title="Open Roles"
+            text="Explore what you can do here."
+            icon={<Emoji emoji={Briefcase} size={32} />}
+          />
+
+          <Group spacing={10} my={20}>
+            <Button
+              component="a"
+              href="https://github.com/dorkodu"
+              leftIcon={<IconBrandGithub />}
+              color="dark"
+              size="md"
+              radius="lg"
+            >
+              GitHub
+            </Button>
+            <Button
+              component="a"
+              href="https://twitter.com/dorkodu"
+              leftIcon={<IconBrandTwitterFilled />}
+              color="blue"
+              size="md"
+              radius="lg"
+            >
+              Twitter
+            </Button>
+          </Group>
+        </Box>,
+        <Box>
+          <Alert title="No Openings Found." color="green" variant="light" my={20}>
+            <Text>
+              We are not actively filling new roles right now but will list future positions here soon. You can express
+              your interest in working with us by sending an email to{" "}
+              <Anchor href="mailto:hey@dorkodu.com" color="blue" weight={500} span>
+                hey@dorkodu.com
+              </Anchor>
+              .
+            </Text>
+          </Alert>
+        </Box>,
+      ]}
+    />
+  </Container>
+);
+
 const WhoWeAre = () => {
   return (
     <Container>
@@ -176,63 +244,145 @@ const WhoWeAre = () => {
         We are designers and engineers. Problem solvers and storytellers. We are a diverse team of individuals, all
         makers at heart.
       </Text>
+      <Text>
+        People at Dorkodu typically share a strong sense of mission, desire for autonomy and ownership over a domain,
+        and a strong generalist skillset within or across disciplines.
+      </Text>
+      <Text>People here are passionate about learning and gaining mastery over one or multiple skills.</Text>
     </Container>
   );
 };
 
-const PerksAndBenefits = () => {
+const WhoYouAre = () => {
+  const jobBenefits: SmallCardData[] = [
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Stock Options",
+      text: "",
+    },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Fully Remote",
+      text: "",
+    },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Async Work ",
+      text: "Flexible working hours.",
+    },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Early-Stage Rocket Ship",
+      text: "We value going that extra mile.",
+    },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Share-based Compensation",
+      text: "Earn as much as you contribute.",
+    },
+    { icon: <IconBusinessplan size={32} />, title: "End Of Year Bonus", text: "We value going that extra mile." },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "No Location Based Salary",
+      text: "We pay you a location independent rate.",
+    },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Work-Life Balance",
+      text: "We pay you a location independent rate.",
+    },
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Regular Team Events",
+      text: "Quarterly offsites, hackathons etc.",
+    },
+  ];
+
   return (
-    <Showcase
-      content={[
-        <Stack spacing="xs">
-          <Title order={2}>Perks & Benefits</Title>
-          <Text>
-            We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our
-            mission and you are a long-term thinker, you found your place!
-          </Text>
-        </Stack>,
-        <List spacing={10} center icon={<Emoji emoji={ArrowRight} size={24} />}>
-          <List.Item>
-            <Text weight={500}>Remote-First</Text>
-            <Text color="dimmed"></Text>
-          </List.Item>
-          <List.Item>
-            <Text weight={500}>Stock Options</Text>
-            <Text color="dimmed"></Text>
-          </List.Item>
-          <List.Item>
-            <Text weight={500}>Flexible Time-Off</Text>
-            <Text color="dimmed"></Text>
-          </List.Item>
-          <List.Item>
-            <Text weight={500}>4 Day Work-Week</Text>
-            <Text color="dimmed"></Text>
-          </List.Item>
-          <List.Item>
-            <Text weight={500}>Build Your Own Workspace</Text>
-            <Text color="dimmed"></Text>
-          </List.Item>
-          <List.Item>
-            <Text weight={500}>End Of Year Bonus</Text>
-            <Text color="dimmed">We value going the extra mile.</Text>
-          </List.Item>
-          <List.Item>
-            <Text weight={500}>Earn As You Work</Text>
-            <Text color="dimmed">We pay you a location independent rate.</Text>
-          </List.Item>
-        </List>,
-      ]}
-    />
+    <Container my={50}>
+      <Stack spacing="xs" my={20}>
+        <Title order={2}>Perks & Benefits</Title>
+        <Text>
+          We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our mission
+          and you are a long-term thinker, you found your place!
+        </Text>
+      </Stack>
+      <SimpleGrid
+        cols={3}
+        spacing={16}
+        breakpoints={[
+          { maxWidth: "48rem", cols: 2, spacing: "sm" },
+          { maxWidth: "36rem", cols: 1, spacing: "sm" },
+        ]}
+      >
+        {jobBenefits.map(($, i) => (
+          <SmallCardWithIcon data={$} key={i} />
+        ))}
+      </SimpleGrid>
+    </Container>
+  );
+};
+
+type SmallCardData = { icon: React.ReactNode; title: React.ReactNode; text: React.ReactNode };
+
+const SmallCardWithIcon = ({ data: { icon, title, text } }: { data: SmallCardData }) => (
+  <Paper p={10} radius="lg">
+    <ThemeIcon mb={8} size={48} variant="gradient" gradient={{ from: "indigo", to: "cyan" }} radius="lg">
+      {icon}
+    </ThemeIcon>
+    <Text weight={500}>{title}</Text>
+    <Text color="dimmed">{text}</Text>
+  </Paper>
+);
+
+const PerksAndBenefits = () => {
+  const jobBenefits: SmallCardData[] = [
+    { icon: <IconBusinessplan size={32} />, title: "Stock Options", text: "" },
+    { icon: "", title: "Remote-First", text: "" },
+    { icon: "", title: "Flexible Time-Off", text: "" },
+    { icon: "", title: "Async Work ", text: "Flexible working hours" },
+    { icon: "", title: "Early-Stage Rocket Ship", text: "We value going that extra mile." },
+    { icon: "", title: "Share-based Compensation", text: "Earn as much as you contribute." },
+    { icon: "", title: "End Of Year Bonus", text: "We value going that extra mile." },
+    { icon: "", title: "No Location Based Salary", text: "We pay you a location independent rate." },
+    { icon: "", title: "Work-Life Balance", text: "We pay you a location independent rate." },
+    { icon: "", title: "Regular Team Events", text: "Quarterly offsites, hackathons etc." },
+  ];
+
+  return (
+    <Container my={50}>
+      <Stack spacing="xs" my={20}>
+        <Title order={2}>Perks & Benefits</Title>
+        <Text>
+          We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our mission
+          and you are a long-term thinker, you found your place!
+        </Text>
+      </Stack>
+      <SimpleGrid
+        cols={3}
+        spacing={16}
+        breakpoints={[
+          { maxWidth: "48rem", cols: 2, spacing: "sm" },
+          { maxWidth: "36rem", cols: 1, spacing: "sm" },
+        ]}
+      >
+        {jobBenefits.map(($, i) => (
+          <SmallCardWithIcon data={$} key={i} />
+        ))}
+      </SimpleGrid>
+    </Container>
   );
 };
 
 const Quote = () => (
-  <Container>
-    <Text weight={600}>“The best way to predict the future is to invent it.”</Text>
-    <Text>
-      — Alan Kay
+  <Container py={40} size={550}>
+    <Text weight={600} size="xl">
+      “The best way to predict the future is to invent it.”
+    </Text>
+    <Text size="xl" my={5}>
+      — Alan Kay,
       <Text color="dimmed" span>
-        , computing pioneer.
+        &nbsp;a pioneer in computers.
       </Text>
     </Text>
   </Container>
