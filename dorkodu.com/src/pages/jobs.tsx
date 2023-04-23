@@ -26,6 +26,8 @@ import {
   Button,
   Group,
   Alert,
+  Flex,
+  Divider,
 } from "@mantine/core";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
@@ -34,8 +36,19 @@ import Meta from "@/components/Meta";
 
 import { HeroIndex } from "@/components/Hero/HeroIndex";
 import { SectionTitle, Showcase } from "@/components/Commons";
-import { ArrowRight, Briefcase, Emoji } from "@/styles/emoji";
-import { IconBrandGithub, IconBrandTwitter, IconBusinessplan } from "@tabler/icons-react";
+import { ArrowRight, Blossom, Briefcase, Emoji, Watch } from "@/styles/emoji";
+import {
+  IconArrowRight,
+  IconBrain,
+  IconBrandGithub,
+  IconBrandTwitter,
+  IconBusinessplan,
+  IconCaravan,
+  IconGift,
+  IconMapPinOff,
+  IconMoodHappyFilled,
+  IconTent,
+} from "@tabler/icons-react";
 import { IconBrandTwitterFilled } from "@tabler/icons-react";
 
 const meta = {
@@ -51,9 +64,12 @@ const Jobs: NextPage = () => {
       <Head>
         <Meta {...meta} />
       </Head>
+      <Headline />
       <Hero />
       <Pitch />
       <WhoWeAre />
+      <PerksAndBenefits />
+      <HowWeWork />
       <OpenRoles />
       <PerksAndBenefits />
     </WebsiteLayout>
@@ -62,6 +78,32 @@ const Jobs: NextPage = () => {
 
 export default Jobs;
 
+const Headline = () => {
+  const { classes: $, theme } = styles.Hero();
+
+  return (
+    <Container size={500} p={0}>
+      <Title
+        order={1}
+        size={48}
+        color="dimmed"
+        variant="gradient"
+        gradient={{ from: "#00cc44", to: "lime", deg: 180 }}
+        className={$.title}
+        align="center"
+      >
+        Jobs
+      </Title>
+      <Title order={2} size="h1" weight={800} className={$.headline} align="center">
+        Work @ Dorkodu
+      </Title>
+      <Text my={8} size={18} weight={500} color="dimmed" align="center">
+        Join the revolution.
+      </Text>
+    </Container>
+  );
+};
+
 const Hero = () => {
   const { classes: $, theme } = styles.Hero();
 
@@ -69,28 +111,18 @@ const Hero = () => {
     <Container mt={25} mb={100}>
       <div className={$.inner}>
         <div className={$.content}>
-          <Title
-            order={1}
-            size={48}
-            color="dimmed"
-            variant="gradient"
-            gradient={{ from: "#00cc44", to: "lime", deg: 180 }}
-            className={$.title}
-          >
-            Jobs
-          </Title>
-          <Title order={2} size="h1" weight={800} className={$.headline}>
-            Work @ Dorkodu
-          </Title>
-          <Text my={8} size={18} maw={425}>
-            Join the revolution
+          <Text size={18} maw={425}>
+            Your very own set of tools to build and explore the new internet. From private notes to decentralized
+            communities.
           </Text>
-          <Text size={18} maw={425} color="dimmed">
-            <div>
-              Your very own set of tools to build and explore the new internet. From private notes to decentralized
-              communities.
-            </div>
-          </Text>
+          <Group my={20}>
+            <Button size="md" radius="lg" variant="light" color="green">
+              About Us
+            </Button>
+            <Button size="md" radius="lg" rightIcon={<IconArrowRight />}>
+              Explore Open Roles
+            </Button>
+          </Group>
         </div>
         <Image src="/images/undraw/pair-programming.svg" className={$.image} />
       </div>
@@ -157,6 +189,7 @@ const Pitch = () => {
           letterSpacing: -1,
           lineHeight: 1.2,
           color: $.colorScheme == "dark" ? $.white : $.black,
+          marginBottom: 20,
         })}
       >
         Technology has lost its meaning.
@@ -195,7 +228,6 @@ const OpenRoles = () => (
             text="Explore what you can do here."
             icon={<Emoji emoji={Briefcase} size={32} />}
           />
-
           <Group spacing={10} my={20}>
             <Button
               component="a"
@@ -253,63 +285,61 @@ const WhoWeAre = () => {
   );
 };
 
-const WhoYouAre = () => {
+const PerksAndBenefits = () => {
   const jobBenefits: SmallCardData[] = [
     {
       icon: <IconBusinessplan size={32} />,
       title: "Stock Options",
-      text: "",
+      text: `Act like an owner, cause you are.`,
     },
     {
-      icon: <IconBusinessplan size={32} />,
-      title: "Fully Remote",
-      text: "",
-    },
-    {
-      icon: <IconBusinessplan size={32} />,
-      title: "Async Work ",
+      icon: <IconTent size={32} />,
+      title: "Fully Remote + Async",
       text: "Flexible working hours.",
     },
+
     {
-      icon: <IconBusinessplan size={32} />,
-      title: "Early-Stage Rocket Ship",
+      icon: <IconMoodHappyFilled size={32} />,
+      title: "Team Events & Care",
+      text: "Hackathons, therapy sessions, coaching etc. to support you to be your best self.",
+    },
+    {
+      icon: <IconGift size={32} />,
+      title: "End Of Year Bonus",
       text: "We value going that extra mile.",
     },
     {
       icon: <IconBusinessplan size={32} />,
       title: "Share-based Compensation",
-      text: "Earn as much as you contribute.",
-    },
-    { icon: <IconBusinessplan size={32} />, title: "End Of Year Bonus", text: "We value going that extra mile." },
-    {
-      icon: <IconBusinessplan size={32} />,
-      title: "No Location Based Salary",
-      text: "We pay you a location independent rate.",
+      text: "Earn as much as you contribute. That's fair. No salary or formal titles.",
     },
     {
-      icon: <IconBusinessplan size={32} />,
-      title: "Work-Life Balance",
-      text: "We pay you a location independent rate.",
-    },
-    {
-      icon: <IconBusinessplan size={32} />,
-      title: "Regular Team Events",
-      text: "Quarterly offsites, hackathons etc.",
+      icon: <IconMapPinOff size={32} />,
+      title: "#NoLocationBasedSalary",
+      text: "We pay you a universal basic rate.",
     },
   ];
 
   return (
     <Container my={50}>
-      <Stack spacing="xs" my={20}>
-        <Title order={2}>Perks & Benefits</Title>
-        <Text>
-          We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our mission
-          and you are a long-term thinker, you found your place!
-        </Text>
-      </Stack>
+      <Showcase
+        size={0.8}
+        content={[
+          <SectionTitle
+            icon={<Emoji size={40} emoji={Blossom} />}
+            title="Perks & Benefits"
+            text="What to expect as a bonus."
+          />,
+          <Text>
+            <b>We are a bootstrapped startup.</b> Soon to become profitable, don't expect too much. If you believe in
+            our mission and you are a long-term thinker, you found your place!
+          </Text>,
+        ]}
+      />
+      <Divider py={20} size="xs" />
       <SimpleGrid
         cols={3}
-        spacing={16}
+        spacing={0}
         breakpoints={[
           { maxWidth: "48rem", cols: 2, spacing: "sm" },
           { maxWidth: "36rem", cols: 1, spacing: "sm" },
@@ -326,53 +356,18 @@ const WhoYouAre = () => {
 type SmallCardData = { icon: React.ReactNode; title: React.ReactNode; text: React.ReactNode };
 
 const SmallCardWithIcon = ({ data: { icon, title, text } }: { data: SmallCardData }) => (
-  <Paper p={10} radius="lg">
+  <Paper p={10}>
     <ThemeIcon mb={8} size={48} variant="gradient" gradient={{ from: "indigo", to: "cyan" }} radius="lg">
       {icon}
     </ThemeIcon>
-    <Text weight={500}>{title}</Text>
-    <Text color="dimmed">{text}</Text>
+    <Text weight={600} mb={5}>
+      {title}
+    </Text>
+    <Text weight={500} color="dimmed">
+      {text}
+    </Text>
   </Paper>
 );
-
-const PerksAndBenefits = () => {
-  const jobBenefits: SmallCardData[] = [
-    { icon: <IconBusinessplan size={32} />, title: "Stock Options", text: "" },
-    { icon: "", title: "Remote-First", text: "" },
-    { icon: "", title: "Flexible Time-Off", text: "" },
-    { icon: "", title: "Async Work ", text: "Flexible working hours" },
-    { icon: "", title: "Early-Stage Rocket Ship", text: "We value going that extra mile." },
-    { icon: "", title: "Share-based Compensation", text: "Earn as much as you contribute." },
-    { icon: "", title: "End Of Year Bonus", text: "We value going that extra mile." },
-    { icon: "", title: "No Location Based Salary", text: "We pay you a location independent rate." },
-    { icon: "", title: "Work-Life Balance", text: "We pay you a location independent rate." },
-    { icon: "", title: "Regular Team Events", text: "Quarterly offsites, hackathons etc." },
-  ];
-
-  return (
-    <Container my={50}>
-      <Stack spacing="xs" my={20}>
-        <Title order={2}>Perks & Benefits</Title>
-        <Text>
-          We are a bootstrapped startup. Soon to become profitable, don't expect too much. If you believe in our mission
-          and you are a long-term thinker, you found your place!
-        </Text>
-      </Stack>
-      <SimpleGrid
-        cols={3}
-        spacing={16}
-        breakpoints={[
-          { maxWidth: "48rem", cols: 2, spacing: "sm" },
-          { maxWidth: "36rem", cols: 1, spacing: "sm" },
-        ]}
-      >
-        {jobBenefits.map(($, i) => (
-          <SmallCardWithIcon data={$} key={i} />
-        ))}
-      </SimpleGrid>
-    </Container>
-  );
-};
 
 const Quote = () => (
   <Container py={40} size={550}>
@@ -393,6 +388,63 @@ const JobOpenings = () => {
     <Container>
       <Title>Open Roles</Title>
       <Text></Text>
+    </Container>
+  );
+};
+
+const HowWeWork = () => (
+  <Group>
+    <Container py={50}>
+      <SectionTitle icon={<Emoji size={40} emoji={Watch} />} title="How We Work?" text="" />
+      <Text my={20}></Text>
+      <List center icon={<Emoji emoji={ArrowRight} size={24} />} spacing={15}>
+        <List.Item>
+          <Text weight={600}>Highly Aligned, Loosely Coupled.</Text>
+          <Text>Members of our team understand high-level company goals, are autonomous, and show initiative.</Text>
+        </List.Item>
+        <List.Item>
+          <Text weight={600}>Ambition Shapes Reality.</Text>
+          <Text>
+            We are extremely ambitious in what we can accomplish. We set high standards, expecting to fail in the
+            short-term but knowing that failure guides us to learn and ultimately succeed.
+          </Text>
+        </List.Item>
+        <List.Item>
+          <Text weight={600}>Product-Driven.</Text>
+          <Text>
+            We invest in a world-class experience that reduces massive friction for our users and speaks for itself.
+          </Text>
+        </List.Item>
+        <List.Item>
+          <Text weight={600}>Asynchronous Productivity.</Text>
+          <Text>
+            We are a globally distributed and diverse team that values deep, asynchronous work, effective and clear
+            communication.
+          </Text>
+        </List.Item>
+        <List.Item>
+          <Text weight={600}>Learn Through Building</Text>
+          <Text>
+            It's time to build! We ship frequently, connect with our community, and iterate until we get it perfect.
+          </Text>
+        </List.Item>
+      </List>
+    </Container>
+    <Box>
+      <Image src="/images/undraw/" />
+    </Box>
+  </Group>
+);
+
+const Freelance = () => {
+  return (
+    <Container>
+      <Title order={2}>We Offer Freelance Positions!</Title>
+      <Text>
+        Duolingo is constantly exploring new ways to reach language learners. Help us expand our mission through these
+        specialty freelance opportunities. While these roles are exempt from full-time employment benefits, they offer
+        the opportunity to collaborate with the Duolingo team on content that will reach millions of learners worldwide.
+      </Text>
     </Container>
   );
 };
