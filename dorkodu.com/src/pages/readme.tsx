@@ -1,4 +1,4 @@
-import { Showcase } from "@/components/Commons";
+import { Showcase, WIP } from "@/components/Commons";
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { createStyles, Title, Text, Button, Container, Group, rem, Stack, Image, List, Box } from "@mantine/core";
@@ -22,14 +22,14 @@ const Readme: NextPage = () => {
       </Head>
 
       <Hero />
-
-      <Container my={50}>
-        <Act1 />
-        <Act2 />
-        <Act3 />
-      </Container>
-
-      <Jobs />
+      <WIP />
+      {/**
+        <Container my={50} mx={0} px={0}>
+          <Act1 />
+          <Act2 />
+          <Act3 />
+        </Container>
+      */}
     </WebsiteLayout>
   );
 };
@@ -40,9 +40,9 @@ const Hero = () => {
   const { classes: $, theme } = styles.Hero();
 
   return (
-    <Container mt={25} mb={100}>
-      <div className={$.inner}>
-        <div className={$.content}>
+    <Showcase
+      content={[
+        <>
           <Title
             order={1}
             size={48}
@@ -65,10 +65,10 @@ const Hero = () => {
               communities.
             </div>
           </Text>
-        </div>
-        <Image src="/images/undraw/terms.svg" className={$.image} />
-      </div>
-    </Container>
+        </>,
+        <Image src="/images/undraw/terms.svg" className={$.image} />,
+      ]}
+    />
   );
 };
 
@@ -261,6 +261,8 @@ const styles = {
 
     image: {
       maxWidth: 360,
+      marginRight: "auto",
+      marginLeft: "auto",
     },
   })),
 };
