@@ -47,6 +47,8 @@ import {
   IconGift,
   IconMapPinOff,
   IconMoodHappyFilled,
+  IconReceipt,
+  IconReceipt2,
   IconTent,
 } from "@tabler/icons-react";
 import { IconBrandTwitterFilled } from "@tabler/icons-react";
@@ -69,6 +71,7 @@ const Jobs: NextPage = () => {
       <Pitch />
       <WhoWeAre />
       <PerksAndBenefits />
+      <WhoYouAre />
       <HowWeWork />
       <OpenRoles />
       <PerksAndBenefits />
@@ -116,11 +119,11 @@ const Hero = () => {
             communities.
           </Text>
           <Group my={20}>
-            <Button size="md" radius="lg" variant="light" color="green">
-              About Us
-            </Button>
             <Button size="md" radius="lg" rightIcon={<IconArrowRight />}>
               Explore Open Roles
+            </Button>
+            <Button size="md" radius="lg" variant="light" color="green">
+              About Us
             </Button>
           </Group>
         </div>
@@ -271,19 +274,33 @@ const OpenRoles = () => (
 const WhoWeAre = () => {
   return (
     <Container>
-      <Title>Join a team of makers</Title>
-      <Text>
-        We are designers and engineers. Problem solvers and storytellers. We are a diverse team of individuals, all
-        makers at heart.
-      </Text>
-      <Text>
-        People at Dorkodu typically share a strong sense of mission, desire for autonomy and ownership over a domain,
-        and a strong generalist skillset within or across disciplines.
-      </Text>
-      <Text>People here are passionate about learning and gaining mastery over one or multiple skills.</Text>
+      <Showcase
+        size={1.25}
+        content={[
+          <Box>
+            <Title order={2}>Who We Are?</Title>
+            <Title order={3} color="dimmed">
+              Join a Team of Makers.
+            </Title>
+            <Text my={10}>
+              We are designers and engineers. Problem solvers and storytellers. We are a diverse team of individuals,
+              all makers at heart.
+            </Text>
+            <Text my={10}>
+              People at Dorkodu typically share a strong sense of mission, desire for autonomy and ownership over a
+              domain, and a strong generalist skillset within or across disciplines.
+            </Text>
+          </Box>,
+          <Box>
+            <Text>People here are passionate about learning and gaining mastery over one or multiple skills.</Text>
+          </Box>,
+        ]}
+      />
     </Container>
   );
 };
+
+const WhoYouAre = () => <></>;
 
 const PerksAndBenefits = () => {
   const jobBenefits: SmallCardData[] = [
@@ -297,7 +314,6 @@ const PerksAndBenefits = () => {
       title: "Fully Remote + Async",
       text: "Flexible working hours.",
     },
-
     {
       icon: <IconMoodHappyFilled size={32} />,
       title: "Team Events & Care",
@@ -309,7 +325,7 @@ const PerksAndBenefits = () => {
       text: "We value going that extra mile.",
     },
     {
-      icon: <IconBusinessplan size={32} />,
+      icon: <IconReceipt2 size={32} />,
       title: "Share-based Compensation",
       text: "Earn as much as you contribute. That's fair. No salary or formal titles.",
     },
@@ -321,7 +337,7 @@ const PerksAndBenefits = () => {
   ];
 
   return (
-    <Container my={50}>
+    <Container my={50} px={0}>
       <Showcase
         size={0.8}
         content={[
@@ -336,7 +352,6 @@ const PerksAndBenefits = () => {
           </Text>,
         ]}
       />
-      <Divider py={20} size="xs" />
       <SimpleGrid
         cols={3}
         spacing={0}
@@ -393,47 +408,68 @@ const JobOpenings = () => {
 };
 
 const HowWeWork = () => (
-  <Group>
-    <Container py={50}>
-      <SectionTitle icon={<Emoji size={40} emoji={Watch} />} title="How We Work?" text="" />
-      <Text my={20}></Text>
-      <List center icon={<Emoji emoji={ArrowRight} size={24} />} spacing={15}>
-        <List.Item>
-          <Text weight={600}>Highly Aligned, Loosely Coupled.</Text>
-          <Text>Members of our team understand high-level company goals, are autonomous, and show initiative.</Text>
-        </List.Item>
-        <List.Item>
-          <Text weight={600}>Ambition Shapes Reality.</Text>
-          <Text>
-            We are extremely ambitious in what we can accomplish. We set high standards, expecting to fail in the
-            short-term but knowing that failure guides us to learn and ultimately succeed.
-          </Text>
-        </List.Item>
-        <List.Item>
-          <Text weight={600}>Product-Driven.</Text>
-          <Text>
-            We invest in a world-class experience that reduces massive friction for our users and speaks for itself.
-          </Text>
-        </List.Item>
-        <List.Item>
-          <Text weight={600}>Asynchronous Productivity.</Text>
-          <Text>
-            We are a globally distributed and diverse team that values deep, asynchronous work, effective and clear
-            communication.
-          </Text>
-        </List.Item>
-        <List.Item>
-          <Text weight={600}>Learn Through Building</Text>
-          <Text>
-            It's time to build! We ship frequently, connect with our community, and iterate until we get it perfect.
-          </Text>
-        </List.Item>
-      </List>
-    </Container>
-    <Box>
-      <Image src="/images/undraw/" />
-    </Box>
-  </Group>
+  <Showcase
+    size={1.5}
+    content={[
+      <Container py={50} px={0}>
+        <SectionTitle
+          icon={<Emoji size={40} emoji={Watch} />}
+          title="How We Work?"
+          text="First know, then trust the process."
+        />
+        <Text my={20}></Text>
+        <List
+          center
+          icon={<></>}
+          spacing={15}
+          styles={($) => ({
+            item: {
+              borderWidth: 1,
+              borderColor: $.colors.gray[3],
+              borderStyle: "solid",
+              borderRadius: 10,
+              padding: 10,
+              paddingLeft: 0,
+            },
+          })}
+        >
+          <List.Item>
+            <Text weight={700}>Highly Aligned, Loosely Coupled.</Text>
+            <Text>Members of our team understand high-level company goals, are autonomous, and show initiative.</Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={700}>Ambition Shapes Reality.</Text>
+            <Text>
+              We are extremely ambitious in what we can accomplish. We set high standards, expecting to fail in the
+              short-term but knowing that failure guides us to learn and ultimately succeed.
+            </Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={700}>Product-Driven.</Text>
+            <Text>
+              We invest in a world-class experience that reduces massive friction for our users and speaks for itself.
+            </Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={700}>Asynchronous Productivity.</Text>
+            <Text>
+              We are a globally distributed and diverse team that values deep, asynchronous work, effective and clear
+              communication.
+            </Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={700}>Learn Through Building</Text>
+            <Text>
+              It's time to build! We ship frequently, connect with our community, and iterate until we get it perfect.
+            </Text>
+          </List.Item>
+        </List>
+      </Container>,
+      <Box>
+        <Image src="/images/undraw/in-the-office.svg" />
+      </Box>,
+    ]}
+  />
 );
 
 const Freelance = () => {
