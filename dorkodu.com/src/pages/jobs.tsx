@@ -70,11 +70,10 @@ const Jobs: NextPage = () => {
       <Hero />
       <Pitch />
       <WhoWeAre />
-      <PerksAndBenefits />
       <WhoYouAre />
+      <PerksAndBenefits />
       <HowWeWork />
       <OpenRoles />
-      <PerksAndBenefits />
     </WebsiteLayout>
   );
 };
@@ -300,8 +299,6 @@ const WhoWeAre = () => {
   );
 };
 
-const WhoYouAre = () => <></>;
-
 const PerksAndBenefits = () => {
   const jobBenefits: SmallCardData[] = [
     {
@@ -368,19 +365,65 @@ const PerksAndBenefits = () => {
   );
 };
 
-type SmallCardData = { icon: React.ReactNode; title: React.ReactNode; text: React.ReactNode };
+const WhoYouAre = () => {
+  const jobBenefits: SmallCardData[] = [
+    {
+      icon: <IconBusinessplan size={32} />,
+      title: "Stock Options",
+    },
+  ];
+
+  return (
+    <Container my={50} px={0}>
+      <Showcase
+        size={0.8}
+        content={[
+          <SectionTitle
+            icon={<Emoji size={40} emoji={Blossom} />}
+            title="Who You Are?"
+            text="What we look for in you."
+          />,
+          <Text>
+            <b>We are a bootstrapped startup.</b> Soon to become profitable, don't expect too much. If you believe in
+            our mission and you are a long-term thinker, you found your place!
+          </Text>,
+        ]}
+      />
+      <SimpleGrid
+        cols={3}
+        spacing={0}
+        breakpoints={[
+          { maxWidth: "48rem", cols: 2, spacing: "sm" },
+          { maxWidth: "36rem", cols: 1, spacing: "sm" },
+        ]}
+      >
+        {jobBenefits.map(($, i) => (
+          <SmallCardWithIcon data={$} key={i} />
+        ))}
+      </SimpleGrid>
+    </Container>
+  );
+};
+
+type SmallCardData = { icon?: React.ReactNode; title?: React.ReactNode; text?: React.ReactNode };
 
 const SmallCardWithIcon = ({ data: { icon, title, text } }: { data: SmallCardData }) => (
   <Paper p={10}>
-    <ThemeIcon mb={8} size={48} variant="gradient" gradient={{ from: "indigo", to: "cyan" }} radius="lg">
-      {icon}
-    </ThemeIcon>
-    <Text weight={600} mb={5}>
-      {title}
-    </Text>
-    <Text weight={500} color="dimmed">
-      {text}
-    </Text>
+    {icon && (
+      <ThemeIcon mb={8} size={48} variant="gradient" gradient={{ from: "indigo", to: "cyan" }} radius="lg">
+        {icon}
+      </ThemeIcon>
+    )}
+    {title && (
+      <Text weight={600} mb={5}>
+        {title}
+      </Text>
+    )}
+    {text && (
+      <Text weight={500} color="dimmed">
+        {text}
+      </Text>
+    )}
   </Paper>
 );
 
