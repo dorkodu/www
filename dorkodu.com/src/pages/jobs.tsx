@@ -113,9 +113,8 @@ const Hero = () => {
     <Container mt={25} mb={100}>
       <div className={$.inner}>
         <div className={$.content}>
-          <Text size={18} maw={425}>
-            Your very own set of tools to build and explore the new internet. From private notes to decentralized
-            communities.
+          <Text size={20} maw={425}>
+            Join our mission to reinvent how humans and computers think, work and live together.
           </Text>
           <Group my={20}>
             <Button size="md" radius="lg" rightIcon={<IconArrowRight />}>
@@ -204,6 +203,12 @@ const Pitch = () => {
         It used to radically change how we lived and worked.
         <br />
         It made us feel like we lived in the future.
+      </Text>
+      <Text>
+        Early computing pioneers envisioned a future where machines on our desks could amplify our imagination, extend
+        our intellect, and help us model information in ways never before seen. This is the type of tool we want to
+        build together at Notion — one that gives you the software you can mold and shape like clay to solve your
+        problems your way.
       </Text>
       <Text>
         We are building the tools for the next generation of high-impact individuals and teams. The place where
@@ -468,7 +473,8 @@ const HowWeWork = () => (
           styles={($) => ({
             item: {
               borderWidth: 1,
-              borderColor: $.colors.gray[3],
+              borderColor: $.colorScheme == "dark" ? $.colors.dark[9] : $.colors.gray[2],
+              background: $.colorScheme == "dark" ? $.colors.dark[8] : $.colors.gray[1],
               borderStyle: "solid",
               borderRadius: 10,
               padding: 10,
@@ -477,31 +483,41 @@ const HowWeWork = () => (
           })}
         >
           <List.Item>
-            <Text weight={700}>Highly Aligned, Loosely Coupled.</Text>
+            <Text weight={700} mb={5}>
+              Highly Aligned, Loosely Coupled.
+            </Text>
             <Text>Members of our team understand high-level company goals, are autonomous, and show initiative.</Text>
           </List.Item>
           <List.Item>
-            <Text weight={700}>Ambition Shapes Reality.</Text>
+            <Text weight={700} mb={5}>
+              Ambition Shapes Reality.
+            </Text>
             <Text>
               We are extremely ambitious in what we can accomplish. We set high standards, expecting to fail in the
               short-term but knowing that failure guides us to learn and ultimately succeed.
             </Text>
           </List.Item>
           <List.Item>
-            <Text weight={700}>Product-Driven.</Text>
+            <Text weight={700} mb={5}>
+              Product-Driven.
+            </Text>
             <Text>
               We invest in a world-class experience that reduces massive friction for our users and speaks for itself.
             </Text>
           </List.Item>
           <List.Item>
-            <Text weight={700}>Asynchronous Productivity.</Text>
+            <Text weight={700} mb={5}>
+              Asynchronous Productivity.
+            </Text>
             <Text>
               We are a globally distributed and diverse team that values deep, asynchronous work, effective and clear
               communication.
             </Text>
           </List.Item>
           <List.Item>
-            <Text weight={700}>Learn Through Building</Text>
+            <Text weight={700} mb={5}>
+              Learn Through Building
+            </Text>
             <Text>
               It's time to build! We ship frequently, connect with our community, and iterate until we get it perfect.
             </Text>
@@ -509,7 +525,7 @@ const HowWeWork = () => (
         </List>
       </Container>,
       <Box>
-        <Image src="/images/undraw/in-the-office.svg" />
+        <Image src="/images/undraw/in-the-office.svg" alt="People in the office." maw={400} />
       </Box>,
     ]}
   />
