@@ -104,8 +104,6 @@ export default function Home() {
 }
 
 const Headline = () => {
-  const { classes: $, theme } = styles.Hero();
-
   return (
     <Container size={500} p={0}>
       <Title
@@ -114,12 +112,11 @@ const Headline = () => {
         color="dimmed"
         variant="gradient"
         gradient={{ from: "#00cc44", to: "lime", deg: 180 }}
-        className={$.title}
         align="center"
       >
         Jobs
       </Title>
-      <Title order={2} size="h1" weight={800} className={$.headline} align="center">
+      <Title order={2} size="h1" weight={800} align="center">
         Work @ Dorkodu
       </Title>
       <Text my={8} size={18} weight={500} color="dimmed" align="center">
@@ -127,82 +124,6 @@ const Headline = () => {
       </Text>
     </Container>
   );
-};
-
-const Hero = () => {
-  const { classes: $, theme } = styles.Hero();
-
-  return (
-    <Container mt={25} mb={100}>
-      <div className={$.inner}>
-        <div className={$.content}>
-          <Text size={20} maw={425}>
-            Join our mission to reinvent how humans and computers think, work and live together.
-          </Text>
-          <Group my={20}>
-            <Button size="md" radius="lg" rightIcon={<IconArrowRight />}>
-              Explore Open Roles
-            </Button>
-            <Button size="md" radius="lg" variant="light" color="green">
-              About Us
-            </Button>
-          </Group>
-        </div>
-        <Image src="/images/undraw/pair-programming.svg" className={$.image} />
-      </div>
-    </Container>
-  );
-};
-
-const styles = {
-  Hero: createStyles((theme) => ({
-    title: {
-      color: theme.colorScheme == "dark" ? theme.colors.gray[6] : theme.colors.gray[5],
-      fontSize: rem(40),
-      lineHeight: 1,
-      fontWeight: 900,
-      letterSpacing: -1,
-
-      [theme.fn.smallerThan("xs")]: {
-        fontSize: rem(28),
-      },
-    },
-
-    headline: {
-      color: theme.colorScheme == "dark" ? theme.white : theme.black,
-      letterSpacing: -0.8,
-    },
-
-    description: {},
-
-    inner: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      paddingTop: `calc(${theme.spacing.xl} * 4)`,
-      paddingBottom: `calc(${theme.spacing.xl} * 4)`,
-
-      [theme.fn.smallerThan("md")]: {
-        flexDirection: "column",
-        alignItems: "center",
-        gap: 40,
-      },
-    },
-
-    content: {
-      maxWidth: rem(600),
-      marginRight: `calc(${theme.spacing.xl} * 3)`,
-
-      [theme.fn.smallerThan("md")]: {
-        maxWidth: "100%",
-        marginRight: 0,
-      },
-    },
-
-    image: {
-      maxWidth: 400,
-    },
-  })),
 };
 
 const Products = () => {
@@ -254,6 +175,73 @@ const YesAndNoList = () => {
 };
 
 const Punchline = () => {
+  return (
+    <Showcase
+      content={[
+        <Container>
+          <Title
+            sx={(theme) => ({
+              lineHeight: 0.85,
+              letterSpacing: -0.75,
+              fontSize: rem(30),
+              maxWidth: rem(400),
+              fontWeight: 800,
+              color: theme.colorScheme == "dark" ? theme.white : theme.black,
+            })}
+            order={1}
+          >
+            We are bringing{" "}
+            <Text variant="gradient" span gradient={{ from: "indigo", to: "blue" }}>
+              meaning
+            </Text>{" "}
+            back to{" "}
+            <Text variant="gradient" span gradient={{ from: "#00cc45", to: "lime" }}>
+              technology
+            </Text>{" "}
+            again.
+          </Title>
+          <Text color="dimmed" size="lg" mt={12} weight={500}>
+            We're a small team on a mission to build the open technology for empowering human wisdom.
+          </Text>
+        </Container>,
+        <List
+          icon={<></>}
+          spacing={20}
+          center
+          styles={($) => ({
+            item: {
+              borderWidth: 1,
+              borderColor: $.colorScheme == "light" ? $.colors.gray[3] : $.colors.dark[5],
+              borderRadius: 10,
+              borderStyle: "solid",
+              padding: 15,
+              paddingLeft: 5,
+            },
+          })}
+        >
+          <List.Item>
+            <Text weight={800} mb={5}>
+              OWN YOUR DATA
+            </Text>
+            <Text>No more lock-in. Own your data, own your identity. Credible exit.</Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={800} mb={5}>
+              FREEDOM
+            </Text>
+            <Text>Permissionless and composable protocols. Open app. Build what you want on top.</Text>
+          </List.Item>
+          <List.Item>
+            <Text weight={800} mb={5}></Text>
+            <Text>Built on the Wander network, inspired by the web. A universal repository for human knowledge.</Text>
+          </List.Item>
+        </List>,
+      ]}
+    />
+  );
+};
+
+const Hero = () => {
   return (
     <Showcase
       content={[

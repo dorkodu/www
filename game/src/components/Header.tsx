@@ -74,7 +74,6 @@ const useStyles = createStyles((theme) => ({
       padding: theme.spacing.md,
     },
   },
-
   linkActive: {
     "&, &:hover": {
       backgroundColor: theme.fn.variant({ variant: "light", color: theme.primaryColor }).background,
