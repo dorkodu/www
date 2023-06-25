@@ -1,4 +1,4 @@
-import { Dorkodu } from "../types/dorkodu";
+import Dorkodu from "../types/dorkodu";
 
 export const roles: Record<string, Dorkodu.WorkRole> = {
   SoftwareEngineer: {

@@ -1,22 +1,12 @@
 import Head from "next/head";
 
-import { useState } from "react";
 import {
-  AppShell,
-  Navbar,
-  Header,
-  Footer,
-  Aside,
   Text,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
   Container,
   createStyles,
   rem,
   Image,
   Title,
-  Stack,
   List,
   SimpleGrid,
   ThemeIcon,
@@ -26,28 +16,21 @@ import {
   Button,
   Group,
   Alert,
-  Flex,
-  Divider,
 } from "@mantine/core";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
 import { NextPage } from "next";
 import Meta from "@/components/Meta";
 
-import { HeroIndex } from "@/components/Hero/HeroIndex";
 import { SectionTitle, Showcase } from "@/components/Commons";
-import { ArrowRight, Blossom, Briefcase, Emoji, Watch } from "@/styles/emoji";
+import { Blossom, Briefcase, Emoji, Watch } from "@/styles/emoji";
 import {
   IconArrowRight,
-  IconBrain,
   IconBrandGithub,
-  IconBrandTwitter,
   IconBusinessplan,
-  IconCaravan,
   IconGift,
   IconMapPinOff,
   IconMoodHappyFilled,
-  IconReceipt,
   IconReceipt2,
   IconTent,
 } from "@tabler/icons-react";

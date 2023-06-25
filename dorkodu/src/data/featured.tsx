@@ -1,5 +1,5 @@
 export const FeaturedUsecases = {
-  supTitle: "WELCOME TO FREEDOM.",
+  supTitle: "WELCOME TO YOUR DIGITAL MIND.",
   title: "The Internet, owned and created by you.",
   description: `
     Welcome to Dorkodu, where the digital assets you create are truly yours.

@@ -45,7 +45,7 @@ const styles = {
     },
 
     controls: {
-      marginTop: theme.spacing.xl * 2,
+      marginTop: +theme.spacing.xl * 2,
 
       [BREAKPOINT]: {
         marginTop: theme.spacing.xl,
