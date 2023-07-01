@@ -4,6 +4,7 @@ import { createStyles, Title, Text, Button, Container, Group, rem } from "@manti
 import { IconArrowRight } from "@tabler/icons-react";
 import { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 const meta = {
   title: "Oops!",
@@ -81,9 +82,11 @@ export function NotFound() {
         The page you are looking for was moved, removed, renamed or may have never existed.
       </Text>
       <Group position="center" my={25}>
-        <Button variant="gradient" size="lg" radius={20} rightIcon={<IconArrowRight />}>
-          Go Back Home
-        </Button>
+        <Link href="/">
+          <Button variant="gradient" size="lg" radius={20} rightIcon={<IconArrowRight />}>
+            Go Back Home
+          </Button>
+        </Link>
       </Group>
     </Container>
   );
