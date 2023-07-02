@@ -31,7 +31,7 @@ import Link from "next/link";
 
 const meta = {
   title: "About — Dorkodu",
-  description: `Your Dream Fulfillment Technology Company.`,
+  description: `The Life Fulfillment Technology Company.`,
   keywords: `about dorkodu, about dorkodu.com, dream fulfillment company, technology, the dorkodu company, dream technology`,
   url: "/about",
 };
@@ -70,8 +70,8 @@ const Hero = () => {
             <Text variant="gradient" gradient={{ from: "#00cc40", to: "lime", deg: 180 }} span>
               Life Fulfillment
             </Text>
-            <Text mt={-8}>Technology Company</Text>
-            <Text mt={-8}>for the Humankind.</Text>
+            <Text mt={-6}>Technology Company</Text>
+            <Text mt={-6}>For The Humankind.</Text>
           </Title>
           <Text my={8} size={18} maw={425}>
             We combine gamification, human-centric design with our superior technology to create products that help
@@ -121,7 +121,9 @@ const OurTeam = () => {
 
       <Stack spacing={30} mt={40}>
         {people.theRing.map((member) => (
-          <TheRingMember member={member} key={member.name} />
+          <div key={member.name}>
+            <TheRingMember member={member} />
+          </div>
         ))}
       </Stack>
 
@@ -129,7 +131,9 @@ const OurTeam = () => {
 
       <SimpleGrid cols={2} spacing={25} breakpoints={[{ maxWidth: 600, cols: 1, spacing: 40 }]}>
         {people.members.map((member) => (
-          <TeamMember member={member} key={member.name} />
+          <div key={member.name}>
+            <TeamMember member={member} />
+          </div>
         ))}
       </SimpleGrid>
     </Container>

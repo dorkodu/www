@@ -117,7 +117,7 @@ export function HeroIndex() {
               With all apps you need, life's like a game. Say hello to&nbsp;
               <i>
                 <b>
-                  <u>your own digital brain</u>
+                  <u>your own digital mind</u>
                 </b>
               </i>
               . Fulfill your dreams.
