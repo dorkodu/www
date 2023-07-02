@@ -23,16 +23,23 @@ import { NextPage } from "next";
 import Meta from "@/components/Meta";
 
 import { SectionTitle, Showcase } from "@/components/Commons";
-import { Blossom, Briefcase, Emoji, Watch } from "@/styles/emoji";
+import { Blossom, Briefcase, Emoji, People, Watch } from "@/styles/emoji";
 import {
   IconArrowRight,
   IconBrandGithub,
   IconBusinessplan,
+  IconFlag3,
   IconGift,
   IconMapPinOff,
+  IconMessage,
+  IconMessageCircleCheck,
   IconMoodHappyFilled,
+  IconMoodHeart,
   IconReceipt2,
+  IconTargetArrow,
   IconTent,
+  IconTools,
+  IconUsers,
 } from "@tabler/icons-react";
 import { IconBrandTwitterFilled } from "@tabler/icons-react";
 
@@ -49,7 +56,6 @@ const Jobs: NextPage = () => {
       <Head>
         <Meta {...meta} />
       </Head>
-      <Headline />
       <Hero />
       <Pitch />
       <WhoWeAre />
@@ -63,11 +69,10 @@ const Jobs: NextPage = () => {
 
 export default Jobs;
 
-const Headline = () => {
+const Hero = () => {
   const { classes: $, theme } = styles.Hero();
-
   return (
-    <Container size={500} p={0}>
+    <Container size={500} p={0} mb={100}>
       <Title
         order={1}
         size={48}
@@ -79,37 +84,23 @@ const Headline = () => {
       >
         Jobs
       </Title>
-      <Title order={2} size="h1" weight={800} className={$.headline} align="center">
+      <Title color="black" order={2} size="h1" weight={800} className={$.headline} align="center">
         Work @ Dorkodu
       </Title>
-      <Text my={8} size={18} weight={500} color="dimmed" align="center">
-        Join the revolution.
+      <Text my={8} size={20} weight={500} color="dimmed" align="center">
+        Your <b>life fulfillment</b> technology company.
       </Text>
-    </Container>
-  );
-};
-
-const Hero = () => {
-  const { classes: $, theme } = styles.Hero();
-
-  return (
-    <Container mt={25} mb={100}>
-      <div className={$.inner}>
-        <div className={$.content}>
-          <Text size={20} maw={425}>
-            Join our mission to reinvent how humans and computers think, work and live together.
-          </Text>
-          <Group my={20}>
-            <Button size="md" radius="lg" rightIcon={<IconArrowRight />}>
-              Explore Open Roles
-            </Button>
-            <Button size="md" radius="lg" variant="light" color="green">
-              About Us
-            </Button>
-          </Group>
-        </div>
-        <Image src="/images/undraw/pair-programming.svg" className={$.image} />
-      </div>
+      <Text size={20} align="center">
+        Join our mission to reinvent how humans and computers think, work and live together.
+      </Text>
+      <Group my={20} position="center">
+        <Button size="md" radius="lg" rightIcon={<IconArrowRight />}>
+          Explore Open Roles
+        </Button>
+        <Button size="md" radius="lg" variant="light" color="green">
+          About Us
+        </Button>
+      </Group>
     </Container>
   );
 };
@@ -166,43 +157,77 @@ const styles = {
 };
 
 const Pitch = () => {
+  const ActIntro = (
+    <Showcase
+      size={1.5}
+      content={[
+        <>
+          <Title
+            sx={($) => ({
+              letterSpacing: -1,
+              lineHeight: 1.2,
+              color: $.colorScheme == "dark" ? $.white : $.black,
+              marginBottom: 20,
+            })}
+            size={28}
+          >
+            Technology has lost its meaning.
+            <br />
+            Help us bring it back, together.
+          </Title>
+          <Text size="lg" my="lg">
+            Remember when software felt magical?
+            <br />
+            Good software used to be an experience.
+            <br />
+            It used to radically change how we lived and worked.
+            <br />
+            It made us feel like we lived in the future.
+            <br />
+            <Text weight={500} underline>
+              Software liberated our minds.
+            </Text>
+          </Text>
+        </>,
+        <Image src="/images/undraw/launching.svg" />,
+      ]}
+    />
+  );
+
+  const ActClimax = (
+    <Showcase
+      content={[
+        <>
+          <Text size="lg" my="lg">
+            We are building the tools for the next generation of high-impact individuals and teams. The place where
+            ambitious creators come to bring radical ideas to life.
+          </Text>
+          <Text size="lg" my="lg">
+            We are looking for talented people who share our passion for crafting exceptional software products.
+            <br />
+            That person might be you.
+          </Text>
+        </>,
+        <Image src="" />,
+      ]}
+    />
+  );
+
+  const ActQuote = (
+    <Text size="lg" align="center" color="dimmed" my="lg" weight={450} maw={600} mx="auto">
+      Early computing pioneers envisioned a future where machines on our desks could <b>amplify our imagination</b>,{" "}
+      <b>extend our intellect</b>, and help us create things in ways never before seen.
+    </Text>
+  );
+
   return (
     <Container>
-      <Title
-        sx={($) => ({
-          letterSpacing: -1,
-          lineHeight: 1.2,
-          color: $.colorScheme == "dark" ? $.white : $.black,
-          marginBottom: 20,
-        })}
-      >
-        Technology has lost its meaning.
-        <br />
-        Help us bring it back, together.
-      </Title>
-      <Text>
-        Remember when software felt magical? Good software used to be an experience.
-        <br />
-        It used to radically change how we lived and worked.
-        <br />
-        It made us feel like we lived in the future.
+      {ActIntro}
+      {ActQuote}
+      {ActClimax}
+      <Text align="center" size="xl">
+        Join us and let's bring back the meaning to technology.
       </Text>
-      <Text>
-        Early computing pioneers envisioned a future where machines on our desks could amplify our imagination, extend
-        our intellect, and help us model information in ways never before seen. This is the type of tool we want to
-        build together at Notion — one that gives you the software you can mold and shape like clay to solve your
-        problems your way.
-      </Text>
-      <Text>
-        We are building the tools for the next generation of high-impact individuals and teams. The place where
-        ambitious creators come to bring radical ideas to life.
-      </Text>
-      <Text>
-        We are looking for talented people who share our passion for crafting exceptional software products.
-        <br />
-        That person might be you.
-      </Text>
-      <Text>Join us and let's bring back the magic of software.</Text>
       <Quote />
     </Container>
   );
@@ -271,16 +296,11 @@ const WhoWeAre = () => {
             </Title>
             <Text my={10}>
               We are designers and engineers. Problem solvers and storytellers. We are a diverse team of individuals,
-              all makers at heart.
-            </Text>
-            <Text my={10}>
-              People at Dorkodu typically share a strong sense of mission, desire for autonomy and ownership over a
-              domain, and a strong generalist skillset within or across disciplines.
+              all makers at heart. People here are passionate about learning and gaining mastery over one or multiple
+              skills.
             </Text>
           </Box>,
-          <Box>
-            <Text>People here are passionate about learning and gaining mastery over one or multiple skills.</Text>
-          </Box>,
+          <Box></Box>,
         ]}
       />
     </Container>
@@ -290,34 +310,34 @@ const WhoWeAre = () => {
 const PerksAndBenefits = () => {
   const jobBenefits: SmallCardData[] = [
     {
-      icon: <IconBusinessplan size={32} />,
+      icon: <IconBusinessplan size={28} stroke={2.25} />,
       title: "Stock Options",
       text: `Act like an owner, cause you are.`,
     },
     {
-      icon: <IconTent size={32} />,
+      icon: <IconTent size={32} stroke={2.25} />,
       title: "Fully Remote + Async",
       text: "Flexible working hours.",
+    },
+    {
+      icon: <IconMapPinOff size={32} stroke={2.25} />,
+      title: "#NoLocationBasedSalary",
+      text: "We pay you a universal basic rate.",
+    },
+    {
+      icon: <IconGift size={32} stroke={2.25} />,
+      title: "End Of Year Bonus",
+      text: "We value going that extra mile.",
+    },
+    {
+      icon: <IconReceipt2 size={32} stroke={2.25} />,
+      title: "Share-based Compensation",
+      text: "Earn as much as you contribute. That's fair. No fixed salary or boring industrial titles.",
     },
     {
       icon: <IconMoodHappyFilled size={32} />,
       title: "Team Events & Care",
       text: "Hackathons, therapy sessions, coaching etc. to support you to be your best self.",
-    },
-    {
-      icon: <IconGift size={32} />,
-      title: "End Of Year Bonus",
-      text: "We value going that extra mile.",
-    },
-    {
-      icon: <IconReceipt2 size={32} />,
-      title: "Share-based Compensation",
-      text: "Earn as much as you contribute. That's fair. No salary or formal titles.",
-    },
-    {
-      icon: <IconMapPinOff size={32} />,
-      title: "#NoLocationBasedSalary",
-      text: "We pay you a universal basic rate.",
     },
   ];
 
@@ -356,8 +376,34 @@ const PerksAndBenefits = () => {
 const WhoYouAre = () => {
   const jobBenefits: SmallCardData[] = [
     {
-      icon: <IconBusinessplan size={32} />,
-      title: "Stock Options",
+      icon: <IconMessage size={28} stroke={2.25} />,
+      title: "Communicator",
+      text: "You are clear, concise and engaging in communication.",
+    },
+    {
+      icon: <IconTools size={28} stroke={2.25} />,
+      title: "Artisan",
+      text: "You care deeply about the quality of work. Down to the last pixel.",
+    },
+    {
+      icon: <IconTargetArrow size={28} stroke={2.25} />,
+      title: "Problemsolver",
+      text: "You’re able to take a bird’s eye view and solve issues.",
+    },
+    {
+      icon: <IconUsers size={28} stroke={2.25} />,
+      title: "Teammate",
+      text: "You are a team player who loves to co-create.",
+    },
+    {
+      icon: <IconMoodHeart size={28} stroke={2.25} />,
+      title: "Passionate",
+      text: "You are passionate about building truly great software.",
+    },
+    {
+      icon: <IconFlag3 size={28} stroke={2.25} />,
+      title: "Indie",
+      text: "You are a self-starter who gets things done.",
     },
   ];
 
@@ -367,13 +413,13 @@ const WhoYouAre = () => {
         size={0.8}
         content={[
           <SectionTitle
-            icon={<Emoji size={40} emoji={Blossom} />}
+            icon={<Emoji size={40} emoji={People} />}
             title="Who You Are?"
             text="What we look for in you."
           />,
           <Text>
-            <b>We are a bootstrapped startup.</b> Soon to become profitable, don't expect too much. If you believe in
-            our mission and you are a long-term thinker, you found your place!
+            People at Dorkodu typically share a <b>strong sense of mission</b>, <b>desire for autonomy</b> and{" "}
+            <b>ownership</b> over a domain, and a <b>strong generalist skillset</b> within or across disciplines.
           </Text>,
         ]}
       />
@@ -396,9 +442,9 @@ const WhoYouAre = () => {
 type SmallCardData = { icon?: React.ReactNode; title?: React.ReactNode; text?: React.ReactNode };
 
 const SmallCardWithIcon = ({ data: { icon, title, text } }: { data: SmallCardData }) => (
-  <Paper p={10}>
+  <Paper p={15} m={10} withBorder shadow="md" radius="lg">
     {icon && (
-      <ThemeIcon mb={8} size={48} variant="gradient" gradient={{ from: "indigo", to: "cyan" }} radius="lg">
+      <ThemeIcon mb={8} size={40} variant="gradient" gradient={{ from: "green", to: "dorkodu" }} radius="md">
         {icon}
       </ThemeIcon>
     )}
@@ -416,7 +462,7 @@ const SmallCardWithIcon = ({ data: { icon, title, text } }: { data: SmallCardDat
 );
 
 const Quote = () => (
-  <Container py={40} size={550}>
+  <Container py={40} size={550} px={0}>
     <Text weight={600} size="xl">
       “The best way to predict the future is to invent it.”
     </Text>
