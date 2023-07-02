@@ -2,46 +2,29 @@ import Head from "next/head";
 
 import {
   Container,
-  Grid,
   SimpleGrid,
-  Skeleton,
   rem,
   useMantineTheme,
-  Card,
   Title,
   Text,
   Box,
   Paper,
   Group,
-  createStyles,
   Button,
   ThemeIcon,
-  Col,
-  Stack,
   List,
-  Image,
-  CSSObject,
-  Space,
   UnstyledButton,
 } from "@mantine/core";
 
 import {
-  IconReceiptOff,
-  IconFlame,
-  IconCircleDotted,
-  IconFileCode,
   IconBrandTwitter,
-  IconBrandTwitterFilled,
   IconBrandInstagram,
   IconBrandGithub,
   IconBrandYoutube,
   IconBrandLinkedin,
-  IconMail,
-  IconAt,
   IconMailOpened,
   IconBookmark,
   IconBrandTiktok,
-  IconLinkOff,
   IconExternalLink,
 } from "@tabler/icons-react";
 
@@ -49,7 +32,7 @@ import WebsiteLayout from "@/layouts/WebsiteLayout";
 
 import Meta from "@/components/Meta";
 import { HeroIndex } from "@/components/Hero/HeroIndex";
-import { EmailBanner, SubstackEmbeddedForm } from "@/components/Newsletter";
+import { EmailBanner } from "@/components/Newsletter";
 
 import ForumIcon from "@/assets/logos/forum_Icon.svg";
 import IDIcon from "@/assets/logos/id_Icon.svg";
@@ -57,7 +40,6 @@ import IDIcon from "@/assets/logos/id_Icon.svg";
 import { ProductShowcaseGrid } from "@/components/Product";
 import { FeaturedUseCases } from "@/components/Features";
 import { FAQs } from "@/components/FAQ";
-import { HeroWithBackground } from "@/components/Hero/HeroWithBackground";
 import { FeaturedUsecases } from "@/data/featured";
 import Dorkodu from "@/types/dorkodu";
 import { projects } from "@/data/products";
@@ -69,16 +51,14 @@ import {
   CrossMark,
   Earth,
   Emoji,
-  GrowingHeart,
   Leaf,
-  Postbox,
   SmilingEyes,
   SparklingHeart,
 } from "@/styles/emoji";
 
 const meta = {
   title: "Dorkodu",
-  description: `Just Like Your Digital Mind.`,
+  description: `Your Digital Life, In One Place.`,
   keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
   url: "/",
   image: {
@@ -126,14 +106,10 @@ const Products = () => {
 const YesAndNoList = () => {
   const Pros = (
     <List icon={<Emoji size={20} emoji={Checkbox} />} center spacing={8}>
-      <List.Item>
-        Founded by two inventor kids,
-        <br />
-        as their dream tech company.
-      </List.Item>
+      <List.Item>Founded by two inventor kids.</List.Item>
       <List.Item>Homebrew open source technology.</List.Item>
       <List.Item>Human-friendly design.</List.Item>
-      <List.Item>You own your data.</List.Item>
+      <List.Item>You own your data & identity.</List.Item>
     </List>
   );
 
@@ -148,7 +124,7 @@ const YesAndNoList = () => {
   );
 
   return (
-    <Container size={760}>
+    <Container size={760} my={20}>
       <Title order={2}>Our Yes & No List</Title>
       <Showcase noCenter content={[Pros, Cons]} />
     </Container>
@@ -182,7 +158,7 @@ const Punchline = () => {
             again.
           </Title>
           <Text color="dimmed" size="lg" mt={12} weight={500}>
-            We're a small team on a mission to build the open technology for empowering human wisdom.
+            We're a passionate team on a mission to build the open technology for liberating human wisdom.
           </Text>
         </Container>,
         <List
@@ -202,19 +178,26 @@ const Punchline = () => {
         >
           <List.Item>
             <Text weight={800} mb={5}>
-              OWN YOUR DATA
+              YOUR DIGITAL LIFE IN ONE PLACE
             </Text>
-            <Text>No more lock-in. Own your data, own your identity. Credible exit.</Text>
+            <Text>
+              Welcome to your digital mind. Everything is connected and work in harmony. One account to rule 'em all.
+            </Text>
           </List.Item>
           <List.Item>
             <Text weight={800} mb={5}>
-              FREEDOM
+              FOLKS OWN THE INTERNET
             </Text>
-            <Text>Permissionless and composable protocols. Open app. Build what you want on top.</Text>
+            <Text>Own your data, own your identity and own your social circle. No more lock-in. Credible exit.</Text>
           </List.Item>
+
           <List.Item>
-            <Text weight={800} mb={5}></Text>
-            <Text>Built on the Wander network, inspired by the web. A universal repository for human knowledge.</Text>
+            <Text weight={800} mb={5}>
+              FREE AS IN FREEDOM
+            </Text>
+            <Text>
+              Composable and permissionless protocols. With an open ecosystem. Build tools and communities freely.
+            </Text>
           </List.Item>
         </List>,
       ]}
@@ -226,7 +209,6 @@ const AboutWander = () => {
   return (
     <Showcase
       content={[
-        <Image maw={300} mx={"auto"} src="/images/logos/wander_Brand.svg" />,
         <Container>
           <Title
             order={2}
@@ -239,18 +221,14 @@ const AboutWander = () => {
           <Text weight={500} mb={10} color="dimmed">
             The Second Brain Protocol
           </Text>
-          <Text>An open software protocol for building the collective digital mind of the humankind.</Text>
+          <Text>An open software protocol for building the collective wisdom of the humankind.</Text>
           <List icon={<Emoji emoji={Checkbox} size={20} />} center spacing={4} my={10}>
             <List.Item>Decentralized</List.Item>
             <List.Item>Permissionless</List.Item>
             <List.Item>Self-Sovereign</List.Item>
             <List.Item>Open Source</List.Item>
           </List>
-          <Text>Collaborate across a worldwide network of digital objects.</Text>
-          <Text>
-            Wander is an open protocol that prioritizes user-ownership. Your data belongs to you. Wander belongs to
-            everybody.
-          </Text>
+
           <Group my={20}>
             <Button
               component="a"
@@ -273,6 +251,19 @@ const AboutWander = () => {
               GitHub
             </Button>
           </Group>
+        </Container>,
+        <Container>
+          <Text weight={600}>A universal knowlededge graph...</Text>
+          <List icon={<Emoji emoji={ArrowRight} size={20} />} center my={8}>
+            <List.Item>hosted by a decentralized network.</List.Item>
+            <List.Item>exchanges semantic information.</List.Item>
+            <List.Item>owned by its users.</List.Item>
+            <List.Item>social by nature.</List.Item>
+          </List>
+          <Text>
+            Wander is an open protocol that prioritizes user-ownership. Your data belongs to you. Wander belongs to
+            everybody.
+          </Text>
         </Container>,
       ]}
     />
