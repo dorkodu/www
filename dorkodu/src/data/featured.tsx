@@ -1,9 +1,9 @@
 export const FeaturedUsecases = {
   supTitle: "WELCOME TO YOUR DIGITAL MIND.",
-  title: "The Internet, owned and created by you.",
+  title: "The Internet Of Minds, Created And Owned By The People.",
   description: `
-    Welcome to Dorkodu, where the digital assets you create are truly yours.
-    Here, you can decide how your data is used, shared, and valued.
+    Welcome to Dorkodu, where the digital world you create is truly yours.
+    Here, you can own your identity and decide how your data is used, shared, and valued.
   `,
   useCases: [
     {
