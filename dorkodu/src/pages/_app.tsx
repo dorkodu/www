@@ -6,7 +6,9 @@ import { useLocalStorage } from "@mantine/hooks";
 import theme from "../styles/theme";
 import Script from "next/script";
 
-import { Rubik } from "@/styles/fonts";
+import { Rubik as RubikFont } from "next/font/google";
+//? Fonts
+export const Rubik = RubikFont({ weight: "variable", subsets: ["latin", "latin-ext"], style: ["normal", "italic"] });
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -37,6 +39,7 @@ export default function App(props: AppProps) {
         <meta name="robots" content="notranslate" />
         <meta name="googlebot" content="notranslate" />
         <meta name="google" content="notranslate" />
+
         <Script id="ColorThemeFARTBlocker" strategy="beforeInteractive">
           {`function set(e){let t="light"===e?"#ffffff":"#1A1B1E";document.documentElement.style.backgroundColor=t,document.querySelector('meta[name="theme-color"]').setAttribute("content",t)}let theme=localStorage.getItem("theme");"light"!==theme&&"dark"!==theme&&(theme="light",localStorage.setItem("theme","light")),set(theme);`}
         </Script>
