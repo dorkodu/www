@@ -6,10 +6,6 @@ import { useLocalStorage } from "@mantine/hooks";
 import theme from "../styles/theme";
 import Script from "next/script";
 
-import { Rubik as RubikFont } from "next/font/google";
-//? Fonts
-export const Rubik = RubikFont({ weight: "variable", subsets: ["latin", "latin-ext"], style: ["normal", "italic"] });
-
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
@@ -43,13 +39,14 @@ export default function App(props: AppProps) {
         <Script id="ColorThemeFARTBlocker" strategy="beforeInteractive">
           {`function set(e){let t="light"===e?"#ffffff":"#1A1B1E";document.documentElement.style.backgroundColor=t,document.querySelector('meta[name="theme-color"]').setAttribute("content",t)}let theme=localStorage.getItem("theme");"light"!==theme&&"dark"!==theme&&(theme="light",localStorage.setItem("theme","light")),set(theme);`}
         </Script>
-      </Head>
 
-      <style jsx global>{`
-        html {
-          font-family: ${Rubik.style.fontFamily};
-        }
-      `}</style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
