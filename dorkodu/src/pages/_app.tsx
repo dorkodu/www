@@ -43,13 +43,13 @@ export default function App(props: AppProps) {
         <Script id="ColorThemeFARTBlocker" strategy="beforeInteractive">
           {`function set(e){let t="light"===e?"#ffffff":"#1A1B1E";document.documentElement.style.backgroundColor=t,document.querySelector('meta[name="theme-color"]').setAttribute("content",t)}let theme=localStorage.getItem("theme");"light"!==theme&&"dark"!==theme&&(theme="light",localStorage.setItem("theme","light")),set(theme);`}
         </Script>
-
-        <style jsx global>{`
-          html {
-            font-family: ${Rubik.style.fontFamily};
-          }
-        `}</style>
       </Head>
+
+      <style jsx global>{`
+        html {
+          font-family: ${Rubik.style.fontFamily};
+        }
+      `}</style>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
