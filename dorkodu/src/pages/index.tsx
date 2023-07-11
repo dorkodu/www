@@ -14,6 +14,10 @@ import {
   ThemeIcon,
   List,
   UnstyledButton,
+  Image,
+  Stack,
+  Card,
+  Badge,
 } from "@mantine/core";
 
 import {
@@ -26,6 +30,9 @@ import {
   IconBookmark,
   IconBrandTiktok,
   IconExternalLink,
+  IconExclamationMark,
+  IconAlertTriangleFilled,
+  IconHourglass,
 } from "@tabler/icons-react";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
@@ -36,6 +43,7 @@ import { EmailBanner } from "@/components/Newsletter";
 
 import ForumIcon from "@/assets/logos/forum_Icon.svg";
 import IDIcon from "@/assets/logos/id_Icon.svg";
+import CrewlandsIcon from "@/assets/logos/crewlands_Icon.svg";
 
 import { ProductShowcaseGrid } from "@/components/Product";
 import { FeaturedUseCases } from "@/components/Features";
@@ -76,6 +84,7 @@ export default function Home() {
       <HeroIndex />
       <Products />
       <Punchline />
+      <CrewlandsPromo />
       <FeaturedUseCases {...FeaturedUsecases} />
       <AboutWander />
       <YesAndNoList />
@@ -89,8 +98,14 @@ export default function Home() {
 
 const Products = () => {
   const products: Dorkodu.Project[] = [
-    { title: "Forum", tagline: "Social Discourse", image: ForumIcon.src, link: "/products/forum" },
-    { title: "ID", tagline: "Your Digital Identity", image: IDIcon.src, link: "/products/id" },
+    { title: "Forum", tagline: "Social Discourse", image: ForumIcon.src, link: "https://forum.dorkodu.com" },
+    { title: "ID", tagline: "Your Digital Identity", image: IDIcon.src, link: "https://id.dorkodu.com" },
+    {
+      title: "Crewlands",
+      tagline: "Turn-based Strategy Game",
+      image: CrewlandsIcon.src,
+      link: "https://crewlands.dorkodu.com",
+    },
   ];
 
   return (
@@ -264,6 +279,98 @@ const AboutWander = () => {
             Wander is an open protocol that prioritizes user-ownership. Your data belongs to you. Wander belongs to
             everybody.
           </Text>
+        </Container>,
+      ]}
+    />
+  );
+};
+
+const CrewlandsPromo = () => {
+  const theme = useMantineTheme();
+
+  return (
+    <Showcase
+      content={[
+        <Container>
+          <Image
+            src={
+              theme.colorScheme == "dark"
+                ? "/images/logos/crewlands_Brand-White.svg"
+                : "/images/logos/crewlands_Brand.svg"
+            }
+          />
+          <Text my={20} color="dimmed" align="center" weight={500}>
+            Finally a turn-based strategy game for everyone.
+          </Text>
+          <Group my={20} position="center">
+            <Button
+              component="a"
+              href="https://crewlands.dorkodu.com"
+              leftIcon={<IconExternalLink />}
+              size="md"
+              radius="lg"
+              disabled
+            >
+              Play Crewlands
+            </Button>
+            <Badge px={10} size="lg" radius="md" color="red" variant="filled">
+              Coming Soon<i>!</i>
+            </Badge>
+          </Group>
+          <Stack spacing={4}>
+            <Text align="center">Fight with/against other players and capture lands.</Text>
+            <Text align="center" maw={400} mx={"auto"}>
+              Play <b>online</b> by opening a room and sharing the link, or <b>offline</b> on the same device,{" "}
+              <b>like a board game!</b>
+            </Text>
+          </Stack>
+        </Container>,
+        <Container>
+          <Title
+            order={2}
+            sx={($) => ({
+              color: $.colorScheme == "dark" ? $.white : $.black,
+            })}
+          >
+            Crewlands
+          </Title>
+          <Text weight={500} mb={10} color="dimmed">
+            Social & Turn-based Strategy Game
+          </Text>
+          <List icon={<Emoji emoji={ArrowRight} size={20} />} spacing={5} lh={1.5} my={8}>
+            <List.Item>
+              <Text>
+                <b>Easy-to-learn and fun to master.</b> For all ages and different tastes.
+              </Text>
+            </List.Item>
+            <List.Item>
+              <Text>
+                <b>Multiplayer.</b> Against offline local players & bots on the same device, or online with other
+                players.
+              </Text>
+            </List.Item>
+            <List.Item>
+              <Text>
+                <b>Built-in chat.</b> Enables and enriches the social interactions in the game.
+              </Text>
+            </List.Item>
+            <List.Item>
+              <Text>
+                <b>Bots</b> with different difficulty levels.
+              </Text>
+            </List.Item>
+            <List.Item>
+              <Text>
+                <b>Rich map generation</b> unlocks the endless potential of war and peace.
+              </Text>
+            </List.Item>
+            <List.Item>
+              <Text>
+                <b>Like a social chess.</b> Limitless interaction and diplomacy, without all the complex and boring
+                features.
+              </Text>
+            </List.Item>
+          </List>
         </Container>,
       ]}
     />
