@@ -42,15 +42,6 @@ export const ProductShowcaseGrid = ({ products }: { products: Dorkodu.Project[] 
           <ProductLinkCard project={item} />
         </Grid.Col>
       ))}
-      <Grid.Col span="content" key="more-soon">
-        <Center h={80} p="lg">
-          <Badge size="xl" variant="light" p="md" radius={10}>
-            <Center>
-              <span>More Coming Soon!</span>
-            </Center>
-          </Badge>
-        </Center>
-      </Grid.Col>
     </Grid>
   );
 };

@@ -18,6 +18,8 @@ import {
   Stack,
   Card,
   Badge,
+  Divider,
+  Center,
 } from "@mantine/core";
 
 import {
@@ -33,6 +35,9 @@ import {
   IconExclamationMark,
   IconAlertTriangleFilled,
   IconHourglass,
+  IconStar,
+  IconStarFilled,
+  IconApps,
 } from "@tabler/icons-react";
 
 import WebsiteLayout from "@/layouts/WebsiteLayout";
@@ -109,12 +114,40 @@ const Products = () => {
   ];
 
   return (
-    <Container my={60}>
-      <Title order={2} weight={800}>
-        Our Apps
-      </Title>
+    <Container my={60} p={0}>
+      <Divider
+        variant="solid"
+        labelPosition="center"
+        label={
+          <Text weight={500} size="lg">
+            Our Apps
+          </Text>
+        }
+      />
       <ProductShowcaseGrid products={products} />
     </Container>
+  );
+
+  const x = (
+    <Group
+      align="center"
+      position="center"
+      spacing={8}
+      sx={($) => ({
+        backgroundColor: $.fn.variant({ color: "green", variant: "light" }).background,
+        color: $.fn.variant({ color: "green", variant: "light" }).color,
+        border: "1px solid " + $.fn.variant({ color: "green", variant: "light" }).border,
+        padding: "5px",
+        borderRadius: 10,
+      })}
+    >
+      <ThemeIcon color="green" size="lg" variant="filled">
+        <IconApps size={24} />
+      </ThemeIcon>
+      <Text weight={700} size={24} pr={4}>
+        Our Apps
+      </Text>
+    </Group>
   );
 };
 
@@ -289,91 +322,108 @@ const CrewlandsPromo = () => {
   const theme = useMantineTheme();
 
   return (
-    <Showcase
-      content={[
-        <Container>
-          <Image
-            src={
-              theme.colorScheme == "dark"
-                ? "/images/logos/crewlands_Brand-White.svg"
-                : "/images/logos/crewlands_Brand.svg"
-            }
-          />
-          <Text my={20} color="dimmed" align="center" weight={500}>
-            Finally a turn-based strategy game for everyone.
-          </Text>
-          <Group my={20} position="center">
-            <Button
-              component="a"
-              href="https://crewlands.dorkodu.com"
-              leftIcon={<IconExternalLink />}
-              size="md"
-              radius="lg"
-              disabled
-            >
-              Play Crewlands
-            </Button>
-            <Badge px={10} size="lg" radius="md" color="red" variant="filled">
-              Coming Soon<i>!</i>
-            </Badge>
-          </Group>
-          <Stack spacing={4}>
-            <Text align="center">Fight with/against other players and capture lands.</Text>
-            <Text align="center" maw={400} mx={"auto"}>
-              Play <b>online</b> by opening a room and sharing the link, or <b>offline</b> on the same device,{" "}
-              <b>like a board game!</b>
-            </Text>
-          </Stack>
-        </Container>,
-        <Container>
-          <Title
-            order={2}
-            sx={($) => ({
-              color: $.colorScheme == "dark" ? $.white : $.black,
-            })}
-          >
-            Crewlands
-          </Title>
-          <Text weight={500} mb={10} color="dimmed">
-            Social & Turn-based Strategy Game
-          </Text>
-          <List icon={<Emoji emoji={ArrowRight} size={20} />} spacing={5} lh={1.5} my={8}>
-            <List.Item>
-              <Text>
-                <b>Easy-to-learn and fun to master.</b> For all ages and different tastes.
+    <Box my={25}>
+      <Divider
+        color="green"
+        labelPosition="center"
+        label={
+          <Badge color="green" sx={($) => ({})} p={10} size="xl" radius="md">
+            <Group align="center" position="center" spacing={8}>
+              <IconStarFilled size={16} />
+              <Text>Featured</Text>
+            </Group>
+          </Badge>
+        }
+      />
+
+      <Paper withBorder shadow="lg" p={10} my={20} radius={20} sx={($) => ({})}>
+        <Showcase
+          content={[
+            <Container>
+              <Image
+                src={
+                  theme.colorScheme == "dark"
+                    ? "/images/logos/crewlands_Brand-White.svg"
+                    : "/images/logos/crewlands_Brand.svg"
+                }
+              />
+              <Text my={20} color="dimmed" align="center" weight={500}>
+                Finally a turn-based strategy game for everyone.
               </Text>
-            </List.Item>
-            <List.Item>
-              <Text>
-                <b>Multiplayer.</b> Against offline local players & bots on the same device, or online with other
-                players.
+              <Group my={20} position="center">
+                <Button
+                  component="a"
+                  href="https://crewlands.dorkodu.com"
+                  leftIcon={<IconExternalLink />}
+                  size="md"
+                  radius="lg"
+                  disabled
+                >
+                  Play Crewlands
+                </Button>
+                <Badge px={10} size="lg" radius="md" color="red" variant="filled">
+                  Coming Soon<i>!</i>
+                </Badge>
+              </Group>
+              <Stack spacing={4}>
+                <Text align="center">Fight with/against other players and capture lands.</Text>
+                <Text align="center" maw={400} mx={"auto"}>
+                  Play <b>online</b> by opening a room and sharing the link, or <b>offline</b> on the same device,{" "}
+                  <b>like a board game!</b>
+                </Text>
+              </Stack>
+            </Container>,
+            <Container>
+              <Title
+                order={2}
+                sx={($) => ({
+                  color: $.colorScheme == "dark" ? $.white : $.black,
+                })}
+              >
+                Crewlands
+              </Title>
+              <Text weight={500} mb={10} color="dimmed">
+                Social & Turn-based Strategy Game
               </Text>
-            </List.Item>
-            <List.Item>
-              <Text>
-                <b>Built-in chat.</b> Enables and enriches the social interactions in the game.
-              </Text>
-            </List.Item>
-            <List.Item>
-              <Text>
-                <b>Bots</b> with different difficulty levels.
-              </Text>
-            </List.Item>
-            <List.Item>
-              <Text>
-                <b>Rich map generation</b> unlocks the endless potential of war and peace.
-              </Text>
-            </List.Item>
-            <List.Item>
-              <Text>
-                <b>Like a social chess.</b> Limitless interaction and diplomacy, without all the complex and boring
-                features.
-              </Text>
-            </List.Item>
-          </List>
-        </Container>,
-      ]}
-    />
+              <List icon={<Emoji emoji={ArrowRight} size={20} />} spacing={5} lh={1.5} my={8}>
+                <List.Item>
+                  <Text>
+                    <b>Easy-to-learn and fun to master.</b> For all ages and different tastes.
+                  </Text>
+                </List.Item>
+                <List.Item>
+                  <Text>
+                    <b>Multiplayer.</b> Against offline local players & bots on the same device, or online with other
+                    players.
+                  </Text>
+                </List.Item>
+                <List.Item>
+                  <Text>
+                    <b>Built-in chat.</b> Enables and enriches the social interactions in the game.
+                  </Text>
+                </List.Item>
+                <List.Item>
+                  <Text>
+                    <b>Bots</b> with different difficulty levels.
+                  </Text>
+                </List.Item>
+                <List.Item>
+                  <Text>
+                    <b>Rich map generation</b> unlocks the endless potential of war and peace.
+                  </Text>
+                </List.Item>
+                <List.Item>
+                  <Text>
+                    <b>Like a social chess.</b> Limitless interaction and diplomacy, without all the complex and boring
+                    features.
+                  </Text>
+                </List.Item>
+              </List>
+            </Container>,
+          ]}
+        />
+      </Paper>
+    </Box>
   );
 };
 
