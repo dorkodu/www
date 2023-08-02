@@ -1,10 +1,15 @@
 import Meta from "@/components/Meta";
 import WebsiteLayout from "@/layouts/WebsiteLayout";
-import { createStyles, Title, Text, Button, Container, Group, rem } from "@mantine/core";
+import {
+  createStyles,
+  Title,
+  Text,
+  Button,
+  Container,
+  Group,
+  rem,
+} from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
-import { NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
 
 const meta = {
   title: "Oops!",
@@ -17,7 +22,7 @@ const meta = {
   },
 };
 
-const Home: NextPage = () => {
+export default function Page() {
   return (
     <WebsiteLayout>
       <Head>
@@ -28,9 +33,7 @@ const Home: NextPage = () => {
       </main>
     </WebsiteLayout>
   );
-};
-
-export default Home;
+}
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -44,7 +47,10 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(200),
     lineHeight: 1,
     marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
-    color: theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3],
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[4]
+        : theme.colors.gray[3],
 
     [theme.fn.smallerThan("sm")]: {
       fontSize: rem(100),
@@ -78,12 +84,21 @@ export function NotFound() {
     <Container className={classes.root}>
       <div className={classes.label}>404</div>
       <Title className={classes.title}>Something's gone wrong.</Title>
-      <Text color="dimmed" size="xl" align="center" className={classes.description}>
-        The page you are looking for was moved, removed, renamed or may have never existed.
+      <Text
+        color="dimmed"
+        size="xl"
+        align="center"
+        className={classes.description}>
+        The page you are looking for was moved, removed, renamed or may have
+        never existed.
       </Text>
       <Group position="center" my={25}>
         <Link href="/">
-          <Button variant="gradient" size="lg" radius={20} rightIcon={<IconArrowRight />}>
+          <Button
+            variant="gradient"
+            size="lg"
+            radius={20}
+            rightIcon={<IconArrowRight />}>
             Go Back Home
           </Button>
         </Link>
