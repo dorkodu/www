@@ -15,7 +15,7 @@ export const theme: MantineThemeOverride = {
       src: 'local("sans-serif")',
       letterSpacing: "0.6px",
       wordSpacing: "-1.65px",
-    }
+    },
   }),
 
   dir: "ltr",
@@ -29,4 +29,4 @@ export const theme: MantineThemeOverride = {
 
   fontFamily: `Rubik, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, sans-serif`,
   fontFamilyMonospace: `ui-monospace, "JetBrains Mono", "Cascadia Mono", SFMono-Regular, "Segoe UI Mono", "Roboto Mono", Liberation Mono, Courier New, "Ubuntu Mono",  Menlo, Monaco, Consolas, monospace`,
-}
+};

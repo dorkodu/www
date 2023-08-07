@@ -3,8 +3,17 @@ import { Anchor, Container, Group, Title } from "@mantine/core";
 export default function Header() {
   return (
     <Container>
-      <Title>Doruk Eray</Title>
-      <Nav links={[]} />
+      <Group>
+        <Title>Doruk Eray</Title>
+        <Nav
+          links={[
+            { text: "Home", url: "/" },
+            { text: "Portfolio", url: "/portfolio" },
+            { text: "Story", url: "/story" },
+            { text: "Notes", url: "/notes" },
+          ]}
+        />
+      </Group>
     </Container>
   );
 }
