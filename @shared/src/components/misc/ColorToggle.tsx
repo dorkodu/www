@@ -75,7 +75,6 @@ export function ColorToggleIcon({ size }: { size: MantineSize }) {
 }
 
 import { Switch, useMantineTheme } from "@mantine/core";
-import React from "react";
 
 export function ColorToggleSwitch({ size }: { size: MantineSize }) {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

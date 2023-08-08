@@ -1,9 +1,10 @@
 import { Anchor, Container, Group, Title } from "@mantine/core";
+import { ColorToggleSwitch } from "@shared/components/misc/ColorToggle";
 
 export default function Header() {
   return (
-    <Container>
-      <Group>
+    <Container my={16}>
+      <Group position="apart">
         <Title>Doruk Eray</Title>
         <Nav
           links={[
@@ -13,6 +14,7 @@ export default function Header() {
             { text: "Notes", url: "/notes" },
           ]}
         />
+        <ColorToggleSwitch size={20} />
       </Group>
     </Container>
   );

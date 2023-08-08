@@ -1,18 +1,20 @@
-import { Anchor, Container, Group, Title } from "@mantine/core";
+import { Anchor, Container, Group, Text, Title } from "@mantine/core";
 
 export default function Footer() {
   return (
-    <Container>
-      <Title>Doruk Eray</Title>
+    <Group>
+      <Text>Doruk Eray</Text>
       <Nav links={[]} />
-    </Container>
+    </Group>
   );
 }
 
 const Nav = ({ links }: { links: { url: string; text: string }[] }) => (
   <Group>
     {links.map((link) => (
-      <Anchor<"a"> href={link.url}>{link.text}</Anchor>
+      <Anchor<"a"> href={link.url} key={link.text}>
+        {link.text}
+      </Anchor>
     ))}
   </Group>
 );
