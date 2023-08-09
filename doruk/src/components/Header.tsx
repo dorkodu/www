@@ -14,7 +14,7 @@ export default function Header() {
             { text: "Notes", url: "/notes" },
           ]}
         />
-        <ColorToggleSwitch size={20} />
+        <ColorToggleSwitch size="md" />
       </Group>
     </Container>
   );

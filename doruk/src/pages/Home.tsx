@@ -15,11 +15,11 @@ const Hero = () => (
   <Showcase
     content={[
       <Stack spacing={0}>
-        <Title order={1} weight={800}>
-          I am Doruk Eray.
+        <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
+          I'm Doruk Eray
         </Title>
-        <Title order={2} weight={600}>
-          Founder ✦ Polymath ✦ Craftsman
+        <Title order={2} weight={600} size={20} color="dimmed">
+          Founder ∗ Polymath ∗ Craftsman
         </Title>
         <Text></Text>
       </Stack>,
@@ -39,6 +39,10 @@ const AboutMe = () => (
       perspiciatis tenetur obcaecati iure architecto excepturi ab. Ab neque
       laudantium adipisci?
     </Text>
+    <Substack />
+    <Spotify />
+    <GitHub />
+    <Twitter />
   </Container>
 );
 
