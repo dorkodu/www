@@ -6,6 +6,9 @@ export default function Page() {
     <Container>
       <Hero />
       <AboutMe />
+      <SocialLinks />
+      <FeaturedNotes />
+      <Highlights />
       <Portfolio />
     </Container>
   );
@@ -39,19 +42,47 @@ const AboutMe = () => (
       perspiciatis tenetur obcaecati iure architecto excepturi ab. Ab neque
       laudantium adipisci?
     </Text>
-    <Substack />
-    <Spotify />
-    <GitHub />
-    <Twitter />
   </Container>
 );
 
 const SocialLinks = () => <></>;
 const FeaturedNotes = () => <></>;
 
-const Substack = () => <></>;
-const Spotify = () => <></>;
-const GitHub = () => <></>;
-const Twitter = () => <></>;
+const Highlights = () => (
+  <Container px={0}>
+    <Twitter />
+    <GitHub />
+    <Substack />
+    <Spotify />
+  </Container>
+);
 
-const Portfolio = () => <>Portfolio</>;
+const Substack = () => (
+  <Container px={0}>
+    <Title order={2}>Portfolio</Title>
+  </Container>
+);
+
+const Spotify = () => (
+  <Container px={0}>
+    <Title order={2}>Portfolio</Title>
+  </Container>
+);
+
+const GitHub = () => (
+  <Container px={0}>
+    <Title order={2}>Portfolio</Title>
+  </Container>
+);
+
+const Twitter = () => (
+  <Container px={0}>
+    <Title order={2}>Portfolio</Title>
+  </Container>
+);
+
+const Portfolio = () => (
+  <Container px={0}>
+    <Title order={2}>Portfolio</Title>
+  </Container>
+);
