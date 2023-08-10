@@ -1,16 +1,31 @@
-import { Anchor, Box, Group, Stack, Text, Title } from "@mantine/core";
+import { Anchor, Group, Image, Stack, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { ColorToggleSegment } from "@shared/components/misc/ColorToggle";
 
 export default function Header() {
+  const isMobileScreen = useMediaQuery("(max-width: 760px)");
+
   return (
     <header>
-      <Group position="apart" maw={960} p={16} mx="auto">
-        <Group>
+      <Group
+        position="apart"
+        maw={960}
+        p={16}
+        mx="auto"
+        sx={isMobileScreen ? { flexDirection: "column" } : {}}>
+        <Group spacing={10}>
+          <Image src="/favicon.png" width={60} height={60} radius={4} />
           <Stack spacing={0}>
-            <Text weight={800} size={32} sx={{ letterSpacing: -1 }}>
+            <Text
+              weight={800}
+              size={28}
+              sx={($) => ({
+                letterSpacing: -1,
+                color: $.colorScheme == "dark" ? $.white : $.black,
+              })}>
               Doruk Eray
             </Text>
-            <Text weight={600} size={18} color="dimmed">
+            <Text weight={600} size={16} color="dimmed">
               Founder ∗ Polymath ∗ Craftsman
             </Text>
           </Stack>
@@ -35,7 +50,7 @@ export default function Header() {
 const Nav = ({ links }: { links: { url: string; text: string }[] }) => (
   <Group>
     {links.map((link) => (
-      <Anchor<"a"> href={link.url} color="blue" weight={500}>
+      <Anchor<"a"> href={link.url} key={link.text} color="blue" weight={500}>
         {link.text}
       </Anchor>
     ))}
