@@ -1,6 +1,7 @@
 import { Anchor, Group, Image, Stack, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { ColorToggleSegment } from "@shared/components/misc/ColorToggle";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const isMobileScreen = useMediaQuery("(max-width: 760px)");
@@ -47,12 +48,20 @@ export default function Header() {
   );
 }
 
-const Nav = ({ links }: { links: { url: string; text: string }[] }) => (
-  <Group>
-    {links.map((link) => (
-      <Anchor<"a"> href={link.url} key={link.text} color="blue" weight={500}>
-        {link.text}
-      </Anchor>
-    ))}
-  </Group>
-);
+const Nav = ({ links }: { links: { url: string; text: string }[] }) => {
+  const navigate = useNavigate();
+
+  return (
+    <Group>
+      {links.map((link) => (
+        <Anchor<"div">
+          onClick={() => navigate(link.url)}
+          key={link.text}
+          color="blue"
+          weight={500}>
+          {link.text}
+        </Anchor>
+      ))}
+    </Group>
+  );
+};

@@ -16,18 +16,21 @@ export default function Page() {
 
 const Hero = () => (
   <Showcase
+    size={1.25}
     content={[
       <Stack spacing={0}>
         <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
-          I'm Doruk Eray
+          Hello!
         </Title>
         <Title order={2} weight={600} size={20} color="dimmed">
-          Founder ∗ Polymath ∗ Craftsman
+          Welcome to my personal website.
         </Title>
-        <Text></Text>
+        <Text mt={12}>
+          I'm Doruk Eray, a founder, polymath and craftsman based in Istanbul.
+        </Text>
       </Stack>,
-      <Stack>
-        <Image src="/images/doruk.png" maw={300} mah={300} my={0} mx={0} />
+      <Stack align="end" p={10}>
+        <Image src="/images/doruk.png" maw={300} mah={300} radius={10} />
       </Stack>,
     ]}
   />
