@@ -6,7 +6,7 @@ export default function Footer() {
     <footer>
       <Container size={960} my="xl">
         <Divider />
-        <Group maw={960} position="apart" mx={"auto"} p={10}>
+        <Group maw={960} position="apart" mx={"auto"} p={10} align="center">
           <Nav
             links={[
               { text: "Home", url: "/" },
@@ -23,7 +23,7 @@ export default function Footer() {
               span
               weight={700}
               sx={($) => ({
-                color: $.colorScheme == "dark" ? $.white : $.black,
+                color: $.colorScheme == "dark" ? $.white : "unset",
               })}>
               Doruk Eray
             </Text>
