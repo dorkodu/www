@@ -5,13 +5,26 @@ import {
   Group,
   Image,
   List,
+  SimpleGrid,
   Stack,
   Text,
   Title,
   useMantineTheme,
 } from "@mantine/core";
 
-import { IconExternalLink } from "@tabler/icons-react";
+import {
+  IconBookmark,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTiktok,
+  IconBrandTwitter,
+  IconBrandYoutube,
+  IconExternalLink,
+  IconMailOpened,
+} from "@tabler/icons-react";
+
+import { ContactInfo, ContactInfoCard } from "@/components/Contact";
 
 import { SectionTitle, Showcase } from "@shared/components/commons";
 import {
@@ -34,6 +47,7 @@ export default function Page() {
       <FeaturedNotes />
       <Highlights />
       <Portfolio />
+      <ContactMe />
     </Container>
   );
 }
@@ -202,3 +216,106 @@ const Portfolio = () => (
     <Title order={2}>Portfolio</Title>
   </Container>
 );
+
+export const Section = () => {
+  return (
+    <Container size={600} pt={50}>
+      <Title order={2} align="center" mb={8}>
+        Contact Us
+      </Title>
+      <Text maw={400} align="center" mx="auto">
+        For any question, problem, wish or suggestion; you can reach us out via
+        any related platform below.
+      </Text>
+      <SimpleGrid
+        my={25}
+        cols={2}
+        breakpoints={[{ maxWidth: "540", cols: 1, spacing: "sm" }]}
+        spacing={20}
+        verticalSpacing={20}>
+        {contactInfo.map((info) => (
+          <Box key={info.platform}>
+            <Contact.ContactInfoCard info={info} />
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Container>
+  );
+};
+
+export const contactInfo: Info[] = [
+  {
+    platform: "Twitter",
+    tag: "@dorkodu",
+    link: "https://twitter.com/dorkodu",
+    icon: <IconBrandTwitter width={28} height={28} />,
+  },
+  {
+    platform: "Instagram",
+    tag: "@dorkodu",
+    link: "https://instagram.com/dorkodu",
+    icon: <IconBrandInstagram width={34} height={34} />,
+  },
+  {
+    platform: "GitHub",
+    tag: "@dorkodu",
+    link: "https://github.com/dorkodu",
+    icon: <IconBrandGithub width={30} height={30} />,
+  },
+  {
+    platform: "Substack",
+    tag: "dorkodu",
+    link: "https://dorkodu.substack.com",
+    icon: <IconBookmark width={28} height={28} />,
+  },
+  {
+    platform: "YouTube",
+    tag: "@dorkodu",
+    link: "https://youtube.com/@dorkodu",
+    icon: <IconBrandYoutube width={32} height={32} />,
+  },
+  {
+    platform: "TikTok",
+    tag: "@dorkodu",
+    link: "https://tiktok.com/@dorkodu",
+    icon: <IconBrandTiktok width={28} height={28} />,
+  },
+  {
+    platform: "LinkedIn",
+    tag: "@dorkodu",
+    link: "https://linkedin.com/company/dorkodu",
+    icon: <IconBrandLinkedin width={32} height={32} />,
+  },
+  {
+    platform: "Email",
+    tag: "hey@dorkodu.com",
+    link: "mailto:hey@dorkodu.com",
+    icon: <IconMailOpened width={30} height={30} />,
+  },
+];
+
+export const Section = () => {
+  return (
+    <Container size={600} pt={50}>
+      <Title order={2} align="center" mb={8}>
+        Contact Us
+      </Title>
+      <Text maw={400} align="center" mx="auto">
+        For any question, problem, wish or suggestion; you can reach us out via
+        any related platform below.
+      </Text>
+      <SimpleGrid
+        my={25}
+        cols={2}
+        breakpoints={[{ maxWidth: "540", cols: 1, spacing: "sm" }]}
+        spacing={20}
+        verticalSpacing={20}>
+        {contactInfo.map((info) => (
+          <Box key={info.platform}>
+            <Contact.ContactInfoCard info={info} />
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Container>
+  );
+};

@@ -3,4 +3,5 @@ export const website = {
   twitter: {
     username: "@d0rukeray",
   },
+  contact: [],
 };
