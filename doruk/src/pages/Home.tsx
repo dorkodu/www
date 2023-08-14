@@ -1,4 +1,6 @@
 import {
+  ActionIcon,
+  Anchor,
   Box,
   Button,
   Container,
@@ -8,42 +10,34 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  ThemeIcon,
   Title,
   useMantineTheme,
 } from "@mantine/core";
 
-import {
-  IconBookmark,
-  IconBrandGithub,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTiktok,
-  IconBrandTwitter,
-  IconBrandYoutube,
-  IconExternalLink,
-  IconMailOpened,
-} from "@tabler/icons-react";
+import { ContactInfoIcon } from "@/components/Contact";
 
-import { ContactInfo, ContactInfoCard } from "@/components/Contact";
-
-import { SectionTitle, Showcase } from "@shared/components/commons";
+import { Showcase } from "@shared/components/commons";
 import {
-  ArrowRight,
-  Bullseye,
   Earth,
   Emoji,
-  Leaf,
   SmilingEyes,
   SparklingHeart,
 } from "@shared/styles/emoji";
+import { website } from "@/website";
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconMail,
+} from "@tabler/icons-react";
 
 export default function Page() {
   return (
     <Container>
       <Hero />
       <AboutMe />
-      <Mission />
-      <SocialLinks />
       <FeaturedNotes />
       <Highlights />
       <Portfolio />
@@ -67,19 +61,47 @@ const Hero = () => (
           Welcome to my personal website.
         </Title>
         <Text mt={12} size="lg">
-          I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and <b>Craftsman</b>{" "}
-          based in <b>Istanbul</b>.
+          I'm Doruk, a <b>Founder</b>, <b>Polymath</b> and <b>Craftsman</b>{" "}
+          based in <b>Istanbul</b>. <FollowOnTwitter />
         </Text>
-        <Group my={16}>
-          <Button size="lg" radius="lg">
-            Let's Work Together!
+
+        <List icon="∗" spacing={5} mt={10}>
+          <List.Item>
+            I design and build software products @&nbsp;
+            <Anchor
+              href="https://dorkodu.com"
+              color="blue"
+              weight={600}
+              td="underline">
+              Dorkodu
+            </Anchor>
+            .
+          </List.Item>
+          <List.Item>
+            I sing, write songs and play guitar @&nbsp;
+            <Anchor
+              href="https://instagram.com/theterraspark"
+              color="blue"
+              weight={600}
+              td="underline">
+              Terraspark
+            </Anchor>
+            .
+          </List.Item>
+          <List.Item>
+            I study Cognitive Science @&nbsp;
+            <b>Bogazici University</b>.
+          </List.Item>
+        </List>
+
+        <SocialLinks />
+
+        <Group my={5}>
+          <Button size="md" radius="lg">
+            See My Portfolio
           </Button>
-          <Button
-            size="md"
-            radius="lg"
-            variant="light"
-            rightIcon={<IconExternalLink />}>
-            Our Company
+          <Button size="md" radius="lg" variant="light">
+            Read My Story
           </Button>
         </Group>
       </Stack>,
@@ -87,10 +109,31 @@ const Hero = () => (
   />
 );
 
+const FollowOnTwitter = () => {
+  return (
+    <>
+      <a
+        href="https://twitter.com/d0rukeray?ref_src=twsrc%5Etfw"
+        className="twitter-follow-button"
+        data-size="large"
+        data-show-screen-name="false"
+        data-lang="en"
+        data-dnt="true"
+        data-show-count="false">
+        Follow
+      </a>
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charSet="utf-8"></script>
+    </>
+  );
+};
+
 const AboutMe = () => (
   <Showcase
     content={[
-      <Stack>
+      <Stack pr={20}>
         <Title order={2}>In a nutshell...</Title>
         <Text>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -99,83 +142,63 @@ const AboutMe = () => (
           necessitatibus?
         </Text>
       </Stack>,
-      <List icon={"∗"}>
-        <List.Item>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae,
-            eius?
-          </Text>
-        </List.Item>
-      </List>,
+      <MissionStatement />,
     ]}
   />
 );
 
-export const Mission = () => {
+export const MissionStatement = () => {
   const theme = useMantineTheme();
 
   return (
-    <Container my={25} p={0}>
-      <Showcase
-        content={[
-          <SectionTitle
-            title="Our Purpose"
-            text="Why we do this?"
-            icon={Leaf}
-          />,
-          <Box component="section" id="our-purpose" py={20}>
-            <List spacing={8} center>
-              <List.Item icon={<Emoji size={24} emoji={SparklingHeart} />}>
-                Help people find and pursue their true purpose.
-              </List.Item>
-              <List.Item icon={<Emoji size={24} emoji={SmilingEyes} />}>
-                Create a meaningful life experience for everyone.
-              </List.Item>
-              <List.Item icon={<Emoji size={24} emoji={Earth} />}>
-                Build the utopian dream of heaven on earth.
-              </List.Item>
-            </List>
-          </Box>,
-        ]}
-      />
-
-      <Showcase
-        content={[
-          <SectionTitle
-            title="Our Mission"
-            text="Our roadmap and objectives."
-            icon={Bullseye}
-          />,
-          <Box component="section" id="our-purpose" py={20}>
-            <Box>
-              <Text
-                size={24}
-                weight={800}
-                color={theme.colorScheme == "dark" ? theme.white : theme.black}>
-                Liberate the Humankind;
-              </Text>
-              <Text size={18} weight={500} color="dimmed">
-                with meaningful technology.
-              </Text>
-            </Box>
-            <List
-              icon={<Emoji size={24} emoji={ArrowRight} />}
-              spacing={20}
-              my="md"
-              center>
-              <List.Item>
-                <Text weight={700}>Empowering the world’s best minds.</Text>
-                <Text>From students and hobbyists to startups.</Text>
-              </List.Item>
-            </List>
-          </Box>,
-        ]}
-      />
-    </Container>
+    <Box component="section" id="our-purpose" py={20}>
+      <Box mb={10}>
+        <Text
+          size={24}
+          weight={800}
+          color={theme.colorScheme == "dark" ? theme.white : theme.black}>
+          Liberate the Humankind;
+        </Text>
+        <Text size={20} weight={500} color="dimmed">
+          with meaningful art & technology.
+        </Text>
+      </Box>
+      <List spacing={5} center>
+        <List.Item icon={<Emoji size={24} emoji={SparklingHeart} />}>
+          Help people find and pursue their life purpose.
+        </List.Item>
+        <List.Item icon={<Emoji size={24} emoji={SmilingEyes} />}>
+          Create a meaningful life experience for everyone.
+        </List.Item>
+        <List.Item icon={<Emoji size={24} emoji={Earth} />}>
+          Build the utopian dream of heaven on earth.
+        </List.Item>
+      </List>
+    </Box>
   );
 };
 
-const SocialLinks = () => <></>;
+const SocialLinks = () => {
+  return (
+    <Group spacing={5} my={10}>
+      <ActionIcon variant="default" radius={12} size={40}>
+        <IconBrandInstagram size={32} stroke={2.15} />
+      </ActionIcon>
+      <ActionIcon variant="default" radius={12} size={40}>
+        <IconBrandTwitter size={30} stroke={2.15} />
+      </ActionIcon>
+      <ActionIcon variant="default" radius={12} size={40}>
+        <IconBrandLinkedin size={30} stroke={2.15} />
+      </ActionIcon>
+      <ActionIcon variant="default" radius={12} size={40}>
+        <IconBrandGithub size={30} stroke={2.15} />
+      </ActionIcon>
+      <ActionIcon variant="default" radius={12} size={40}>
+        <IconMail size={30} stroke={2.15} />
+      </ActionIcon>
+    </Group>
+  );
+};
 const FeaturedNotes = () => <></>;
 
 const Highlights = () => (
@@ -194,8 +217,16 @@ const Substack = () => (
 );
 
 const Spotify = () => (
-  <Container px={0}>
-    <Title order={2}>Portfolio</Title>
+  <Container py={20} size={600}>
+    <iframe
+      style={{ borderRadius: "12px" }}
+      src="https://open.spotify.com/embed/playlist/1JjHkm5GrtUt6bGogDce5e?utm_source=generator&theme=0"
+      width="100%"
+      height="352"
+      frameBorder="0"
+      allowFullScreen={false}
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
   </Container>
 );
 
@@ -206,8 +237,21 @@ const GitHub = () => (
 );
 
 const Twitter = () => (
-  <Container px={0}>
-    <Title order={2}>Portfolio</Title>
+  <Container px={0} size={600}>
+    <a
+      className="twitter-timeline"
+      data-lang="en"
+      data-width="400"
+      data-height="600"
+      data-dnt="true"
+      data-theme="light"
+      href="https://twitter.com/d0rukeray?ref_src=twsrc%5Etfw">
+      Tweets by d0rukeray
+    </a>{" "}
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charSet="utf-8"></script>
   </Container>
 );
 
@@ -217,15 +261,15 @@ const Portfolio = () => (
   </Container>
 );
 
-export const Section = () => {
+export const ContactMe = () => {
   return (
     <Container size={600} pt={50}>
       <Title order={2} align="center" mb={8}>
-        Contact Us
+        Contact Me
       </Title>
       <Text maw={400} align="center" mx="auto">
-        For any question, problem, wish or suggestion; you can reach us out via
-        any related platform below.
+        For any question, problem, wish or suggestion; you can reach me via any
+        related platform below.
       </Text>
       <SimpleGrid
         my={25}
@@ -233,86 +277,9 @@ export const Section = () => {
         breakpoints={[{ maxWidth: "540", cols: 1, spacing: "sm" }]}
         spacing={20}
         verticalSpacing={20}>
-        {contactInfo.map((info) => (
-          <Box key={info.platform}>
-            <Contact.ContactInfoCard info={info} />
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Container>
-  );
-};
-
-export const contactInfo: Info[] = [
-  {
-    platform: "Twitter",
-    tag: "@dorkodu",
-    link: "https://twitter.com/dorkodu",
-    icon: <IconBrandTwitter width={28} height={28} />,
-  },
-  {
-    platform: "Instagram",
-    tag: "@dorkodu",
-    link: "https://instagram.com/dorkodu",
-    icon: <IconBrandInstagram width={34} height={34} />,
-  },
-  {
-    platform: "GitHub",
-    tag: "@dorkodu",
-    link: "https://github.com/dorkodu",
-    icon: <IconBrandGithub width={30} height={30} />,
-  },
-  {
-    platform: "Substack",
-    tag: "dorkodu",
-    link: "https://dorkodu.substack.com",
-    icon: <IconBookmark width={28} height={28} />,
-  },
-  {
-    platform: "YouTube",
-    tag: "@dorkodu",
-    link: "https://youtube.com/@dorkodu",
-    icon: <IconBrandYoutube width={32} height={32} />,
-  },
-  {
-    platform: "TikTok",
-    tag: "@dorkodu",
-    link: "https://tiktok.com/@dorkodu",
-    icon: <IconBrandTiktok width={28} height={28} />,
-  },
-  {
-    platform: "LinkedIn",
-    tag: "@dorkodu",
-    link: "https://linkedin.com/company/dorkodu",
-    icon: <IconBrandLinkedin width={32} height={32} />,
-  },
-  {
-    platform: "Email",
-    tag: "hey@dorkodu.com",
-    link: "mailto:hey@dorkodu.com",
-    icon: <IconMailOpened width={30} height={30} />,
-  },
-];
-
-export const Section = () => {
-  return (
-    <Container size={600} pt={50}>
-      <Title order={2} align="center" mb={8}>
-        Contact Us
-      </Title>
-      <Text maw={400} align="center" mx="auto">
-        For any question, problem, wish or suggestion; you can reach us out via
-        any related platform below.
-      </Text>
-      <SimpleGrid
-        my={25}
-        cols={2}
-        breakpoints={[{ maxWidth: "540", cols: 1, spacing: "sm" }]}
-        spacing={20}
-        verticalSpacing={20}>
-        {contactInfo.map((info) => (
-          <Box key={info.platform}>
-            <Contact.ContactInfoCard info={info} />
+        {website.contact.map((info) => (
+          <Box key={info.title}>
+            <ContactInfoIcon info={info} />
           </Box>
         ))}
       </SimpleGrid>
