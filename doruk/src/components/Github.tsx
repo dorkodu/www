@@ -15,6 +15,96 @@ import CenterLoader from "@shared/components/loaders/CenterLoader";
 import { IconBuilding } from "@tabler/icons-react";
 import { useState } from "react";
 
+export function GitHubProfileCard({
+  username,
+  width = 400,
+}: {
+  username: string;
+  width: number;
+}) {
+  const [user, setUser] = useState<GithubUser | null>(null);
+
+  if (user == null) {
+    fetchGithubUser(username).then((user) => {
+      setUser(user);
+    });
+  }
+
+  return (
+    <Paper p={10} withBorder shadow="md" maw={width}>
+      {user ? (
+        <>
+          <Group position="apart">
+            <Group spacing={10}>
+              <Image
+                src={user.avatarURL}
+                alt={user.name}
+                width={64}
+                height={64}
+                radius={8}
+              />
+
+              <Stack spacing={0}>
+                <Text weight={700} size={20}>
+                  {user.name}
+                </Text>
+                <Text weight={400} color="dimmed">
+                  @{user.login}
+                </Text>
+              </Stack>
+            </Group>
+
+            <a href={user.htmlURL}>
+              <Button variant="default">Follow</Button>
+            </a>
+          </Group>
+
+          <Text my={10} size="sm">
+            {user.bio}
+          </Text>
+
+          <Divider mt={10} />
+
+          <Group>
+            <Text my={10} size="sm">
+              <b>{user.publicRepos}&nbsp;</b>
+              <Text color="dimmed" span>
+                Repos
+              </Text>
+            </Text>
+
+            {user.publicGists && user.publicGists > 0 && (
+              <Text my={10} size="sm">
+                <b>{user.publicGists}&nbsp;</b>
+                <Text color="dimmed" span>
+                  Gists
+                </Text>
+              </Text>
+            )}
+
+            <Text my={10} size="sm">
+              <b>{user.followers}&nbsp;</b>
+              <Text color="dimmed" span>
+                Followers&nbsp;
+              </Text>
+            </Text>
+          </Group>
+
+          <Group>
+            {user.hireable && (
+              <Badge my={10} size="md" variant="dot">
+                Available for hire
+              </Badge>
+            )}
+          </Group>
+        </>
+      ) : (
+        <CenterLoader />
+      )}
+    </Paper>
+  );
+}
+
 export function GitHubCommitGraph({
   username,
   color,
