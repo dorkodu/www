@@ -3,9 +3,11 @@ import {
   Badge,
   Button,
   Card,
+  Center,
   Divider,
   Group,
   Image,
+  Loader,
   Paper,
   Stack,
   Text,
@@ -31,21 +33,21 @@ export function GitHubProfileCard({
   }
 
   return (
-    <Paper p={10} withBorder shadow="md" maw={width}>
+    <Paper p={10} withBorder shadow="md" maw={width} mih={100} m={10}>
       {user ? (
         <>
-          <Group position="apart">
+          <Group position="apart" align="flex-start">
             <Group spacing={10}>
               <Image
                 src={user.avatarURL}
                 alt={user.name}
-                width={64}
-                height={64}
+                width={60}
+                height={60}
                 radius={8}
               />
 
               <Stack spacing={0}>
-                <Text weight={700} size={20}>
+                <Text weight={700} size={18}>
                   {user.name}
                 </Text>
                 <Text weight={400} color="dimmed">
@@ -55,7 +57,9 @@ export function GitHubProfileCard({
             </Group>
 
             <a href={user.htmlURL}>
-              <Button variant="default">Follow</Button>
+              <Button variant="filled" color="dark" radius="md" size="sm">
+                Follow
+              </Button>
             </a>
           </Group>
 
@@ -89,17 +93,11 @@ export function GitHubProfileCard({
               </Text>
             </Text>
           </Group>
-
-          <Group>
-            {user.hireable && (
-              <Badge my={10} size="md" variant="dot">
-                Available for hire
-              </Badge>
-            )}
-          </Group>
         </>
       ) : (
-        <CenterLoader />
+        <Center>
+          <Loader variant="dots" color="green" />
+        </Center>
       )}
     </Paper>
   );
@@ -107,10 +105,10 @@ export function GitHubProfileCard({
 
 export function GitHubCommitGraph({
   username,
-  color,
+  color = "40bb60",
 }: {
   username: string;
-  color: string;
+  color?: string;
 }) {
   return (
     <a href={`https://github.com/${username}`}>
@@ -119,17 +117,5 @@ export function GitHubCommitGraph({
         alt={`@${username}`}
       />
     </a>
-  );
-}
-
-export function GithubUserCard({ user }: { user: string }) {
-  return (
-    <iframe
-      id={`ghcard-${user}-3`}
-      frameBorder="0"
-      scrolling="0"
-      src={`https://lab.lepture.com/github-cards/cards/default.html?user=${user}&amp;identity=ghcard-${user}-3&amp;client_id=a11a1bda412d928fb39a&amp;client_secret=92b7cf30bc42c49d589a10372c3f9ff3bb310037`}
-      width="400"
-      height="150"></iframe>
   );
 }
