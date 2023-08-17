@@ -122,3 +122,14 @@ export function GitHubCommitGraph({
   );
 }
 
+export function GithubUserCard({ user }: { user: string }) {
+  return (
+    <iframe
+      id={`ghcard-${user}-3`}
+      frameBorder="0"
+      scrolling="0"
+      src={`https://lab.lepture.com/github-cards/cards/default.html?user=${user}&amp;identity=ghcard-${user}-3&amp;client_id=a11a1bda412d928fb39a&amp;client_secret=92b7cf30bc42c49d589a10372c3f9ff3bb310037`}
+      width="400"
+      height="150"></iframe>
+  );
+}
