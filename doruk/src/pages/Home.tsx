@@ -4,13 +4,13 @@ import {
   Box,
   Button,
   Container,
+  Divider,
   Group,
   Image,
   List,
   SimpleGrid,
   Stack,
   Text,
-  ThemeIcon,
   Title,
   useMantineTheme,
 } from "@mantine/core";
@@ -32,6 +32,7 @@ import {
   IconBrandTwitter,
   IconMail,
 } from "@tabler/icons-react";
+import { GitHubProfileCard, GithubUserCard } from "@/components/Github";
 
 export default function Page() {
   return (
@@ -60,22 +61,32 @@ const Hero = () => (
         <Title order={2} weight={600} size={20} color="dimmed">
           Welcome to my personal website.
         </Title>
-        <Text mt={12} size="lg">
-          I'm Doruk, a <b>Founder</b>, <b>Polymath</b> and <b>Craftsman</b>{" "}
-          based in <b>Istanbul</b>. <FollowOnTwitter />
+        <Text mt={12} size="md">
+          I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and <b>Craftsman</b>{" "}
+          from <b>Istanbul</b>. My focus is on software, music and business.
         </Text>
 
-        <List icon="∗" spacing={5} mt={10}>
+        <List
+          icon={
+            <Text weight={500} size={18}>
+              ∗
+            </Text>
+          }
+          center
+          spacing={5}
+          mt={10}>
           <List.Item>
-            I design and build software products @&nbsp;
-            <Anchor
-              href="https://dorkodu.com"
-              color="blue"
-              weight={600}
-              td="underline">
-              Dorkodu
-            </Anchor>
-            .
+            <Text>
+              I design products and build software @&nbsp;
+              <Anchor
+                href="https://dorkodu.com"
+                color="blue"
+                weight={600}
+                td="underline">
+                Dorkodu
+              </Anchor>
+              .
+            </Text>
           </List.Item>
           <List.Item>
             I sing, write songs and play guitar @&nbsp;
@@ -87,10 +98,6 @@ const Hero = () => (
               Terraspark
             </Anchor>
             .
-          </List.Item>
-          <List.Item>
-            I study Cognitive Science @&nbsp;
-            <b>Bogazici University</b>.
           </List.Item>
         </List>
 
@@ -108,27 +115,6 @@ const Hero = () => (
     ]}
   />
 );
-
-const FollowOnTwitter = () => {
-  return (
-    <>
-      <a
-        href="https://twitter.com/d0rukeray?ref_src=twsrc%5Etfw"
-        className="twitter-follow-button"
-        data-size="large"
-        data-show-screen-name="false"
-        data-lang="en"
-        data-dnt="true"
-        data-show-count="false">
-        Follow
-      </a>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"></script>
-    </>
-  );
-};
 
 const AboutMe = () => (
   <Showcase
@@ -179,9 +165,13 @@ export const MissionStatement = () => {
 };
 
 const SocialLinks = () => {
+  const social: { link: string; icon: JSX.Element }[] = [
+    { link: "", icon: <></> },
+  ];
+
   return (
     <Group spacing={5} my={10}>
-      <ActionIcon variant="default" radius={12} size={40}>
+      <ActionIcon<"a"> variant="default" radius={12} size={40}>
         <IconBrandInstagram size={32} stroke={2.15} />
       </ActionIcon>
       <ActionIcon variant="default" radius={12} size={40}>
@@ -201,57 +191,50 @@ const SocialLinks = () => {
 };
 const FeaturedNotes = () => <></>;
 
-const Highlights = () => (
-  <Container px={0}>
-    <Twitter />
-    <GitHub />
-    <Substack />
-    <Spotify />
-  </Container>
-);
+const Highlights = () => {
+  const Spotify = () => (
+    <Container py={20} size={600}>
+      <iframe
+        style={{ borderRadius: "12px" }}
+        src="https://open.spotify.com/embed/playlist/1JjHkm5GrtUt6bGogDce5e?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameBorder="0"
+        allowFullScreen={false}
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    </Container>
+  );
+
+  const GitHub = () => (
+    <Container size={600} sx={{ border: "1px solid #ccc" }}>
+      <Title>Github</Title>
+      <GitHubProfileCard width={400} username="dorukeray" />
+      <Text>·</Text>
+    </Container>
+  );
+
+  return (
+    <Container px={0}>
+      <GitHub />
+      <Substack />
+      <Spotify />
+    </Container>
+  );
+};
 
 const Substack = () => (
-  <Container px={0}>
-    <Title order={2}>Portfolio</Title>
-  </Container>
-);
-
-const Spotify = () => (
-  <Container py={20} size={600}>
+  <Container size={600} px={0}>
     <iframe
-      style={{ borderRadius: "12px" }}
-      src="https://open.spotify.com/embed/playlist/1JjHkm5GrtUt6bGogDce5e?utm_source=generator&theme=0"
+      src="https://dorkodu.substack.com/embed"
       width="100%"
-      height="352"
+      style={{
+        background: "white",
+        borderRadius: 10,
+        height: 400,
+      }}
       frameBorder="0"
-      allowFullScreen={false}
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"></iframe>
-  </Container>
-);
-
-const GitHub = () => (
-  <Container px={0}>
-    <Title order={2}>Portfolio</Title>
-  </Container>
-);
-
-const Twitter = () => (
-  <Container px={0} size={600}>
-    <a
-      className="twitter-timeline"
-      data-lang="en"
-      data-width="400"
-      data-height="600"
-      data-dnt="true"
-      data-theme="light"
-      href="https://twitter.com/d0rukeray?ref_src=twsrc%5Etfw">
-      Tweets by d0rukeray
-    </a>{" "}
-    <script
-      async
-      src="https://platform.twitter.com/widgets.js"
-      charSet="utf-8"></script>
+      scrolling="no"></iframe>
   </Container>
 );
 
