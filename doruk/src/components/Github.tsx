@@ -1,8 +1,5 @@
 import { GithubUser, fetchGithubUser } from "@/lib/github";
 import {
-  Badge,
-  Button,
-  Card,
   Center,
   Divider,
   Group,
@@ -13,27 +10,31 @@ import {
   Text,
   ThemeIcon,
 } from "@mantine/core";
-import CenterLoader from "@shared/components/loaders/CenterLoader";
-import { IconBuilding } from "@tabler/icons-react";
+import { IconBook2, IconBrandGithub, IconUsers } from "@tabler/icons-react";
+
 import { useState } from "react";
 
 export function GitHubProfileCard({
   username,
   width = 400,
+  commitGraph = false,
 }: {
   username: string;
   width: number;
+  commitGraph?: boolean;
 }) {
   const [user, setUser] = useState<GithubUser | null>(null);
 
   if (user == null) {
-    fetchGithubUser(username).then((user) => {
-      setUser(user);
-    });
+    fetchGithubUser(username)
+      //············
+      .then((user) => {
+        setUser(user);
+      });
   }
 
   return (
-    <Paper p={10} withBorder shadow="md" maw={width} mih={100} m={10}>
+    <Paper p={10} withBorder shadow="sm" maw={width} mih={100} m={10}>
       {user ? (
         <>
           <Group position="apart" align="flex-start">
@@ -41,8 +42,8 @@ export function GitHubProfileCard({
               <Image
                 src={user.avatarURL}
                 alt={user.name}
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 radius={8}
               />
 
@@ -57,9 +58,11 @@ export function GitHubProfileCard({
             </Group>
 
             <a href={user.htmlURL}>
-              <Button variant="filled" color="dark" radius="md" size="sm">
-                Follow
-              </Button>
+              <Group>
+                <ThemeIcon variant="light" color="gray" radius="md" size="xl">
+                  <IconBrandGithub size={28} />
+                </ThemeIcon>
+              </Group>
             </a>
           </Group>
 
@@ -67,29 +70,29 @@ export function GitHubProfileCard({
             {user.bio}
           </Text>
 
-          <Divider mt={10} />
+          {commitGraph && (
+            <div>
+              <Image
+                src={`https://ghchart.rshah.org/50c060/${username}`}
+                alt={`@${username}`}
+              />
+            </div>
+          )}
+
+          <Divider my={10} />
 
           <Group>
-            <Text my={10} size="sm">
+            <Text size="md">
               <b>{user.publicRepos}&nbsp;</b>
               <Text color="dimmed" span>
                 Repos
               </Text>
             </Text>
 
-            {user.publicGists && user.publicGists > 0 && (
-              <Text my={10} size="sm">
-                <b>{user.publicGists}&nbsp;</b>
-                <Text color="dimmed" span>
-                  Gists
-                </Text>
-              </Text>
-            )}
-
-            <Text my={10} size="sm">
+            <Text size="md">
               <b>{user.followers}&nbsp;</b>
               <Text color="dimmed" span>
-                Followers&nbsp;
+                Followers
               </Text>
             </Text>
           </Group>
@@ -100,22 +103,5 @@ export function GitHubProfileCard({
         </Center>
       )}
     </Paper>
-  );
-}
-
-export function GitHubCommitGraph({
-  username,
-  color = "40bb60",
-}: {
-  username: string;
-  color?: string;
-}) {
-  return (
-    <a href={`https://github.com/${username}`}>
-      <Image
-        src={`https://ghchart.rshah.org/${color}/${username}`}
-        alt={`@${username}`}
-      />
-    </a>
   );
 }
