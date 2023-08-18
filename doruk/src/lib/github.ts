@@ -120,7 +120,6 @@ export interface GithubRepo {
   subscribersCount?:         number;
 }
 
-
 export async function fetchGithubUser(username: string): Promise<GithubUser|null> {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`);
