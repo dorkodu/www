@@ -4,18 +4,15 @@ import {
   Box,
   Button,
   Container,
-  Divider,
+  Flex,
   Group,
   Image,
   List,
-  SimpleGrid,
   Stack,
   Text,
   Title,
   useMantineTheme,
 } from "@mantine/core";
-
-import { ContactInfoIcon } from "@/components/Contact";
 
 import { Showcase } from "@shared/components/commons";
 import {
@@ -24,15 +21,15 @@ import {
   SmilingEyes,
   SparklingHeart,
 } from "@shared/styles/emoji";
-import { website } from "@/website";
 import {
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandTwitter,
+  IconExternalLink,
   IconMail,
 } from "@tabler/icons-react";
-import { GitHubProfileCard, GithubUserCard } from "@/components/Github";
+import { GitHubProfileCard } from "@/components/Github";
 
 export default function Page() {
   return (
@@ -42,7 +39,6 @@ export default function Page() {
       <FeaturedNotes />
       <Highlights />
       <Portfolio />
-      <ContactMe />
     </Container>
   );
 }
@@ -166,34 +162,46 @@ export const MissionStatement = () => {
 
 const SocialLinks = () => {
   const social: { link: string; icon: JSX.Element }[] = [
-    { link: "", icon: <></> },
+    {
+      link: "https://twitter.com/d0rukeray",
+      icon: <IconBrandTwitter size={30} />,
+    },
+    {
+      link: "https://instagram.com/d0rukeray",
+      icon: <IconBrandInstagram size={32} />,
+    },
+    {
+      link: "https://github.com/dorukeray",
+      icon: <IconBrandGithub size={30} />,
+    },
+    {
+      link: "https://linkedin.com/in/dorukeray",
+      icon: <IconBrandLinkedin size={32} />,
+    },
+    {
+      link: "mailto:doruk@dorkodu.com",
+      icon: <IconMail size={30} />,
+    },
   ];
 
   return (
     <Group spacing={5} my={10}>
-      <ActionIcon<"a"> variant="default" radius={12} size={40}>
-        <IconBrandInstagram size={32} stroke={2.15} />
-      </ActionIcon>
-      <ActionIcon variant="default" radius={12} size={40}>
-        <IconBrandTwitter size={30} stroke={2.15} />
-      </ActionIcon>
-      <ActionIcon variant="default" radius={12} size={40}>
-        <IconBrandLinkedin size={30} stroke={2.15} />
-      </ActionIcon>
-      <ActionIcon variant="default" radius={12} size={40}>
-        <IconBrandGithub size={30} stroke={2.15} />
-      </ActionIcon>
-      <ActionIcon variant="default" radius={12} size={40}>
-        <IconMail size={30} stroke={2.15} />
-      </ActionIcon>
+      {social.map((link) => (
+        <a href={link.link} target="_blank" key={link.link}>
+          <ActionIcon variant="default" radius={12} size={40}>
+            {link.icon}
+          </ActionIcon>
+        </a>
+      ))}
     </Group>
   );
 };
+
 const FeaturedNotes = () => <></>;
 
 const Highlights = () => {
   const Spotify = () => (
-    <Container py={20} size={600}>
+    <Container py={20} size={600} px={0}>
       <iframe
         style={{ borderRadius: "12px" }}
         src="https://open.spotify.com/embed/playlist/1JjHkm5GrtUt6bGogDce5e?utm_source=generator&theme=0"
@@ -206,66 +214,84 @@ const Highlights = () => {
     </Container>
   );
 
-  const GitHub = () => (
-    <Container size={600} sx={{ border: "1px solid #ccc" }}>
-      <Title>Github</Title>
-      <GitHubProfileCard width={400} username="dorukeray" />
-      <Text>·</Text>
-    </Container>
-  );
-
-  return (
-    <Container px={0}>
-      <GitHub />
-      <Substack />
-      <Spotify />
-    </Container>
-  );
-};
-
-const Substack = () => (
-  <Container size={600} px={0}>
+  const Substack = () => (
     <iframe
       src="https://dorkodu.substack.com/embed"
       width="100%"
       style={{
         background: "white",
-        borderRadius: 10,
+        borderRadius: 16,
         height: 400,
+        marginTop: 20,
       }}
       frameBorder="0"
       scrolling="no"></iframe>
-  </Container>
-);
+  );
+
+  const GitHub = () => (
+    <Container py={20} size={600} px={0}>
+      <GitHubProfileCard commitGraph width={400} username="dorukeray" />{" "}
+    </Container>
+  );
+
+  return (
+    <Container px={0}>
+      <Showcase
+        size={0.65}
+        content={[
+          <Stack>
+            <Title order={2}>💌 Open Source</Title>
+            <Text>
+              Since my teenage years, I've built many open source projects;
+              libraries, tools and even some components of Dorkodu's
+              products/services are open to public.
+            </Text>
+            <Button
+              component="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/dorukeray"
+              size="md"
+              radius="lg"
+              rightIcon={<IconExternalLink />}>
+              See My GitHub
+            </Button>
+          </Stack>,
+          <Flex align="flex-end">
+            <GitHub />
+          </Flex>,
+        ]}
+      />
+
+      <Container size={600} px={0}>
+        <Title order={2}>We're on Substack.</Title>
+        <Text>
+          Dorkodu has a newsletter and community on Substack. You may like our
+          weekly publication, notes and podcasts about technology, design,
+          business and more.
+        </Text>
+        <Substack />
+      </Container>
+
+      <Showcase
+        size={0.65}
+        content={[
+          <Stack>
+            <Title order={2}>I'm on Spotify.</Title>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+              consequuntur porro quisquam, molestiae magnam qui.
+            </Text>
+          </Stack>,
+          <Spotify />,
+        ]}
+      />
+    </Container>
+  );
+};
 
 const Portfolio = () => (
   <Container px={0}>
     <Title order={2}>Portfolio</Title>
   </Container>
 );
-
-export const ContactMe = () => {
-  return (
-    <Container size={600} pt={50}>
-      <Title order={2} align="center" mb={8}>
-        Contact Me
-      </Title>
-      <Text maw={400} align="center" mx="auto">
-        For any question, problem, wish or suggestion; you can reach me via any
-        related platform below.
-      </Text>
-      <SimpleGrid
-        my={25}
-        cols={2}
-        breakpoints={[{ maxWidth: "540", cols: 1, spacing: "sm" }]}
-        spacing={20}
-        verticalSpacing={20}>
-        {website.contact.map((info) => (
-          <Box key={info.title}>
-            <ContactInfoIcon info={info} />
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Container>
-  );
-};
