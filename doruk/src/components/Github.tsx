@@ -10,8 +10,8 @@ import {
   Text,
   ThemeIcon,
 } from "@mantine/core";
-import { IconBook2, IconBrandGithub, IconUsers } from "@tabler/icons-react";
 
+import { IconBook2, IconBrandGithub, IconUsers } from "@tabler/icons-react";
 import { useState } from "react";
 
 export function GitHubProfileCard({
@@ -105,3 +105,12 @@ export function GitHubProfileCard({
     </Paper>
   );
 }
+
+export const GitHubStats: React.FunctionComponent = () => {
+  return (
+    <img
+      src="https://raw.githubusercontent.com/dorukeray/github-stats/master/generated/overview.svg#gh-light-mode-only"
+      alt="Doruk Eray's Github Statistics"
+    />
+  );
+};
