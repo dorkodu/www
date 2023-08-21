@@ -1,6 +1,7 @@
 import {
   ActionIcon,
   Anchor,
+  Badge,
   Box,
   Button,
   Container,
@@ -13,6 +14,17 @@ import {
   Title,
   useMantineTheme,
 } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
+import {
+  IconArrowRight,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTelegram,
+  IconBrandTwitter,
+  IconExternalLink,
+  IconMail,
+} from "@tabler/icons-react";
 
 import { Showcase } from "@shared/components/commons";
 import {
@@ -21,14 +33,7 @@ import {
   SmilingEyes,
   SparklingHeart,
 } from "@shared/styles/emoji";
-import {
-  IconBrandGithub,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTwitter,
-  IconExternalLink,
-  IconMail,
-} from "@tabler/icons-react";
+
 import { GitHubProfileCard } from "@/components/Github";
 
 export default function Page() {
@@ -43,86 +48,125 @@ export default function Page() {
   );
 }
 
-const Hero = () => (
-  <Showcase
-    size={1}
-    content={[
-      <Group p={10} spacing={10} position="right">
-        <Image src="/images/doruk-student.png" maw={320} mah={320} radius={8} />
-      </Group>,
-      <Stack spacing={0}>
-        <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
-          Hello, world!
-        </Title>
-        <Title order={2} weight={600} size={20} color="dimmed">
-          Welcome to my personal website.
-        </Title>
-        <Text mt={12} size="md">
-          I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and <b>Craftsman</b>{" "}
-          from <b>Istanbul</b>. My focus is on software, music and business.
-        </Text>
+const Hero = () => {
+  const navigate = useNavigate();
 
-        <List
-          icon={
-            <Text weight={500} size={18}>
-              ∗
-            </Text>
-          }
-          center
-          spacing={5}
-          mt={10}>
-          <List.Item>
-            <Text>
-              I design products and build software @&nbsp;
+  return (
+    <Showcase
+      size={1}
+      content={[
+        <Group p={10} spacing={10} position="right">
+          <Image
+            src="/images/doruk-student.png"
+            maw={320}
+            mah={320}
+            radius={8}
+          />
+        </Group>,
+        <Stack spacing={0}>
+          <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
+            Hello, world!
+          </Title>
+          <Title order={2} weight={600} size={20} color="dimmed">
+            Welcome to my personal website.
+          </Title>
+          <Text mt={12} size="md">
+            I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and{" "}
+            <b>Craftsman</b> from <b>Istanbul</b>. My focus is on software,
+            music and business.
+          </Text>
+
+          <List
+            icon={
+              <Text weight={500} size={18}>
+                ∗
+              </Text>
+            }
+            center
+            spacing={5}
+            mt={10}>
+            <List.Item>
+              <Text>
+                I design products and build software @&nbsp;
+                <Anchor
+                  href="https://dorkodu.com"
+                  color="blue"
+                  weight={600}
+                  td="underline">
+                  Dorkodu
+                </Anchor>
+                .
+              </Text>
+            </List.Item>
+            <List.Item>
+              I sing, write songs and play guitar @&nbsp;
               <Anchor
-                href="https://dorkodu.com"
+                href="https://instagram.com/theterraspark"
                 color="blue"
                 weight={600}
                 td="underline">
-                Dorkodu
+                Terraspark
               </Anchor>
               .
-            </Text>
-          </List.Item>
-          <List.Item>
-            I sing, write songs and play guitar @&nbsp;
-            <Anchor
-              href="https://instagram.com/theterraspark"
-              color="blue"
-              weight={600}
-              td="underline">
-              Terraspark
-            </Anchor>
-            .
-          </List.Item>
-        </List>
+            </List.Item>
+          </List>
 
-        <SocialLinks />
+          <SocialLinks />
 
-        <Group my={5}>
-          <Button size="md" radius="lg">
-            See My Portfolio
-          </Button>
-          <Button size="md" radius="lg" variant="light">
-            Read My Story
-          </Button>
-        </Group>
-      </Stack>,
-    ]}
-  />
-);
+          <Group my={5}>
+            <Button
+              onClick={() => navigate("/portfolio")}
+              size="md"
+              radius="lg">
+              See My Portfolio
+            </Button>
+            <Button
+              component="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/dorukeray"
+              size="md"
+              radius="lg"
+              variant="light"
+              rightIcon={<IconExternalLink />}>
+              Dorkodu
+            </Button>
+          </Group>
+        </Stack>,
+      ]}
+    />
+  );
+};
 
 const AboutMe = () => (
   <Showcase
     content={[
       <Stack pr={20}>
-        <Title order={2}>In a nutshell...</Title>
+        <Title order={2}>🌰 In a nutshell...</Title>
         <Text>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Necessitatibus mollitia architecto ea in consectetur neque at nulla
-          nobis. Error quaerat nobis exercitationem dolorum nihil
-          necessitatibus?
+          I design products, build software, lead a tech company, recently
+          graduated high school, singing/songwriting and composing albums with
+          my band.
         </Text>
+        <Group spacing={4}>
+          {[
+            ["Software", "blue"],
+            ["Music", "cyan"],
+            ["Industrial Design", "red"],
+            ["Artificial Intelligence", "indigo"],
+            ["Knowledge Theory", "violet"],
+            ["Psychology", "grape"],
+            ["UI/UX Design", "orange"],
+            ["Cryptoeconomics", "yellow"],
+            ["Gamification", "lime"],
+            ["Decentralized Web", "green"],
+            ["Semantics", "teal"],
+          ].map((text) => (
+            <Badge variant="light" color={text[1]} radius={10} size="lg">
+              {text[0]}
+            </Badge>
+          ))}
+        </Group>
       </Stack>,
       <MissionStatement />,
     ]}
@@ -135,6 +179,9 @@ export const MissionStatement = () => {
   return (
     <Box component="section" id="our-purpose" py={20}>
       <Box mb={10}>
+        <Badge variant="dot" size="lg" my={8}>
+          My Life Mission
+        </Badge>
         <Text
           size={24}
           weight={800}
@@ -160,6 +207,9 @@ export const MissionStatement = () => {
   );
 };
 
+const Portfolio = () => <Container px={0}></Container>;
+const FeaturedNotes = () => <Container px={0}></Container>;
+
 const SocialLinks = () => {
   const social: { link: string; icon: JSX.Element }[] = [
     {
@@ -179,13 +229,17 @@ const SocialLinks = () => {
       icon: <IconBrandLinkedin size={32} />,
     },
     {
+      link: "https://t.me/dorukeray",
+      icon: <IconBrandTelegram size={32} />,
+    },
+    {
       link: "mailto:doruk@dorkodu.com",
       icon: <IconMail size={30} />,
     },
   ];
 
   return (
-    <Group spacing={5} my={10}>
+    <Group spacing={8} my={10}>
       {social.map((link) => (
         <a href={link.link} target="_blank" key={link.link}>
           <ActionIcon variant="default" radius={12} size={40}>
@@ -196,8 +250,6 @@ const SocialLinks = () => {
     </Group>
   );
 };
-
-const FeaturedNotes = () => <></>;
 
 const Highlights = () => {
   const Spotify = () => (
@@ -237,10 +289,10 @@ const Highlights = () => {
   return (
     <Container px={0}>
       <Showcase
-        size={0.65}
+        size={0.8}
         content={[
           <Stack>
-            <Title order={2}>💌 Open Source</Title>
+            <Title order={2}>I ❤️ Open Source</Title>
             <Text>
               Since my teenage years, I've built many open source projects;
               libraries, tools and even some components of Dorkodu's
@@ -254,7 +306,7 @@ const Highlights = () => {
               size="md"
               radius="lg"
               rightIcon={<IconExternalLink />}>
-              See My GitHub
+              See My GitHub Page
             </Button>
           </Stack>,
           <Flex align="flex-end">
@@ -264,7 +316,9 @@ const Highlights = () => {
       />
 
       <Container size={600} px={0}>
-        <Title order={2}>We're on Substack.</Title>
+        <Title order={2} align="center" my={12}>
+          🔖 We're on Substack.
+        </Title>
         <Text>
           Dorkodu has a newsletter and community on Substack. You may like our
           weekly publication, notes and podcasts about technology, design,
@@ -277,10 +331,14 @@ const Highlights = () => {
         size={0.65}
         content={[
           <Stack>
-            <Title order={2}>I'm on Spotify.</Title>
+            <Title order={2}>💽 I'm on Spotify.</Title>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-              consequuntur porro quisquam, molestiae magnam qui.
+              I curate <i>concept album</i> playlists, usually following our
+              studio sessions with my band.
+            </Text>
+            <Text weight={600} color="dimmed">
+              Ever dreamed about a “superalbum” of songs by different artists
+              but they vibe together?
             </Text>
           </Stack>,
           <Spotify />,
@@ -289,9 +347,3 @@ const Highlights = () => {
     </Container>
   );
 };
-
-const Portfolio = () => (
-  <Container px={0}>
-    <Title order={2}>Portfolio</Title>
-  </Container>
-);
