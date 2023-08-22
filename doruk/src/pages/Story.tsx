@@ -1,5 +1,6 @@
 import {
   Anchor,
+  Badge,
   Button,
   Container,
   Group,
@@ -16,6 +17,7 @@ export default function Page() {
     <Container>
       <Hero />
       <TLDR />
+      <Explanation />
       <Story />
     </Container>
   );
@@ -105,4 +107,46 @@ const Hero = () => (
       </Stack>,
     ]}
   />
+);
+
+const Explanation = () => (
+  <>
+    <Title>Why?</Title>
+    <Text>
+      i want to live a free, happy and meaningful life. i believe this is a
+      fundemental human right; a livable world & a life worth living. so we need
+      to come together, and create this utopic dream life for everyone.
+    </Text>
+
+    <Title>How?</Title>
+    <Text>
+      I am passionate in products, design and software. I am an autodidact
+      (self-taught) so I teach myself the arts of my work.
+    </Text>
+    <Group spacing={4}>
+      {[
+        "Knowledge",
+        "Tools of Thought",
+        "Human Nature",
+        "Psychology",
+        "Industrial Design",
+        "Cryptoeconomics",
+        " Artificial Intelligence",
+        "Decentralized Web",
+      ].map((text) => (
+        <Badge variant="light" color="green" radius={10} size="lg">
+          {text}
+        </Badge>
+      ))}
+    </Group>
+    <Text>
+      I want to fulfill my purpose in this life, be remembered as an{" "}
+      <b>inventor</b>, <b>innovator</b>, <b>artist</b>, a <b>cult leader</b>; or
+      in a single word, a
+      <b>
+        <u>protagonist</u>
+      </b>
+      in the story of human.
+    </Text>
+  </>
 );

@@ -121,15 +121,11 @@ const Hero = () => {
               See My Portfolio
             </Button>
             <Button
-              component="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/dorukeray"
+              onClick={() => navigate("/story")}
               size="md"
               radius="lg"
-              variant="light"
-              rightIcon={<IconExternalLink />}>
-              Dorkodu
+              variant="light">
+              My Story
             </Button>
           </Group>
         </Stack>,
