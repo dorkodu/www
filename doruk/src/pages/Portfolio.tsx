@@ -83,8 +83,6 @@ const Hero = () => {
             </List.Item>
           </List>
 
-          <SocialLinks />
-
           <Group my={5}>
             <Button
               onClick={() => navigate("/portfolio")}
@@ -105,4 +103,5 @@ const Hero = () => {
     />
   );
 };
+
 const Story = () => <></>;

@@ -32,7 +32,7 @@ const Story: React.FunctionComponent = () => {
 };
 
 const TLDR: React.FunctionComponent = () => (
-  <Container>
+  <Container size={640} py={50}>
     <Title order={2}>TL;DR;</Title>
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae nobis
@@ -51,91 +51,61 @@ const Hero = () => (
       </Group>,
       <Stack spacing={0}>
         <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
-          Hello, world!
+          My Story
         </Title>
         <Title order={2} weight={600} size={20} color="dimmed">
-          Welcome to my personal website.
+          A summary of my life and personality.
         </Title>
-        <Text mt={12} size="md">
-          I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and <b>Craftsman</b>{" "}
-          from <b>Istanbul</b>. My focus is on software, music and business.
+        <Text my={12} size="md">
+          I give an extraordinary vibe. A nerd inventor who loves design and
+          art, also writes songs and storms the stage, tells inspiring words
+          like a cult leader.
         </Text>
-
-        <List
-          icon={
-            <Text weight={500} size={18}>
-              ∗
-            </Text>
-          }
-          center
-          spacing={5}
-          mt={10}>
-          <List.Item>
-            <Text>
-              I design products and build software @&nbsp;
-              <Anchor
-                href="https://dorkodu.com"
-                color="blue"
-                weight={600}
-                td="underline">
-                Dorkodu
-              </Anchor>
-              .
-            </Text>
-          </List.Item>
-          <List.Item>
-            I sing, write songs and play guitar @&nbsp;
-            <Anchor
-              href="https://instagram.com/theterraspark"
-              color="blue"
-              weight={600}
-              td="underline">
-              Terraspark
-            </Anchor>
-            .
-          </List.Item>
-        </List>
-
-        <Group my={5}>
-          <Button size="md" radius="lg">
-            See My Portfolio
-          </Button>
-          <Button size="md" radius="lg" variant="light">
-            Read My Story
-          </Button>
-        </Group>
+        <Text size="md">
+          My friends say <b>I got hero's backstory</b>.
+        </Text>
       </Stack>,
     ]}
   />
 );
 
 const Explanation = () => (
-  <>
-    <Title>Why?</Title>
-    <Text>
-      i want to live a free, happy and meaningful life. i believe this is a
-      fundemental human right; a livable world & a life worth living. so we need
-      to come together, and create this utopic dream life for everyone.
+  <Container size={640}>
+    <Title order={3} mb={4}>
+      Why?
+    </Title>
+    <Text mb="lg">
+      <b>
+        I want to live a <u>free, happy and meaningful life</u>.
+      </b>{" "}
+      I believe this is a fundemental human right;{" "}
+      <b>a livable world & a life worth living.</b> So we need to come together,
+      and create this utopic dream life for everyone.{" "}
     </Text>
 
-    <Title>How?</Title>
-    <Text>
-      I am passionate in products, design and software. I am an autodidact
-      (self-taught) so I teach myself the arts of my work.
+    <Title order={3} mb={4}>
+      How?
+    </Title>
+    <Text mb={20}>
+      I am passionate in designing products and building software. I am an
+      autodidact (self-taught) so I teach myself the arts of my work.
     </Text>
     <Group spacing={4}>
       {[
-        "Knowledge",
-        "Tools of Thought",
-        "Human Nature",
-        "Psychology",
-        "Industrial Design",
-        "Cryptoeconomics",
-        " Artificial Intelligence",
-        "Decentralized Web",
+        ["Software", "blue"],
+        ["Music", "cyan"],
+        ["Industrial Design", "red"],
+        ["Artificial Intelligence", "indigo"],
+        ["Knowledge Theory", "violet"],
+        ["Psychology", "grape"],
+        ["UI/UX Design", "orange"],
+        ["Cryptoeconomics", "yellow"],
+        ["Gamification", "lime"],
+        ["Decentralized Web", "green"],
+        ["Semantics", "teal"],
       ].map((text) => (
-        <Badge variant="light" color="green" radius={10} size="lg">
-          {text}
+        <Badge variant="light" color={text[1]} radius={10} size="lg">
+          {text[0]}
         </Badge>
       ))}
     </Group>
@@ -148,5 +118,5 @@ const Explanation = () => (
       </b>
       in the story of human.
     </Text>
-  </>
+  </Container>
 );
