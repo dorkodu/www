@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   Container,
+  Divider,
   Flex,
   Group,
   Image,
@@ -16,14 +17,16 @@ import {
 } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import {
-  IconArrowRight,
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandTelegram,
   IconBrandTwitter,
-  IconExternalLink,
+  IconBriefcase,
+  IconCode,
+  IconGlobe,
   IconMail,
+  IconSchool,
 } from "@tabler/icons-react";
 
 import { Showcase } from "@shared/components/commons";
@@ -35,12 +38,14 @@ import {
 } from "@shared/styles/emoji";
 
 import { GitHubProfileCard } from "@/components/Github";
+import { IStoryElement, StoryElement } from "@/components/story";
 
 export default function Page() {
   return (
     <Container>
       <Hero />
       <AboutMe />
+      <InANutshell />
       <FeaturedNotes />
       <Highlights />
       <Portfolio />
@@ -63,7 +68,7 @@ const Hero = () => {
             radius={8}
           />
         </Group>,
-        <Stack spacing={0}>
+        <Stack spacing={0} maw={500} mx="auto">
           <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
             Hello, world!
           </Title>
@@ -134,23 +139,109 @@ const Hero = () => {
   );
 };
 
+const InANutshell = () => {
+  const story: IStoryElement[] = [
+    {
+      icon: <IconBriefcase size={32} />,
+      title: (
+        <>
+          I'm the Founder & Chief @{" "}
+          <Anchor href="https://dorkodu.com" color="blue" td="underline">
+            Dorkodu
+          </Anchor>
+        </>
+      ),
+      text: "I lead our team, design products and build software.",
+      subtext: `We are a humane technology company to create social & gamified products and open source technology to liberate the humankind.`,
+    },
+    {
+      icon: <IconCode size={32} />,
+      title: `I have 8+ years of experience in software.`,
+      text: (
+        <>
+          {`Web Platform · Product · Front-end · UI/UX`}
+          <Group spacing={4} mt={10}>
+            {[
+              "TypeScript",
+              "JavaScript",
+              "React",
+              "Node.js",
+              "Vite",
+              "Linux",
+              "Postgres",
+              "MySQL",
+              "Nginx",
+              "Docker",
+              "PHP",
+              "HTML",
+              "CSS",
+            ].map(($) => (
+              <Badge variant="dot" color="gray" size="md">
+                {$}
+              </Badge>
+            ))}
+          </Group>
+        </>
+      ),
+    },
+    {
+      icon: <IconSchool size={32} />,
+      title: `I am a student @ Bogazici University`,
+      text: `I am a freshman, and I want to study Cognitive Science.`,
+      subtext: `
+        I graduated from Vefa Lisesi, a historical and well-established high school in Istanbul 
+        ∗ Computer Science, Industrial Design, Philosophy and Business.
+      `,
+    },
+    {
+      icon: <IconGlobe size={32} />,
+      title: `I want to help the future of human civilization.`,
+      text: `By contributing to critical areas like and Informatics-related fields.`,
+      subtext: `Agriculture · Water · Green Energy · AI · Space · Education · Genetics`,
+    },
+    {
+      icon: ``,
+      title: ``,
+      text: ``,
+      subtext: ``,
+    },
+    {
+      icon: ``,
+      title: ``,
+      text: ``,
+      subtext: ``,
+    },
+  ];
+
+  return (
+    <Container size={600} my={50}>
+      <Title order={2}>In a nutshell</Title>
+      <Divider mb={25} />
+      <Stack spacing={25} mt={10}>
+        {story.map((item) => (
+          <StoryElement {...item} key={item.title?.toString()} />
+        ))}
+      </Stack>
+    </Container>
+  );
+};
+
 const AboutMe = () => (
   <Showcase
     content={[
-      <Stack pr={20}>
-        <Title order={2}>🌰 In a nutshell...</Title>
-        <Text>
-          I design products, build software, lead a tech company, recently
-          graduated high school, singing/songwriting and composing albums with
-          my band.
-        </Text>
-        <Group spacing={4}>
+      <MissionStatement />,
+      <Box>
+        <Badge variant="dot" size="lg" mb={16}>
+          My Interests
+        </Badge>
+
+        <Group maw={450} mx="auto" spacing={8}>
           {[
             ["Software", "blue"],
             ["Music", "cyan"],
             ["Industrial Design", "red"],
             ["Artificial Intelligence", "indigo"],
-            ["Knowledge Theory", "violet"],
+            ["Theory of Knowledge", "violet"],
             ["Psychology", "grape"],
             ["UI/UX Design", "orange"],
             ["Cryptoeconomics", "yellow"],
@@ -158,13 +249,17 @@ const AboutMe = () => (
             ["Decentralized Web", "green"],
             ["Semantics", "teal"],
           ].map((text) => (
-            <Badge variant="light" color={text[1]} radius={10} size="lg">
+            <Badge
+              key={text[0]}
+              variant="light"
+              color={text[1]}
+              radius={6}
+              size="lg">
               {text[0]}
             </Badge>
           ))}
         </Group>
-      </Stack>,
-      <MissionStatement />,
+      </Box>,
     ]}
   />
 );
@@ -173,11 +268,12 @@ export const MissionStatement = () => {
   const theme = useMantineTheme();
 
   return (
-    <Box component="section" id="our-purpose" py={20}>
+    <Box py={20} pl={12}>
       <Box mb={10}>
         <Badge variant="dot" size="lg" my={8}>
           My Life Mission
         </Badge>
+
         <Text
           size={24}
           weight={800}
@@ -188,6 +284,7 @@ export const MissionStatement = () => {
           with meaningful art & technology.
         </Text>
       </Box>
+
       <List spacing={5} center>
         <List.Item icon={<Emoji size={24} emoji={SparklingHeart} />}>
           Help people find and pursue their life purpose.
@@ -254,7 +351,7 @@ const Highlights = () => {
         style={{ borderRadius: "12px" }}
         src="https://open.spotify.com/embed/playlist/1JjHkm5GrtUt6bGogDce5e?utm_source=generator&theme=0"
         width="100%"
-        height="352"
+        height="400"
         frameBorder="0"
         allowFullScreen={false}
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -287,9 +384,9 @@ const Highlights = () => {
       <Showcase
         size={0.8}
         content={[
-          <Stack>
+          <Box maw={500} mx="auto">
             <Title order={2}>I ❤️ Open Source</Title>
-            <Text>
+            <Text my={12}>
               Since my teenage years, I've built many open source projects;
               libraries, tools and even some components of Dorkodu's
               products/services are open to public.
@@ -301,32 +398,36 @@ const Highlights = () => {
               href="https://github.com/dorukeray"
               size="md"
               radius="lg"
-              rightIcon={<IconExternalLink />}>
-              See My GitHub Page
+              color="dark"
+              leftIcon={<IconBrandGithub />}>
+              See My GitHub
             </Button>
-          </Stack>,
+          </Box>,
           <Flex align="flex-end">
             <GitHub />
           </Flex>,
         ]}
       />
 
-      <Container size={600} px={0}>
-        <Title order={2} align="center" my={12}>
-          🔖 We're on Substack.
-        </Title>
-        <Text>
-          Dorkodu has a newsletter and community on Substack. You may like our
-          weekly publication, notes and podcasts about technology, design,
-          business and more.
-        </Text>
-        <Substack />
-      </Container>
+      <Showcase
+        size={0.65}
+        content={[
+          <Stack maw={400} mx="auto">
+            <Title order={2}>🔖 We're on Substack.</Title>
+            <Text>
+              Dorkodu has a newsletter and community on Substack. You may like
+              our weekly publication, notes and podcasts about technology,
+              design, business and more.
+            </Text>
+          </Stack>,
+          <Substack />,
+        ]}
+      />
 
       <Showcase
         size={0.65}
         content={[
-          <Stack>
+          <Stack maw={400} mx="auto">
             <Title order={2}>💽 I'm on Spotify.</Title>
             <Text>
               I curate <i>concept album</i> playlists, usually following our
