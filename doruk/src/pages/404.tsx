@@ -1,4 +1,3 @@
-import BaseLayout from "@/layouts/Base";
 import {
   createStyles,
   Title,
@@ -9,17 +8,7 @@ import {
   rem,
 } from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
-
-const meta = {
-  title: "Oops!",
-  description: `Something went wrong.`,
-  keywords: `dorkodu, dorkodu.com, dorkodia, liberate, gamification, productivity, humane technology`,
-  url: "/",
-  image: {
-    src: "/public/images/dorkodu-single.png",
-    alt: "dorkodu logo with single letter.",
-  },
-};
+import { useNavigate } from "react-router-dom";
 
 export default function Page() {
   return (
@@ -40,11 +29,12 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 900,
     fontSize: rem(200),
     lineHeight: 1,
-    marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
     color:
       theme.colorScheme === "dark"
         ? theme.colors.dark[4]
         : theme.colors.gray[3],
+
+    marginBottom: theme.spacing.xl,
 
     [theme.fn.smallerThan("sm")]: {
       fontSize: rem(100),
@@ -67,17 +57,18 @@ const useStyles = createStyles((theme) => ({
     margin: "auto",
     fontWeight: 500,
     marginTop: theme.spacing.xl,
-    marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
+    marginBottom: theme.spacing.xl,
   },
 }));
 
 export function NotFound() {
   const { classes } = useStyles();
+  const navigate = useNavigate();
 
   return (
     <Container className={classes.root}>
       <div className={classes.label}>404</div>
-      <Title className={classes.title}>Something's gone wrong.</Title>
+      <Title className={classes.title}>Not Found</Title>
       <Text
         color="dimmed"
         size="xl"
@@ -87,15 +78,14 @@ export function NotFound() {
         never existed.
       </Text>
       <Group position="center" my={25}>
-        <Link href="/">
-          <Button
-            variant="gradient"
-            size="lg"
-            radius={20}
-            rightIcon={<IconArrowRight />}>
-            Go Back Home
-          </Button>
-        </Link>
+        <Button
+          variant="gradient"
+          size="lg"
+          radius={20}
+          onClick={() => navigate("/")}
+          rightIcon={<IconArrowRight />}>
+          Go Back Home
+        </Button>
       </Group>
     </Container>
   );
