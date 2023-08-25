@@ -17,9 +17,13 @@ export default function Page() {
     <Container>
       <Hero />
       <Story />
+      <TechStack />
+      <Skills />
+      <Projects />
     </Container>
   );
 }
+
 const Hero = () => {
   const navigate = useNavigate();
 
@@ -28,19 +32,14 @@ const Hero = () => {
       size={1}
       content={[
         <Group p={10} spacing={10} position="right">
-          <Image
-            src="/images/doruk-student.png"
-            maw={320}
-            mah={320}
-            radius={8}
-          />
+          <Image src="/images/doruk-music.jpg" maw={320} mah={320} radius={8} />
         </Group>,
         <Stack spacing={0}>
           <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
-            Hello, world!
+            Portfolio
           </Title>
           <Title order={2} weight={600} size={20} color="dimmed">
-            Welcome to my personal website.
+            My projects, skills and passion.
           </Title>
           <Text mt={12} size="md">
             I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and{" "}
@@ -85,7 +84,9 @@ const Hero = () => {
 
           <Group my={5}>
             <Button
-              onClick={() => navigate("/portfolio")}
+              component="a"
+              href="https://github.com"
+              target="_blank"
               size="md"
               radius="lg">
               See My Portfolio
@@ -105,3 +106,6 @@ const Hero = () => {
 };
 
 const Story = () => <></>;
+const TechStack = () => <></>;
+const Projects = () => <></>;
+const Skills = () => <></>;
