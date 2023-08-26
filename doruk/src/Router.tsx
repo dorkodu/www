@@ -39,6 +39,8 @@ const Router = createBrowserRouter(
 
       <Route path="/notes" element={Page(Notes)} />
       <Route path="/note/[slug]" element={Page(Notes)} />
+      {/* if note id is NOT specified -> show all notes */}
+      <Route path="/note" element={<Navigate to="/notes" />} />
 
       <Route path="/404" element={Page(NotFound)} />
       <Route path="*" element={<Navigate to="/404" />} />
