@@ -119,7 +119,7 @@ const TLDR = () => {
 const Explanation = () => (
   <Container size={640}>
     <Title order={2} mb={4}>
-      Q&A
+      FAQs
     </Title>
     <Divider mb={20} />
 
@@ -265,7 +265,18 @@ const Thanks = () => (
     </Text>
     <Divider mt={8} mb={30} />
 
-    <SimpleGrid cols={3} spacing={10}>
+    <SimpleGrid
+      spacing={10}
+      breakpoints={[
+        {
+          cols: 2,
+          minWidth: 450,
+        },
+        {
+          cols: 3,
+          minWidth: 600,
+        },
+      ]}>
       <Image src="/images/idols/steve.jpg" alt="Steve Jobs" radius={10} />
       <Image src="/images/idols/floyd.jpg" alt="Pink Floyd" radius={10} />
       <Image src="/images/idols/ataturk.jpg" alt="Ataturk" radius={10} />
