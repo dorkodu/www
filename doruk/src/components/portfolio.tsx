@@ -72,7 +72,7 @@ export function EducationEntry({ edu }: { edu: IEducation }) {
               {edu.role}
             </Text>
           </Stack>
-          <Image src={edu.image} maw={48} mah={48} radius={4} />
+          <Image src={edu.image} maw={60} mah={60} radius={4} />
         </Group>
 
         <Group position="apart" mt="md" spacing={2}>
@@ -103,7 +103,7 @@ export function ProjectEntry({ project }: { project: IProject }) {
             {project.tagline}
           </Text>
 
-          <Group spacing={4}>
+          <Group spacing={8}>
             <IconLink color={theme.fn.themeColor("blue")} />
 
             {project.links.map((link) => (
@@ -112,7 +112,8 @@ export function ProjectEntry({ project }: { project: IProject }) {
                 href={link.to}
                 target="_blank"
                 color="blue"
-                td="underline">
+                td="underline"
+                weight={500}>
                 {link.text}
               </Anchor>
             ))}
@@ -121,19 +122,16 @@ export function ProjectEntry({ project }: { project: IProject }) {
 
         {project.description}
 
-        <List
-          icon={
-            <Text weight={500} size={18}>
-              ∗
-            </Text>
-          }
-          center
-          spacing={5}
-          mt={10}>
+        <Stack spacing={8} my={10}>
           {project.workList.map((item) => (
-            <List.Item>{item}</List.Item>
+            <Group spacing={8}>
+              <Text weight={500} size={16}>
+                ∗
+              </Text>
+              <Text size="sm">{item}</Text>
+            </Group>
           ))}
-        </List>
+        </Stack>
 
         <Group mt={8} spacing={4} align="center">
           {project.tags.map((tag) => (

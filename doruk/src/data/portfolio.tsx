@@ -63,14 +63,14 @@ export const education: IEducation[] = [
     role: "BA, Primary Education",
     timeFrame: "2023 – Present",
     status: "Freshman",
-    image: "/favicon.png",
+    image: "/images/logo-bogazici.png",
   },
   {
     place: "Vefa Lisesi",
     role: "High School",
     timeFrame: "2018 – 2023",
     status: "3.85/4.0 GPA",
-    image: "/favicon.png",
+    image: "/images/logo-vefa.png",
   },
 ];
 
@@ -90,7 +90,26 @@ export const projects: IProject[] = [
       "P2P Sync.",
       "Local-first offline PWA framework.",
       "Published package to NPM.",
-      "Deployed deployed on a self-hosted server.",
+      "Deployed on a self-hosted server.",
+    ],
+    tags: ["TypeScript", "Node.js", "Zustand", "Postgres", "Nginx", "Docker"],
+  },
+  {
+    title: "Mindgarden",
+    tagline: "Social & Gamified Note-taking App",
+    description: <></>,
+    links: [
+      { text: "GitHub", to: "https://github.com/dorkodu/mindgarden" },
+      { text: "Website", to: "https://mind.dorkodu.com" },
+    ],
+    workList: [
+      "Applied gamification features on UX",
+      "Implemented a Decentralized Local-Network Sync",
+      "Created a unique Recommendation Algorithm on the “Discover” Page",
+      "Created a new Markup Language",
+      "Built Collaborative Block-based Editor",
+      "Responsive/Adaptive UI Design ",
+      "Deployed on a self-hosted server.",
     ],
     tags: [
       "TypeScript",
