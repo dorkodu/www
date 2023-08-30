@@ -11,7 +11,7 @@ import {
   ThemeIcon,
 } from "@mantine/core";
 
-import { IconBook2, IconBrandGithub, IconUsers } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { useState } from "react";
 
 export function GitHubProfileCard({
@@ -34,7 +34,7 @@ export function GitHubProfileCard({
   }
 
   return (
-    <Paper p={10} withBorder shadow="sm" maw={width} mih={100} m={10}>
+    <Paper p={10} withBorder shadow="xs" maw={width} mih={100} m={10}>
       {user ? (
         <>
           <Group position="apart" align="flex-start">
@@ -82,14 +82,14 @@ export function GitHubProfileCard({
           <Divider my={10} />
 
           <Group>
-            <Text size="md">
+            <Text size="sm">
               <b>{user.publicRepos}&nbsp;</b>
               <Text color="dimmed" span>
                 Repos
               </Text>
             </Text>
 
-            <Text size="md">
+            <Text size="sm">
               <b>{user.followers}&nbsp;</b>
               <Text color="dimmed" span>
                 Followers
