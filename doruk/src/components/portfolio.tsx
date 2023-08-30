@@ -103,7 +103,7 @@ export function ProjectEntry({ project }: { project: IProject }) {
             {project.tagline}
           </Text>
 
-          <Group spacing={8}>
+          <Group mt={5} spacing={8} align="center">
             <IconLink color={theme.fn.themeColor("blue")} />
 
             {project.links.map((link) => (
@@ -113,7 +113,8 @@ export function ProjectEntry({ project }: { project: IProject }) {
                 target="_blank"
                 color="blue"
                 td="underline"
-                weight={500}>
+                weight={500}
+                key={link.to}>
                 {link.text}
               </Anchor>
             ))}
@@ -124,7 +125,7 @@ export function ProjectEntry({ project }: { project: IProject }) {
 
         <Stack spacing={8} my={10}>
           {project.workList.map((item) => (
-            <Group spacing={8}>
+            <Group spacing={6} noWrap key={item}>
               <Text weight={500} size={16}>
                 ∗
               </Text>
@@ -133,7 +134,7 @@ export function ProjectEntry({ project }: { project: IProject }) {
           ))}
         </Stack>
 
-        <Group mt={8} spacing={4} align="center">
+        <Group mt={16} spacing={4} align="center">
           {project.tags.map((tag) => (
             <Badge key={tag} color="green" radius={5} size="md" variant="light">
               {tag}
