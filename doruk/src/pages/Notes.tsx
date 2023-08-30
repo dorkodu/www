@@ -1,4 +1,5 @@
 import { INote, NoteCard } from "@/components/note";
+import { notes } from "@/data/notes";
 import { Container, Divider, Stack, Title } from "@mantine/core";
 
 export default function Page() {
@@ -19,7 +20,7 @@ const Feed = () => {
 
       <Stack spacing={25} mt={10}>
         {notes.map((note) => (
-          <NoteCard note={note} />
+          <NoteCard note={note} key={note.title} />
         ))}
       </Stack>
     </Container>
@@ -27,19 +28,5 @@ const Feed = () => {
 };
 
 function fetchNotes() {
-  // imititate fetching notes
-  const notes: INote[] = [
-    {
-      id: 0,
-      slug: "hello-world",
-      content: `Hello, I just wanted to say hi. A simple word. An open and geniuine bridge to an unknown human-being.`,
-
-      title: "Hello World",
-      description: "This is my first note on my website.",
-      publishedAt: new Date(Date.now()),
-      tags: ["message", "idea"],
-    },
-  ];
-
   return notes;
 }

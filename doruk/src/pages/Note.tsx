@@ -1,42 +1,41 @@
-import { Container, Image, Stack, Text, Title } from "@mantine/core";
+import { INote, NotePage as Note } from "@/components/note";
+import { notes } from "@/data/notes";
+import {
+  Alert,
+  Container,
+  Divider,
+  Image,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 import { Showcase } from "@shared/components/commons";
+import { useParams } from "react-router-dom";
 
 export default function Page() {
+  const params = useParams();
+
+  const [success, data] = fetchNote(params.slug!);
+
   return (
-    <Container>
-      <Hero />
-      <AboutMe />
+    <Container size={768} my={50}>
+      {success ? <Note note={data} /> : <ErrorCard />}
     </Container>
   );
 }
 
-const Hero = () => (
-  <Showcase
-    content={[
-      <Stack spacing={0}>
-        <Title order={1} weight={800} size={36} sx={{ letterSpacing: -1 }}>
-          I'm Doruk Eray
-        </Title>
-        <Title order={2} weight={600} size={20} color="dimmed">
-          Founder ∗ Polymath ∗ Craftsman
-        </Title>
-        <Text></Text>
-      </Stack>,
-      <Stack>
-        <Image src="/images/doruk.png" maw={300} mah={300} my={0} mx={0} />
-      </Stack>,
-    ]}
-  />
-);
+function fetchNote(slug: string | null): [boolean, INote] {
+  let data: INote;
+  let success: boolean = false;
 
-const AboutMe = () => (
-  <Container>
-    <Title order={2}>About Me</Title>
-    <Text>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dicta
-      voluptatem deleniti culpa? Eveniet alias pariatur, tempora enim sequi
-      perspiciatis tenetur obcaecati iure architecto excepturi ab. Ab neque
-      laudantium adipisci?
-    </Text>
-  </Container>
-);
+  notes.forEach((note) => {
+    if (note.slug === slug) {
+      data = note;
+      success = true;
+    }
+  });
+
+  return [success, data];
+}
+
+const ErrorCard = () => <Alert>This note doesn't exist.</Alert>;

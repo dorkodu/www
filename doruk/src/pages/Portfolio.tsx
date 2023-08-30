@@ -100,7 +100,7 @@ const Hero = () => {
           <Group my="md" spacing="xs">
             <Button
               component="a"
-              href="https://github.com"
+              href="https://github.com/dorukeray"
               target="_blank"
               radius={12}
               color="dark"
@@ -109,7 +109,7 @@ const Hero = () => {
             </Button>
             <Button
               component="a"
-              href="https://github.com"
+              href="https://twitter.com/d0rukeray"
               target="_blank"
               radius={12}
               color="blue"
@@ -118,7 +118,7 @@ const Hero = () => {
             </Button>
             <Button
               component="a"
-              href="https://github.com"
+              href="https://linkedin.com/in/dorukeray"
               target="_blank"
               size="sm"
               radius={12}
@@ -139,11 +139,13 @@ const Resume = () => {
       <Title order={2}>Resume</Title>
       <Divider mb={25} />
 
-      <Text my={25}>Cover letter should go here.</Text>
+      <Text my={25} color="dimmed">
+        Cover letter will be here.
+      </Text>
 
       <Box my={25}>
         <Title order={3}>Work Experience</Title>
-        <Text>Lorem ipsum dolor sit amet consectetur.</Text>
+        <Text></Text>
 
         <Stack my={20} spacing={16}>
           {experience.map(($) => (
@@ -152,9 +154,11 @@ const Resume = () => {
         </Stack>
       </Box>
 
-      <Box my={25}>
+      <Box my={40}>
         <Title order={3}>Education</Title>
-        <Text>Lorem ipsum dolor sit amet consectetur.</Text>
+        <Text>
+          I've always worked independent from school, as a self-taught.
+        </Text>
 
         <SimpleGrid
           my={20}
@@ -185,11 +189,9 @@ const Projects = () => (
           minWidth: 720,
         },
       ]}>
-      <Stack my={10} spacing={16}>
-        {projects.map(($) => (
-          <ProjectEntry project={$} key={$.title} />
-        ))}
-      </Stack>
+      {projects.map(($) => (
+        <ProjectEntry project={$} key={$.title} />
+      ))}
     </SimpleGrid>
   </Container>
 );
