@@ -7,7 +7,6 @@ import {
 import { useLocalStorage } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 import { theme } from "./styles/theme";
-import { ScrollRestoration } from "react-router-dom";
 import BaseLayout from "./layouts/Base";
 
 export default function App() {
@@ -31,21 +30,17 @@ export default function App() {
   };
 
   return (
-    <>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}>
-        <MantineProvider
-          theme={{ ...theme, colorScheme }}
-          withNormalizeCSS
-          withGlobalStyles>
-          <BaseLayout>
-            <Outlet />
-          </BaseLayout>
-        </MantineProvider>
-      </ColorSchemeProvider>
-
-      <ScrollRestoration />
-    </>
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}>
+      <MantineProvider
+        theme={{ ...theme, colorScheme }}
+        withNormalizeCSS
+        withGlobalStyles>
+        <BaseLayout>
+          <Outlet />
+        </BaseLayout>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 }
