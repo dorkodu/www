@@ -22,5 +22,6 @@ export default defineConfig({
   },
   build: {
     reportCompressedSize: false,
+    outDir: "out"
   },
 });
