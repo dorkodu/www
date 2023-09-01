@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const isMobileScreen = useMediaQuery("(max-width: 760px)");
+
   const X = () => (
     <Text span sx={($) => ({ color: $.colors.gray[5] })}>
       ∗
     </Text>
   );
+
   return (
     <header>
       <Group

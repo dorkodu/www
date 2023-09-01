@@ -6,7 +6,6 @@ import {
   Button,
   Container,
   Divider,
-  Flex,
   Group,
   Image,
   List,
@@ -37,9 +36,11 @@ import {
   SparklingHeart,
 } from "@shared/styles/emoji";
 
-import { GitHubProfileCard } from "@/components/Github";
 import { IStoryElement, StoryElement } from "@/components/story";
 import { randomId } from "@mantine/hooks";
+import { lazy } from "react";
+
+const Highlights = lazy(() => import("@/components/Highlights"));
 
 export default function Page() {
   return (
@@ -342,106 +343,5 @@ const SocialLinks = () => {
         </a>
       ))}
     </Group>
-  );
-};
-
-const Highlights = () => {
-  const Spotify = () => (
-    <Container py={20} size={600} px={0}>
-      <iframe
-        style={{ borderRadius: "12px" }}
-        src="https://open.spotify.com/embed/playlist/1JjHkm5GrtUt6bGogDce5e?utm_source=generator&theme=0"
-        width="100%"
-        height="400"
-        frameBorder="0"
-        allowFullScreen={false}
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"></iframe>
-    </Container>
-  );
-
-  const Substack = () => (
-    <iframe
-      src="https://dorkodu.substack.com/embed"
-      width="100%"
-      style={{
-        background: "white",
-        borderRadius: 16,
-        height: 400,
-        marginTop: 20,
-      }}
-      frameBorder="0"
-      scrolling="no"></iframe>
-  );
-
-  const GitHub = () => (
-    <Container py={20} size={600} px={0}>
-      <GitHubProfileCard commitGraph width={400} username="dorukeray" />{" "}
-    </Container>
-  );
-
-  return (
-    <Container px={0}>
-      <Showcase
-        size={0.8}
-        content={[
-          <Box maw={500} mx="auto">
-            <Title order={2}>I ❤️ Open Source</Title>
-            <Text my={12}>
-              Since my teenage years, I've built many open source projects;
-              libraries, tools and even some components of Dorkodu's
-              products/services are open to public.
-            </Text>
-            <Button
-              component="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/dorukeray"
-              size="md"
-              radius="lg"
-              color="dark"
-              leftIcon={<IconBrandGithub />}>
-              See My GitHub
-            </Button>
-          </Box>,
-          <Flex align="flex-end">
-            <GitHub />
-          </Flex>,
-        ]}
-      />
-
-      <Showcase
-        size={0.65}
-        content={[
-          <Stack maw={400} mx="auto">
-            <Title order={2}>🔖 We're on Substack.</Title>
-            <Text>
-              Dorkodu has a newsletter and community on Substack. You may like
-              our weekly publication, notes and podcasts about technology,
-              design, business and more.
-            </Text>
-          </Stack>,
-          <Substack />,
-        ]}
-      />
-
-      <Showcase
-        size={0.65}
-        content={[
-          <Stack maw={400} mx="auto">
-            <Title order={2}>💽 I'm on Spotify.</Title>
-            <Text>
-              I curate <i>concept album</i> playlists, usually following our
-              studio sessions with my band.
-            </Text>
-            <Text weight={600} color="dimmed">
-              Ever dreamed about a “superalbum” of songs by different artists
-              but they vibe together?
-            </Text>
-          </Stack>,
-          <Spotify />,
-        ]}
-      />
-    </Container>
   );
 };

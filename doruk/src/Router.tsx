@@ -8,14 +8,13 @@ import {
 
 import App from "@/App";
 import CenterLoader from "@shared/components/loaders/CenterLoader";
-import { wait } from "@shared/components/hooks";
 
 /**
  * Page: Make any app view a lazy-loaded static page
  * (helper function to wrap any view in suspense)
  */
 function Page(name: string) {
-  const View = React.lazy(wait(() => import(`./pages/${name}.tsx`)));
+  const View = React.lazy(() => import(`./pages/${name}.tsx`));
 
   return (
     <Suspense fallback={<CenterLoader />}>
