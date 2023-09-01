@@ -12,7 +12,7 @@ import {
 } from "@mantine/core";
 
 import { IconBrandGithub } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function GitHubProfileCard({
   username,
@@ -25,13 +25,15 @@ export function GitHubProfileCard({
 }) {
   const [user, setUser] = useState<GithubUser | null>(null);
 
-  if (user == null) {
-    fetchGithubUser(username)
-      //············
-      .then((user) => {
-        setUser(user);
-      });
-  }
+  useEffect(() => {
+    if (user == null) {
+      fetchGithubUser(username)
+        //··············
+        .then((user) => {
+          setUser(user);
+        });
+    }
+  });
 
   return (
     <Paper p={10} withBorder shadow="xs" maw={width} mih={100} m={10}>
@@ -114,4 +116,3 @@ export const GitHubStats: React.FunctionComponent = () => {
     />
   );
 };
-
