@@ -115,4 +115,3 @@ export const GitHubStats: React.FunctionComponent = () => {
   );
 };
 
-const GithubStats = {};

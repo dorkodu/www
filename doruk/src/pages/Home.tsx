@@ -39,6 +39,7 @@ import {
 
 import { GitHubProfileCard } from "@/components/Github";
 import { IStoryElement, StoryElement } from "@/components/story";
+import { randomId } from "@mantine/hooks";
 
 export default function Page() {
   return (
@@ -219,7 +220,9 @@ const InANutshell = () => {
       <Divider mb={25} />
       <Stack spacing={25} mt={10}>
         {story.map((item) => (
-          <StoryElement {...item} key={item.title?.toString()} />
+          <div key={randomId()}>
+            <StoryElement {...item} />
+          </div>
         ))}
       </Stack>
     </Container>

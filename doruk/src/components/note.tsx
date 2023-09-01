@@ -6,21 +6,10 @@ import {
   ThemeIcon,
   Box,
   Container,
-  Title,
-  rem,
   Divider,
-  Button,
-  Image,
-  ActionIcon,
-  Stack,
   Anchor,
 } from "@mantine/core";
-import {
-  IconBookmark,
-  IconCalendar,
-  IconNote,
-  IconTag,
-} from "@tabler/icons-react";
+import { IconNote } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 
 export interface INote {

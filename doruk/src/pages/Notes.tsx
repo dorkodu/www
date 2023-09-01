@@ -1,4 +1,4 @@
-import { INote, NoteCard } from "@/components/note";
+import { NoteCard } from "@/components/note";
 import { notes } from "@/data/notes";
 import { Container, Divider, Stack, Title } from "@mantine/core";
 

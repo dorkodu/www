@@ -9,9 +9,8 @@ import {
   Anchor,
   useMantineTheme,
   Image,
-  List,
 } from "@mantine/core";
-import { IconExternalLink, IconLink, IconWorld } from "@tabler/icons-react";
+import { IconExternalLink, IconLink } from "@tabler/icons-react";
 
 export function WorkExperienceEntry({ work }: { work: IWorkExperience }) {
   const theme = useMantineTheme();

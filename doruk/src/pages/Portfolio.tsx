@@ -11,7 +11,6 @@ import {
   Button,
   Container,
   Divider,
-  Grid,
   Group,
   Image,
   List,
@@ -22,12 +21,10 @@ import {
 } from "@mantine/core";
 import { Showcase } from "@shared/components/commons";
 import {
-  IconBookmark,
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
-import { useNavigate } from "react-router-dom";
 
 export default function Page() {
   return (
@@ -40,7 +37,6 @@ export default function Page() {
 }
 
 const Hero = () => {
-  const navigate = useNavigate();
 
   return (
     <Showcase
@@ -134,6 +130,13 @@ const Hero = () => {
 };
 
 const Resume = () => {
+  const Skills = () => (
+    <Container size={768} my={50}>
+      <Title order={2}>Skills</Title>
+      <Divider mb={25} />
+    </Container>
+  );
+
   return (
     <Container size={768} my={25}>
       <Title order={2}>Resume</Title>
@@ -145,7 +148,7 @@ const Resume = () => {
 
       <Box my={25}>
         <Title order={3}>Work Experience</Title>
-        <Text></Text>
+        <Text>I am an indie hacker, so I only worked freelance or for our own startup.</Text>
 
         <Stack my={20} spacing={16}>
           {experience.map(($) => (
@@ -157,7 +160,7 @@ const Resume = () => {
       <Box my={40}>
         <Title order={3}>Education</Title>
         <Text>
-          I've always worked independent from school, as a self-taught.
+          I've always learnt independent from school, as a <b>self-taught</b>.
         </Text>
 
         <SimpleGrid
@@ -173,6 +176,8 @@ const Resume = () => {
           ))}
         </SimpleGrid>
       </Box>
+
+      <Skills />
     </Container>
   );
 };
@@ -196,9 +201,4 @@ const Projects = () => (
   </Container>
 );
 
-const Skills = () => (
-  <Container size={768} my={50}>
-    <Title order={2}>Skills</Title>
-    <Divider mb={25} />
-  </Container>
-);
+

@@ -1,16 +1,16 @@
 import { INote, NotePage as Note } from "@/components/note";
 import { notes } from "@/data/notes";
 import {
-  Alert,
+  Button,
+  Card,
   Container,
-  Divider,
-  Image,
+  Group,
   Stack,
   Text,
-  Title,
+  ThemeIcon,
 } from "@mantine/core";
-import { Showcase } from "@shared/components/commons";
-import { useParams } from "react-router-dom";
+import { IconArrowRight, IconMoodSad } from "@tabler/icons-react";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Page() {
   const params = useParams();
@@ -25,7 +25,7 @@ export default function Page() {
 }
 
 function fetchNote(slug: string | null): [boolean, INote] {
-  let data: INote;
+  let data: INote | null;
   let success: boolean = false;
 
   notes.forEach((note) => {
@@ -35,7 +35,36 @@ function fetchNote(slug: string | null): [boolean, INote] {
     }
   });
 
-  return [success, data];
+  return [success, data!];
 }
 
-const ErrorCard = () => <Alert>This note doesn't exist.</Alert>;
+const ErrorCard = () => {
+  const navigate = useNavigate();
+
+  return (
+    <Card
+      sx={($) => ({
+        backgroundColor: $.fn.variant({ color: "red", variant: "outline" })
+          .background,
+      })}>
+      <Group>
+        <ThemeIcon size={48} color="blue" variant="light">
+          <IconMoodSad size={36} />
+        </ThemeIcon>
+        <Stack spacing={2}>
+          <Text weight={700} size={24}>
+            404: Not Found
+          </Text>
+          <Text>This note doesn't exist.</Text>
+        </Stack>
+        <Button
+          size="lg"
+          radius="lg"
+          rightIcon={<IconArrowRight />}
+          onClick={() => navigate("/notes")}>
+          Back to Notes
+        </Button>
+      </Group>
+    </Card>
+  );
+};
