@@ -1,6 +1,6 @@
 import { Anchor, Group, Image, Stack, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { ColorToggleSegment } from "@shared/components/misc/ColorToggle";
+import { ColorToggleSegment } from "@/components/ColorToggle";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {

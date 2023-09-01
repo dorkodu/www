@@ -177,7 +177,7 @@ const InANutshell = () => {
               "HTML",
               "CSS",
             ].map(($) => (
-              <Badge variant="dot" color="gray" size="md">
+              <Badge variant="dot" color="gray" size="md" key={$}>
                 {$}
               </Badge>
             ))}
@@ -220,9 +220,7 @@ const InANutshell = () => {
       <Divider mb={25} />
       <Stack spacing={25} mt={10}>
         {story.map((item) => (
-          <div key={randomId()}>
-            <StoryElement {...item} />
-          </div>
+          <StoryElement {...item} key={randomId()} />
         ))}
       </Stack>
     </Container>
