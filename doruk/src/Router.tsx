@@ -15,7 +15,7 @@ import { wait } from "@shared/components/hooks";
  * (helper function to wrap any view in suspense)
  */
 function Page(name: string) {
-  const View = React.lazy(wait(() => import(`./pages/${name}`)));
+  const View = React.lazy(wait(() => import(`./pages/${name}.tsx`)));
 
   return (
     <Suspense fallback={<CenterLoader />}>
