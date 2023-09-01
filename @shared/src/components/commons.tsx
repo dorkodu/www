@@ -1,7 +1,6 @@
 import { Emoji, SadFace } from "@/styles/emoji";
 
 import {
-  Alert,
   Box,
   Container,
   Flex,
@@ -11,6 +10,7 @@ import {
   Title,
   useMantineTheme,
 } from "@mantine/core";
+
 import { useMediaQuery } from "@mantine/hooks";
 
 export const SectionTitle = ({

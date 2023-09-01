@@ -4,7 +4,6 @@ import {
   ActionIcon,
   useMantineColorScheme,
   MantineSize,
-  ThemeIcon,
 } from "@mantine/core";
 import {
   IconSun,
