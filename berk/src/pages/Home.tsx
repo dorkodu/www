@@ -127,13 +127,6 @@ const Hero = () => {
               radius="lg">
               See My Portfolio
             </Button>
-            <Button
-              onClick={() => navigate("/story")}
-              size="md"
-              radius="lg"
-              variant="light">
-              My Story
-            </Button>
           </Group>
         </Stack>,
       ]}

@@ -26,7 +26,6 @@ function Page(name: string) {
 // Views & Lazy-loaded
 const Home = Page("Home");
 const Portfolio = Page("Portfolio");
-const Story = Page("Story");
 const NotFound = Page("404");
 
 const Router = createBrowserRouter(
@@ -34,7 +33,6 @@ const Router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index element={Home} />
 
-      <Route path="/story" element={Story} />
       <Route path="/portfolio" element={Portfolio} />
 
       <Route path="/404" element={NotFound} />
