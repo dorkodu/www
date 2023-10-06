@@ -26,8 +26,6 @@ function Page(name: string) {
 // Views & Lazy-loaded
 const Home = Page("Home");
 const Portfolio = Page("Portfolio");
-const Notes = Page("Notes");
-const Note = Page("Note");
 const Story = Page("Story");
 const NotFound = Page("404");
 
@@ -38,19 +36,6 @@ const Router = createBrowserRouter(
 
       <Route path="/story" element={Story} />
       <Route path="/portfolio" element={Portfolio} />
-
-      <Route path="/notes" element={Notes} />
-
-      <Route
-        path="/note/:slug"
-        element={Note}
-        loader={async ({ params }) => {
-          return fetch(`/data/notes/${params.slug}.json`);
-        }}
-      />
-
-      {/* if note id is NOT specified -> show all notes */}
-      <Route path="/note" element={<Navigate to="/notes" />} />
 
       <Route path="/404" element={NotFound} />
       <Route path="*" element={<Navigate to="/404" />} />

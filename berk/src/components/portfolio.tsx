@@ -93,7 +93,7 @@ export function ProjectEntry({ project }: { project: IProject }) {
 
   return (
     <Box maw={400}>
-      <Card withBorder shadow="xs" py="sm" px="md">
+      <Card withBorder shadow="xs" py="sm" px="md" h="100%">
         <Stack spacing={2}>
           <Text weight={750} size="lg">
             {project.title}

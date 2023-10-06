@@ -125,9 +125,8 @@ export async function fetchGithubUser(username: string): Promise<GithubUser|null
     const response = await fetch(`https://api.github.com/users/${username}`);
     const json = await response.json();
     const user = Convert.toGithubUser(json);
-    console.log("user fetched.")
     return user;
-  } catch (error) { return null; }
+  } catch (error) { console.log(error);return null; }
 }
 
 export async function fetchGithubRepo(user: string, repo: string): Promise<GithubUser|null> {

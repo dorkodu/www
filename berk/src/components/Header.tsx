@@ -21,7 +21,7 @@ export default function Header() {
         mx="auto"
         sx={isMobileScreen ? { flexDirection: "column" } : {}}>
         <Group spacing={10}>
-          <Image src="/favicon.png" width={60} height={60} radius={4} />
+          <Image src="/icon-192-maskable.png" width={60} height={60} radius={4} />
           <Stack spacing={0}>
             <Text
               weight={800}
@@ -30,10 +30,10 @@ export default function Header() {
                 letterSpacing: -1,
                 color: $.colorScheme == "dark" ? $.white : $.black,
               })}>
-              Doruk Eray
+              Berk Remzi
             </Text>
             <Text weight={600} size={16} color="dimmed">
-              Founder <X /> Polymath <X /> Craftsman
+              Creator <X /> Technologist <X /> Founder
             </Text>
           </Stack>
         </Group>
@@ -43,8 +43,6 @@ export default function Header() {
             links={[
               { text: "Home", url: "/" },
               { text: "Portfolio", url: "/portfolio" },
-              { text: "Story", url: "/story" },
-              { text: "Notes", url: "/notes" },
             ]}
           />
           <ColorToggleSegment size="xs" />

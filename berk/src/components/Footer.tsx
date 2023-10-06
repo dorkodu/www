@@ -11,8 +11,6 @@ export default function Footer() {
             links={[
               { text: "Home", url: "/" },
               { text: "Portfolio", url: "/portfolio" },
-              { text: "Story", url: "/story" },
-              { text: "Notes", url: "/notes" },
             ]}
           />
 
@@ -25,7 +23,7 @@ export default function Footer() {
               sx={($) => ({
                 color: $.colorScheme == "dark" ? $.white : "unset",
               })}>
-              Doruk Eray
+              Berk Remzi
             </Text>
           </Text>
         </Group>

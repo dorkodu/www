@@ -13,9 +13,6 @@ import { Showcase } from "@shared/components/commons";
 import { IconBrandGithub } from "@tabler/icons-react";
 
 //? Lazy-loading Optimization
-const SpotifyEmbed = React.lazy(
-  () => import(`@/components/embeds/SpotifyEmbed`)
-);
 const SubstackEmbed = React.lazy(
   () => import(`@/components/embeds/SubstackEmbed`)
 );
@@ -35,7 +32,7 @@ const OpenSource = () => (
           component="a"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/dorukeray"
+          href="https://github.com/berkcambaz"
           size="md"
           radius="lg"
           color="dark"
@@ -45,7 +42,7 @@ const OpenSource = () => (
       </Box>,
       <Flex align="flex-end">
         <Container py={20} size={600} px={0}>
-          <GitHubProfileCard commitGraph width={400} username="dorukeray" />
+          <GitHubProfileCard commitGraph width={400} username="berkcambaz" />
         </Container>
       </Flex>,
     ]}
@@ -69,34 +66,11 @@ const Writing = () => (
   />
 );
 
-const Music = () => (
-  <Showcase
-    size={0.65}
-    content={[
-      <Stack maw={400} mx="auto">
-        <Title order={2}>💽 I'm on Spotify.</Title>
-        <Text>
-          I curate <i>concept album</i> playlists, usually following our studio
-          sessions with my band.
-        </Text>
-        <Text weight={600} color="dimmed">
-          Ever dreamed about a “superalbum” of songs by different artists but
-          they vibe together?
-        </Text>
-      </Stack>,
-      <Container py={20} size={600} px={0}>
-        <SpotifyEmbed />
-      </Container>,
-    ]}
-  />
-);
-
 export default function Highlights() {
   return (
     <Container px={0}>
       <OpenSource />
       <Writing />
-      <Music />
     </Container>
   );
 }

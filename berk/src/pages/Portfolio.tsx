@@ -44,9 +44,8 @@ const Hero = () => {
       content={[
         <Group p={10} spacing={10} position="right">
           <Image
-            src="/images/doruk-music.jpg"
+            src="/images/berk-dorkodu.jpg"
             maw={250}
-            mah={250}
             radius={12}
           />
         </Group>,
@@ -69,7 +68,7 @@ const Hero = () => {
             mt={10}>
             <List.Item>
               <Text>
-                I design products and build software @&nbsp;
+                I build & products and manage our software @&nbsp;
                 <Anchor
                   href="https://dorkodu.com"
                   color="blue"
@@ -81,13 +80,13 @@ const Hero = () => {
               </Text>
             </List.Item>
             <List.Item>
-              I sing, write songs and play guitar @&nbsp;
+              I design and develop video games also @&nbsp;
               <Anchor
-                href="https://instagram.com/theterraspark"
+                href="https://dorkodu.com"
                 color="blue"
                 weight={600}
                 td="underline">
-                Terraspark
+                Dorkodu
               </Anchor>
               .
             </List.Item>
@@ -96,7 +95,7 @@ const Hero = () => {
           <Group my="md" spacing="xs">
             <Button
               component="a"
-              href="https://github.com/dorukeray"
+              href="https://github.com/berkcambaz"
               target="_blank"
               radius={12}
               color="dark"
@@ -105,7 +104,7 @@ const Hero = () => {
             </Button>
             <Button
               component="a"
-              href="https://twitter.com/d0rukeray"
+              href="https://twitter.com/bercrobat"
               target="_blank"
               radius={12}
               color="blue"
@@ -114,7 +113,7 @@ const Hero = () => {
             </Button>
             <Button
               component="a"
-              href="https://linkedin.com/in/dorukeray"
+              href="https://linkedin.com/in/berkcambaz"
               target="_blank"
               size="sm"
               radius={12}
@@ -130,21 +129,18 @@ const Hero = () => {
 };
 
 const Resume = () => {
-  const Skills = () => (
-    <Container size={768} my={50}>
-      <Title order={2}>Skills</Title>
-      <Divider mb={25} />
-    </Container>
-  );
-
   return (
     <Container size={768} my={25}>
       <Title order={2}>Resume</Title>
       <Divider mb={25} />
 
-      <Text my={25} color="dimmed">
-        Cover letter will be here.
-      </Text>
+      <Anchor
+        href="/berk-remzi-cv.pdf"
+        color="blue"
+        weight={600}
+        td="underline">
+        Download my CV here.
+      </Anchor>
 
       <Box my={25}>
         <Title order={3}>Work Experience</Title>
@@ -176,8 +172,6 @@ const Resume = () => {
           ))}
         </SimpleGrid>
       </Box>
-
-      <Skills />
     </Container>
   );
 };

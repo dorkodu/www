@@ -64,7 +64,7 @@ const Hero = () => {
       content={[
         <Group p={10} spacing={10} position="right">
           <Image
-            src="/images/doruk-student.png"
+            src="/images/berk-student.jpg"
             maw={320}
             mah={320}
             radius={8}
@@ -78,9 +78,9 @@ const Hero = () => {
             Welcome to my personal website.
           </Title>
           <Text mt={12} size="md">
-            I'm Doruk Eray, a <b>Founder</b>, <b>Polymath</b> and{" "}
-            <b>Craftsman</b> from <b>Istanbul</b>. My focus is on software,
-            music and business.
+            I'm Berk Remzi, a <b>Creator</b>, <b>Technologist</b> and{" "}
+            <b>Founder</b> from <b>Istanbul</b>. My focus is on software,
+            games and business.
           </Text>
 
           <List
@@ -94,7 +94,7 @@ const Hero = () => {
             mt={10}>
             <List.Item>
               <Text>
-                I design products and build software @&nbsp;
+                I build products and manage our software @&nbsp;
                 <Anchor
                   href="https://dorkodu.com"
                   color="blue"
@@ -106,13 +106,13 @@ const Hero = () => {
               </Text>
             </List.Item>
             <List.Item>
-              I sing, write songs and play guitar @&nbsp;
+              I design and develop video games also @&nbsp;
               <Anchor
-                href="https://instagram.com/theterraspark"
+                href="https://dorkodu.com"
                 color="blue"
                 weight={600}
                 td="underline">
-                Terraspark
+                Dorkodu
               </Anchor>
               .
             </List.Item>
@@ -147,36 +147,50 @@ const InANutshell = () => {
       icon: <IconBriefcase size={32} />,
       title: (
         <>
-          I'm the Founder & Chief @{" "}
+          I'm the Co-Founder & Chief Technologist @{" "}
           <Anchor href="https://dorkodu.com" color="blue" td="underline">
             Dorkodu
           </Anchor>
         </>
       ),
-      text: "I lead our team, design products and build software.",
+      text: "I lead our technology team, build products and software.",
       subtext: `We are a humane technology company to create social & gamified products and open source technology to liberate the humankind.`,
     },
     {
       icon: <IconCode size={32} />,
-      title: `I have 8+ years of experience in software.`,
+      title: `I have 6+ years of experience in software.`,
       text: (
         <>
-          {`Web Platform · Product · Front-end · UI/UX`}
+          {`Full-stack · Web Development · Product`}
           <Group spacing={4} mt={10}>
             {[
               "TypeScript",
               "JavaScript",
               "React",
+              "VueJS",
+              "NextJS",
               "Node.js",
+              "Express",
+              "Zustand",
+              "Redux",
+              "WebSockets",
+              "Socket.IO",
+              "Mantine UI",
+              "i18Next",
+              "Electron",
               "Vite",
-              "Linux",
-              "Postgres",
-              "MySQL",
-              "Nginx",
-              "Docker",
-              "PHP",
               "HTML",
               "CSS",
+              "Postgres",
+              "MySQL",
+              "SQLite",
+              "Redis",
+              "MongoDB",
+              "Nginx",
+              "Linux",
+              "Docker",
+              "C#",
+              "Unity",
             ].map(($) => (
               <Badge variant="dot" color="gray" size="md" key={$}>
                 {$}
@@ -188,8 +202,8 @@ const InANutshell = () => {
     },
     {
       icon: <IconSchool size={32} />,
-      title: `I am a student @ Bogazici University`,
-      text: `I am a freshman, and I want to study Cognitive Science.`,
+      title: `I am a student @ Istanbul University`,
+      text: `I am a freshman, and I am studying Linguistics.`,
       subtext: `
         I graduated from Vefa Lisesi, a historical and well-established high school in Istanbul 
         ∗ Computer Science, Industrial Design, Philosophy and Business.
@@ -240,8 +254,7 @@ const AboutMe = () => (
         <Group maw={450} mx="auto" spacing={8}>
           {[
             ["Software", "blue"],
-            ["Music", "cyan"],
-            ["Industrial Design", "red"],
+            ["Games", "cyan"],
             ["Artificial Intelligence", "indigo"],
             ["Theory of Knowledge", "violet"],
             ["Psychology", "grape"],
@@ -308,27 +321,27 @@ const FeaturedNotes = () => <Container px={0}></Container>;
 const SocialLinks = () => {
   const social: { link: string; icon: JSX.Element }[] = [
     {
-      link: "https://twitter.com/d0rukeray",
+      link: "https://twitter.com/bercrobat",
       icon: <IconBrandTwitter size={30} />,
     },
     {
-      link: "https://instagram.com/d0rukeray",
+      link: "https://instagram.com/bercrobat",
       icon: <IconBrandInstagram size={32} />,
     },
     {
-      link: "https://github.com/dorukeray",
+      link: "https://github.com/berkcambaz",
       icon: <IconBrandGithub size={30} />,
     },
     {
-      link: "https://linkedin.com/in/dorukeray",
+      link: "https://linkedin.com/in/berkcambaz",
       icon: <IconBrandLinkedin size={32} />,
     },
     {
-      link: "https://t.me/dorukeray",
+      link: "https://t.me/bercrobat",
       icon: <IconBrandTelegram size={32} />,
     },
     {
-      link: "mailto:doruk@dorkodu.com",
+      link: "mailto:berk@dorkodu.com",
       icon: <IconMail size={30} />,
     },
   ];

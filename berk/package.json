@@ -1,7 +1,6 @@
 {
-  "name": "doruk.dorkodu.com",
-  "private": true,
-  "version": "0.0.0",
+  "name": "berk.dorkodu.com",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
