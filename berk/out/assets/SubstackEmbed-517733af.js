@@ -1,0 +1,1 @@
+import{j as r}from"./index-10c0fcfd.js";function o(){return r.jsx("iframe",{src:"https://dorkodu.substack.com/embed",width:"100%",style:{background:"white",borderRadius:16,height:400,marginTop:20},frameBorder:"0",scrolling:"no"})}export{o as default};
