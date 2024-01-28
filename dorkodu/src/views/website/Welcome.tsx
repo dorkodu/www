@@ -5,7 +5,6 @@ import { IconAdOff, IconArrowRight, IconBuildingCommunity, IconBuildingStore, Ic
 
 import Emoji from '#/components/custom/Emoji'
 
-import * as PremiumStyles from '#/styles/views/Premium.css'
 import * as WebsiteStyles from '#/styles/Website.css'
 
 export default function Welcome() {
@@ -13,11 +12,9 @@ export default function Welcome() {
     <Stack p={10} mt="4vw">
       <Hero />
 
-      {Premium}
       {ItWorks}
       {Features}
       {Join}
-      {Pricing}
       <FAQ />
     </Stack>
   )
@@ -31,8 +28,10 @@ const Hero = () => {
       <SimpleGrid cols={{ base: 1, sm: 2 }}>
         <Stack gap="sm">
           <div>
-            <Image src={'/images/Hero.svg'} w="80%" mx="auto" />
-          </div>
+            <Image src={'/images/Hero.svg'} w="80%" mx="auto" />,0
+          </div> <b>
+
+          </b>
 
           <Title className={WebsiteStyles.Hero.Title}>
             Your Social & Gamified <br /> Productivity Companion
@@ -68,7 +67,7 @@ const Hero = () => {
                 ['✅', 'Track Habits & To-Dos', 'Never been more enjoyable.'],
                 ['🫂', 'Share Stories', 'Connect with close friends.'],
               ].map(x => (
-                <GlassCard key={x[0]}>
+                <Card key={x[0]}>
                   <Group wrap="nowrap">
                     {/* @ts-ignore */}
                     <Emoji emoji={x[0]} size={30} />
@@ -77,7 +76,7 @@ const Hero = () => {
                       <Text>{x[2]}</Text>
                     </Stack>
                   </Group>
-                </GlassCard>
+                </Card>
               ))}
             </Stack>
           </div>
@@ -195,65 +194,6 @@ const Features = (
           </Group>
         </Card>
       ))}
-    </SimpleGrid>
-  </Paper>
-)
-
-const Premium = (
-  <Paper shadow="sm" className={PremiumStyles.Banner.Root} my={50}>
-    <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
-      <Stack gap="xs">
-        <Title className={PremiumStyles.Banner.Title} c="white">
-          Supercharge Your <br /> Gamified Productivity.
-        </Title>
-        <Text className={PremiumStyles.Banner.Text}>
-          Reaching your life goals never been more fun. <br />
-          Your first super-week is on us.
-        </Text>
-
-        <Button
-          size="lg"
-          className={PremiumStyles.Banner.Button}
-          rightSection={<IconArrowRight stroke={2.5} />}
-        >
-          Try For Free
-        </Button>
-      </Stack>
-      <Box style={{ alignSelf: 'center', maxWidth: 380 }}>
-        <List spacing="sm">
-          {[
-            [
-              <IconAdOff />,
-              'Ad-free',
-              'No interruptions, full productivity.',
-            ],
-            [
-              <IconMultiplier2x />,
-              'Doubled Gains',
-              'More coins, XP and items available.',
-            ],
-            [
-              <IconUsersGroup />,
-              'Groups',
-              'Share common goals & habits with friends. Say hello to social productivity boost!',
-            ],
-          ].map(x => (
-            <List.Item
-              key={x[1]}
-              icon={
-                <ThemeIcon variant="light" c="white" size={36}>
-                  {x[0]}
-                </ThemeIcon>
-              }
-            >
-              <Text fw={700} c="white" lh={1.1}>
-                {x[1]}
-              </Text>
-              <Text c="white">{x[2]}</Text>
-            </List.Item>
-          ))}
-        </List>
-      </Box>
     </SimpleGrid>
   </Paper>
 )
@@ -395,130 +335,3 @@ function FAQ() {
 const text = `      We need to create the next generation human. <br />
 This is a civilizational moment in human history. <br />
 We will go extinct, or will adapt to our new digital-native reality.`
-
-const Pricing = (
-  <Paper>
-    <Group wrap='nowrap' gap={8} justify='center' mr={8}>
-      <Emoji emoji='💸' size={32} />
-      <Title order={2} fw={800} size={32} lts={-0.5}>Pricing</Title>
-    </Group>
-
-    <Text size='lg' ta="center">One app to gamify your life and productivity.</Text>
-
-    <SimpleGrid my={20} cols={{ base: 1, xs: 2, }} maw={800} mx="auto">
-
-      <Box mt={-10}>
-        <Image src="/images/free.svg" w={64} h="auto" style={{ position: "relative", top: 40, left: 12, zIndex: 1 }} />
-        <Card withBorder pb={35}>
-          <Card.Section p="md">
-            <Box h={26}></Box>
-            <Title order={5} fw={800} fz={32} ff="monospace">
-              $0
-            </Title>
-            <Title order={3} fw={600}>Starter Pack</Title>
-            <Text>All basics for a new beginning!</Text>
-          </Card.Section>
-
-          <Button radius="lg" size="md" fw={700}>
-            GET STARTED
-          </Button>
-
-          <Card.Section p="md">
-            <List icon={<ThemeIcon variant="light" color="green" size={26}><IconCheck size={20} stroke={2.5} /></ThemeIcon>} spacing={0}>
-              <List.Item py={1}>3 Life Goals</List.Item>
-              <List.Item py={1}>10 Habits</List.Item>
-              <List.Item py={1}>One Story Per Day</List.Item>
-              <List.Item py={1}>Social Feed</List.Item>
-              <List.Item py={1}>1x Gains</List.Item>
-            </List>
-          </Card.Section>
-        </Card>
-      </Box>
-
-      <Box>
-        <Image src="/images/trekie_SUPER_Badge.svg" h={56} w="auto" style={{ position: "relative", top: 32, left: 12, zIndex: 1 }} />
-        <Card shadow="sm" style={{ backgroundImage: PremiumStyles.BackgroundGradient }}>
-          <Card.Section p="md">
-            <Group gap={8} mt={20}>
-              <Title fw={800} fz={36} ff="monospace" c="white">
-                $6
-                <Text span c="blue.2" fz={20}>/month</Text>
-              </Title>
-            </Group>
-            <Text c="white">Say hello to your new <b>supercharged life</b>!</Text>
-
-          </Card.Section>
-
-          <Button className={PremiumStyles.Banner.Button} size="lg">
-            TRY FOR FREE
-          </Button>
-
-          <Card.Section p="md">
-            <List icon={<ThemeIcon variant="light" color="white" size={36}><IconCircleCheckFilled /></ThemeIcon>} center>
-              {
-                [
-                  ["Increased Limits", <IconInfinity />],
-                  ["No Ads", <IconAdOff />],
-                  ["Doubled Gains", <IconMultiplier2x />],
-                  ["Public Pages", <IconWorld />],
-                  ["Profile Highlights", <IconPin />],
-                  ["Communities", <IconUsersGroup />],
-                ].map(x =>
-                  <List.Item py={2} icon={<ThemeIcon variant="light" color="white" size={32}>{x[1]}</ThemeIcon>} key={x[0]}>
-                    <Text c="white" fw={500}>{x[0]}</Text>
-                  </List.Item>
-                )
-              }
-            </List>
-          </Card.Section>
-        </Card>
-      </Box>
-    </SimpleGrid>
-
-    <Divider label="Do you want more?" styles={{ label: { fontSize: 16 } }} mt={40} maw={800} mx="auto" />
-
-    <SimpleGrid my={20} cols={{ base: 1, xs: 2, }} maw={800} mx="auto">
-      <Card withBorder>
-        <Group wrap='nowrap' align="flex-start">
-          <ThemeIcon size="xl" variant="gradient" gradient={{ to: "rgb(0, 191, 250)", from: "rgb(34, 12, 161)" }}>
-            <IconUsersGroup size={28} />
-          </ThemeIcon>
-
-          <Stack gap={0}>
-            <Title order={4}>Teams & Family</Title>
-            <Text>
-              A better place for small groups to gamify and get productive!
-            </Text>
-            <Text>
-              <i><u>Coming soon!</u></i>
-            </Text>
-          </Stack>
-        </Group>
-      </Card>
-
-      <Card withBorder>
-        <Group wrap='nowrap' align="flex-start">
-          <ThemeIcon size="xl" variant="gradient" gradient={{ to: "rgb(0, 191, 250)", from: "rgb(34, 12, 161)" }}>
-            <IconBuildingCommunity size={28} />
-          </ThemeIcon>
-
-          <Stack gap={0}>
-            <Title order={4}>For Business</Title>
-            <Text>
-              Advanced controls & support to gamify your organization. <b>Contact us, we can offer a solution that suit your needs.</b>
-            </Text>
-
-            <Anchor href='mailto:hey@dorkodu.com'>
-              <Group gap={4}>
-                <IconMail />
-                <Text fw={500} span>hey@dorkodu.com</Text>
-              </Group>
-            </Anchor>
-          </Stack>
-        </Group>
-
-      </Card>
-    </SimpleGrid>
-
-  </Paper>
-)

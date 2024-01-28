@@ -1,7 +1,6 @@
 import { Anchor, Flex } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import ColorToggle from "../util/ColorToggle";
-import LanguagePicker from "../util/LanguagePicker";
 
 function Footer() {
   const navigate = useNavigate();
@@ -29,18 +28,14 @@ function Footer() {
             About
           </Anchor>
         </Flex>
-
+        s
         <Anchor href="https://dorkodu.com" target="_blank">
           Dorkodu © {new Date().getFullYear()}
         </Anchor>
       </Flex>
 
       <Flex justify="center">
-        <LanguagePicker />
-      </Flex>
-
-      <Flex justify="center">
-        <ColorToggle />
+        <ColorToggle size="xs" />
       </Flex>
     </>
   );
