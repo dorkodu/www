@@ -1,3 +1,4 @@
+import { vanilla } from '#/styles/theme'
 import {
   SegmentedControl,
   Center,
@@ -25,7 +26,7 @@ function ColorToggle({ size = 'md' }: { size: MantineSize }) {
           value: 'light',
           label: (
             <Center>
-              <IconSun size={18} stroke={3} />
+              <IconSun size={18} stroke={3} color={colorScheme == "light" ? vanilla.colors.yellow[6] : vanilla.colors.dimmed} />
             </Center>
           ),
         },
@@ -33,7 +34,7 @@ function ColorToggle({ size = 'md' }: { size: MantineSize }) {
           value: 'dark',
           label: (
             <Center>
-              <IconMoon size={18} stroke={3} />
+              <IconMoon size={18} stroke={3} color={colorScheme == "dark" ? vanilla.colors.blue[3] : vanilla.colors.dimmed} />
             </Center>
           ),
         },

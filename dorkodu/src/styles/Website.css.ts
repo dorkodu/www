@@ -22,33 +22,34 @@ export const Hero = {
   Title: style({
     fontSize: 32,
     fontWeight: 800,
+    lineHeight: 1.0,
+    letterSpacing: -0.5,
+
+    "@media": {
+      [vanilla.smallerThan("xs")]: {
+        fontSize: 26,
+      }
+    }
+  }),
+  Tagline: style({
+    fontWeight: 600,
+    fontSize: 24,
     lineHeight: 1.15,
     letterSpacing: -0.5,
-    color: vanilla.colors.white,
-    width: '90%',
-    margin: `12px auto`,
-    textAlign: 'center',
+    color: vanilla.colors.dimmed,
 
-    selectors: {
-      [vanilla.darkSelector]: {
-        color: vanilla.colors.black,
-      },
-    },
+    "@media": {
+      [vanilla.smallerThan("xs")]: {
+        fontSize: 18,
+      }
+    }
   }),
 }
 
 export const Footer = {
   Root: style({
-    background: vanilla.colors.default,
-    borderRadius: vanilla.radius.lg,
     padding: vanilla.spacing.md,
     margin: `${vanilla.spacing.md} ${vanilla.spacing.xs}`,
-
-
-    selectors: {
-      [vanilla.darkSelector]: {
-      }
-    }
   }),
 
   Link: style({
@@ -70,9 +71,8 @@ export const Footer = {
 
   DorkoduMotto: style({
     color: vanilla.colors.defaultColor,
-    fontWeight: 800,
+    fontWeight: 600,
     lineHeight: 1.25,
-    textAlign: 'center',
 
     selectors: {
       [vanilla.darkSelector]: {

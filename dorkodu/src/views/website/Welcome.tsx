@@ -1,6 +1,6 @@
-import { Anchor, BackgroundImage, Box, Button, Card, Divider, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
+import { BackgroundImage, Badge, Box, Button, Card, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
   from '@mantine/core'
-import { IconAdOff, IconArrowRight, IconBuildingCommunity, IconBuildingStore, IconCheck, IconCheckbox, IconChecks, IconCircleCheckFilled, IconCoins, IconCopyCheck, IconInfinity, IconMail, IconMultiplier2x, IconPhoto, IconPin, IconRocket, IconSocial, IconSparkles, IconSquareCheckFilled, IconTargetArrow, IconUserCheck, IconUsers, IconUsersGroup, IconWorld, }
+import { IconArrowRight, IconBrandProducthunt, IconBuildingStore, IconCheckbox, IconCoins, IconCopyCheck, IconDeviceGamepad, IconGlobe, IconGoGame, IconPhoto, IconRocket, IconSocial, IconSparkles, IconSubtask, IconTallymarks, IconTargetArrow, IconUserCheck, IconUsersGroup, IconWorld, }
   from '@tabler/icons-react'
 
 import Emoji from '#/components/custom/Emoji'
@@ -12,7 +12,10 @@ export default function Welcome() {
     <Stack p={10} mt="4vw">
       <Hero />
 
-      {ItWorks}
+      {Interests}
+      {About}
+      {Mission}
+      {Team}
       {Features}
       {Join}
       <FAQ />
@@ -21,93 +24,87 @@ export default function Welcome() {
 }
 
 const Hero = () => {
-  const { colorScheme } = useMantineColorScheme()
-
   return (
-    <Paper p={10}>
+    <Box p={10}>
       <SimpleGrid cols={{ base: 1, sm: 2 }}>
-        <Stack gap="sm">
-          <div>
-            <Image src={'/images/Hero.svg'} w="80%" mx="auto" />,0
-          </div> <b>
-
-          </b>
-
-          <Title className={WebsiteStyles.Hero.Title}>
-            Your Social & Gamified <br /> Productivity Companion
+        <Stack gap={4} justify="center" maw={500} mx="auto">
+          <Title order={1} className={WebsiteStyles.Hero.Title}>
+            Life <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}>Gamification</Text> Company.
+          </Title>
+          {/* <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}> Gamification</Text> */}
+          <Title order={3} className={WebsiteStyles.Hero.Tagline} c="dimmed">
+            Bringing meaning back to technology. Then we liberate the humankind.
           </Title>
 
-          <Stack w="90%" maw={320} gap={12} mx="auto">
-            <Button size="md" fw={700}>
-              GET STARTED
-            </Button>
-            <Button size="md" fw={700} variant="light">
-              I ALREADY HAVE ACCOUNT
-            </Button>
+          <Text size="lg" lh={1.25} my="xs" maw={400}>
+            We create apps for <Text span inherit fw={600}>gamification</Text> + <Text span inherit fw={600}>productivity</Text>{" "}
+            and build technology for <Text span inherit fw={600}>decentralized web</Text>.
+          </Text>
+
+          <Stack gap="xs" w="80%">
+            <Button size="md" >Get Started</Button>
+            <Button size="md" variant="light" component='a' href="https://t.me/dorkodu" target="_blank">Join Community</Button>
           </Stack>
         </Stack>
 
-        <BackgroundImage
-          src="/images/hero-Gamify.png"
-          maw={540}
-          mx="auto"
-          my="lg"
-          radius="lg"
-          style={{ padding: "40px 0" }}
-        >
-          <div>
-            <Stack
-              gap="sm"
-              maw={380}
-              style={{ alignSelf: 'center', justifySelf: 'center' }}
-              mx="auto"
-            >
-              {[
-                ['🎯', 'Add Life Goals', 'Design your new life.'],
-                ['✅', 'Track Habits & To-Dos', 'Never been more enjoyable.'],
-                ['🫂', 'Share Stories', 'Connect with close friends.'],
-              ].map(x => (
-                <Card key={x[0]}>
-                  <Group wrap="nowrap">
-                    {/* @ts-ignore */}
-                    <Emoji emoji={x[0]} size={30} />
-                    <Stack gap={0} pr={8}>
-                      <Text fw={700}>{x[1]}</Text>
-                      <Text>{x[2]}</Text>
-                    </Stack>
-                  </Group>
-                </Card>
-              ))}
-            </Stack>
-          </div>
-        </BackgroundImage>
+        <Image src="/images/dorkodu-ecosystem.svg" maw={440} mx="auto" />
       </SimpleGrid>
-    </Paper>
+    </Box >
   )
 }
 
-const ItWorks = (
-  <Paper component="section" p="lg" my="xl">
-    <SimpleGrid cols={{ base: 1, sm: 2 }} my={50}>
-      <Stack gap={0} style={{ alignSelf: 'center' }}>
-        <Emoji emoji="🎮" size={40} />
-        <Title order={2} fw={800}>
-          Gamify your life.
-        </Title>
-        <Title order={3} fw={600} c="dimmed">
-          It works, backed by science.
-        </Title>
+const Interests = (
+  <Paper mt={40}>
+    <Title ta="center" order={2} fw={800} lts={-0.5}>Our Interests</Title>
+    <Text ta="center">Where we focus our primary work.</Text>
 
-        <Text my="xs" maw={500} size="lg">
-          Trekie is a <b>gamified productivity app</b> that treats your real
-          life like a game. With rewards to motivate you and social features to
-          share your journey with close friends.
+    <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconDeviceGamepad2 size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Gamification</Text>
+        </Group>
+        <Text mt={10}>Your life, gamified. Enhanced human engagement and motivation. Transforming routine activities into enjoyable and rewarding experiences.</Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconWorld size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Decentralized Web</Text>
+        </Group>
+        <Text mt={10}>
+          A new regenerative ecosystem.  <b>You own your data and identity.</b> True user agency on the web. Permissionless and composable protocols. Open source.
         </Text>
-      </Stack>
+      </Card>
 
-      <Flex justify="center" style={{ alignSelf: 'center' }}>
-        <Image src="/images/Gamify.webp" w="80%" h="auto" mx="auto" radius="lg" />
-      </Flex>
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconCopyCheck size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Productivity</Text>
+        </Group>
+        <Text mt={10}>
+
+        </Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconUsersGroup size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Social</Text>
+        </Group>
+        <Text mt={10}>
+          Time to liberate a building block for the modern life.
+        </Text>
+      </Card>
     </SimpleGrid>
   </Paper>
 )
@@ -147,7 +144,7 @@ const Features = (
           icon: IconSparkles,
           title: 'XP',
           description:
-            'Life is about experience, see your score!',
+            'Life = Experience. See your score!',
         },
         {
           icon: IconCoins,
@@ -180,13 +177,13 @@ const Features = (
             'Buy boosts, features, and life packs.',
         },
       ].map(Feature => (
-        <Card withBorder key={randomId()} p={10}>
+        <Card withBorder key={randomId()} p={6} radius="lg">
           <Group gap={10} wrap="nowrap" align="flex-start">
-            <ThemeIcon variant="gradient" gradient={{ from: "green", to: "teal" }} size={40}>
+            <ThemeIcon variant="gradient" gradient={{ from: "green", to: "teal" }} size={42} radius={12}>
               <Feature.icon stroke={2.25} size={26} />
             </ThemeIcon>
             <Stack gap={0}>
-              <Title order={3} fw={700} lh={1.35} fz={16}>
+              <Title order={3} fw={700} lh={1.25} mt={2} fz={16}>
                 {Feature.title}
               </Title>
               <Text size="sm" >{Feature.description}</Text>
@@ -204,7 +201,7 @@ const Join = (
   </Paper>
 )
 
-const WhyMeWhyNot = (
+const Mission = (
   <Paper>
     <Title>Why?</Title>
     <Text>
@@ -245,43 +242,80 @@ const WhyMeWhyNot = (
   </Paper>
 )
 
-const CallToAction = (
-  <Paper>
-    <Title ta="center">Call to Action</Title>
-    <Text>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto,
-      aliquam?
+
+const About = (
+  <Paper maw={600} my="lg" mx="auto" id='about'>
+    <Title order={2}>About Us</Title>
+    <Text my={10}>
+      We combine gamification, human-centric design with our superior open source technology to create products that help people fulfill their lifes.
     </Text>
+
+    <Title order={3}>Why?</Title>
+    <Text></Text>
+
+    <Title order={3}>How?</Title>
+    <Text></Text>
   </Paper>
 )
 
-const DorkoduShilling = (
-  <Paper className={WebsiteStyles.DorkoduBanner.Root}>
-    <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
-      <Stack gap="xs">
-        <Title className={WebsiteStyles.DorkoduBanner.Title} c="white">
-          We are bringing meaning <br /> back to technology again.
-        </Title>
-        <Text className={WebsiteStyles.DorkoduBanner.Text}>
-          Reaching your life goals never been more fun. <br />
-          Your first super-week is on us.
-        </Text>
-        <Button
-          size="lg"
-          className={WebsiteStyles.DorkoduBanner.Button}
-          rightSection={<IconArrowRight stroke={2.5} />}
-        >
-          Join
-        </Button>
-      </Stack>
-      <Box style={{ alignSelf: 'center', maxWidth: 380 }}>
-        <Image src="https://dorkodu.com/images/dorkodu-ecosystem.svg" />
-      </Box>
+
+const people = [
+  {
+    name: "Doruk Eray",
+    title: "Founder & Chief",
+    bio: "Polymath, Craftsman, Designer.",
+    tags: ["product", "business", "software", "design"],
+    photo: "/images/team/doruk.png"
+  },
+  {
+    name: "Berk Cambaz",
+    title: "Chief Technologist",
+    bio: "Co-Founder, Engineer, Swiss-knife.",
+    tags: ["technology", "software", "infrastructure"],
+    photo: "/images/team/berk.png"
+  },
+  {
+    name: "Ahmet Erdem",
+    title: "Chamberlain",
+    bio: "Finance, Management, Economics.",
+    tags: ["business", "finance", "management"],
+    photo: "/images/team/erdem.png"
+  },
+  {
+    name: "Furkan G. Yıldırım",
+    bio: "Community & PR",
+    tags: ["media", "community"],
+    photo: "/images/team/furkan.png"
+  },
+]
+
+const Team = (
+  <Box>
+    <Title order={2}>Our Team</Title>
+    <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
+      {people.map(member => (
+        <Card key={randomId()} radius="lg" p="sm">
+          <Group wrap="nowrap">
+            <Image src={member.photo} w={100} h={100} radius="lg" />
+            <Stack gap={0}>
+              <Text fw={700} size="xl" lh={1.5}>{member.name}</Text>
+              {member.title && <Text fw={600} size="md" c="dimmed" lh={1.25}>{member.title}</Text>}
+              <Text>{member.bio}</Text>
+              <Group gap={4} my={4}>
+                {member.tags.map(tag => <Badge variant="light" color='blue'>{tag}</Badge>)}
+              </Group>
+            </Stack>
+          </Group>
+        </Card>
+      ))}
     </SimpleGrid>
-  </Paper>
+  </Box>
 )
 
 import { randomId } from '@mantine/hooks'
+import { IconDeviceGamepad2 } from '@tabler/icons-react'
+import { IconDeviceGamepad3 } from '@tabler/icons-react'
+import { IconGlobeFilled } from '@tabler/icons-react'
 
 function FAQ() {
   const questions = [

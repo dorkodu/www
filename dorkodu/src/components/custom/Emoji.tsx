@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import twemoji from 'twemoji'
-import classes from '#/styles/components/Emoji.module.css'
+import classes from '#/styles/Emoji.module.css'
 
 interface Props {
   emoji: string

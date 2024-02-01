@@ -17,9 +17,9 @@ export const Layout = {
     flexDirection: 'column',
 
     width: '100%',
-    maxWidth: 1200,
+    maxWidth: 1024,
     minHeight: '100vh',
-    margin: '0 auto',
+    margin: '16px auto 0',
 
     '@media': {
       [isExtraWide]: {
