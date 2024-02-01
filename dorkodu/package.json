@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mantine/core": "^7.1.7",
-    "@mantine/hooks": "^7.1.7",
-    "@mantine/vanilla-extract": "^7.1.7",
+    "@mantine/core": "^7.5.0",
+    "@mantine/hooks": "^7.5.0",
+    "@mantine/vanilla-extract": "^7.5.0",
     "@tabler/icons-react": "^2.41.0",
     "emoji-regex": "^10.3.0",
     "react": "^18.2.0",
