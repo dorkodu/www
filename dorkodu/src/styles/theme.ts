@@ -28,6 +28,8 @@ export const theme = createTheme({
       styles: (theme) => ({
         root: {
           color: useThemed({ light: theme.black, dark: theme.white }),
+          letterSpacing: -0.5,
+
         },
       }),
     }),
