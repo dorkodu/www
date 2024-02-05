@@ -25,6 +25,7 @@ import { IconBookmark, IconBrandGithub, IconBrandInstagram, IconBrandTelegram, I
 import { IconBookmarkFilled } from '@tabler/icons-react'
 import { IconBookmarkEdit } from '@tabler/icons-react'
 import { IconBookmarks } from '@tabler/icons-react'
+import { socialLinks } from '#/data'
 
 function WebsiteLayout() {
   const theme = useMantineTheme()
@@ -130,7 +131,6 @@ function Footer() {
               ['About', '/#about'],
               ['Mission', '/#mission'],
               ['Team', '/#team'],
-              ['Roadmap', '/#roadmap'],
               ['FAQs', '/#faq'],
             ].map(link => (
               <Anchor
@@ -171,7 +171,7 @@ function Footer() {
             {[
               ['Terms', '/legal/terms'],
               ['Privacy', '/legal/privacy'],
-              ['Company', 'https://dorkodu.com'],
+              ['Community Rules', '/legal/community'],
             ].map(link => (
               <Anchor
                 component={Link}
@@ -188,25 +188,17 @@ function Footer() {
           </Stack>
           <Stack gap={4} p={10}>
             <Text className={WebsiteStyle.Footer.ListTitle}>Social</Text>
-            {[
-              ['Twitter', 'https://twitter.com/dorkodu', <IconBrandTwitter />],
-              ['Instagram', 'https://instagram.com/dorkodu', <IconBrandInstagram />],
-              ['GitHub', 'https://github.com/dorkodu', <IconBrandGithub />],
-              ['Telegram', 'https://t.me/dorkodu', <IconBrandTelegram />],
-              ['YouTube', 'https://youtube.com/@dorkodu', <IconBrandYoutube />],
-              ['Substack', 'https://dorkodu.substack.com', <IconBookmarks />],
-            ].map(link => (
+            {socialLinks.map(link => (
               <Anchor
-                component={Link}
                 //@ts-ignore
-                to={link[1]} key={link[0]}
+                href={link.to} key={link.text}
                 classNames={{
                   root: WebsiteStyle.Footer.Link,
                 }}
               >
                 <Group wrap='nowrap' gap={4}>
-                  <span>{link[2]}</span>
-                  <span>{link[0]}</span>
+                  <span><link.icon /></span>
+                  <span>{link.text}</span>
                 </Group>
               </Anchor>
             ))}

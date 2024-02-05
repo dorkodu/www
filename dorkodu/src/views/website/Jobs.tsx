@@ -1,9 +1,10 @@
-import { Flex, Title } from '@mantine/core'
+import { Flex, Text, Title } from '@mantine/core'
 
 function Page() {
   return (
     <Flex direction="column" m="md">
-      <Title>About</Title>
+      <Title>Jobs</Title>
+      <Text></Text>
     </Flex>
   )
 }

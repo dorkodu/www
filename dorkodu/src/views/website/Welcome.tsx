@@ -12,12 +12,15 @@ export default function Welcome() {
     <Stack p={10} mt="4vw">
       <Hero />
 
-      {Interests}
+      {Products}
       {About}
+      {Interests}
       {Mission}
       {Team}
       {Values}
+      {Roadmap}
       {Join}
+      {Contact}
     </Stack>
   )
 }
@@ -32,7 +35,7 @@ const Hero = () => {
           </Title>
           {/* <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}> Gamification</Text> */}
           <Title order={3} className={WebsiteStyles.Hero.Tagline} c="dimmed">
-            Bringing meaning back to technology. Then we liberate the humankind.
+            Bringing humane spirit back to technology. Let's liberate the humankind, together.
           </Title>
 
           <Text size="lg" lh={1.25} my="xs" maw={400}>
@@ -51,6 +54,120 @@ const Hero = () => {
     </Box >
   )
 }
+
+const Products = (
+  <Paper mt={40}>
+    <Title ta="center" order={2} fw={800} lts={-0.5}>Projects</Title>
+    <Text ta="center">Where we focus our primary work.</Text>
+
+    <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconDeviceGamepad2 size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Gamification</Text>
+        </Group>
+        <Text mt={10}>Your life, gamified. Enhanced human engagement and motivation. Transforming routine activities into enjoyable and rewarding experiences.</Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconWorld size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Decentralized Web</Text>
+        </Group>
+        <Text mt={10}>
+          A new regenerative ecosystem.  <b>You own your data and identity.</b> True user agency on the web. Permissionless and composable protocols. Open source.
+        </Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconCopyCheck size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Productivity</Text>
+        </Group>
+        <Text mt={10}>
+          Welcome to your digital mind. Enjoy peace of mind and keep your important notes at your fingertips. <b>Everything is connected and work in harmony.</b>
+        </Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconUsersGroup size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Social</Text>
+        </Group>
+        <Text mt={10}>
+          A new foundation to build a civilizational public town square. Give creators independence from platforms, developers the freedom to build, and users a choice in their experience.
+        </Text>
+      </Card>
+    </SimpleGrid>
+  </Paper>
+)
+
+const Contact = (
+  <Paper mt={40}>
+    <Title ta="center" order={2} fw={800} lts={-0.5}>Contact</Title>
+    <Text ta="center">Where we focus our primary work.</Text>
+
+    <SimpleGrid my="lg" cols={{ base: 1, xs: 2, sm: 3 }} maw={800} mx="auto">
+      {
+        [].map(link => )
+      }
+      <Card key={randomId()} radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconDeviceGamepad2 size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Gamification</Text>
+        </Group>
+        <Text mt={10}>Your life, gamified. Enhanced human engagement and motivation. Transforming routine activities into enjoyable and rewarding experiences.</Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconWorld size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Decentralized Web</Text>
+        </Group>
+        <Text mt={10}>
+          A new regenerative ecosystem.  <b>You own your data and identity.</b> True user agency on the web. Permissionless and composable protocols. Open source.
+        </Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconCopyCheck size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Productivity</Text>
+        </Group>
+        <Text mt={10}>
+          Welcome to your digital mind. Enjoy peace of mind and keep your important notes at your fingertips. <b>Everything is connected and work in harmony.</b>
+        </Text>
+      </Card>
+
+      <Card key={randomId()} withBorder shadow="sm" radius="lg">
+        <Group gap="sm">
+          <ThemeIcon size={40} variant="gradient">
+            <IconUsersGroup size={28} />
+          </ThemeIcon>
+          <Text fw={600} lh={1.15} size="xl">Social</Text>
+        </Group>
+        <Text mt={10}>
+          A new foundation to build a civilizational public town square. Give creators independence from platforms, developers the freedom to build, and users a choice in their experience.
+        </Text>
+      </Card>
+    </SimpleGrid>
+  </Paper>
+)
 
 const Interests = (
   <Paper mt={40}>
@@ -112,6 +229,26 @@ const Mission = (
   <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
     <Card key={randomId()} radius="lg">
       <Group gap="sm">
+        <Emoji emoji='🍃' />
+        <Text fw={600} lh={1.15} size="xl">Mission</Text>
+      </Group>
+      <Text mt={10}>Your life, gamified. Enhancing human engagement and motivation. Transforming routine activities into enjoyable and rewarding experiences.</Text>
+    </Card>
+
+    <Card key={randomId()} radius="lg">
+      <Group gap="sm">
+        <Emoji emoji='🎯' />
+        <Text fw={600} lh={1.15} size="xl">Goals</Text>
+      </Group>
+      <Text mt={10}>Your life, gamified. Enhanced human engagement and motivation. Transforming routine activities into enjoyable and rewarding experiences.</Text>
+    </Card>
+  </SimpleGrid>
+)
+
+const Roadmap = (
+  <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
+    <Card key={randomId()} radius="lg">
+      <Group gap="sm">
         <Emoji emoji='🎯' />
         <Text fw={600} lh={1.15} size="xl">Gamification</Text>
       </Group>
@@ -125,12 +262,8 @@ const Values = (
   <Paper p="md" my={50}>
     <Group align="center" justify="center" gap="sm">
       <Emoji emoji='⛩️' />
-      <Title ta="center" lts={-1} order={2} size={32} fw={800}>Our Values</Title>
+      <Title ta="center" lts={-1} order={2} size={32} fw={900}>Our Values</Title>
     </Group>
-
-    <Text mx="auto" maw={600} lh={1.25} my={20} size="lg">
-      Working with Trekie is fun! You <b>track your habits</b> with bite-sized actions every day, earn <b>XP</b> and <b>coins</b> while getting better at real world.
-    </Text>
 
     <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} mt={40}>
       {[
@@ -295,10 +428,11 @@ const Investors = (
 
 const Join = (
   <Paper>
-    <Title>
-      Technology has lost its humane spirit.
-      Join us to bring meaning back, together.
-    </Title>
+    <Text fz={26} fw={400} lh={1.25} ta="center" mx="auto" my={20}>
+      Technology has lost its humane spirit. <br />
+      Join us to bring meaning back to work.
+    </Text>
+
     <Text>
       Remember when software felt magical?
       Good software used to be an experience.
@@ -319,7 +453,7 @@ const About = (
       We combine gamification, human-centric design with our superior open source technology to create products that help people fulfill their lifes.
     </Text>
 
-    <List icon={ }>
+    <List icon={<IconArrowRight />}>
       <List.Item></List.Item>
     </List>
   </Paper>

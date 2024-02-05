@@ -43,7 +43,12 @@ export const router = createBrowserRouter(
       <Route element={layout('WebsiteLayout')}>
         <Route index path="/" element={view('website:Welcome')} />
 
-        <Route path="/about" element={view('website:About')} />
+        <Route path="/about" element={<Navigate to="/#about" />} />
+        <Route path="/contact" element={<Navigate to="/#contact" />} />
+        <Route path="/blog" element={<Navigate to="https://dorkodu.substack.com" />} />
+
+        <Route path="/jobs" element={view('website:Jobs')} />
+        <Route path="/press" element={view('website:Press')} />
 
         <Route path="/legal/:document" element={view('website:Legal')} />
 
