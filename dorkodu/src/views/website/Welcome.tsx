@@ -1,4 +1,4 @@
-import { BackgroundImage, Badge, Box, Button, Card, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
+import { Anchor, BackgroundImage, Badge, Box, Button, Card, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
   from '@mantine/core'
 import { IconArrowRight, IconBrandProducthunt, IconBuildingStore, IconCheckbox, IconCoins, IconCopyCheck, IconDeviceGamepad, IconGlobe, IconGoGame, IconPhoto, IconRocket, IconSocial, IconSparkles, IconSubtask, IconTallymarks, IconTargetArrow, IconUserCheck, IconUsersGroup, IconWorld, }
   from '@tabler/icons-react'
@@ -11,16 +11,7 @@ export default function Welcome() {
   return (
     <Stack p={10} mt="4vw">
       <Hero />
-
-      {Products}
-      {About}
-      {Interests}
-      {Mission}
       {Team}
-      {Values}
-      {Roadmap}
-      {Join}
-      {Contact}
     </Stack>
   )
 }
@@ -118,7 +109,18 @@ const Contact = (
 
     <SimpleGrid my="lg" cols={{ base: 1, xs: 2, sm: 3 }} maw={800} mx="auto">
       {
-        [].map(link => )
+        socialLinks.map(link => <Anchor
+          //@ts-ignore
+          href={link.to} key={link.text}
+          classNames={{
+            root: WebsiteStyles.Footer.Link,
+          }}
+        >
+          <Group wrap='nowrap' gap={4}>
+            <span><link.icon /></span>
+            <span>{link.text}</span>
+          </Group>
+        </Anchor>)
       }
       <Card key={randomId()} radius="lg">
         <Group gap="sm">
@@ -459,7 +461,6 @@ const About = (
   </Paper>
 )
 
-
 const people = [
   {
     name: "Doruk Eray",
@@ -491,11 +492,10 @@ const people = [
 ]
 
 const Team = (
-  <Box>
-    <Title order={2}>Our Team</Title>
+  <Box my={30}>
     <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
       {people.map(member => (
-        <Card key={randomId()} radius="lg" p="sm">
+        <Paper key={randomId()} radius="lg">
           <Group wrap="nowrap">
             <Image src={member.photo} w={100} h={100} radius="lg" />
             <Stack gap={0}>
@@ -507,7 +507,7 @@ const Team = (
               </Group>
             </Stack>
           </Group>
-        </Card>
+        </Paper>
       ))}
     </SimpleGrid>
   </Box>
@@ -517,6 +517,7 @@ import { randomId } from '@mantine/hooks'
 import { IconDeviceGamepad2 } from '@tabler/icons-react'
 import { IconDeviceGamepad3 } from '@tabler/icons-react'
 import { IconGlobeFilled } from '@tabler/icons-react'
+import { socialLinks } from '#/data'
 
 function FAQ() {
   const questions = [
