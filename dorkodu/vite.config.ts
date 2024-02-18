@@ -55,7 +55,7 @@ export default defineConfig({
   server: {
     watch: { usePolling: true },
     host: true,
-    port: 8014,
+    port: 8080,
     strictPort: true,
     proxy: {
       "/api": {
@@ -66,8 +66,6 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@api": path.resolve(__dirname, "../api/src"),
-      "@core": path.resolve(__dirname, "../core/src"),
       "#": path.resolve(__dirname, "./src"),
     },
   },

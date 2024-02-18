@@ -497,7 +497,7 @@ const Team = (
       {people.map(member => (
         <Paper key={randomId()} radius="lg">
           <Group wrap="nowrap">
-            <Image src={member.photo} w={100} h={100} radius="lg" />
+            <Image src={member.photo} w={80} h={80} radius="lg" />
             <Stack gap={0}>
               <Text fw={700} size="xl" lh={1.5}>{member.name}</Text>
               {member.title && <Text fw={600} size="md" c="dimmed" lh={1.25}>{member.title}</Text>}
