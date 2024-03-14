@@ -60,23 +60,24 @@ const Products = () => (
         </Center>
       </Box>
 
-      <Stack gap="xs">
-        <Group gap={6}>
-          <Emoji emoji="🥳" size={26} />
-          <Text size="lg" fw={700} ta="center" c="dimmed">Introducing Trekie!</Text>
-        </Group>
-
+      <Stack gap={8}>
+        <Text size="lg" lh={1} fw={800} c="dimmed">INTRODUCING TREKIE</Text>
         <Title style={{
-          fontSize: 26,
+          fontSize: 28,
           fontWeight: 750,
           lineHeight: 1.0,
-          letterSpacing: -0.5,
+          letterSpacing: -0.65,
         }}>
-          Your Social & Gamified <br /> Productivity Companion
+          Your social and gamified productivity companion app.
         </Title>
 
-        <Group gap="sm">
-          <Button size="md" radius="lg" component='a' href='https://trekie.io'>GET STARTED</Button>
+        <Group gap={8} mt={4}>
+          <Emoji emoji='🥳' size={22} />
+          <Text lh="22px">Start gamifying your life today!</Text>
+        </Group>
+
+        <Group gap="sm" mt={4}>
+          <Button size="md" radius="lg" component='a' href='https://trekie.io' fw={700}>JOIN TREKIE NOW!</Button>
         </Group>
       </Stack>
 
