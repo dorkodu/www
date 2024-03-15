@@ -12,9 +12,10 @@ export default function Welcome() {
     <Stack p={10} mt="4vw" gap="xl">
       <Hero />
       <Products />
-      {Mission}
+      {About}
       <Interests />
       {Team}
+      <FAQ />
     </Stack>
   )
 }
@@ -50,7 +51,7 @@ const Hero = () => {
 }
 
 const Products = () => (
-  <Paper mt={40}>
+  <Paper mt={40} id='products'>
 
     <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
 
@@ -222,8 +223,8 @@ const Interests = () => (
   </Paper>
 )
 
-const Mission = (
-  <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
+const About = (
+  <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }} id='about'>
     <Card key={randomId()} radius="lg">
 
       <Badge size="xl" variant="light" radius="md">
@@ -453,19 +454,6 @@ const Join = (
 )
 
 
-const About = (
-  <Paper maw={600} my="lg" mx="auto" id='about'>
-    <Title order={2} fw={800}>About Us</Title>
-    <Text my={10} size="lg">
-      We combine gamification, human-centric design with our superior open source technology to create products that help people fulfill their lifes.
-    </Text>
-
-    <List icon={<IconArrowRight />}>
-      <List.Item></List.Item>
-    </List>
-  </Paper>
-)
-
 const people = [
   {
     name: "Doruk Eray",
@@ -497,7 +485,7 @@ const people = [
 ]
 
 const Team = (
-  <Box my={30}>
+  <Box my={30} id='team'>
     <Title ta="center" order={2} fw={800} lts={-0.5}>Our Team</Title>
     <Text ta="center">First citizens of Dorkodian utopia.</Text>
 
@@ -530,33 +518,21 @@ import { useThemed, vanilla } from '#/styles/theme'
 function FAQ() {
   const questions = [
     [
-      'Apples',
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
+      `You do what?`,
+      'We are an indie tech company. We create products and technology to help you fulfill your dream life.',
     ],
     [
-      'Apples',
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
+      `What's with that name?`,
+      `We made it up: Doruk + Berk + Code. Add some alliteration. Voila! We needed an original, authentic, available name.`,
     ],
     [
-      'Apples',
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
-    ],
-    [
-      'Apples',
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
-    ],
-    [
-      'Apples',
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
-    ],
-    [
-      'Apples',
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
-    ],
+      'I have something to say, but how?',
+      'You can reach us on any social platform you like. Send an email, shoot a DM, say hello!',
+    ]
   ]
 
   return (
-    <Paper my={50}>
+    <Paper my={50} id='faq'>
       <Title ta="center">FAQs</Title>
       <Text ta="center">Frequently Asked Questions</Text>
 
