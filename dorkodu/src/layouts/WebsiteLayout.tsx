@@ -19,20 +19,12 @@ import { useMediaQuery } from '@mantine/hooks'
 import * as LayoutStyle from '#/styles/Layout.css'
 import * as WebsiteStyle from '#/styles/Website.css'
 
-import { useThemed, vanilla } from '#/styles/theme'
+import { vanilla } from '#/styles/theme'
 import ColorToggle from '#/components/util/ColorToggle'
-import { IconBookmark, IconBrandGithub, IconBrandInstagram, IconBrandTelegram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react'
-import { IconBookmarkFilled } from '@tabler/icons-react'
-import { IconBookmarkEdit } from '@tabler/icons-react'
-import { IconBookmarks } from '@tabler/icons-react'
+
 import { socialLinks } from '#/data'
 
 function WebsiteLayout() {
-  const theme = useMantineTheme()
-  const { colorScheme } = useMantineColorScheme()
-
-  const navigate = useNavigate()
-  const isWideScreen = useMediaQuery('(min-width: 768px)')
 
   return (
     <div className={LayoutStyle.Layout.Root}>
@@ -79,7 +71,6 @@ function Header() {
               ['About', '/#about'],
               ['Products', '/#products'],
               ['Blog', 'https://dorkodu.substack.com'],
-              ['FAQ', '/#faq'],
             ].map(link => (
               <Anchor
                 component={Link}
