@@ -39,8 +39,8 @@ const Hero = () => {
           </Text>
 
           <Stack gap="xs" w="80%">
-            <Button size="md" >Get Started</Button>
-            <Button size="md" variant="light" component='a' href="https://t.me/dorkodu" target="_blank">Join Community</Button>
+            <Button size="md" fw={700} component='a' href="#get-started">GET STARTED</Button>
+            <Button size="md" variant="light" component='a' href="https://t.me/dorkodu" target="_blank" fw={700}>JOIN COMMUNITY</Button>
           </Stack>
         </Stack>
 
@@ -53,7 +53,7 @@ const Hero = () => {
 const Products = () => (
   <Paper mt={40} id='products'>
 
-    <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
+    <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }} id='get-started'>
 
       <Box>
         <Center>
@@ -77,9 +77,8 @@ const Products = () => (
           <Text lh="22px">Start gamifying your life today!</Text>
         </Group>
 
-        <Group gap="sm" mt={4}>
-          <Button size="md" radius="lg" component='a' href='https://trekie.io' fw={700}>JOIN TREKIE NOW!</Button>
-        </Group>
+        <Button mt={6} size="md" radius="lg" fw={700} maw={240} rightSection={<IconArrowRight />}
+          component='a' href='https://trekie.io'>JOIN TREKIE NOW!</Button>
       </Stack>
 
     </SimpleGrid>
@@ -224,33 +223,38 @@ const Interests = () => (
 )
 
 const About = (
-  <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }} id='about'>
-    <Card key={randomId()} radius="lg">
+  <Box mt="lg" id='about'>
+    <Title ta="center" order={2} fw={800} lts={-0.5}>Our Company</Title>
+    <Text ta="center">Who we are, what we do and why we do it.</Text>
 
-      <Badge size="xl" variant="light" radius="md">
-        <Text lh={1} fw={750}>MISSION</Text>
-      </Badge>
+    <SimpleGrid mt="md" cols={{ base: 1, sm: 2 }}>
 
-      <Stack gap="8" my="sm">
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="💗" size={26} /><Text>Help people find and pursue their true purpose.</Text></Group>
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="😊" size={26} /><Text>Create a meaningful life experience for everyone.</Text></Group>
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="🌎" size={26} /><Text>Build the utopian dream of heaven on earth.</Text></Group>
-      </Stack>
-    </Card>
+      <Card key={randomId()} radius="lg" id='mission'>
+        <Badge size="xl" variant="light" radius="md">
+          <Text lh={1} fw={750}>MISSION</Text>
+        </Badge>
+        <Stack gap="8" my="sm">
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="💗" size={26} /><Text>Help people find and pursue their true purpose.</Text></Group>
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="😊" size={26} /><Text>Create a meaningful life experience for everyone.</Text></Group>
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="🌎" size={26} /><Text>Build the utopian dream of heaven on earth.</Text></Group>
+        </Stack>
+      </Card>
 
-    <Card key={randomId()} radius="lg">
-      <Badge size="xl" color="blue" variant="light" radius="md">
-        <Text lh={1} fw={750}>GOALS</Text>
-      </Badge>
+      <Card key={randomId()} radius="lg" id='goals'>
+        <Badge size="xl" color="blue" variant="light" radius="md">
+          <Text lh={1} fw={750}>GOALS</Text>
+        </Badge>
+        <Stack gap="2" my="sm">
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make gamification mainstream.</Text></Group>
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make productivity humane.</Text></Group>
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make the web decentralized.</Text></Group>
+          <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make social circles geniune.</Text></Group>
+        </Stack>
+      </Card>
 
-      <Stack gap="2" my="sm">
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make gamification mainstream.</Text></Group>
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make productivity humane.</Text></Group>
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make the web decentralized.</Text></Group>
-        <Group wrap='nowrap' gap="xs"><Emoji emoji="➡️" size={22} /><Text>Make social circles geniune.</Text></Group>
-      </Stack>
-    </Card>
-  </SimpleGrid>
+    </SimpleGrid>
+  </Box>
+
 )
 
 const Roadmap = (
@@ -453,7 +457,6 @@ const Join = (
   </Paper>
 )
 
-
 const people = [
   {
     name: "Doruk Eray",
@@ -487,13 +490,13 @@ const people = [
 const Team = (
   <Box my={30} id='team'>
     <Title ta="center" order={2} fw={800} lts={-0.5}>Our Team</Title>
-    <Text ta="center">First citizens of Dorkodian utopia.</Text>
+    <Text ta="center">First citizens of our Dorkodian utopia.</Text>
 
     <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }}>
       {people.map(member => (
         <Paper key={randomId()} radius="lg">
-          <Group wrap="nowrap">
-            <Image src={member.photo} w={80} h={80} radius="lg" />
+          <Group wrap="nowrap" align="flex-start">
+            <Image src={member.photo} w={80} h={80} radius="lg" mt={4} />
             <Stack gap={0}>
               <Text fw={700} size="xl" lh={1.5}>{member.name}</Text>
               {member.title && <Text fw={600} size="md" c="dimmed" lh={1.25}>{member.title}</Text>}
@@ -513,7 +516,7 @@ import { randomId } from '@mantine/hooks'
 import { IconDeviceGamepad2 } from '@tabler/icons-react'
 import { socialLinks } from '#/data'
 import { glassBackground } from '#/styles/shared.css'
-import { useThemed, vanilla } from '#/styles/theme'
+import { useThemed } from '#/styles/theme'
 
 function FAQ() {
   const questions = [
@@ -532,8 +535,8 @@ function FAQ() {
   ]
 
   return (
-    <Paper my={50} id='faq'>
-      <Title ta="center">FAQs</Title>
+    <Paper my={20} id='faq'>
+      <Title ta="center" order={2} fw={800} lts={-0.5}>FAQs</Title>
       <Text ta="center">Frequently Asked Questions</Text>
 
       <SimpleGrid my="lg" cols={{ base: 1, sm: 2, md: 3 }}>
