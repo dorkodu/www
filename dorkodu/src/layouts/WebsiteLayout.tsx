@@ -86,7 +86,9 @@ function Header() {
         </Paper>
 
         <Group gap={8}>
-          <Button>Get Started</Button>
+          <Button size="sm" radius={14}
+            component="a" href='#products'
+          >GET STARTED</Button>
           <ColorToggle size="xs" />
         </Group>
       </Box>
@@ -99,7 +101,7 @@ function Footer() {
   return (
     <Box className={WebsiteStyle.Footer.Root}>
       <Group align="flex-start">
-        <Stack gap={0} px={10} w={"35%"} miw={200}>
+        <Stack gap={0} px={10} w={"30%"} miw={200}>
           <Anchor display="block" href="https://dorkodu.com" target="_blank">
             <Image
               src="/images/dorkodu_Logo_Colorful.svg"
@@ -162,7 +164,8 @@ function Footer() {
             {[
               ['Terms', '/legal/terms'],
               ['Privacy', '/legal/privacy'],
-              ['Community Rules', '/legal/community'],
+              ['Community Rules', '/legal/community-rules'],
+              ['Cookie Policy', '/legal/cookie-policy'],
             ].map(link => (
               <Anchor
                 component={Link}
