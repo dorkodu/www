@@ -1,12 +1,13 @@
-import { Alert, Anchor, BackgroundImage, Badge, Box, Button, Card, Container, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
+import { ActionIcon, Alert, Anchor, BackgroundImage, Badge, Box, Button, Card, Container, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
   from '@mantine/core'
-import { IconArrowRight, IconBrandGithub, IconBrandProducthunt, IconBrandTelegram, IconBrandTwitter, IconBuildingStore, IconCheckbox, IconCoins, IconCopyCheck, IconDeviceGamepad, IconGlobe, IconGoGame, IconPhoto, IconRocket, IconSocial, IconSparkles, IconSubtask, IconTallymarks, IconTargetArrow, IconUserCheck, IconUsersGroup, IconWorld, }
+import { IconArrowRight, IconBrandGithub, IconBrandInstagram, IconBrandProducthunt, IconBrandTelegram, IconBrandTwitter, IconBrandX, IconBuildingStore, IconCheckbox, IconCoins, IconCopyCheck, IconDeviceGamepad, IconGlobe, IconGoGame, IconInfoCircle, IconPhoto, IconRocket, IconSocial, IconSparkles, IconSubtask, IconTallymarks, IconTargetArrow, IconUserCheck, IconUsersGroup, IconWorld, }
   from '@tabler/icons-react'
 
 import Emoji from '#/components/custom/Emoji'
 
 import * as WebsiteStyles from '#/styles/Website.css'
 import { useParams } from 'react-router-dom';
+import { IconBrandYoutube } from '@tabler/icons-react';
 
 export default function Legal() {
 
@@ -24,6 +25,14 @@ export default function Legal() {
       content = <Privacy />
       break
 
+    case "cookie-policy":
+      content = <CookiePolicy />
+      break
+
+    case "community-rules":
+      content = <CommunityRules />
+      break
+
     default:
       content = <Company />
       break
@@ -39,7 +48,19 @@ export default function Legal() {
 const Terms = () => {
   return (
     <Container size={760}>
-      <Title order={1}>Terms of Service</Title>
+      <Group wrap="nowrap">
+        <Emoji emoji='📄' size={36} />
+        <Stack gap={0}>
+          <Title order={1} fw={750} lh={1}>
+            Terms of Service
+          </Title>
+          {/* <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}> Gamification</Text> */}
+          <Title order={2} c="dimmed" fw={600} size={18}>
+            Governance rules, rights and responsibilities.
+          </Title>
+        </Stack>
+      </Group>
+
       <p>These Terms of Service ("Terms") govern your use of , accessible at <a href="https://dorkodu.com">https://dorkodu.com</a>. Please read these Terms carefully before accessing or using the website. Your access to and use of the service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the service.</p>
       <p>By accessing or using the service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the service.</p>
       <h2>Accounts</h2>
@@ -69,7 +90,20 @@ const Terms = () => {
 const Privacy = () => {
   return (
     <Container size={760}>
-      <Title order={1}>Privacy Policy</Title>
+      <Group wrap="nowrap">
+        <Emoji emoji='🔐' size={36} />
+        <Stack gap={0}>
+          <Title order={1} fw={750} lh={1}>
+            Privacy Policy
+          </Title>
+          {/* <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}> Gamification</Text> */}
+          <Title order={2} c="dimmed" fw={600} size={18}>
+            Our respect for your information.
+          </Title>
+        </Stack>
+      </Group>
+
+
       <p>Last updated: <i>March 05, 2024</i></p>
       <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
       <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
@@ -254,43 +288,13 @@ const Privacy = () => {
       <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
       <h2>Contact Us</h2>
       <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-      <ul>
-        <li>By email: eren@bayri.net</li>
-      </ul>
+      <p><b>By Email:</b> <Anchor href='mailto:hey@dorkodu.com'>hey@dorkodu.com</Anchor></p>
     </Container>)
-}
-
-const Hero = () => {
-  return (
-    <Box p={10}>
-      <SimpleGrid cols={{ base: 1, sm: 2 }}>
-        <Stack gap={4} justify="center" maw={500} mx="auto">
-          <Title order={1} className={WebsiteStyles.Hero.Title}>
-            Work @ <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}>Dorkodu</Text>
-          </Title>
-          <Title order={3} className={WebsiteStyles.Hero.Tagline} c="dimmed">
-            Join our mission to bring meaningful spirit back to human life with gamification.
-          </Title>
-
-          <Text size="lg" lh={1.25} my="xs" maw={400}>
-            Are you into gamification, productivity, social and decentralized web? You found your place.
-          </Text>
-
-          <Stack gap="xs" w="80%">
-            <Button size="md" component='a' href="#openings">Explore Open Roles</Button>
-            <Button size="md" variant="light" component='a' href="/" target="_blank">About Us</Button>
-          </Stack>
-        </Stack>
-
-        <Image src="/images/work-at-dorkodu.svg" maw={440} mx="auto" />
-      </SimpleGrid>
-    </Box >
-  )
 }
 
 const Company = () => {
   return (
-    <Box my={50} id='openings'>
+    <Box my={50} id='company'>
       <SimpleGrid cols={{ base: 1, sm: 2 }}>
         <Stack gap={4} justify="center" maw={500} mx="auto">
 
@@ -304,23 +308,173 @@ const Company = () => {
               <Title order={4} c="dimmed" fw={600} size={18}>
                 Explore what we can do together.
               </Title>
-
-              <Text></Text>
             </Stack>
           </Group>
 
           <Group gap="xs" my={8}>
-            <Button size="md" color="blue" leftSection={<IconBrandTelegram />}
-              component='a' href="https://t.me/dorkodu" target="_blank">Telegram</Button>
-            <Button size="md" color="dark" leftSection={<IconBrandGithub />}
-              component='a' href="https://github.com/dorkodu" target="_blank">GitHub</Button>
+            <ActionIcon size="xl" color="dark" component='a' href="https://x.com/dorkodu" target="_blank"><IconBrandX /></ActionIcon>
+            <ActionIcon size="xl" gradient={{ from: "cyan", to: "blue" }} variant="gradient" component='a' href="https://t.me/dorkodu" target="_blank"><IconBrandTelegram /></ActionIcon>
+            <ActionIcon size="xl" color="gray" component='a' href="https://github.com/dorkodu" target="_blank"><IconBrandGithub size={26} /></ActionIcon>
+            <ActionIcon size="xl" color="red.7" component='a' href="https://github.com/dorkodu" target="_blank"><IconBrandYoutube /></ActionIcon>
+            <ActionIcon size="xl" gradient={{ from: "violet", to: "orange", deg: -220 }} variant="gradient" component='a' href="https://instagram.com/dorkodu" target="_blank"><IconBrandInstagram size={28} /></ActionIcon>
           </Group>
         </Stack>
 
-        <Alert title="No openings currently." maw={460} radius="lg" mx="auto">
-          <Text size="sm">We are not actively filling new roles right now but will list future positions here soon. You can express your interest in working with us by sending an email to <Anchor href='mailto:hey@dorkodu.com'>hey@dorkodu.com</Anchor>.</Text>
-        </Alert>
+        <div>
+          <Alert title="Info" icon={<IconInfoCircle size={28} />}>
+            <Text size="sm">We are not legally incorporated yet.</Text>
+          </Alert>
+        </div>
       </SimpleGrid>
-    </Box >
+    </Box>
+  )
+}
+
+const CommunityRules = () => {
+  return (
+    <Container size={760}>
+      <Group wrap="nowrap" maw={440}>
+        <Emoji emoji='👥' size={40} />
+        <Stack gap={0}>
+          <Title order={1} fw={750} lh={1}>
+            Community Rules
+          </Title>
+          {/* <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}> Gamification</Text> */}
+          <Title order={2} c="dimmed" fw={600} lh={1.2} size={18} mt={4}>
+            Guidelines for all of our community members.
+          </Title>
+        </Stack>
+      </Group>
+
+
+      <p><b>Last updated:</b> March 21, 2024</p>
+
+      <h3></h3>
+      <p><b>We believe that everyone should have access to free tools for gamification, productivity and social media</b>. Our guidelines are meant to build a mutual understanding of what being a part of this community is all about. We will take action if any of these guidelines are not upheld, so please read carefully.</p>
+
+      <h2>Always be Respectful</h2>
+      <p>We come together from across the world at varying experiences with the same goal in mind - to grow. Curiosity, questioning, and cultural understanding are something we celebrate. Be respectful of others and where they’re coming from.</p>
+
+      <h2>Help and support across all skill levels</h2>
+      <p>We are all in this together. Life-wide gamification and productivity is hard and takes a lot of courage and dedication. If someone makes "easy" mistakes or has a question you think has an obvious answer, kindly and calmly help them out. Heckling and being straight up mean doesn’t help anyone learn. Can’t say it nicely? Don’t weigh in.</p>
+
+      <h2>Embrace and share differences</h2>
+      <p>A language can have many words, accents and ways to say the same thing. We think that’s one of the wonders of languages. Approach these conversations with an open mind and attitude.</p>
+
+      <h2>Think before you share</h2>
+      <p>We care about your safety. Online communities are inherently social, but please beware of swapping or posting any private information that could be misused. That includes your phone number, age, address, what time you’ll be at home, school name, email, or other personal information that could put your privacy at risk. Simply put: don’t over-share. Sharing and encouraging others to share personal data might get your post, and possibly your account, removed.</p>
+
+      <h2>Do Not...</h2>
+      <p><b>Please don’t use any of Dorkodu's Websites, Apps and any other Product/Services with bad and ingeniuine intentions.</b></p>
+
+      <h3>Don't attack anyone with words or actions.</h3>
+      <p>Dorkodu is a safe place for members of all backgrounds. Harassment and hurtful content will not be tolerated. Using symbols, names and text that promote hate—as well as harassing, stalking, impersonating, and making sexual remarks towards someone—are considered abuse. The same goes for nudity and disturbing profile pictures and usernames. As stated in the terms, Dorkodu reserves the right to replace images or remove these accounts at its sole discretion.</p>
+      <p>Rule of thumb: if you are making someone feel attacked or hurt, then you shouldn’t be doing it. We take these reports seriously and may delete your account without previous notice if such activity is verified by our team.</p>
+
+      <h3>Don't script or cheat maliciously.</h3>
+      <p>Dorkodu believes in honest effort. If you are scripting for the purposes of cheating or sharing information and instructions about using Dorkodu in a way that may impact the system, community, sharing, learning, data or experience in a negative or significant manner, your account and posts may be removed.</p>
+
+      <h3>Don't write inflammatory comments.</h3>
+      <p>Hateful, obscene and off-topic comments don’t contribute to learning. Cursing doesn’t either (let people discover those words in the wild). Leave them out of the language discussions.</p>
+
+      <h3>To Summarize</h3>
+      <p>We do not tolerate content that is:</p>
+
+      <ul>
+        <li>Illegal</li>
+        <li>Pornographic</li>
+        <li>Excessively profane or violent</li>
+        <li>Spam</li>
+        <li>Threatening, harassing, or bullying</li>
+        <li>Associated with racism or intolerance</li>
+        <li>Impersonating someone in a misleading or deceptive manner</li>
+        <li>Personal confidential information</li>
+      </ul>
+
+      <p>
+        <b>Please don't waste your time looking for loopholes.</b> We will remove any content that violates the spirit of these guidelines and you will risk losing partial or full access to Dorkodu without warning. By following these guidelines, we will all contribute to an interesting and helpful learning community.
+      </p>
+
+    </Container>
+  )
+}
+
+const CookiePolicy = () => {
+  return (
+    <Container size={760}>
+      <Group wrap="nowrap" maw={440}>
+        <Emoji emoji='🍪' size={36} />
+        <Stack gap={0}>
+          <Title order={1} fw={750} lh={1}>
+            Cookie Policy
+          </Title>
+          {/* <Text span inherit variant="gradient" gradient={{ from: "#17CC38", to: "#6BD731", deg: 60 }}> Gamification</Text> */}
+          <Title order={2} c="dimmed" fw={600} lh={1.2} size={18} mt={4}>
+            What we do with small pieces of information we store to enhance the experience.
+          </Title>
+        </Stack>
+      </Group>
+
+
+      <p><b>Last updated:</b> March 21, 2024</p>
+      <p>This Cookie Policy explains what Cookies are and how We use them. You should read this policy so You can understand what type of cookies We use, or the information We collect using Cookies and how that information is used.</p>
+      <p>Cookies do not typically contain any information that personally identifies a user, but personal information that we store about You may be linked to the information stored in and obtained from Cookies. For further information on how We use, store and keep your personal data secure, see our Privacy Policy.</p>
+      <p>We do not store sensitive personal information, such as mailing addresses, account passwords, etc. in the Cookies We use.</p>
+      <h2>Interpretation and Definitions</h2>
+      <h4>Interpretation</h4>
+      <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+      <h4>Definitions</h4>
+      <p>For the purposes of this Cookies Policy:</p>
+      <ul>
+        <li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Cookies Policy) refers to Dorkodu, Istanbul, Turkey.</li>
+        <li><strong>Cookies</strong> means small files that are placed on Your computer, mobile device or any other device by a website, containing details of your browsing history on that website among its many uses.</li>
+        <li><strong>Website</strong> refers to Dorkodu, accessible from <a href="https://dorkodu.com" rel="external nofollow noopener" target="_blank">https://dorkodu.com</a></li>
+        <li><strong>You</strong> means the individual accessing or using the Website, or a company, or any legal entity on behalf of which such individual is accessing or using the Website, as applicable.</li>
+      </ul>
+      <h2>The use of the Cookies</h2>
+      <h4>Type of Cookies We Use</h4>
+      <p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close your web browser.</p>
+      <p>We use both session and persistent Cookies for the purposes set out below:</p>
+      <ul>
+        <li>
+          <p><strong>Necessary / Essential Cookies</strong></p>
+          <p>Type: Session Cookies</p>
+          <p>Administered by: Us</p>
+          <p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
+        </li>
+        <li>
+          <p><strong>Functionality Cookies</strong></p>
+          <p>Type: Persistent Cookies</p>
+          <p>Administered by: Us</p>
+          <p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
+        </li>
+      </ul>
+      <h4>Your Choices Regarding Cookies</h4>
+      <p>If You prefer to avoid the use of Cookies on the Website, first You must disable the use of Cookies in your browser and then delete the Cookies saved in your browser associated with this website. You may use this option for preventing the use of Cookies at any time.</p>
+      <p>If You do not accept Our Cookies, You may experience some inconvenience in your use of the Website and some features may not function properly.</p>
+      <p>If You'd like to delete Cookies or instruct your web browser to delete or refuse Cookies, please visit the help pages of your web browser.</p>
+      <ul>
+        <li>
+          <p>For the Chrome web browser, please visit this page from Google: <a href="https://support.google.com/accounts/answer/32050" rel="external nofollow noopener" target="_blank">https://support.google.com/accounts/answer/32050</a></p>
+        </li>
+        <li>
+          <p>For the Internet Explorer web browser, please visit this page from Microsoft: <a href="http://support.microsoft.com/kb/278835" rel="external nofollow noopener" target="_blank">http://support.microsoft.com/kb/278835</a></p>
+        </li>
+        <li>
+          <p>For the Firefox web browser, please visit this page from Mozilla: <a href="https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored" rel="external nofollow noopener" target="_blank">https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored</a></p>
+        </li>
+        <li>
+          <p>For the Safari web browser, please visit this page from Apple: <a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" rel="external nofollow noopener" target="_blank">https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac</a></p>
+        </li>
+      </ul>
+      <p>For any other web browser, please visit your web browser's official web pages.</p>
+      <h4>More Information about Cookies</h4>
+      <p>You can learn more about cookies: <a href="https://www.freeprivacypolicy.com/blog/cookies/" target="_blank">Cookies: What Do They Do?</a>.</p>
+      <h4>Contact Us</h4>
+      <p>If you have any questions about this Cookies Policy, You can contact us:</p>
+      <ul>
+        <li>By email: hey@dorkodu.com</li>
+      </ul>
+    </Container>
   )
 }

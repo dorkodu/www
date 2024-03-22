@@ -44,32 +44,34 @@ const Hero = () => {
           </Stack>
         </Stack>
 
-        <Image src="/images/dorkodu-ecosystem.svg" maw={440} mx="auto" />
+        <Box p={10} my={10}>
+          <Image src="/images/dorkodu-ecosystem.svg" maw={440} mx="auto" />
+        </Box>
       </SimpleGrid>
     </Box >
   )
 }
 
 const Products = () => (
-  <Paper mt={40} id='products'>
+  <Paper py={10} id='products' mt="3vw">
 
     <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }} id='get-started'>
 
-      <Box>
+      <Box maw={400} mx="auto">
         <Center>
-          <Image src={useThemed({ light: "/images/trekie_Brand.svg", dark: "/images/trekie_Brand_White.svg" })} h={100} w="auto" />
+          <Image src={useThemed({ light: "/images/trekie_Brand.svg", dark: "/images/trekie_Brand_White.svg" })} w="100%" h="auto" />
         </Center>
       </Box>
 
-      <Stack gap={8}>
+      <Stack gap={8} maw={420} mx="auto">
         <Text size="lg" lh={1} fw={800} c="dimmed">INTRODUCING TREKIE</Text>
         <Title style={{
-          fontSize: 28,
+          fontSize: 26,
           fontWeight: 750,
           lineHeight: 1.0,
           letterSpacing: -0.65,
         }}>
-          Your social and gamified productivity companion app.
+          Your social and gamified productivity companion.
         </Title>
 
         <Group gap={8} mt={4}>
@@ -223,7 +225,7 @@ const Interests = () => (
 )
 
 const About = (
-  <Box mt="lg" id='about'>
+  <Box pt="md" id='about' mt="2vw">
     <Title ta="center" order={2} fw={800} lts={-0.5}>Our Company</Title>
     <Text ta="center">Who we are, what we do and why we do it.</Text>
 
