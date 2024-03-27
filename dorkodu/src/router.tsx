@@ -61,7 +61,7 @@ export const router = createBrowserRouter(
       <Route path="/error" element={view('flow:Error')} />
 
       {/* Error routes & catch all */}
-      <Route path="*" element={view('website:NotFound')} />
+      <Route path="*" element={<Navigate to="/404" />} />
     </Route>
   )
 )

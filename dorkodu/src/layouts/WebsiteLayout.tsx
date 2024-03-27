@@ -96,7 +96,6 @@ function Header() {
   )
 }
 
-
 function Footer() {
   return (
     <Box className={WebsiteStyle.Footer.Root}>
