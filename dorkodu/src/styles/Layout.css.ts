@@ -79,6 +79,9 @@ export const Layout = {
     display: 'flex',
     marginTop: BARHEIGHT,
 
+    // Make sure body uses full height while content is loading to avoid footer layout shift.
+    minHeight: "100dvh",
+
     '@media': {
       [isWideScreen]: {
         marginTop: 0,
