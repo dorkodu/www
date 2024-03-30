@@ -57,7 +57,7 @@ export const router = createBrowserRouter(
       </Route>
 
       {/* User Flow */}
-      <Route path="/join" element={view('flow:CreateAccount')} />
+      <Route path="/join" element={<Navigate to="/#products" />} />
       <Route path="/error" element={view('flow:Error')} />
 
       {/* Error routes & catch all */}

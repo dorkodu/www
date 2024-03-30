@@ -2,15 +2,12 @@ import {
   Anchor,
   Box,
   Button,
-  Flex,
   Group,
   Image,
   Paper,
   SimpleGrid,
   Stack,
   Text,
-  useMantineColorScheme,
-  useMantineTheme,
 } from '@mantine/core'
 
 import { Link, Outlet, useNavigate } from 'react-router-dom'
