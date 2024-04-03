@@ -20,7 +20,7 @@ export const Header = {
 
 export const Hero = {
   Title: style({
-    fontSize: 32,
+    fontSize: "calc(22px + 0.5vw)",
     fontWeight: 800,
     lineHeight: 1.0,
     letterSpacing: -0.5,

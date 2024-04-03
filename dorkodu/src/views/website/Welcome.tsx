@@ -1,4 +1,4 @@
-import { Anchor, BackgroundImage, Badge, Box, Button, Card, Center, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, useMantineColorScheme }
+import { Anchor, BackgroundImage, Badge, Box, Button, Card, Center, Flex, Group, Image, List, Paper, SimpleGrid, Stack, Text, ThemeIcon, Title, rem, useMantineColorScheme }
   from '@mantine/core'
 import { IconArrowRight, IconBrandProducthunt, IconBuildingStore, IconCheckbox, IconCoins, IconCopyCheck, IconDeviceGamepad, IconGlobe, IconGoGame, IconPhoto, IconRocket, IconSocial, IconSparkles, IconSubtask, IconTallymarks, IconTargetArrow, IconUserCheck, IconUsersGroup, IconWorld, }
   from '@tabler/icons-react'
@@ -38,7 +38,7 @@ const Hero = () => {
             and build technology for <Text span inherit fw={600}>decentralized web</Text>.
           </Text>
 
-          <Stack gap="xs" w="80%">
+          <Stack gap="xs" maw={400}>
             <Button size="md" fw={700} component='a' href="#get-started">GET STARTED</Button>
             <Button size="md" variant="light" component='a' href="https://t.me/dorkodu" target="_blank" fw={700}>JOIN COMMUNITY</Button>
           </Stack>
@@ -57,33 +57,38 @@ const Products = () => (
 
     <SimpleGrid my="lg" cols={{ base: 1, sm: 2 }} id='get-started'>
 
-      <Box maw={400} mx="auto">
+      <Box maw={400} mx="auto" display="flex">
         <Center>
-          <Image src={useThemed({ light: "/images/trekie_Brand.svg", dark: "/images/trekie_Brand_White.svg" })} w="100%" h="auto" />
+          <Image src={useThemed({ light: "/images/trekie_Brand.svg", dark: "/images/trekie_Brand_White.svg" })} w="80%" h="auto" />
         </Center>
       </Box>
 
-      <Stack gap={8} maw={420} mx="auto">
-        <Text size="lg" lh={1} fw={800} c="dimmed">INTRODUCING TREKIE</Text>
+      <Stack gap={8} id='trekie' maw={500} mx="auto">
+
+        <Text mt={4} lh={1.25} fw={800} c="dimmed" ta="center" size="calc(16px + 0.25vw)">INTRODUCING TREKIE</Text>
         <Title style={{
-          fontSize: 26,
+          fontSize: "calc(22px + 0.5vw)",
           fontWeight: 750,
           lineHeight: 1.0,
           letterSpacing: -0.65,
+          textAlign: "center"
         }}>
-          Your social and gamified productivity companion.
+          Your social and gamified <br /> productivity companion.
         </Title>
 
-        <Group gap={8} mt={4}>
+        <Group gap={8} mt={4} justify="center">
           <Emoji emoji='🥳' size={22} />
           <Text lh="22px">Start gamifying your life today!</Text>
         </Group>
 
-        <Button mt={6} size="md" radius="lg" fw={700} maw={240} rightSection={<IconArrowRight />}
-          component='a' href='https://trekie.io'>JOIN TREKIE NOW!</Button>
+        <Group gap={8} justify="center">
+          <Button mt={6} size="md" radius="lg" fw={700} maw={240} component='a' href='https://trekie.io'>JOIN NOW!</Button>
+          <Button mt={6} size="md" radius="lg" fw={700} maw={240} component='a' href='https://trekie.io/welcome' variant="light">WEBSITE</Button>
+        </Group>
       </Stack>
-
     </SimpleGrid>
+
+
   </Paper>
 )
 
