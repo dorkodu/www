@@ -1,11 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Doruk Eray",
-  "short_name": "@dorukeray",
+  "name": "dorkodu",
+  "short_name": "dorkodu",
   "start_url": ".",
-  "display": "browser",
-  "description": "Founder ✦ Polymath ✦ Software Craftsman",
-  "theme_color": "#00cc40",
+  "display": "standalone",
+  "description": "the dream fulfillment technology company.",
+  "theme_color": "#20df30",
+  "background_color": "#20df30",
   "icons": [
     {
       "src": "android-chrome-36x36.png?v=2",

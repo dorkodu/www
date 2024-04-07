@@ -1,50 +1,48 @@
-import { MantineTheme, MantineThemeOverride } from "@mantine/core";
+import {
+  Anchor,
+  Button,
+  Title,
+  createTheme,
+  useMantineColorScheme,
+} from '@mantine/core'
+import { themeToVars } from '@mantine/vanilla-extract'
 
-export const theme: MantineThemeOverride = {
-  defaultGradient: { deg: 60, from: "green", to: "lime" },
+export const theme = createTheme({
+  primaryColor: 'green',
+  defaultRadius: 'md',
+  cursorType: 'pointer',
 
-  lineHeight: 1.25,
+  fontFamily: 'Rubik, Roboto, sans-serif',
+  fontFamilyMonospace: 'JetBrains Mono, Fira Code, monospace',
 
-  headings: {
-    fontWeight: 600,
-    fontFamily: "Rubik",
+  components: {
+    Anchor: Anchor.extend({
+      styles: (theme) => ({
+        root: {
+          color: theme.colors.blue[6],
+          fontWeight: 450
+        },
+      }),
+    }),
+    Title: Title.extend({
+      styles: (theme) => ({
+        root: {
+          color: useThemed({ light: theme.black, dark: theme.white }),
+          letterSpacing: -0.5,
 
-    sizes: {
-      h1: { lineHeight: 1.25, fontWeight: 800 },
-      h2: { lineHeight: 1.25, fontWeight: 750 },
-      h3: { lineHeight: 1.3, fontWeight: 650 },
-      h4: { lineHeight: 1.3, fontWeight: 600 },
-      h5: { lineHeight: 1.35, fontWeight: 550 },
-      h6: { lineHeight: 1.35, fontWeight: 500 },
-    },
+        },
+      }),
+    }),
+    Button: Button.extend({
+      defaultProps: {
+        radius: 'lg',
+      },
+    }),
   },
+})
 
-  globalStyles: (theme: MantineTheme) => ({
-    body: {
-      overflowY: "scroll",
-      overscrollBehavior: "contain",
+export const vanilla = themeToVars(theme)
 
-      maxWidth: theme.breakpoints.lg,
-      margin: "0 auto",
-    },
-
-    "@font-face": {
-      fontFamily: "sans-serif",
-      src: 'local("sans-serif")',
-      letterSpacing: "0.6px",
-      wordSpacing: "-1.65px",
-    },
-  }),
-
-  dir: "ltr",
-  respectReducedMotion: true,
-
-  primaryColor: "green",
-  defaultRadius: "md",
-  cursorType: "pointer",
-  focusRing: "auto",
-  loader: "dots",
-
-  fontFamily: `Rubik, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, sans-serif`,
-  fontFamilyMonospace: `ui-monospace, "JetBrains Mono", "Cascadia Mono", SFMono-Regular, "Segoe UI Mono", "Roboto Mono", Liberation Mono, Courier New, "Ubuntu Mono",  Menlo, Monaco, Consolas, monospace`,
-};
+export function useThemed({ dark, light }: { light: string; dark: string }) {
+  return useMantineColorScheme().colorScheme == 'dark' ? dark : light
+}
