@@ -28,13 +28,13 @@ import {
   IconSchool,
 } from "@tabler/icons-react";
 
-import { Showcase } from "@shared/components/commons";
+import { Showcase } from "@/components/commons";
 import {
   Earth,
   Emoji,
   SmilingEyes,
   SparklingHeart,
-} from "@shared/styles/emoji";
+} from "@/components/emoji";
 
 import { IStoryElement, StoryElement } from "@/components/story";
 import { randomId } from "@mantine/hooks";

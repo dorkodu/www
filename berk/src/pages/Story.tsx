@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 
 import { randomId } from "@mantine/hooks";
-import { Showcase } from "@shared/components/commons";
+import { Showcase } from "@/components/commons";
 
 export default function Page() {
   return (

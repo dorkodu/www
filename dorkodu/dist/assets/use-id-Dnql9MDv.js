@@ -1,1 +1,0 @@
-import{R as n,l as s,D as u}from"./index-D13OjYyu.js";import{r as i}from"./IconBrandTelegram-DeGirgQe.js";const d=n.useId||(()=>{});function a(){const t=d();return t?`mantine-${t.replace(/:/g,"")}`:""}function p(t){const e=a(),[r,o]=s.useState(e);return u(()=>{o(i())},[]),typeof t=="string"?t:typeof window>"u"?e:r}export{p as u};

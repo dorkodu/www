@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import App from "@/App";
-import CenterLoader from "@shared/components/loaders/CenterLoader";
+import CenterLoader from "@/components/loaders/CenterLoader";
 
 /**
  * Page: Make any app view a lazy-loaded static page

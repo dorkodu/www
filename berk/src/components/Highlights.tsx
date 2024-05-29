@@ -9,7 +9,7 @@ import {
 } from "@mantine/core";
 import React from "react";
 import { GitHubProfileCard } from "./Github";
-import { Showcase } from "@shared/components/commons";
+import { Showcase } from "@/components/commons";
 import { IconBrandGithub } from "@tabler/icons-react";
 
 //? Lazy-loading Optimization

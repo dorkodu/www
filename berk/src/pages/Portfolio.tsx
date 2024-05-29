@@ -19,7 +19,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { Showcase } from "@shared/components/commons";
+import { Showcase } from "@/components/commons";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
