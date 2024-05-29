@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-export function useDelay(delay: number = 100) {
+export function useDelay() {
   const [state, setState] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setState(false), delay);
+    const timeout = setTimeout(() => setState(false), 100);
     return () => clearTimeout(timeout);
   }, []);
 

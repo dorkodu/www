@@ -2,37 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Dorkodu</title>
-    <meta name="title" content="Dorkodu" />
-    <meta name="description" content="The Life Gamification Company." />
-    <meta name="theme-color" content="#1A1B1E" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
+    <title>Doruk Eray</title>
+    <meta name="title" content="Doruk Eray" />
+    <meta
+      name="description"
+      content="Founder ∗ Polymath ∗ Software Craftsman" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Dorkodu" />
-    <meta property="og:url" content="https://dorkodu.com" />
-    <meta property="og:description" content="The Life Gamification Company." />
-    <meta property="og:image" content="https://dorkodu.com/icon-512-maskable.png"/>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="150x150" href="/favicon.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://dorkodu.com" />
-    <meta property="twitter:title" content="Dorkodu" />
-    <meta property="twitter:description" content="The Life Gamification Company." />
-    <meta property="twitter:image" content="https://dorkodu.com/icon-512-maskable.png" />
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="me" href="https://toolsforthought.social/@doruk" />
+
+    <meta name="robots" content="notranslate" />
+    <meta name="googlebot" content="notranslate" />
+    <meta name="google" content="notranslate" />
+
+    <style>
+      @font-face {
+        font-family: Rubik;
+        src: url("/fonts/Rubik.woff2") format("woff2");
+        font-display: fallback;
+      }
+
+      .hidden {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
+    </style>
+
+    <!-- Light/dark theme switcher, minified and original code. -->
+    <script>
+      function set(e) {
+        let t = "light" === e ? "#ffffff" : "#1A1B1E";
+        (document.documentElement.style.backgroundColor = t),
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", t);
+      }
+      let theme = localStorage.getItem("theme");
+      "light" !== theme &&
+        "dark" !== theme &&
+        ((theme = "light"), localStorage.setItem("theme", "light")),
+        set(theme);
+    </script>
   </head>
 
   <body>
+    <div aria-hidden="true" class="hidden" style="font-family: Rubik">
+      &nbsp;
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

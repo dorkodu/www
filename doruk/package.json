@@ -1,6 +1,7 @@
 {
-  "name": "www-dorkodu",
-  "version": "1.0.0",
+  "name": "doruk.dorkodu.com",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,42 +11,28 @@
     "deploy": "bun install && bun run build"
   },
   "dependencies": {
-    "@mantine/core": "^7.7.1",
-    "@mantine/hooks": "^7.5.0",
-    "@mantine/vanilla-extract": "^7.5.0",
-    "@tabler/icons-react": "^2.41.0",
-    "emoji-regex": "^10.3.0",
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.17",
+    "@mantine/hooks": "^6.0.17",
+    "@tabler/icons-react": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.17.0",
-    "react-tweet": "^3.2.0",
-    "twemoji": "^14.0.2"
+    "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
-    "@types/react": "^18.2.73",
-    "@types/react-dom": "^18.2.23",
-
-
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
+    "@types/react": "^18.2.17",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.46.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-
-    "typescript": "^5.4.3",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
-    
-    "@vanilla-extract/css": "^1.14.2",
-    "@vanilla-extract/vite-plugin": "^4.0.7",
-    "postcss-preset-mantine": "^1.13.0",
-    
-    "vite": "^5.2.7",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-html": "^3.2.2",
-    "vite-plugin-pwa": "^0.19.7",
-    "@vitejs/plugin-react-swc": "^3.6.0",
-    
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-pwa": "^0.16.4",
     "workbox-window": "^7.0.0"
   }
 }

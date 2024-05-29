@@ -1,67 +1,61 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-refresh/only-export-components */
-
-import React, { Suspense } from 'react'
+import React, { Suspense } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Navigate,
   Route,
-} from 'react-router-dom'
-import CenterLoader from '#/components/loaders/CenterLoader'
-import { util } from '#/lib/util'
-import App from './App'
+} from "react-router-dom";
 
+import App from "@/App";
+import CenterLoader from "@/components/loaders/CenterLoader";
 
-function view(path: string) {
-  const [folder, file] = path.split(':')
+/**
+ * Page: Make any app view a lazy-loaded static page
+ * (helper function to wrap any view in suspense)
+ */
+function Page(name: string) {
+  const View = React.lazy(() => import(`./pages/${name}.tsx`));
 
-  return suspenseLoader(
-    React.lazy(util.wait(() => import(`./views/${folder}/${file}.tsx`)))
-  )
-}
-
-function layout(path: string) {
-  return suspenseLoader(
-    React.lazy(util.wait(() => import(`./layouts/${path}.tsx`)))
-  )
-}
-
-function suspenseLoader(
-  Component: React.LazyExoticComponent<React.ComponentType<any>>
-) {
   return (
     <Suspense fallback={<CenterLoader />}>
-      <Component />
+      <View />
     </Suspense>
-  )
+  );
 }
 
-export const router = createBrowserRouter(
+// Views & Lazy-loaded
+const Home = Page("Home");
+const Portfolio = Page("Portfolio");
+const Notes = Page("Notes");
+const Note = Page("Note");
+const Story = Page("Story");
+const NotFound = Page("404");
+
+const Router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />} errorElement={view('flow:Error')}>
-      <Route element={layout('WebsiteLayout')}>
-        <Route index path="/" element={view('website:Welcome')} />
+    <Route path="/" element={<App />}>
+      <Route index element={Home} />
 
-        <Route path="/about" element={<Navigate to="/#about" />} />
-        <Route path="/contact" element={<Navigate to="/#contact" />} />
-        <Route path="/blog" element={<Navigate to="https://dorkodu.substack.com" />} />
+      <Route path="/story" element={Story} />
+      <Route path="/portfolio" element={Portfolio} />
 
-        <Route path="/jobs" element={view('website:Jobs')} />
-        <Route path="/press" element={view('website:Press')} />
+      <Route path="/notes" element={Notes} />
 
-        <Route path="/legal/:document" element={view('website:Legal')} />
-        <Route path="/legal" element={<Navigate to="/legal/company" />} />
+      <Route
+        path="/note/:slug"
+        element={Note}
+        loader={async ({ params }) => {
+          return fetch(`/data/notes/${params.slug}.json`);
+        }}
+      />
 
-        <Route path="/404" element={view('website:NotFound')} />
-      </Route>
+      {/* if note id is NOT specified -> show all notes */}
+      <Route path="/note" element={<Navigate to="/notes" />} />
 
-      {/* User Flow */}
-      <Route path="/join" element={<Navigate to="/#products" />} />
-      <Route path="/error" element={view('flow:Error')} />
-
-      {/* Error routes & catch all */}
+      <Route path="/404" element={NotFound} />
       <Route path="*" element={<Navigate to="/404" />} />
     </Route>
   )
-)
+);
+
+export default Router;
