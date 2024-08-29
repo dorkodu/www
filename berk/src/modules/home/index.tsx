@@ -47,7 +47,7 @@ export default function Page() {
           ]}
           title="Co-Founder & Founding Technologist"
           link="https://dorkodu.com"
-          date="June 2021 – Present"
+          date="Jan 2021 – Present"
         />
 
         <Title order={3} pt="md">
