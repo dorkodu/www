@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Text, Title } from "@mantine/core";
+import { Button, Card, Flex, Image, Text, Title } from "@mantine/core";
 import Content from "./components/layout/Content";
 import Header from "./components/layout/Header";
 import EducationCard from "./components/EducationCard";
@@ -10,6 +10,7 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import Footer from "./components/layout/Footer";
+import SkillElement from "./components/SkillElement";
 
 export default function Page() {
   return (
@@ -73,6 +74,39 @@ export default function Page() {
             link="https://trekie.io"
           />
         </Flex>
+
+        <Title order={3} pt="md">
+          Skills
+        </Title>
+        <Card withBorder shadow="md">
+          <Flex direction="column" gap="xs">
+            <SkillElement name="Language" items={["English", "Turkish"]} />
+            <SkillElement
+              name="Programming"
+              items={["TypeScript", "JavaScript"]}
+            />
+            <SkillElement
+              name="Frameworks"
+              items={["React", "Express", "Next.js"]}
+            />
+            <SkillElement
+              name="Database & Web"
+              items={["PostgreSQL", "PWA", "SPA", "REST"]}
+            />
+            <SkillElement
+              name="Tech"
+              items={[
+                "Node.js",
+                "Bun",
+                "Vite",
+                "Capacitor",
+                "GitHub",
+                "Docker",
+                "Linux",
+              ]}
+            />
+          </Flex>
+        </Card>
 
         <Title order={3} pt="md">
           Education
