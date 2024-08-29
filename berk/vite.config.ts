@@ -1,25 +1,21 @@
 import { defineConfig } from "vite";
 
-import path from "path";
+import path from "node:path";
 
-import react from "@vitejs/plugin-react";
-import viteCompression from "vite-plugin-compression";
+import react from "@vitejs/plugin-react-swc";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import { createHtmlPlugin as html } from "vite-plugin-html";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react({}),
-    html({ minify: true }),
-    viteCompression({ algorithm: "gzip" }),
-    viteCompression({ algorithm: "brotliCompress" }),
-  ],
+  plugins: [react(), vanillaExtractPlugin(), html({ minify: true })],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    reportCompressedSize: false,
+  server: {
+    host: true,
   },
+  base: "/",
 });
