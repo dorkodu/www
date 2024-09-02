@@ -87,7 +87,7 @@ export default function Page() {
             />
             <SkillElement
               name="Frameworks"
-              items={["React", "Express", "Next.js"]}
+              items={["React", "Express", "Next.js", "PixiJS"]}
             />
             <SkillElement
               name="Database & Web"
