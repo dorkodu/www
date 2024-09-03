@@ -11,8 +11,8 @@ export default function SkillElement({ name, items }: Props) {
       <Text miw={128}>{name}</Text>
 
       <Flex wrap="wrap" gap={5}>
-        {items.map((item) => (
-          <Pill>{item}</Pill>
+        {items.map((item, i) => (
+          <Pill key={i}>{item}</Pill>
         ))}
       </Flex>
     </Flex>
