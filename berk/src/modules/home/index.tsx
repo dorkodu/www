@@ -73,6 +73,14 @@ export default function Page() {
             ]}
             link="https://trekie.io"
           />
+          <ProjectCard
+            name="Lord Masters (Demo)"
+            desc={[
+              "♟️ Easy-to-learn multiplayer turn-based strategy game, fight with other players, capture lands, and play with friends!",
+              "⚙️ Custom engine using PixiJS for performance (over 95% faster than DOM).",
+            ]}
+            link="https://lordmasters.dorkodu.com"
+          />
         </Flex>
 
         <Title order={3} pt="md">
