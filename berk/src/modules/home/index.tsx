@@ -55,6 +55,14 @@ export default function Page() {
         </Title>
         <Flex direction="column" gap="xs">
           <ProjectCard
+            name="Crewlands"
+            desc={[
+              "♟️ Easy-to-learn multiplayer turn-based strategy game, fight with other players, capture lands, and play with friends!",
+              "⚙️ Custom engine using PixiJS for performance (over 95% faster than DOM).",
+            ]}
+            link="https://crewlands.com"
+          />
+          <ProjectCard
             name="Mindcards"
             desc={[
               "Learn anything with gamified flashcards.",
@@ -73,14 +81,6 @@ export default function Page() {
             ]}
             link="https://trekie.io"
           />
-          <ProjectCard
-            name="Lord Masters (Demo)"
-            desc={[
-              "♟️ Easy-to-learn multiplayer turn-based strategy game, fight with other players, capture lands, and play with friends!",
-              "⚙️ Custom engine using PixiJS for performance (over 95% faster than DOM).",
-            ]}
-            link="https://lordmasters.dorkodu.com"
-          />
         </Flex>
 
         <Title order={3} pt="md">
@@ -94,24 +94,16 @@ export default function Page() {
               items={["TypeScript", "JavaScript"]}
             />
             <SkillElement
-              name="Frameworks"
-              items={["React", "Express", "Next.js", "PixiJS"]}
+              name="Frontend"
+              items={["React", "Next.js", "Zustand", "React Query", "PixiJS"]}
             />
             <SkillElement
-              name="Database & Web"
-              items={["PostgreSQL", "PWA", "SPA", "REST"]}
+              name="Backend"
+              items={["Node.js", "Bun", "Express", "tRPC", "Socket.IO"]}
             />
             <SkillElement
               name="Tech"
-              items={[
-                "Node.js",
-                "Bun",
-                "Vite",
-                "Capacitor",
-                "GitHub",
-                "Docker",
-                "Linux",
-              ]}
+              items={["PostgreSQL", "Docker", "Git", "Linux", "Nginx"]}
             />
           </Flex>
         </Card>
