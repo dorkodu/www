@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StoryRouteImport } from './routes/story'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as AdminRouteImport } from './routes/admin'
@@ -16,6 +17,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as NotesIndexRouteImport } from './routes/notes/index'
 import { Route as NotesSlugRouteImport } from './routes/notes/$slug'
 
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResumeRoute = ResumeRouteImport.update({
   id: '/resume',
   path: '/resume',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/portfolio': typeof PortfolioRoute
   '/resume': typeof ResumeRoute
+  '/story': typeof StoryRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/portfolio': typeof PortfolioRoute
   '/resume': typeof ResumeRoute
+  '/story': typeof StoryRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes': typeof NotesIndexRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/portfolio': typeof PortfolioRoute
   '/resume': typeof ResumeRoute
+  '/story': typeof StoryRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
 }
@@ -79,16 +88,25 @@ export interface FileRouteTypes {
     | '/admin'
     | '/portfolio'
     | '/resume'
+    | '/story'
     | '/notes/$slug'
     | '/notes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/portfolio' | '/resume' | '/notes/$slug' | '/notes'
+  to:
+    | '/'
+    | '/admin'
+    | '/portfolio'
+    | '/resume'
+    | '/story'
+    | '/notes/$slug'
+    | '/notes'
   id:
     | '__root__'
     | '/'
     | '/admin'
     | '/portfolio'
     | '/resume'
+    | '/story'
     | '/notes/$slug'
     | '/notes/'
   fileRoutesById: FileRoutesById
@@ -98,12 +116,20 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   PortfolioRoute: typeof PortfolioRoute
   ResumeRoute: typeof ResumeRoute
+  StoryRoute: typeof StoryRoute
   NotesSlugRoute: typeof NotesSlugRoute
   NotesIndexRoute: typeof NotesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resume': {
       id: '/resume'
       path: '/resume'
@@ -154,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   PortfolioRoute: PortfolioRoute,
   ResumeRoute: ResumeRoute,
+  StoryRoute: StoryRoute,
   NotesSlugRoute: NotesSlugRoute,
   NotesIndexRoute: NotesIndexRoute,
 }

@@ -1,4 +1,12 @@
+import { Link } from "@tanstack/react-router";
 import { Github, Instagram, Linkedin, Mail, Send, Twitter } from "lucide-react";
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Story", href: "/story" },
+  { name: "Notes", href: "/notes" },
+];
 
 const socialLinks = [
   { name: "Twitter", href: "https://twitter.com/d0rukeray", icon: Twitter },
@@ -48,14 +56,22 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom decoration */}
-        <div className="mt-8 pt-6 border-t border-border/30 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <span>Built with</span>
-          <span className="text-foreground font-medium">React</span>
-          <span>·</span>
-          <span className="text-foreground font-medium">TypeScript</span>
-          <span>·</span>
-          <span className="animate-pulse-soft">❤️</span>
+        {/* Navigation Links */}
+        <div className="mt-8 pt-6 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors no-underline"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} <span className="text-link">Doruk Eray</span>
+          </p>
         </div>
       </div>
     </footer>
