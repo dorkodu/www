@@ -98,26 +98,26 @@ function PortfolioHero() {
           <div>
             <ScrollReveal><Badge variant="outline" className="mb-6"><Layers className="h-3 w-3 mr-1" />Work & Projects</Badge></ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6">
                 <span className="block">My</span>
                 <span className="block bg-gradient-to-r from-cta via-link to-purple-500 bg-clip-text text-transparent">Portfolio</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}><p className="text-xl text-muted-foreground max-w-lg leading-relaxed">Products I've built and open source projects I maintain.</p></ScrollReveal>
             <ScrollReveal delay={300}>
-              <div className="mt-10">
+              <div className="mt-8 md:mt-10">
                 <a href="https://github.com/dorukeray" target="_blank" rel="noopener noreferrer" className="no-underline">
-                  <Button variant="outline" size="lg" className="h-14 px-6 rounded-xl group"><Github className="h-5 w-5 mr-2" />View GitHub<ArrowUpRight className="h-4 w-4 ml-2 opacity-50 group-hover:opacity-100" /></Button>
+                  <Button variant="outline" size="lg" className="h-12 sm:h-14 px-5 sm:px-6 text-sm sm:text-base rounded-xl group"><Github className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />View GitHub<ArrowUpRight className="h-4 w-4 ml-2 opacity-50 group-hover:opacity-100" /></Button>
                 </a>
               </div>
             </ScrollReveal>
           </div>
           <ScrollReveal delay={400} direction="left">
-            <div className="grid grid-cols-2 gap-4">
-              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-4xl md:text-5xl font-black tabular-nums mb-2">{projectCount}</div><div className="text-sm text-muted-foreground">Projects</div></div></TiltCard>
-              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-4xl md:text-5xl font-black text-cta mb-2">8+</div><div className="text-sm text-muted-foreground">Years</div></div></TiltCard>
-              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-4xl md:text-5xl font-black text-link mb-2">30+</div><div className="text-sm text-muted-foreground">Repos</div></div></TiltCard>
-              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-4xl md:text-5xl font-black text-amber-500 mb-2">2k+</div><div className="text-sm text-muted-foreground">Commits</div></div></TiltCard>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-4 sm:p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-3xl sm:text-4xl md:text-5xl font-black tabular-nums mb-1 sm:mb-2">{projectCount}</div><div className="text-xs sm:text-sm text-muted-foreground">Projects</div></div></TiltCard>
+              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-4 sm:p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-3xl sm:text-4xl md:text-5xl font-black text-cta mb-1 sm:mb-2">8+</div><div className="text-xs sm:text-sm text-muted-foreground">Years</div></div></TiltCard>
+              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-4 sm:p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-3xl sm:text-4xl md:text-5xl font-black text-link mb-1 sm:mb-2">30+</div><div className="text-xs sm:text-sm text-muted-foreground">Repos</div></div></TiltCard>
+              <TiltCard tiltMax={8} scale={1.02} className="rounded-2xl"><div className="p-4 sm:p-6 rounded-2xl bg-card border border-border/50 text-center"><div className="text-3xl sm:text-4xl md:text-5xl font-black text-amber-500 mb-1 sm:mb-2">2k+</div><div className="text-xs sm:text-sm text-muted-foreground">Commits</div></div></TiltCard>
             </div>
           </ScrollReveal>
         </div>

@@ -26,6 +26,7 @@ export function LandingPage() {
     <div className="flex flex-col">
       <Hero />
       <InANutshell />
+      <LifeMission />
       <FeaturedProjects />
       <Interests />
     </div>
@@ -137,36 +138,36 @@ function Hero() {
 
             {/* Social Links */}
             <ScrollReveal direction="up" delay={400}>
-              <div className="flex items-center gap-4">
-                <div className="flex gap-2">
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap gap-2">
                   {socialLinks.slice(0, 5).map((link) => (
                     <a
                       key={link.name}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative h-11 w-11 rounded-xl bg-muted/50 hover:bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-lg no-underline"
+                      className="group relative h-10 w-10 sm:h-11 sm:w-11 rounded-xl bg-muted/50 hover:bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-lg no-underline"
                       aria-label={link.name}
                     >
-                      <link.icon className="h-5 w-5" />
+                      <link.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </a>
                   ))}
                 </div>
-                <div className="h-6 w-px bg-border" />
-                <span className="text-sm text-muted-foreground">Let's connect</span>
+                <div className="hidden sm:block h-6 w-px bg-border" />
+                <span className="hidden sm:block text-sm text-muted-foreground">Let's connect</span>
               </div>
             </ScrollReveal>
 
             {/* CTA Buttons */}
             <ScrollReveal direction="up" delay={500}>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button asChild size="lg" className="group h-14 px-8 text-base bg-foreground text-background hover:bg-foreground/90 rounded-xl">
+              <div className="flex flex-wrap gap-3 pt-4">
+                <Button asChild size="lg" className="group h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base bg-foreground text-background hover:bg-foreground/90 rounded-xl">
                   <Link to="/portfolio" className="no-underline">
                     View Portfolio
-                    <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="h-14 px-8 text-base rounded-xl border-2 hover:bg-muted">
+                <Button asChild variant="outline" size="lg" className="h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-xl border-2 hover:bg-muted">
                   <Link to="/resume" className="no-underline">Resume</Link>
                 </Button>
               </div>
@@ -174,7 +175,7 @@ function Hero() {
 
             {/* Scroll indicator */}
             <ScrollReveal direction="up" delay={700}>
-              <div className="flex items-center gap-3 pt-8 text-sm text-muted-foreground">
+              <div className="hidden sm:flex items-center gap-3 pt-8 text-sm text-muted-foreground">
                 <MousePointer2 className="h-4 w-4 animate-bounce" />
                 <span>Scroll to explore</span>
               </div>
@@ -298,23 +299,23 @@ function CurrentlyBuildingCard() {
   return (
     <TiltCard tiltMax={3} scale={1.01} className="h-full rounded-3xl">
       <SpotlightCard
-        className="group h-full min-h-[320px] rounded-3xl border border-cta/20 bg-gradient-to-br from-cta/10 via-card to-card backdrop-blur-sm p-8 flex flex-col overflow-hidden relative"
+        className="group h-full min-h-[280px] sm:min-h-[320px] rounded-3xl border border-cta/20 bg-gradient-to-br from-cta/10 via-card to-card backdrop-blur-sm p-6 sm:p-8 flex flex-col overflow-hidden relative"
         spotlightColor="16, 185, 129"
       >
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-cta/20 rounded-full blur-3xl group-hover:bg-cta/30 transition-colors duration-700" />
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-cta/10 rounded-full blur-2xl" />
 
-        <div className="absolute top-8 right-8 w-24 h-24">
+        <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-16 h-16 sm:w-24 sm:h-24 hidden sm:block">
           <div className="absolute inset-0 rounded-full border border-cta/20 animate-ping" style={{ animationDuration: "3s" }} />
           <div className="absolute inset-2 rounded-full border border-cta/30 animate-ping" style={{ animationDuration: "3s", animationDelay: "0.5s" }} />
           <div className="absolute inset-4 rounded-full bg-cta/10 flex items-center justify-center">
-            <Briefcase className="h-6 w-6 text-cta" />
+            <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-cta" />
           </div>
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col">
-          <div className="flex items-center gap-3 mb-6">
-            <Badge variant="cta" className="px-3 py-1">
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <Badge variant="cta" className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm">
               <span className="relative flex h-2 w-2 mr-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cta opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cta"></span>
@@ -323,10 +324,10 @@ function CurrentlyBuildingCard() {
             </Badge>
           </div>
 
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Founder & Chief</h3>
-          <p className="text-xl text-cta font-semibold mb-4">@ Dorkodu</p>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-3">Founder & Chief</h3>
+          <p className="text-lg sm:text-xl text-cta font-semibold mb-3 sm:mb-4">@ Dorkodu</p>
 
-          <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6 flex-1">
             Leading the team, designing products, and building software. We create social & gamified products
             and open source technology to empower individuals worldwide.
           </p>
@@ -378,14 +379,14 @@ function ExperienceCard() {
         </div>
 
         <div className="flex items-center gap-2 mb-2">
-          <Code2 className="h-5 w-5 text-link" />
+          <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-link" />
           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Experience</span>
         </div>
         <div className="flex items-baseline gap-1">
-          <span className="text-5xl md:text-6xl font-black text-foreground tabular-nums">{count}</span>
-          <span className="text-2xl font-bold text-link">+</span>
+          <span className="text-4xl sm:text-5xl md:text-6xl font-black text-foreground tabular-nums">{count}</span>
+          <span className="text-xl sm:text-2xl font-bold text-link">+</span>
         </div>
-        <div className="text-sm text-muted-foreground mt-1">Years building for the web</div>
+        <div className="text-xs sm:text-sm text-muted-foreground mt-1">Years building for the web</div>
       </SpotlightCard>
     </TiltCard>
   );
@@ -404,14 +405,14 @@ function LocationCard() {
           <div className="absolute top-[40%] left-[40%] w-8 h-8 border border-foreground/20 rounded-full" />
         </div>
 
-        <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center shrink-0">
-          <MapPin className="h-7 w-7 text-amber-500" />
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-500 border-2 border-card" />
+        <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center shrink-0">
+          <MapPin className="h-5 w-5 sm:h-7 sm:w-7 text-amber-500" />
+          <div className="absolute -bottom-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500 border-2 border-card" />
         </div>
-        <div className="relative">
+        <div className="relative min-w-0">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Based in</div>
-          <div className="font-bold text-xl text-foreground">Istanbul, Turkey</div>
-          <div className="text-sm text-muted-foreground">🌍 Open to remote</div>
+          <div className="font-bold text-lg sm:text-xl text-foreground truncate">Istanbul, Turkey</div>
+          <div className="text-xs sm:text-sm text-muted-foreground">🌍 Open to remote</div>
         </div>
       </SpotlightCard>
     </TiltCard>
@@ -472,14 +473,14 @@ function EducationCard() {
         className="h-full min-h-[160px] rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 via-card to-card backdrop-blur-sm p-6 flex items-center gap-5 relative overflow-hidden"
         spotlightColor="168, 85, 247"
       >
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center shrink-0 relative">
-          <GraduationCap className="h-8 w-8 text-purple-500" />
-          <div className="absolute -top-1 -right-1 text-xl">🎓</div>
+        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center shrink-0 relative">
+          <GraduationCap className="h-6 w-6 sm:h-8 sm:w-8 text-purple-500" />
+          <div className="absolute -top-1 -right-1 text-lg sm:text-xl">🎓</div>
         </div>
-        <div>
-          <div className="font-bold text-lg text-foreground">Boğaziçi University</div>
-          <div className="text-sm text-purple-400 font-medium">Cognitive Science</div>
-          <div className="text-sm text-muted-foreground mt-1">Vefa Lisesi Graduate • Istanbul</div>
+        <div className="min-w-0">
+          <div className="font-bold text-base sm:text-lg text-foreground truncate">Boğaziçi University</div>
+          <div className="text-xs sm:text-sm text-purple-400 font-medium">Cognitive Science</div>
+          <div className="text-xs sm:text-sm text-muted-foreground mt-1 truncate">Vefa Lisesi Graduate • Istanbul</div>
         </div>
       </SpotlightCard>
     </TiltCard>
@@ -694,3 +695,77 @@ function Interests() {
     </section>
   );
 }
+
+// ============================================
+// LIFE MISSION SECTION
+// ============================================
+
+function LifeMission() {
+  return (
+    <section className="relative py-32 md:py-40 bg-zinc-950 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 rounded-full blur-[150px]" />
+
+      <div className="relative max-w-4xl mx-auto px-6">
+        {/* Header */}
+        <ScrollReveal>
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-emerald-500">My Life Mission</span>
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-4">
+              Liberate the Humankind;
+            </h2>
+
+            <p className="text-lg md:text-xl text-zinc-400 italic">
+              with meaningful art & technology.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Mission items */}
+        <div className="space-y-6">
+          <ScrollReveal delay={100}>
+            <div className="flex items-start gap-5 p-6 rounded-xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700/50 transition-colors">
+              <span className="text-4xl shrink-0">💖</span>
+              <div>
+                <div className="text-xs font-mono text-emerald-500/80 mb-1.5 tracking-wide">01 — PURPOSE</div>
+                <p className="text-lg md:text-xl text-zinc-200 leading-relaxed">
+                  Help people find and pursue their life purpose.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <div className="flex items-start gap-5 p-6 rounded-xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700/50 transition-colors">
+              <span className="text-4xl shrink-0">😊</span>
+              <div>
+                <div className="text-xs font-mono text-emerald-500/80 mb-1.5 tracking-wide">02 — EXPERIENCE</div>
+                <p className="text-lg md:text-xl text-zinc-200 leading-relaxed">
+                  Create a meaningful life experience for everyone.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="flex items-start gap-5 p-6 rounded-xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700/50 transition-colors">
+              <span className="text-4xl shrink-0">🌍</span>
+              <div>
+                <div className="text-xs font-mono text-emerald-500/80 mb-1.5 tracking-wide">03 — UTOPIA</div>
+                <p className="text-lg md:text-xl text-zinc-200 leading-relaxed">
+                  Build the utopian dream of heaven on earth.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
